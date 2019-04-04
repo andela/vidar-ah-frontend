@@ -93,6 +93,12 @@
           "react/sort-comp": 1,
           "react/wrap-multilines": 0,
           "react/jsx-filename-extension": 0,
-          "react/no-unescaped-entities":["error", { "forbid": [] }]
-        }
+          "react/no-unescaped-entities":["error", { "forbid": [] }],
+          "import/no-extraneous-dependencies": [
+            "error",
+            {
+              "devDependencies": true
+            }
+          ]
+              }
 }
