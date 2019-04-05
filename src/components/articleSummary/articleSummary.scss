@@ -1,0 +1,11 @@
+    @import '../../assets/default.scss';
+
+    .outline {
+        box-shadow: $box-shadow-color;
+        margin: 1%;
+      }
+
+      h3 {
+        font-weight: 400;
+        padding: 1rem;
+      }
