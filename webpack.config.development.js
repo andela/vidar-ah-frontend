@@ -12,7 +12,7 @@ module.exports = {
         test: /\.s?css/,
         use: [
           'style-loader',
-          'css-loader',
+          'css-loader?modules&localIdentName=[name]__[local]___[hash:base64:5]',
           'sass-loader'
         ]
       }
