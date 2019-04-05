@@ -4,6 +4,8 @@ jobs:
     docker:
       - image: circleci/node:10
     working_directory: ~/repo
+    environment:
+      CC_TEST_REPORTER_ID: 755eddfaba7893ba66ebdd96adca8a53bfe461ac45fc1fefe9f90c94cec00661
 
     steps:
       - checkout
@@ -16,4 +18,15 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
-      - run: npm run test
+      - run:
+          name: Setup Code Climate test-reporter
+          command: |
+            curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+            chmod +x ./cc-test-reporter
+      - run:
+          name: Run tests
+          command: |
+            npm run test
+            ./cc-test-reporter before-build
+            npm run test:coverage
+            ./cc-test-reporter after-build --exit-code $?
