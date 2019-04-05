@@ -13,10 +13,11 @@
     "preinstall": "rm -rf dist",
     "postinstall": "npm run build",
     "build": "npm run build:prod",
-    "lint": "eslint . --ext .js,.jsx",
     "test": "jest",
     "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage --colors"
+    "test:coverage": "jest --coverage --colors",
+    "lint": "eslint . --ext .js,.jsx && npm run sass-lint",
+    "sass-lint": "sass-lint 'src/**/*.scss' -q -v"
   },
   "pre-commit": [
     "lint",
@@ -66,9 +67,12 @@
     "file-loader": "^3.0.1",
     "image-webpack-loader": "^4.6.0",
     "jest": "^24.5.0",
+    "mini-css-extract-plugin": "^0.5.0",
     "node-sass": "^4.11.0",
     "pre-commit": "^1.2.2",
     "react-hot-loader": "^4.8.2",
+    "sass": "^1.17.4",
+    "sass-lint": "^1.12.1",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "uglifyjs-webpack-plugin": "^2.1.2",

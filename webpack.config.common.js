@@ -21,15 +21,6 @@ module.exports = {
         }
       },
       {
-        test: /\.s?css/,
-        use: [
-          'style-loader',
-          'css-loader',
-          'sass-loader'
-        ]
-      },
-
-      {
         test: /\.(gif|png|jpe?g|woff|woff2|eot|ttf|svg)$/i,
         use: [
           'file-loader'
@@ -45,7 +36,6 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/index.html',
       filename: './index.html'
-    })
-
+    }),
   ],
 };
