@@ -7,7 +7,7 @@ import { connect } from 'react-redux';
 import { Navbar, Nav } from 'react-bootstrap';
 
 import PropTypes from 'prop-types';
-import './header.scss';
+import './Header.scss';
 
 const Header = (props) => {
   let className;
