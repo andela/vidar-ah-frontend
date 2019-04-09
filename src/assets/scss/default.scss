@@ -1,0 +1,49 @@
+$font-stack:    Helvetica, sans-serif;
+$primary-color: #999;
+
+a, .yellow-button {
+  transition: all ease-in-out 0.4s;
+}
+
+.purple-gradient {
+  background: #3c1053;
+  background: -webkit-linear-gradient(to right, #3c1053, #0575e6);
+  background: linear-gradient(97.8deg, rgba(60, 16, 83, 0.9) 37.49%, rgba(173, 83, 137, 0.9) 102.07%, rgba(173, 83, 137, 0.9) 102.07%);
+  height: 100%;
+  position: fixed;
+  width: 100%;
+}
+
+.form-black-bg {
+  background: rgba(0, 0, 0, 0.6);
+  color: #ccc;
+  font-weight: 100;
+  margin: 50px auto;
+  padding: 40px 10px;
+  text-align: center;
+}
+
+input.dark-forms, select.dark-forms {
+  background-color: transparent;
+  border: #aaa 1px solid;
+  border-radius: 0 !important;
+  box-sizing: border-box;
+  color: #ddd;
+  font-size: 0.9em;
+  margin: 20px auto;
+  padding: 20px;
+  width: 80%;
+}
+
+.form-black-bg a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.form-black-bg a:hover {
+  color: #ccc;
+}
+
+.form-black-bg h3 {
+  color: #fff
+}
