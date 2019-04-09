@@ -16,8 +16,9 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage --colors",
-    "lint": "eslint . --ext .js,.jsx && npm run sass-lint",
-    "sass-lint": "sass-lint 'src/**/*.scss' -q -v"
+    "lint": "eslint . --ext .js,.jsx --fix && npm run sass-lint",
+    "sass-lint": "sass-lint 'src/**/*.scss' -q -v",
+    "sass-lint:fix": "sass-lint-auto-fix"
   },
   "pre-commit": [
     "lint",
@@ -36,15 +37,24 @@
   "homepage": "https://github.com/andela/vidar-ah-frontend#readme",
   "dependencies": {
     "autoprefixer": "^9.5.0",
+    "axios": "^0.18.0",
+    "babel-polyfill": "^6.26.0",
+    "bootstrap": "^4.3.1",
     "express": "^4.16.4",
+    "form-data": "^2.3.3",
     "html-webpack-plugin": "^3.2.0",
+    "jquery": "^3.3.1",
     "optimize-css-assets-webpack-plugin": "^5.0.1",
     "path": "^0.12.7",
+    "popper.js": "^1.15.0",
+    "prop-types": "^15.7.2",
     "react": "^16.8.6",
+    "react-bootstrap": "^1.0.0-beta.6",
     "react-dom": "^16.8.6",
     "react-redux": "^6.0.1",
     "react-router-dom": "^5.0.0",
     "redux": "^4.0.1",
+    "redux-mock-store": "^1.5.3",
     "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
@@ -74,8 +84,10 @@
     "react-hot-loader": "^4.8.2",
     "sass": "^1.17.4",
     "sass-lint": "^1.12.1",
+    "sass-lint-auto-fix": "^0.16.2",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
+    "terser-webpack-plugin": "^1.2.3",
     "uglifyjs-webpack-plugin": "^2.1.2",
     "url-loader": "^1.1.2",
     "webpack": "^4.29.6",
