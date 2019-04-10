@@ -9,6 +9,7 @@
     "extends-before-mixins": 2,
     "extends-before-declarations": 2,
     "placeholder-in-extend": 2,
+    "no-url-domains": 0,
     "mixins-before-declarations": [
       2,
       {
