@@ -11,3 +11,7 @@ export const GET_TRENDING_ARTICLES = 'GET_TRENDING_ARTICLES';
 export const CURRENT_USER = 'CURRENT_USER';
 export const GET_RESET_KEY = 'GET_RESET_KEY';
 export const SEND_NEW_PASSWORD = 'SEND_NEW_PASSWORD';
+export const LOGIN = 'LOGIN';
+export const LOGOUT = 'LOGOUT';
+export const START_FETCHING = 'START_FETCHING';
+export const STOP_FETCHING = 'STOP_FETCHING';

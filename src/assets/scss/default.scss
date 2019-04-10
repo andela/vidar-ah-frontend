@@ -63,6 +63,18 @@ select {
   }
 }
 
+input.dark-forms, select.dark-forms {
+  background-color: transparent;
+  border: #aaa 1px solid;
+  border-radius: 0 !important;
+  box-sizing: border-box;
+  color: #ddd;
+  font-size: 0.9em;
+  margin: 20px auto;
+  padding: 20px;
+  width: $input-field-width;
+}
+
 .form-black-bg {
   background: $black-trans-bg;
   color: $color-ccc;
@@ -70,6 +82,8 @@ select {
   margin: 50px auto;
   padding: 40px 10px;
   text-align: center;
+  // display: flex;
+  // flex-direction: column;
 
   & a {
     color: $white;
@@ -84,4 +98,22 @@ select {
     color: $white;
   }
 
+}
+
+.container-social-login {
+  // border: 1px solid white;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+
+  & .info {
+    font-style: $font-stack;
+    font-size: .9rem;
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  & .social-media-icons {
+    // border: 1px solid white;
+    margin: 0 .8rem 0 .8rem;
+  }
 }
