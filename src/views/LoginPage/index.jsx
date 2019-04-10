@@ -1,3 +1,4 @@
+/* eslint-disable import/no-named-as-default */
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -6,7 +7,7 @@ import {
   Container, Row, Col, Form, Alert
 } from 'react-bootstrap';
 import PropTypes from 'prop-types';
-import Header from '../../components/header/Header';
+import Header from '../../components/header/Index';
 import Button from '../../components/button/Index';
 import { loginUser } from '../../redux/actions/auth';
 import Loader from '../../components/loader/Index';
@@ -44,7 +45,7 @@ export const Login = ({ history, loginUser: handleLogin, loading }) => {
     <div className="purple-gradient-bg">
       {loading && <Loader />}
       <Container>
-        <Header location={history.location.pathname} />
+        <Header location={history.location.pathname} history={history} />
       </Container>
       <Container>
         <Row><Col md={{ span: 6, offset: 3 }}>{renderErrors(errors)}</Col></Row>
@@ -63,14 +64,14 @@ export const Login = ({ history, loginUser: handleLogin, loading }) => {
                 onChange={updateLocalState}
               />
               <Form.Control
-                type="password"
-                name="password"
-                placeholder="Password"
-                className="dark-forms"
-                required
-                onChange={updateLocalState}
-              />
-              <Button text="Login" />
+                  type="password"
+                  name="password"
+                  placeholder="Password"
+                  className="dark-forms"
+                  required
+                  onChange={updateLocalState}
+                />
+              <Button text="Login" className="w-80" />
               <div className="container-extras">
                 <span>
                   <NavLink
@@ -85,15 +86,19 @@ export const Login = ({ history, loginUser: handleLogin, loading }) => {
             <div className="container-social-login">
               <span className="info">Or login using </span>
               <SocialIcon
-                url={googleUrl}
-                network="google"
-                className="social-media-icons"
-              />
+                  url={googleUrl}
+                  network="google"
+                  className="social-media-icons"
+                  style={{ height: 35, width: 35 }}
+                  fgColor="#fff"
+                />
               <SocialIcon
-                url={facebookUrl}
-                className="social-media-icons"
-                network="facebook"
-              />
+                  url={facebookUrl}
+                  className="social-media-icons"
+                  network="facebook"
+                  style={{ height: 35, width: 35 }}
+                  fgColor="#fff"
+                />
             </div>
             <div className="container-directing-to-signup">
               <span>

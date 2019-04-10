@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
+import PropTypes from 'prop-types';
 import './articleTitle.scss';
 
 const ArticleTitle = (props) => {
@@ -11,4 +12,7 @@ const ArticleTitle = (props) => {
   );
 };
 
+ArticleTitle.propTypes = {
+  title: PropTypes.string.isRequired
+};
 export default ArticleTitle;

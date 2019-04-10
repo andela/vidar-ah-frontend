@@ -11,11 +11,14 @@ import CreateArticle from '../views/createArticle';
 import Social from '../views/socialCallback/Index';
 import ViewProfile from '../views/profilePage/ViewProfile';
 import EditProfile from '../views/profilePage/EditProfile';
+import Signup from '../views/signup/Index';
+import VerifyAccount from '../components/VerifyEmail';
 
 const Routes = () => (
   <Switch>
     <Route path="/" exact component={LandingPage} />
     <AuthWrapper path="/create-article" exact component={CreateArticle} />
+    <Route path="/signup" exact component={Signup} />
     <Route path="/social/callback" exact component={Social} />
     <Route path="/articles/:slug" component={Article} />
     <Route path="/requestpasswordreset" exact component={RequestPasswordReset} />
@@ -23,6 +26,7 @@ const Routes = () => (
     <Route path="/login" exact component={LoginPage} />
     <AuthWrapper path="/userprofile" component={ViewProfile} />
     <AuthWrapper path="/editprofile" component={EditProfile} />
+    <Route path="/verify/:id" component={VerifyAccount} />
     <Route component={NotFound} />
   </Switch>
 );

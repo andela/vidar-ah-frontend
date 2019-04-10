@@ -1,26 +1,27 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable react/jsx-no-bind */
 /* eslint-disable no-unused-expressions */
+/* eslint-disable react/jsx-no-bind */
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Navbar, Nav } from 'react-bootstrap';
 import PropTypes from 'prop-types';
-import './header.scss';
 import { logOut } from '../../redux/actions/auth';
+import './header.scss';
 
-const Header = (props) => {
+export const Header = (props) => {
   let className;
   const {
     type,
     isLoggedIn,
+    logOut: LogOut,
+    history,
   } = props;
 
   type === 'purple' ? className = 'purple-link' : className = 'white-link';
 
   const logout = () => {
-    props.logOut();
-    props.history.push('/');
+    LogOut();
+    history.push('/');
   };
 
   return (
@@ -36,7 +37,6 @@ const Header = (props) => {
                 <div>
                   <Link to="/" className={className}>Home</Link>
                   <Link to="/create-article" className={className}>Create post</Link>
-                  <Link to="/userprofile" className={className}>My Profile</Link>
                   <Link to="#" onClick={logout} className={className}>Log out</Link>
                 </div>
               ) : (
@@ -52,18 +52,21 @@ const Header = (props) => {
     </div>
   );
 };
+
 Header.propTypes = {
   type: PropTypes.string,
   isLoggedIn: PropTypes.bool.isRequired,
   logOut: PropTypes.func.isRequired,
+  history: PropTypes.object.isRequired
 };
+
 Header.defaultProps = {
   type: 'white',
 };
 
 const mapStateToProps = state => ({
   isLoggedIn: state.authReducer.isLoggedIn,
-  user: state.authReducer.currentUser
+  user: state.authReducer.currentUser,
 });
 
 export default connect(() => mapStateToProps, { logOut })(Header);
