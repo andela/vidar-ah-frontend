@@ -16,9 +16,9 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage --colors",
-    "lint": "eslint . --ext .js,.jsx, --fix && npm run sass-lint",
+    "lint": "eslint . --ext .js,.jsx --fix && npm run sass-lint",
     "sass-lint": "sass-lint 'src/**/*.scss' -q -v",
-    "sass-lint:fix": "sass-lint-auto-fix 'src/**/*.scss' "
+    "sass-lint:fix": "sass-lint-auto-fix"
   },
   "pre-commit": [
     "lint",

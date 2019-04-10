@@ -35,5 +35,5 @@ export default function Banner(props) {
 }
 
 Banner.propTypes = {
-  history: PropTypes.string.isRequired
+  history: PropTypes.instanceOf(Object).isRequired
 };

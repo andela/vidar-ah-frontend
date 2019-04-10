@@ -123,7 +123,7 @@ LandingPage.propTypes = {
 };
 
 LandingPage.propTypes = {
-  history: PropTypes.string
+  history: PropTypes.instanceOf(Object)
 };
 
 LandingPage.defaultProps = {
