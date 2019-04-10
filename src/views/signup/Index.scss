@@ -1,0 +1,15 @@
+$primary-color: #999;
+
+.signup-form {
+  width: 80%;
+}
+
+.interest{
+  color: $primary-color;
+}
+
+@media (max-width: 768px) {
+  .form-black-bg {
+    background: rgba(0,0,0,0)
+  }
+}
