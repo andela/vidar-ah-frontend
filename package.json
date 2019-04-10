@@ -37,7 +37,9 @@
   "homepage": "https://github.com/andela/vidar-ah-frontend#readme",
   "dependencies": {
     "autoprefixer": "^9.5.0",
+    "axios": "^0.18.0",
     "bootstrap": "^4.3.1",
+    "enzyme-to-json": "^3.3.5",
     "express": "^4.16.4",
     "html-webpack-plugin": "^3.2.0",
     "jquery": "^3.3.1",
@@ -50,15 +52,18 @@
     "react-dom": "^16.8.6",
     "react-redux": "^6.0.1",
     "react-router-dom": "^5.0.0",
+    "react-toastify": "^5.0.0",
     "redux": "^4.0.1",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "terser-webpack-plugin": "^1.2.3"
   },
   "devDependencies": {
     "@babel/core": "^7.4.0",
-    "@babel/polyfill": "^7.4.0",
+    "@babel/polyfill": "^7.4.3",
     "@babel/preset-env": "^7.4.2",
     "@babel/preset-es2015": "^7.0.0-beta.53",
     "@babel/preset-react": "^7.0.0",
+    "axios-mock-adapter": "^1.16.0",
     "babel-eslint": "^10.0.1",
     "babel-jest": "^24.5.0",
     "babel-loader": "^8.0.5",
@@ -78,6 +83,7 @@
     "node-sass": "^4.11.0",
     "pre-commit": "^1.2.2",
     "react-hot-loader": "^4.8.2",
+    "react-social-icons": "^4.1.0",
     "sass": "^1.17.4",
     "sass-lint": "^1.12.1",
     "sass-lint-auto-fix": "^0.16.2",
