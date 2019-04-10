@@ -1,4 +1,4 @@
-@import '../../assets/default';
+@import '../../assets/scss/default';
 
 footer {
   background: $white-color;
@@ -13,7 +13,7 @@ footer {
 .footer {
   color: $text-color;
   font-weight: 600;
-  padding-top: 0.875rem;
+  padding-top: .875rem;
   text-align: center;
   width: inherit;
 }

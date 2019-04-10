@@ -1,4 +1,4 @@
-@import '../../assets/default';
+@import '../../assets/scss/default';
 
 .white-link,
 .navbar-brand {
@@ -19,17 +19,23 @@
   padding-left: 0;
 }
 
-.purple-link:hover {
-  color: #ccc;
-  text-decoration: none;
-}
-
-.white-link:hover {
-  color: #ccc;
-  text-decoration: none;
-}
-
 .img-icon {
   cursor: pointer;
-  padding: 0.3rem;
+  padding: .3rem;
+}
+
+a {
+  .purple-link {
+    &:hover {
+      color: $color-ccc;
+      text-decoration: none;
+    }
+}
+
+  .white-link {
+    &:hover {
+      color: $color-ccc;
+      text-decoration: none;
+    }
+  }
 }
