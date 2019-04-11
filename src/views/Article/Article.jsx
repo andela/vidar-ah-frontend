@@ -38,6 +38,7 @@ const Article = (props) => {
       </Container>
       <hr />
       <Container>
+        <h3>Also recommended for you</h3>
         <CardDeck>
           {
               props.recommendedArticles.map(recArticle => (
