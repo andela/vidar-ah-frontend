@@ -4,7 +4,7 @@ import { GET_LATEST_ARTICLES, GET_TRENDING_ARTICLES } from './actionTypes';
 export const getArticles = params => async (dispatch) => {
   try {
     const { data } = await axios({
-      url: `http://vidar-ah-backend-production.herokuapp.com/api/articles/order?type=latest&amount=${params}`,
+      url: `https://vidar-ah-backend-production.herokuapp.com/api/articles/order?type=latest&amount=${params}`,
       method: 'GET',
     });
     dispatch({
@@ -21,7 +21,7 @@ export const getArticles = params => async (dispatch) => {
 export const getTrendingArticles = params => async (dispatch) => {
   try {
     const { data } = await axios({
-      url: `http://vidar-ah-backend-production.herokuapp.com/api/articles/order?type=latest&amount=${params}`,
+      url: `https://vidar-ah-backend-production.herokuapp.com/api/articles/order?type=latest&amount=${params}`,
       method: 'GET',
     });
     dispatch({
