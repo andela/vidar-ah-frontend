@@ -1,0 +1,24 @@
+$yellow-btn-background: #e2d754;
+$btn-text: #51455c;
+$yellow-btn-shadow: rgba(111, 102, 3, 0.5);
+$yellow-btn-hover:  rgb(172, 163, 64);
+$yellow-btn-hover-shadow: rgba(111, 102, 3, 0.8);
+$yellow-btn-hover-color: rgb(46, 39, 53);
+
+.yellow-button {
+  background: $yellow-btn-background;
+  border: 0;
+  box-shadow: 0 12px 60px $yellow-btn-shadow;
+  color: $btn-text;
+  font-size: 1.23rem;
+  font-weight: 500;
+  line-height: normal;
+  padding: 12px 25px;
+  text-align: center;
+
+  & :hover {
+    background: $yellow-btn-hover;
+    box-shadow: 0 12px 60px $yellow-btn-hover-shadow;
+    color: $yellow-btn-hover-color;
+ }
+}
