@@ -12,7 +12,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Banner from '../../components/banner/Index';
 import { getArticles, getTrendingArticles } from '../../redux/actions/getArticles';
-import ArticleSummary from '../../components/articleSummary';
+import ArticleSummary from '../../components/articleSummary/ArticleSummary';
 import RectArticleSummary from '../../components/rectArticleSummary';
 import ContentHeader from '../../components/contentHeader';
 import './index.scss';

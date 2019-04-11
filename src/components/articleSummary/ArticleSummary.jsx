@@ -1,61 +1,50 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import {
   Card,
-  CardDeck
+  Row,
+  Col
 } from 'react-bootstrap';
+import PropTypes from 'prop-types';
 import './articleSummary.scss';
 
+
 const ArticleSummary = (props) => {
-  const { src, title } = props;
+  const {
+    src, header, name, time
+  } = props;
+  const date = new Date(time).getTime();
+  const now = new Date().getTime();
+  const hrs = Math.floor((now - date) / 1000 / 60 / 60);
+
   return (
-    <>
-      <h3>Also recommended for you</h3>
-      <CardDeck>
-        <Card>
-          <Card.Img variant="top" src={src} />
-          <Card.Body>
-            <Card.Title>{title}</Card.Title>
-          </Card.Body>
-          <Card.Footer>
-            <small className="text-muted">Last updated 3 mins ago</small>
-          </Card.Footer>
-        </Card>
-        <Card>
-          <Card.Img variant="top" src={src} />
-          <Card.Body>
-            <Card.Title>{title}</Card.Title>
-          </Card.Body>
-          <Card.Footer>
-            <small className="text-muted">March 30 . 5 mins read</small>
-          </Card.Footer>
-        </Card>
-        <Card>
-          <Card.Img variant="top" src={src} />
-          <Card.Body>
-            <Card.Title>{title}</Card.Title>
-          </Card.Body>
-          <Card.Footer>
-            <small className="text-muted">Oct 5, 2018 . 8 mins read</small>
-          </Card.Footer>
-        </Card>
-        <Card>
-          <Card.Img variant="top" src={src} />
-          <Card.Body>
-            <Card.Title>{title}</Card.Title>
-          </Card.Body>
-          <Card.Footer>
-            <small className="text-muted">Feb 24 . 7 mins read</small>
-          </Card.Footer>
-        </Card>
-      </CardDeck>
-    </>
+    <Card className="card-outline">
+      <Card.Img style={{ height: '8rem' }} variant="top" src={src || 'https://res.cloudinary.com/djdsxql5q/image/upload/v1554806589/Authors%20Haven/culture.jpg'} />
+      <Card.Body>
+        <Card.Text className="card-pad"><h4>{header}</h4></Card.Text>
+      </Card.Body>
+      <Card.Footer className="text-muted">
+        <Row>
+          <Col md={1}><img alt="user" src="https://res.cloudinary.com/dqyytlxwe/image/upload/v1554891501/user-shape_1_1.png" /></Col>
+          <Col md={6}><small>{name}</small></Col>
+          <Col md={5.5}>
+            <small>
+              {hrs}
+              {' '}
+            hours ago
+              {' '}
+            </small>
+          </Col>
+        </Row>
+      </Card.Footer>
+    </Card>
   );
 };
 
 ArticleSummary.propTypes = {
-  title: PropTypes.string.isRequired,
   src: PropTypes.string.isRequired,
+  header: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  time: PropTypes.string.isRequired,
 };
 
 export default ArticleSummary;

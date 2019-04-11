@@ -16,7 +16,7 @@ const Routes = () => (
     <Route path="/resetpassword/:key" exact component={ResetPassword} />
     <Route path="/login" exact component={LoginPage} />
     <Route path="/create-article" exact component={CreateArticle} />
-    <Route path="/articles" component={Article} />
+    <Route path="/articles/:slug" component={Article} />
     <Route component={NotFound} />
   </Switch>
 );

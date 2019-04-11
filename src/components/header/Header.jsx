@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 const Header = ({ location }) => (
   <>
-    <Navbar className="header-comp" collapseOnSelect expand="lg">
+    <Navbar collapseOnSelect expand="lg">
       {
         (location.includes('article')) ? <a href="#home" className="purple-link">authorsHaven</a> : <a href="#home" className="white-link">authorsHaven</a>
       }
@@ -34,9 +34,7 @@ const Header = ({ location }) => (
     </Navbar>
   </>
 );
-
 Header.propTypes = {
   location: PropTypes.string.isRequired
 };
-
 export default Header;

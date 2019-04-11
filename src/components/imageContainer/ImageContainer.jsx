@@ -1,3 +1,4 @@
+
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
@@ -14,7 +15,7 @@ const ImageContainer = (props) => {
     <Container>
       <Row>
         <Col style={{ textAlign: 'center' }}>
-          <Image fluid src={src} style={{ width: '80%' }} />
+          <Image fluid src={src} style={{ width: '70%' }} />
         </Col>
       </Row>
     </Container>
