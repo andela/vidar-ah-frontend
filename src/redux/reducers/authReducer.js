@@ -1,4 +1,10 @@
-import { LOGIN, LOGOUT, CURRENT_USER } from '../actions/actionTypes';
+import {
+  LOGIN,
+  LOGOUT,
+  CURRENT_USER,
+  SIGNUP,
+  SIGNUP_ERROR
+} from '../actions/actionTypes';
 
 const initialState = {
   isLoggedIn: false,
@@ -24,6 +30,21 @@ export default (state = initialState, action = {}) => {
         ...state,
         isLoggedIn: true,
         currentUser: action.payload.currentUser,
+      };
+    case SIGNUP:
+      return {
+        ...state,
+        data: {
+          ...action.payload
+        },
+      };
+
+    case SIGNUP_ERROR:
+      return {
+        ...state,
+        errors: {
+          ...action.errors
+        }
       };
     default:
       return state;

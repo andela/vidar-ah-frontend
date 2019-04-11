@@ -2,7 +2,6 @@
 import React, { useEffect } from 'react';
 import {
   Container,
-  Row,
   CardDeck
 } from 'react-bootstrap';
 import PropTypes from 'prop-types';
@@ -14,6 +13,7 @@ import ImageContainer from '../../components/imageContainer/ImageContainer';
 import ArticleSummary from '../../components/articleSummary/ArticleSummary';
 import ArticleDescription from '../../components/articleDescription/ArticleDescription';
 import { getArticleRequest } from '../../redux/actions/articles';
+import Footer from '../../components/footer/Footer';
 
 const Article = (props) => {
   const { history } = props;
@@ -39,8 +39,7 @@ const Article = (props) => {
       <hr />
       <Container>
         <CardDeck>
-          <Row>
-            {
+          {
               props.recommendedArticles.map(recArticle => (
                 <ArticleSummary
                           key={recArticle.id}
@@ -51,9 +50,9 @@ const Article = (props) => {
                         />
               ))
             }
-          </Row>
         </CardDeck>
       </Container>
+      <Footer />
     </div>
   );
 };

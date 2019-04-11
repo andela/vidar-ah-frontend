@@ -9,7 +9,7 @@ import {
 } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import Header from '../../components/header/index';
+import Header from '../../components/header/Header';
 import Button from '../../components/button/Button';
 import { resetPassword } from '../../redux/actions/passwordReset';
 

@@ -7,14 +7,14 @@ import {
 } from 'react-bootstrap';
 import Button from '../button';
 import HeaderText from '../headerText';
-import Header from '../header';
+import Header from '../header/Header';
 
 
-export default function Banner() {
+export default function Banner({ history }) {
   return (
     <section>
       <div className="cont">
-        <Header />
+        <Header location={history.location.pathname} />
         <Container>
           <Row className="justify-content-md-center">
             <Col sm={8}>

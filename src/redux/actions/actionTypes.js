@@ -11,3 +11,5 @@ export const CURRENT_USER = 'CURRENT_USER';
 export const CREATE_ARTICLE = 'CREATE_ARTICLE';
 export const SET_ARTICLE = 'SET_ARTICLE';
 export const SET_ARTICLE_ERROR = 'SET_ARTICLE_ERROR';
+export const SIGNUP = 'SIGNUP';
+export const SIGNUP_ERROR = 'SIGNUP_ERROR';

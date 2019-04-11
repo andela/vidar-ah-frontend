@@ -3,12 +3,12 @@ import React from 'react';
 import { shallow, mount } from 'enzyme';
 import toJson from 'enzyme-to-json';
 import { MemoryRouter } from 'react-router-dom';
-import { Login } from '../../views/LoginPage';
+import Signup from '../../views/signup/Index';
 import Header from '../../components/header/Header';
 import Button from '../../components/button/Button';
 
 
-const getLoginPage = () => {
+const getSignupPage = () => {
   const props = {
     history: {
       push: jest.fn(),
@@ -16,26 +16,23 @@ const getLoginPage = () => {
         pathname: ''
       }
     },
-
-    loginUser: jest.fn(),
-    loading: false
+    signupUser: jest.fn(),
   };
 
-
-  const shallowWrapper = shallow(<Login {...props} />);
+  const shallowWrapper = shallow(<Signup {...props} />);
 
   const mountWrapper = mount(
     <MemoryRouter>
-      <Login {...props} />
+      <Signup {...props} />
     </MemoryRouter>
   );
   return { shallowWrapper, mountWrapper };
 };
 
-const { mountWrapper } = getLoginPage();
+const { mountWrapper } = getSignupPage();
 
-describe('Test the Login Page', () => {
-  it('it render the longin page without failing', () => {
+describe('Test the Signup Page', () => {
+  it('it render the signup page without failing', () => {
     expect(toJson(mountWrapper)).toMatchSnapshot();
   });
   it('should contain the Header', () => {
@@ -46,6 +43,6 @@ describe('Test the Login Page', () => {
     expect(mountWrapper.find('SocialIcon')).toHaveLength(3);
   });
   it('it render form inputs, buttons and links', () => {
-    expect(mountWrapper.find('Container')).toHaveLength(2);
+    expect(mountWrapper.find('Container')).toHaveLength(1);
   });
 });

@@ -1,23 +1,24 @@
 import React from 'react';
-import './header.scss';
+import { Link } from 'react-router-dom'
 import { Navbar, Nav } from 'react-bootstrap';
 import PropTypes from 'prop-types';
+import './header.scss';
 
 const Header = ({ location }) => (
   <>
     <Navbar collapseOnSelect expand="lg">
       {
-        (location.includes('article')) ? <a href="#home" className="purple-link">authorsHaven</a> : <a href="#home" className="white-link">authorsHaven</a>
+        (location.includes('article')) ? <Link to="/" className="purple-link">authorsHAVEN</Link> : <Link to="/" className="white-link">authorsHAVEN</Link>
       }
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto" />
         <Nav>
           {
-            (location.includes('article')) ? <a href="" className="white-link">Signup</a> : <span />
+            (location.includes('article')) ? <Link to="/signup" className="white-link">Signup</Link> : <span />
           }
           {
-            (location.includes('article') || location === '/requestpasswordreset' || location === '/signup') ? <a href="" className="white-link">Login</a> : <span />
+            (location.includes('article') || location === '/requestpasswordreset' || location === '/signup') ? <Link to="/login" className="white-link">Login</Link> : <span />
           }
           {
             (location.includes('article') || location === 'profile') ? (

@@ -7,7 +7,7 @@ import {
   Container, Row, Col, Form, Alert
 } from 'react-bootstrap';
 import PropTypes from 'prop-types';
-import Header from '../../components/header/index';
+import Header from '../../components/header/Header';
 import Button from '../../components/button/Button';
 import { loginUser } from '../../redux/actions/auth';
 import Loader from '../../components/loader/Loader';
@@ -97,7 +97,7 @@ export const Login = ({ history, loginUser: handleLogin, loading }) => {
               </div>
               <div className="container-directing-to-signup">
                 <span>
-                  Don't have an account? Singn up
+                  Don't have an account? Sign up
                   <NavLink to="/signup" className="link-to-another-page">
                     here
                   </NavLink>

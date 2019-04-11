@@ -1,3 +1,4 @@
+/* eslint-disable react/destructuring-assignment */
 import React, { useEffect } from 'react';
 import {
   Container,
@@ -15,6 +16,7 @@ import { getArticles, getTrendingArticles } from '../../redux/actions/getArticle
 import ArticleSummary from '../../components/articleSummary/ArticleSummary';
 import RectArticleSummary from '../../components/rectArticleSummary';
 import ContentHeader from '../../components/contentHeader';
+import Footer from '../../components/footer/Footer';
 import './index.scss';
 
 
@@ -60,7 +62,7 @@ const LandingPage = (props) => {
 
   return (
     <div>
-      <Banner />
+      <Banner history={props.history} />
       <Container>
         <Row>
           <Col className="trending" md={8}>
@@ -97,6 +99,7 @@ const LandingPage = (props) => {
           </Col>
         </Row>
       </Container>
+      <Footer />
     </div>
   );
 };
@@ -116,6 +119,7 @@ LandingPage.propTypes = {
   getTrendingArticles: PropTypes.func.isRequired,
   articles: PropTypes.array.isRequired,
   getArticles: PropTypes.func.isRequired,
+  history: PropTypes.object.isRequired
 };
 
 export default connect(() => mapStateToProps, mapDispatchToProps)(LandingPage);
