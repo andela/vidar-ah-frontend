@@ -1,7 +1,8 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import NotFound from '../components/404';
-import Article from '../views/article/Index';
+// import Article from '../views/article/Index';
+import Article from '../views/Article/Index';
 import LandingPage from '../views/landingPage/Index';
 import RequestPasswordReset from '../views/passwordReset/RequestPasswordReset';
 import ResetPassword from '../views/passwordReset/ResetPassword';

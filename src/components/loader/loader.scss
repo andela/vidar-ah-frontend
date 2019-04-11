@@ -1,8 +1,8 @@
-$loader-bg: rgba(0, 0, 0, .8);
+$faded-black: rgba(0, 0, 0, .8);
 
 .loader {
   align-items: center;
-  background: $loader-bg;
+  background: $faded-black;
   display: flex;
   height: 100%;
   justify-content: center;
@@ -10,9 +10,9 @@ $loader-bg: rgba(0, 0, 0, .8);
   position: fixed;
   width: 100%;
   z-index: 99;
-}
 
-.loader > img {
-  height: 7rem;
-  width: 7rem;
+  img {
+    height: 7rem;
+    width: 7rem;
+  }
 }

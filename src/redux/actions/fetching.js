@@ -8,6 +8,7 @@ export const startFetching = () => (
 );
 
 export const stopFetching = (fetchSuccess = true, message = []) => (
+
   {
     type: STOP_FETCHING,
     payload: {

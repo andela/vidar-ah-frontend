@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { toast } from 'react-toastify';
 import { LOGIN, LOGOUT } from './actionTypes';
 import { stopFetching, startFetching } from './fetching';
 import { saveToken, removeToken } from '../../utils/localStorage';
@@ -8,18 +7,21 @@ import { saveToken, removeToken } from '../../utils/localStorage';
 const baseUrl = 'https://vidar-ah-backend-production.herokuapp.com';
 
 export const loginUser = userData => async (dispatch) => {
-  dispatch(startFetching());
   try {
+    dispatch(startFetching());
     const { data } = await axios.post(
       `${baseUrl}/api/v1/user/login`,
       { ...userData }
     );
     const { success } = data;
     if (success) {
-      await saveToken(data.token);
+      saveToken(data.token);
+      localStorage.setItem('user', JSON.stringify(data.user));
       dispatch({
         type: LOGIN,
-        payload: { message: data.message }
+        payload: {
+          currentUser: data.user
+        }
       });
       dispatch(stopFetching());
       return true;
@@ -30,11 +32,8 @@ export const loginUser = userData => async (dispatch) => {
     if (error.response) {
       const { response: { data: { errors } } } = error;
       dispatch(stopFetching(false, errors));
-      errors.map(err => toast.error(err));
-      return false;
+      return errors;
     }
-    toast.error('something went wrong');
-    return false;
   }
 };
 

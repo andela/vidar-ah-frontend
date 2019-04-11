@@ -4,6 +4,7 @@ import thunk from 'redux-thunk';
 import { getTrendingArticles, getArticles } from '../../../redux/actions/getArticles';
 
 const middlewares = [thunk];
+// eslint-disable-next-line import/prefer-default-export
 const mockStore = configureMockStore(middlewares);
 
 describe('Get trending articles action', () => {
