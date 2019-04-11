@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { SocialIcon } from 'react-social-icons';
 import {
-  Container, Row, Col, Form
+  Container, Row, Col, Form, Alert
 } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import Header from '../../components/header/Header';
@@ -18,18 +18,24 @@ export const Login = ({ history, loginUser: handleLogin, loading }) => {
     email: null,
     password: null
   });
+  const [errors, setErrors] = useState([]);
 
   function updateLocalState(e) {
     setUserCredentials({ ...userCredentials, [e.target.name]: e.target.value });
-    console.log(userCredentials);
+  }
+
+  function renderErrors(errorsArray) {
+    return errorsArray.map(error => <Alert key={error} variant="danger">{error}</Alert>);
   }
 
   async function onSubmit(e) {
     e.preventDefault();
-    const successfulLogin = await handleLogin(userCredentials);
-    if (successfulLogin) {
-      history.push('/');
+    const loginRes = await handleLogin(userCredentials);
+    if (!Array.isArray(loginRes)) {
+      return history.push('/');
     }
+    console.log(loginRes);
+    return setErrors(loginRes);
   }
 
   return (
@@ -40,6 +46,7 @@ export const Login = ({ history, loginUser: handleLogin, loading }) => {
           <Header location={history.location.pathname} />
         </Container>
         <Container>
+          {renderErrors(errors)}
           <Row>
             <Col md={{ span: 6, offset: 3 }} className="form-black-bg">
               <h3>Login</h3>
@@ -91,7 +98,7 @@ export const Login = ({ history, loginUser: handleLogin, loading }) => {
                 <span>
                   Don't have an account? Singn up
                   <NavLink to="/signup" className="link-to-another-page">
-                     here
+                    here
                   </NavLink>
                 </span>
               </div>

@@ -5,6 +5,13 @@ import { loginUser } from '../../redux/actions/auth';
 
 const axiosMock = new MockAdapter(axios);
 
+const loggedInUser = {
+  name: 'vidar',
+  username: 'vidar-username',
+  email: 'vidar-email',
+  role: 'admin'
+};
+
 describe('loginUser()', () => {
   afterEach(() => {
     jest.resetAllMocks();
@@ -14,7 +21,11 @@ describe('loginUser()', () => {
   afterAll(() => axiosMock.restore);
 
   const dispatch = jest.fn();
-  const successResponse = { success: true, message: 'welcome user', token: 'secret_string' };
+  const successResponse = {
+    success: true,
+    user: loggedInUser,
+    token: 'secret_string'
+  };
   const errorResponse = { success: false, errors: ['something went wrong'] };
 
   it('should login user successfully', async () => {
@@ -22,7 +33,7 @@ describe('loginUser()', () => {
     await loginUser()(dispatch);
     expect(dispatch).toHaveBeenCalledTimes(3);
     expect(dispatch.mock.calls[1][0]).toEqual({
-      payload: { message: 'welcome user' },
+      payload: { currentUser: loggedInUser },
       type: 'LOGIN'
     });
   });

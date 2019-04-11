@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { toast } from 'react-toastify';
+// import jwt from 'jsonwebtoken';
 import { LOGIN, LOGOUT } from './actionTypes';
 import { stopFetching, startFetching } from './fetching';
 import { saveToken, removeToken } from '../../utils/localStorage';
@@ -16,10 +16,13 @@ export const loginUser = userData => async (dispatch) => {
     );
     const { success } = data;
     if (success) {
-      await saveToken(data.token);
+      saveToken(data.token);
+      localStorage.setItem('user', JSON.stringify(data.user));
       dispatch({
         type: LOGIN,
-        payload: { message: data.message }
+        payload: {
+          currentUser: data.user
+        }
       });
       dispatch(stopFetching());
       return true;
@@ -30,11 +33,8 @@ export const loginUser = userData => async (dispatch) => {
     if (error.response) {
       const { response: { data: { errors } } } = error;
       dispatch(stopFetching(false, errors));
-      errors.map(err => toast.error(err));
-      return false;
+      return errors;
     }
-    toast.error('something went wrong');
-    return false;
   }
 };
 

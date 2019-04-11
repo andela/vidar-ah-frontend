@@ -1,8 +1,8 @@
-import { LOGIN, LOGOUT } from '../actions/actionTypes';
+import { LOGIN, LOGOUT, CURRENT_USER } from '../actions/actionTypes';
 
 const initialState = {
   isLoggedIn: false,
-  message: null,
+  currentUser: {}
 };
 
 export default (state = initialState, action = {}) => {
@@ -11,12 +11,19 @@ export default (state = initialState, action = {}) => {
       return {
         ...state,
         isLoggedIn: true,
-        ...action.payload,
+        currentUser: action.payload.currentUser,
       };
     case LOGOUT:
       return {
         ...state,
         isLoggedIn: false,
+        currentUser: {}
+      };
+    case CURRENT_USER:
+      return {
+        ...state,
+        isLoggedIn: true,
+        currentUser: action.payload.currentUser,
       };
     default:
       return state;

@@ -32,7 +32,6 @@ const getLoginPage = () => {
   return { shallowWrapper, mountWrapper };
 };
 
-// const { shallowWrapper: PageLogin } = getLoginPage();
 const { mountWrapper } = getLoginPage();
 
 describe('Test the Login Page', () => {
