@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css?family=Lato|Merriweather');
+
+
+    $primary-color: #999;
+    $text-color: #6f42c1;
+    $box-shadow-color: 0 6px 20px 1px rgba(0, 0, 0, 0.15);
+    $white-color: #fff;
+
+
+    body {
+    font-family: 'Merriweather', serif;
+    }
+
+    h1, 
+    h2, 
+    h3, 
+    h4, 
+    h5, 
+    h6 {
+      font-family: 'Lato', sans-serif;
+    }

@@ -1,19 +1,20 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {
   Container,
   Row,
-  Col
+  Col,
+  Image
 } from 'react-bootstrap';
-import PropTypes from 'prop-types';
 
 const ImageContainer = (props) => {
   const { src } = props;
 
   return (
-    <Container className="image-container">
-      <Row className="justify-content-center">
-        <Col className="text-center">
-          <img src={src} alt="Pics" />
+    <Container>
+      <Row>
+        <Col style={{ textAlign: 'center' }}>
+          <Image fluid src={src} style={{ width: '80%' }} />
         </Col>
       </Row>
     </Container>

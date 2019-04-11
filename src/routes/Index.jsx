@@ -7,6 +7,7 @@ import LoginPage from '../views/LoginPage';
 import RequestPasswordReset from '../views/passwordReset/RequestPasswordReset';
 import ResetPassword from '../views/passwordReset/ResetPassword';
 import CreateArticle from '../views/createArticle';
+import Article from '../views/Article/Article';
 
 const Routes = () => (
   <Switch>
@@ -15,6 +16,7 @@ const Routes = () => (
     <Route path="/resetpassword/:key" exact component={ResetPassword} />
     <Route path="/login" exact component={LoginPage} />
     <Route path="/create-article" exact component={CreateArticle} />
+    <Route path="/articles" component={Article} />
     <Route component={NotFound} />
   </Switch>
 );

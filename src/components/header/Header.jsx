@@ -24,8 +24,8 @@ const Header = ({ location }) => (
               <div>
                 <a href="" className="purple-link">Home</a>
                 <a href="" className="purple-link">Create post</a>
-                <a href="" className="purple-link">Trending</a>
-                <img className="img-circle" alt="Pics" src="https://res.cloudinary.com/dojy8fbrj/image/upload/v1554802478/demo/image_4.png" />
+                <img className="img-icon" title="share on facebook" src="https://res.cloudinary.com/djdsxql5q/image/upload/v1554929659/Authors%20Haven/iconmonstr-facebook-1.png" alt="facebook share" style={{ width: '2rem' }} />
+                <img className="img-icon" title="share on twitter" src="https://res.cloudinary.com/djdsxql5q/image/upload/v1554929740/Authors%20Haven/iconmonstr-twitter-1.png" alt="twitter share" style={{ width: '2rem' }} />
               </div>
             ) : <span />
           }

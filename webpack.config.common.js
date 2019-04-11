@@ -2,7 +2,7 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: './src/index.js',
+  entry: ['@babel/polyfill', './src/index.js'],
   output: {
     path: `${__dirname}/dist`,
     publicPath: '/',
@@ -33,7 +33,7 @@ module.exports = {
         use: [
           'file-loader'
         ]
-      }
+      },
     ]
   },
   resolve: {

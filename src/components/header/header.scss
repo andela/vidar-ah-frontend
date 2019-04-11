@@ -1,3 +1,5 @@
+@import '../../assets/default';
+
 $white: #fff;
 $purple-link: #8932b4;
 $color-ccc: #ccc;
@@ -6,6 +8,7 @@ $color-ccc: #ccc;
 .navbar-brand {
   color: $white;
   font-size: 1.2em;
+  font-weight: 600;
   margin-right: 20px;
   padding-left: 0;
 }
@@ -13,7 +16,8 @@ $color-ccc: #ccc;
 .purple-link,
 .navbar-brand {
   color: $purple-link;
-  font-size: 1.2em;
+  font-size: 1.2rem;
+  font-weight: 600;
   margin-right: 20px;
   padding-left: 0;
 }
