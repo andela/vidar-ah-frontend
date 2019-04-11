@@ -9,10 +9,10 @@ import RequestPasswordReset from '../views/passwordReset/RequestPasswordReset';
 import ResetPassword from '../views/passwordReset/ResetPassword';
 import CreateArticle from '../views/createArticle';
 import Article from '../views/Article/Article';
-import Signup from '../views/signup';
+import Signup from '../views/signup/Index';
 import VerifyEmail from '../components/CheckEmail';
 import VerifyAccount from '../components/VerifyEmail';
-import Profile from '../views/profile';
+import Profile from '../views/profile/Index';
 
 const Routes = () => (
   <Switch>

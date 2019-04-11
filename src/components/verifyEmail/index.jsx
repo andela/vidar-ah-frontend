@@ -6,7 +6,7 @@ import {
   Row,
   Col,
 } from 'react-bootstrap';
-import Header from './header/Header';
+import Header from '../header/Header';
 
 const getVerificationId = history => history.location.pathname.split('/verify/')[1];
 

@@ -7,7 +7,7 @@ import {
   Row,
   Col,
 } from 'react-bootstrap';
-import Header from './header/Header';
+import Header from '../header/Header';
 
 const CheckEmail = ({ history, data }) => (
   <div className="purple-gradient-bg">
