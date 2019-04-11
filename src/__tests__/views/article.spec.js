@@ -24,11 +24,15 @@ describe('Article', () => {
 
     component = mount(
       <Provider store={store}>
-        <Article />
+        <Article
+          history={{ location: { pathname: '/articles/:slug' } }}
+          match={{ params: { slug: 'poierwjvoejcijwoei' } }}
+        />
       </Provider>
     );
     expect(component.find('.article-container').exists()).toBe(true);
   });
+
 
   it('renders spinner when article == null', () => {
     article = null;
@@ -40,7 +44,10 @@ describe('Article', () => {
 
     component = mount(
       <Provider store={store}>
-        <Article />
+        <Article
+          history={{ location: { pathname: '/articles/:slug' } }}
+          match={{ params: { slug: 'poierwjvoejcijwoei' } }}
+        />
       </Provider>
     );
 

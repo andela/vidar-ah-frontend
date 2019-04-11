@@ -9,7 +9,7 @@ import './articleSummary.scss';
 const ArticleSummary = (props) => {
   const { src, title } = props;
   return (
-    <>
+    <div className="article-summary">
       <h3>Also recommended for you</h3>
       <CardDeck>
         <Card>
@@ -49,7 +49,7 @@ const ArticleSummary = (props) => {
           </Card.Footer>
         </Card>
       </CardDeck>
-    </>
+    </div>
   );
 };
 

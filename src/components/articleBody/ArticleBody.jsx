@@ -12,6 +12,10 @@ const ArticleBody = (props) => {
 };
 
 ArticleBody.propTypes = {
-  body: PropTypes.string.isRequired
+  body: PropTypes.string
+};
+
+ArticleBody.defaultProps = {
+  body: ''
 };
 export default ArticleBody;

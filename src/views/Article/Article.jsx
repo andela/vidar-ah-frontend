@@ -12,13 +12,13 @@ import ImageContainer from '../../components/imageContainer/ImageContainer';
 import ArticleSummary from '../../components/articleSummary/ArticleSummary';
 import ArticleDescription from '../../components/articleDescription/ArticleDescription';
 import { getArticleRequest } from '../../redux/actions/articles';
-import history from '../../helpers/history';
 
 const Article = (props) => {
+  const { history } = props;
   const { article, getArticle } = props;
-
+  const { match: { params: { slug } } } = props;
   useEffect(() => {
-    getArticle(`${article}/:slug`);
+    getArticle(slug);
   }, []);
 
   if (!article) return <div>Loading...</div>;
@@ -45,11 +45,14 @@ const Article = (props) => {
 };
 Article.propTypes = {
   article: PropTypes.instanceOf(Object),
-  getArticle: PropTypes.func.isRequired
+  getArticle: PropTypes.func.isRequired,
+  history: PropTypes.object,
+  match: PropTypes.object.isRequired
 };
 
 Article.defaultProps = {
-  article: null
+  article: null,
+  history: {}
 };
 
 const mapStateToProps = state => ({
