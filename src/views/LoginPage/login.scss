@@ -1,11 +1,5 @@
 @import '../../assets/scss/settings';
 
-// .form-login {
-//   font-style: $font-stack;
-//   font-size: .9em;
-//   color: red;
-// }
-
 .yellow-button-login {
   width: $input-field-width;
 
@@ -18,15 +12,13 @@
   // border: 1px solid white;
   display: flex;
   font-size: 1em;
-  font-style: $font-stack;
-  justify-content: space-between;
+  justify-content: center;
   margin: 20px auto;
   width: $input-field-width;
 
   & span {
     display: block;
     font-size: 1em;
-     font-style: $font-stack;
 
     & .checkbox {
       height: 1em;
@@ -35,14 +27,14 @@
     }
 
     & .link-to-another-page {
-      color: #ffa500;
-    font-size: 1em;
-       font-style: $font-stack;
+      color: $yellow;
+      font-size: 1em;
+      text-decoration: none;
 
     }
 
     & .link-to-another-page:hover {
-      color: #ffffff;
+      color: #fff;
     }
 
   }
@@ -55,13 +47,12 @@
   & span {
     display: block;
     font-size: 1em;
-    font-style: $font-stack;
 
     & .link-to-another-page {
-      color: #ffa500;
+      color: $yellow;
       font-size: 1em;
-      font-style: $font-stack;
-      margin: 0 1em 0 1em;
+      margin: 0 .5em 0 .5em;
+      text-decoration: none;
     }
   }
 }

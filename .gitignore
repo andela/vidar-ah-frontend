@@ -2,4 +2,9 @@ node_modules
 /dist
 .DS_Store
 coverage
+<<<<<<< HEAD
 /linters
+=======
+/src/__tests__/helpers
+src/__tests__/views/__LoginPage.test.js
+>>>>>>> feat(user-login): design the ui with sass

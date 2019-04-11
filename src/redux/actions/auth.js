@@ -4,7 +4,6 @@ import { LOGIN, LOGOUT } from './actionTypes';
 import { stopFetching, startFetching } from './fetching';
 import { saveToken, removeToken } from '../../utils/localStorage';
 
-const { log } = console;
 
 const baseUrl = 'https://vidar-ah-backend-production.herokuapp.com';
 
@@ -15,7 +14,6 @@ export const loginUser = userData => async (dispatch) => {
       `${baseUrl}/api/v1/user/login`,
       { ...userData }
     );
-    log(data);
     const { success } = data;
     if (success) {
       await saveToken(data.token);

@@ -12,23 +12,25 @@ import { loginUser } from '../../redux/actions/auth';
 import Loader from '../../components/loader/Loader';
 import './login.scss';
 
+
 export const Login = ({ history, loginUser: handleLogin, loading }) => {
   const [userCredentials, setUserCredentials] = useState({
     email: null,
     password: null
   });
 
-  const updateLocalState = (e) => {
+  function updateLocalState(e) {
     setUserCredentials({ ...userCredentials, [e.target.name]: e.target.value });
-  };
+    console.log(userCredentials);
+  }
 
-  const onSubmit = async (e) => {
+  async function onSubmit(e) {
     e.preventDefault();
     const successfulLogin = await handleLogin(userCredentials);
     if (successfulLogin) {
       history.push('/');
     }
-  };
+  }
 
   return (
     <>
@@ -41,14 +43,14 @@ export const Login = ({ history, loginUser: handleLogin, loading }) => {
           <Row>
             <Col md={{ span: 6, offset: 3 }} className="form-black-bg">
               <h3>Login</h3>
-              <Form onSubmit={e => onSubmit(e)} className="form-login">
+              <Form onSubmit={onSubmit} className="form-login">
                 <Form.Control
                   type="email"
                   name="email"
                   placeholder="Email"
                   className="dark-forms"
                   required
-                  onChange={e => updateLocalState(e)}
+                  onChange={updateLocalState}
                 />
                 <Form.Control
                   type="password"
@@ -56,18 +58,10 @@ export const Login = ({ history, loginUser: handleLogin, loading }) => {
                   placeholder="Password"
                   className="dark-forms"
                   required
-                  onChange={e => updateLocalState(e)}
+                  onChange={updateLocalState}
                 />
                 <Button text="Login" />
                 <div className="container-extras">
-                  <span>
-                    <input
-                      type="checkbox"
-                      name="rememberMe"
-                      className="checkbox"
-                    />
-                    Remember Me
-                  </span>
                   <span>
                     <NavLink
                       to="/requestpasswordreset"
@@ -119,7 +113,9 @@ const mapStateToProps = state => ({
   loading: state.fetchReducer.fetching
 });
 
-export default connect(
+const LoginPage = connect(
   mapStateToProps,
   { loginUser }
 )(Login);
+
+export default LoginPage;
