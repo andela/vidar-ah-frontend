@@ -1,5 +1,5 @@
 import React from 'react';
-import './Header.scss';
+import './index.scss';
 import { Navbar, Nav } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 
@@ -14,10 +14,10 @@ const Header = ({ location }) => (
         <Nav className="mr-auto" />
         <Nav>
           {
-            (location === '/login') ? <a href="" className="white-link">Signup</a> : <span />
+            (location === '/login' || location === '/') ? <a href="" className="white-link">Signup</a> : <span />
           }
           {
-            (location === '/resetpassword' || location === '/requestpasswordreset' || location === '/signup') ? <a href="" className="white-link">Login</a> : <span />
+            (location === '/resetpassword' || location === '/requestpasswordreset' || location === '/signup' || location === '/') ? <a href="" className="white-link">Login</a> : <span />
           }
           {
             (location === '/article/2' || location === 'profile') ? (
@@ -34,9 +34,7 @@ const Header = ({ location }) => (
     </Navbar>
   </>
 );
-
 Header.propTypes = {
   location: PropTypes.string.isRequired
 };
-
 export default Header;

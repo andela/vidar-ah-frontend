@@ -16,9 +16,9 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage --colors",
-    "lint": "eslint . --ext .js,.jsx --fix && npm run sass-lint",
+    "lint": "eslint . --ext .js,.jsx, --fix && npm run sass-lint",
     "sass-lint": "sass-lint 'src/**/*.scss' -q -v",
-    "sass-lint:fix": "sass-lint-auto-fix"
+    "sass-lint:fix": "sass-lint-auto-fix 'src/**/*.scss' "
   },
   "pre-commit": [
     "lint",
@@ -37,6 +37,8 @@
   "homepage": "https://github.com/andela/vidar-ah-frontend#readme",
   "dependencies": {
     "autoprefixer": "^9.5.0",
+    "axios": "^0.18.0",
+    "babel-polyfill": "^6.26.0",
     "bootstrap": "^4.3.1",
     "express": "^4.16.4",
     "html-webpack-plugin": "^3.2.0",
@@ -83,7 +85,7 @@
     "sass-lint-auto-fix": "^0.16.2",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
-    "uglifyjs-webpack-plugin": "^2.1.2",
+    "terser-webpack-plugin": "^1.2.3",
     "url-loader": "^1.1.2",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0",

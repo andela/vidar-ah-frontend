@@ -1,0 +1,20 @@
+$deep-purple-grad: rgba(60, 16, 83, .9);
+$light-purple-grad: rgba(173, 83, 137, .9);
+$white: #fff;
+
+.cont {
+  background-image: linear-gradient(to right, $deep-purple-grad, $light-purple-grad),
+  url('https://res.cloudinary.com/jessam/image/upload/v1554725326/tachina-lee-42980-unsplash_1.jpg'); // sass-lint:disable-line no-url-domains, no-url-protocols
+  background-position: center;
+  background-size: cover;
+  color: $white;
+  overflow: hidden;
+  padding-bottom: 5%;
+  text-align: center;
+  width: 100%;
+}
+
+
+.button {
+  text-align: center;
+}

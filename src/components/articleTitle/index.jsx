@@ -1,5 +1,6 @@
 import React from 'react';
-import './articleTitle.scss';
+import './index.scss';
+import PropTypes from 'prop-types';
 
 const ArticleTitle = (props) => {
   const { text } = props;
@@ -8,6 +9,10 @@ const ArticleTitle = (props) => {
       <h1 className="title">{text}</h1>
     </section>
   );
+};
+
+ArticleTitle.propTypes = {
+  text: PropTypes.string.isRequired
 };
 
 export default ArticleTitle;

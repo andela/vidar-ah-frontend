@@ -4,6 +4,7 @@ import {
   Row,
   Col
 } from 'react-bootstrap';
+import PropTypes from 'prop-types';
 
 const ImageContainer = (props) => {
   const { src } = props;
@@ -20,3 +21,7 @@ const ImageContainer = (props) => {
 };
 
 export default ImageContainer;
+
+ImageContainer.propTypes = {
+  src: PropTypes.string.isRequired,
+};
