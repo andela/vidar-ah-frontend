@@ -16,7 +16,7 @@ render(
     <App />
     <ToastContainer
       transition={Flip}
-      position="top-right"
+      position="top-center"
       autoClose={5000}
     />
   </Provider>,

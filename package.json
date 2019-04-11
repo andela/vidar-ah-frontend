@@ -13,9 +13,9 @@
     "start:prod": "node server.js",
     "start": "node server.js",
     "webpack": "webpack",
-    "test": "jest",
-    "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage --colors",
+    "test": "jest --updateSnapshot",
+    "test:watch": "jest --watch --updateSnapshot",
+    "test:coverage": "jest --coverage --colors --updateSnapshot",
     "lint": "eslint . --ext .js,.jsx --fix && npm run sass-lint",
     "sass-lint": "sass-lint 'src/**/*.scss' -q -v",
     "sass-lint:fix": "sass-lint-auto-fix"

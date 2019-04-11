@@ -1,5 +1,7 @@
+@import '../../assets/scss/settings';
+
 .yellow-button {
-  background: #e2d754;
+  background: $yellow;
   border: 0;
   box-shadow: 0 12px 60px rgba(111, 102, 3, 0.5);
   color: #51455c;
