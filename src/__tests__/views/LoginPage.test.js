@@ -4,7 +4,7 @@ import { shallow, mount } from 'enzyme';
 import toJson from 'enzyme-to-json';
 import { MemoryRouter } from 'react-router-dom';
 import { Login } from '../../views/LoginPage';
-import Header from '../../components/header/Header';
+import Header from '../../components/header/index';
 import Button from '../../components/button/Button';
 
 

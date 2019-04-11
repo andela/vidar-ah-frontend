@@ -12,7 +12,7 @@ exports[`Test the Login Page it render the longin page without failing 1`] = `
         "entries": Array [
           Object {
             "hash": "",
-            "key": "v1k7t0",
+            "key": "uuf1ic",
             "pathname": "/",
             "search": "",
             "state": undefined,
@@ -26,7 +26,7 @@ exports[`Test the Login Page it render the longin page without failing 1`] = `
         "listen": [Function],
         "location": Object {
           "hash": "",
-          "key": "v1k7t0",
+          "key": "uuf1ic",
           "pathname": "/",
           "search": "",
           "state": undefined,
@@ -289,10 +289,13 @@ exports[`Test the Login Page it render the longin page without failing 1`] = `
                             />
                           </FormControl>
                           <Button
+                            className="yellow-button-login"
+                            onClick={[Function]}
                             text="Login"
                           >
                             <button
                               className="yellow-button yellow-button-login"
+                              onClick={[Function]}
                             >
                               Login
                             </button>
