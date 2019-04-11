@@ -1,0 +1,19 @@
+$loader-color: #3498db;
+$loader-border: #f3f3f3;
+$button-yellow: #e2d754;
+
+.loader-spin {
+  animation: spin 2s linear infinite;
+  border: 16px solid $button-yellow;
+  border-radius: 50%;
+  border-top: 16px solid $loader-color;
+  height: 90px;
+  margin: auto;
+  position: absolute;
+  width: 90px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

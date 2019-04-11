@@ -4,12 +4,13 @@ import {
   Row,
   Col
 } from 'react-bootstrap';
+import PropTypes from 'prop-types';
 
 const ImageContainer = (props) => {
   const { src } = props;
 
   return (
-    <Container>
+    <Container className="image-container">
       <Row className="justify-content-center">
         <Col className="text-center">
           <img src={src} alt="Pics" />
@@ -17,6 +18,10 @@ const ImageContainer = (props) => {
       </Row>
     </Container>
   );
+};
+
+ImageContainer.propTypes = {
+  src: PropTypes.string.isRequired
 };
 
 export default ImageContainer;

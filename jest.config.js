@@ -4,6 +4,10 @@ module.exports = {
   collectCoverageFrom: ['src/**/*.{js,jsx,mjs}'],
   coverageDirectory: 'coverage',
   moduleFileExtensions: ['js', 'json', 'jsx'],
+  moduleNameMapper: {
+    '\\.(css|scss)$': '<rootDir>/src/__mocks__/styleMock.js',
+    '\\.(jpg|jpeg|png|otf|webp|svg)$': '<rootDir>/src/__mocks__/fileMock.js',
+  },
   setupFiles: ['<rootDir>/enzyme.config.js'],
   testEnvironment: 'jsdom',
   testMatch: ['**/__tests__/**/*.js?(x)', '**/?(*.)+(spec|test).js?(x)'],
@@ -13,10 +17,5 @@ module.exports = {
   transform: {
     '^.+\\.jsx?$': 'babel-jest'
   },
-  verbose: false,
-  moduleNameMapper: {
-    '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
-      '<rootDir>/assetsTransformer.js',
-    '\\.(css|scss)$': '<rootDir>/assetsTransformer.js'
-  }
+  verbose: false
 };

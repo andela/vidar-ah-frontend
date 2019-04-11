@@ -1,9 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './index.scss';
+import './button.scss';
 
 const Button = ({ text, onClick, className }) => (
-  <button onClick={onClick} className={`yellow-button ${className}`}>{text}</button>
+  <button
+    onClick={onClick}
+    className={`yellow-button ${className}`}
+  >
+    {text}
+  </button>
 );
 
 Button.propTypes = {
@@ -13,7 +18,7 @@ Button.propTypes = {
 };
 
 Button.defaultProps = {
-  className: 'yellow-button-login',
+  className: '',
 };
 
 export default Button;

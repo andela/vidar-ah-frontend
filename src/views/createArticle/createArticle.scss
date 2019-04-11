@@ -1,0 +1,77 @@
+$white: #fff;
+$cream: #ccc;
+$dark-col: #555;
+$black: #000;
+
+.form {
+  margin: 0 auto;
+  margin-bottom: 2%;
+  margin-top: 8px;
+  transition: opacity 1s;
+}
+
+.form-field {
+  padding: 6% 4%;
+  text-align: center;
+}
+
+.form-title {
+  background: $white;
+  border: 0.5px solid $black;
+  box-sizing: border-box;
+  color: $dark-col;
+  font-size: 1rem;
+  margin-bottom: 4%;
+  outline: none;
+  padding: 0.5rem;
+  width: 70%;
+}
+
+.form-description {
+  background: $white;
+  border: 0.5px solid $black;
+  box-sizing: border-box;
+  color: $black;
+  font-size: 1rem;
+  margin-bottom: 4%;
+  outline: none;
+  padding: 0.5rem;
+  width: 70%;
+}
+
+.form-file {
+  background: $white;
+  border: 0.5px solid $black;
+  box-sizing: border-box;
+  color: $black;
+  font-size: 1rem;
+  height: 100px;
+  margin-bottom: 4%;
+  outline: none;
+  padding: 1rem;
+  width: 70%;
+}
+
+.form-body {
+  background: $white;
+  border: 0.5px solid $black;
+  box-sizing: border-box;
+  color: $black;
+  font-size: 95%;
+  margin-bottom: 4%;
+  outline: none;
+  padding: 2%;
+  width: 70%;
+}
+
+.center-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+}
+
+.header-img {
+  height: 400px;
+  width: 700px;
+}

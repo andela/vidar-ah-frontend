@@ -16,9 +16,9 @@
     "test": "jest --updateSnapshot",
     "test:watch": "jest --watch --updateSnapshot",
     "test:coverage": "jest --coverage --colors --updateSnapshot",
-    "lint": "eslint . --ext .js,.jsx, --fix && npm run sass-lint",
     "sass-lint": "sass-lint 'src/**/*.scss' -q -v",
-    "sass-lint:fix": "sass-lint-auto-fix 'src/**/*.scss'"
+    "lint": "eslint . --ext .js,.jsx --fix && npm run sass-lint",
+    "sass-lint:fix": "sass-lint-auto-fix 'src/**/*.scss"
   },
   "pre-commit": [
     "lint",
@@ -56,7 +56,8 @@
     "react-toastify": "^5.0.0",
     "redux": "^4.0.1",
     "redux-thunk": "^2.3.0",
-    "terser-webpack-plugin": "^1.2.3"
+    "terser-webpack-plugin": "^1.2.3",
+    "redux-mock-store": "^1.5.3"
   },
   "devDependencies": {
     "@babel/core": "^7.4.0",
