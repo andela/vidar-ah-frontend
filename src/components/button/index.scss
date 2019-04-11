@@ -1,3 +1,4 @@
+@import '../../assets/scss/settings.scss';
 $yellow-btn-background: #e2d754;
 $btn-text: #51455c;
 $yellow-btn-shadow: rgba(111, 102, 3, 0.5);
@@ -21,4 +22,12 @@ $yellow-btn-hover-color: rgb(46, 39, 53);
     box-shadow: 0 12px 60px $yellow-btn-hover-shadow;
     color: $yellow-btn-hover-color;
  }
+}
+
+.yellow-button-login {
+  width: $input-field-width;
+
+  &:focus {
+    outline: none;
+  }
 }

@@ -1,3 +1,4 @@
+@import './settings.scss';
 @import url('https://fonts.googleapis.com/css?family=Lato|Merriweather'); // sass-lint:disable-line no-url-domains, no-url-protocols
 
 $font-family-header: 'Merriweather', sans-serif;
@@ -48,18 +49,6 @@ small { font-size: .5rem; };
 body {
   font-family: 'Lato', serif;
 }
-$font-stack:    Helvetica, sans-serif;
-$primary-color: #999;
-$deep-purple: hsl(279, 68%, 19%);
-$deep-purple-grad: rgba(60, 16, 83, .9);
-$light-blue: #0575e6;
-$light-purple-grad: rgba(173, 83, 137, .9);
-$aaa-border: #aaa;
-$ddd-border: #ddd;
-$black-trans-bg: rgba(0, 0, 0, .6);
-$color-ccc: #ccc;
-$white: #fff;
-
 
 a,
 .yellow-button {
@@ -116,4 +105,21 @@ select {
 
 .card-outline {
   margin-top: 1rem;
+ }
+ 
+
+.container-social-login {
+  margin-bottom: 3rem;
+  margin-top: 3rem;
+
+  & .info {
+    font-style: $font-family;
+    font-size: .9rem;
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  & .social-media-icons {
+    margin: 0 .8rem 0 .8rem;
+  }
 }

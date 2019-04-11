@@ -1,0 +1,50 @@
+@import '../../assets/scss/settings';
+
+.container-extras {
+  // border: 1px solid white;
+  display: flex;
+  font-size: 1em;
+  justify-content: center;
+  margin: 20px auto;
+  width: $input-field-width;
+
+  & span {
+    display: block;
+    font-size: 1em;
+
+    & .checkbox {
+      height: 1em;
+      margin-right: .5em;
+      width: 1em;
+    }
+
+    & .link-to-another-page {
+      color: $yellow;
+      font-size: 1em;
+      text-decoration: none;
+
+    }
+
+    & .link-to-another-page:hover {
+      color: #fff;
+    }
+
+  }
+}
+
+.container-directing-to-signup {
+  // border: 1px solid white;
+  margin: 6em 0 2em 0;
+
+  & span {
+    display: block;
+    font-size: 1em;
+
+    & .link-to-another-page {
+      color: $yellow;
+      font-size: 1em;
+      margin: 0 .5em 0 .5em;
+      text-decoration: none;
+    }
+  }
+}

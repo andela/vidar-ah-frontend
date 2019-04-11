@@ -2,6 +2,7 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import NotFound from '../components/404';
 import LandingPage from '../views/LandingPage';
+import LoginPage from '../views/LoginPage';
 import RequestPasswordReset from '../views/passwordReset/RequestPasswordReset';
 import ResetPassword from '../views/passwordReset/ResetPassword';
 
@@ -10,6 +11,7 @@ const Routes = () => (
     <Route path="/" exact component={LandingPage} />
     <Route path="/requestpasswordreset" exact component={RequestPasswordReset} />
     <Route path="/resetpassword/:key" exact component={ResetPassword} />
+    <Route path="/login" exact component={LoginPage} />
     <Route component={NotFound} />
   </Switch>
 );
