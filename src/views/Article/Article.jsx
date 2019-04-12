@@ -15,20 +15,21 @@ import ArticleDescription from '../../components/articleDescription/ArticleDescr
 import { getArticleRequest } from '../../redux/actions/articles';
 import Footer from '../../components/footer/Footer';
 
+import Loader from '../../components/loader/Loader';
+
 const Article = (props) => {
-  const { history } = props;
   const { article, getArticle } = props;
   const { match: { params: { slug } } } = props;
   useEffect(() => {
     getArticle(slug);
   }, []);
 
-  if (!article) return <div>Loading...</div>;
+  if (!article) return <Loader />;
 
   return (
     <div className="article-container">
       <Container>
-        <Header location={history.location.pathname} />
+        <Header type="purple" />
       </Container>
       <Container>
         <ArticleTitle title={article.title} />
@@ -60,14 +61,12 @@ const Article = (props) => {
 Article.propTypes = {
   article: PropTypes.instanceOf(Object),
   getArticle: PropTypes.func.isRequired,
-  history: PropTypes.object,
   match: PropTypes.object.isRequired,
   recommendedArticles: PropTypes.array.isRequired
 };
 
 Article.defaultProps = {
   article: null,
-  history: {}
 };
 
 const mapStateToProps = state => ({

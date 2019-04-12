@@ -3,7 +3,6 @@ import axios from 'axios';
 import { CREATE_ARTICLE, SET_ARTICLE, SET_ARTICLE_ERROR } from './actionTypes';
 
 const apiUrl = 'https://vidar-ah-backend-production.herokuapp.com/api/v1';
-const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiaWF0IjoxNTU0OTEzMzk3LCJleHAiOjE1NTQ5OTk3OTd9.cVs2NgYkHTkgGu_DSX60c2fpEXv15-3US1q6h2Rzoiw';
 
 export const setArticle = article => ({
   type: SET_ARTICLE,
@@ -17,6 +16,7 @@ export const setArticleError = error => ({
 
 export const createArticle = articleData => async (dispatch) => {
   try {
+    const token = localStorage.getItem('token');
     const { data } = await axios.post(
       `${apiUrl}/articles`,
       { ...articleData },

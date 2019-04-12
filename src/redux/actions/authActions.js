@@ -2,7 +2,7 @@
 import axios from 'axios';
 import { SIGNUP, SIGNUP_ERROR } from './actionTypes';
 
-const signupUrl = 'http://vidar-ah-backend-production.herokuapp.com/api/v1/user/signup';
+const signupUrl = 'https://vidar-ah-backend-production.herokuapp.com/api/v1/user/signup';
 
 export const signupUser = userData => async (dispatch) => {
   try {

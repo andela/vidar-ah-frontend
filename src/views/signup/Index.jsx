@@ -8,8 +8,10 @@ import {
   Row,
   Col,
   Form,
+  Alert,
 } from 'react-bootstrap';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import ErrorAlert from '../../components/alert/Alert';
 import Header from '../../components/header/Header';
 import Button from '../../components/button/Button';
@@ -23,6 +25,7 @@ const mapDispatchToProps = dispatch => ({
 
 const SignUp = ({ signup, history }) => {
   const [errors, setErrors] = useState([]);
+  const [success, setSuccess] = useState(null);
   const [signupData, setSignupData] = useState({
     name: '',
     username: '',
@@ -41,7 +44,7 @@ const SignUp = ({ signup, history }) => {
     const result = await signup(signupData);
     if (result && result.errors) {
       return setErrors(result.errors);
-    } return history.push('/verify_email');
+    } return setSuccess('Registration successful. Please check your mail to verify your account.');
   };
 
   const validateForm = (e) => {
@@ -57,48 +60,63 @@ const SignUp = ({ signup, history }) => {
     return submitForm();
   };
 
+
+  const renderSuccessMessage = () => (
+    <Alert variant="success">{success}</Alert>
+  );
+
   return (
     <div className="purple-gradient-bg signup">
       <Container>
         <Header location={history.location.pathname} />
         <Row>
-          <Col md={{ span: 6, offset: 3 }}>
-            <ErrorAlert errors={errors} />
-          </Col>
-          <Col md={{ span: 6, offset: 3 }} className="form-black-bg">
-            <h3>Sign up</h3>
-            <Form onSubmit={validateForm}>
-              <Form.Control type="text" name="name" value={name} placeholder="Fullname" className="dark-forms" onChange={e => updateInput(e)} required />
-              <Form.Control type="text" name="username" value={username} placeholder="Username" className="dark-forms" onChange={e => updateInput(e)} required />
-              <Form.Control type="email" name="email" value={email} placeholder="Email" className="dark-forms" onChange={e => updateInput(e)} required />
-              <Form.Group controlId="exampleForm.ControlSelect1">
-                <Form.Control as="select" className="dark-forms">
-                  <option className="interest">Select interests</option>
-                  <option>Art</option>
-                  <option>Music</option>
-                  <option>Poetry</option>
-                  <option>Sports</option>
-                </Form.Control>
-              </Form.Group>
-              <Form.Control type="password" name="password" value={password} placeholder="Password" className="dark-forms" onChange={e => updateInput(e)} required />
-              <Button text="Sign up" className="signup-form" />
-              <br />
-              <p className="p-3">
-                or sign up using
-              </p>
-              <div className="container-social-login mg-t">
-                <SocialIcon url="http://twitter.com" style={{ height: 35, width: 35 }} className="social-media-icons" />
-                {'   '}
-                <SocialIcon url="http://facebook.com" style={{ height: 35, width: 35 }} className="social-media-icons" />
-                {'   '}
-                <SocialIcon url="http://google.com" style={{ height: 35, width: 35 }} className="social-media-icons" />
-              </div>
-              <p>
-                <span>Already have an account? Log in </span>
-                <a href="#"> here</a>
-              </p>
-            </Form>
-          </Col>
+          {
+            success ? (
+              <Col md={{ span: 6, offset: 3 }} className="form-black-bg">
+                {renderSuccessMessage()}
+              </Col>
+            ) : (
+              <>
+                <Col md={{ span: 6, offset: 3 }}>
+                  <ErrorAlert errors={errors} />
+                </Col>
+                <Col md={{ span: 6, offset: 3 }} className="form-black-bg">
+                  <h3>Sign up</h3>
+                  <Form onSubmit={validateForm}>
+                    <Form.Control type="text" name="name" value={name} placeholder="Fullname" className="dark-forms" onChange={e => updateInput(e)} required />
+                    <Form.Control type="text" name="username" value={username} placeholder="Username" className="dark-forms" onChange={e => updateInput(e)} required />
+                    <Form.Control type="email" name="email" value={email} placeholder="Email" className="dark-forms" onChange={e => updateInput(e)} required />
+                    <Form.Group controlId="exampleForm.ControlSelect1">
+                      <Form.Control as="select" className="dark-forms">
+                        <option className="interest">Select interests</option>
+                        <option>Art</option>
+                        <option>Music</option>
+                        <option>Poetry</option>
+                        <option>Sports</option>
+                      </Form.Control>
+                    </Form.Group>
+                    <Form.Control type="password" name="password" value={password} placeholder="Password" className="dark-forms" onChange={e => updateInput(e)} required />
+                    <Button text="Sign up" className="signup-form" />
+                    <br />
+                    <p className="p-3">
+                      or sign up using
+                    </p>
+                    <div className="container-social-login mg-t">
+                      <SocialIcon url="http://twitter.com" style={{ height: 35, width: 35 }} className="social-media-icons" />
+                      {'   '}
+                      <SocialIcon url="http://facebook.com" style={{ height: 35, width: 35 }} className="social-media-icons" />
+                      {'   '}
+                      <SocialIcon url="http://google.com" style={{ height: 35, width: 35 }} className="social-media-icons" />
+                    </div>
+                    <p>
+                      <span>Already have an account? Log in </span>
+                      <Link to="/login"> here</Link>
+                    </p>
+                  </Form>
+                </Col>
+              </>
+            )
+          }
         </Row>
       </Container>
     </div>

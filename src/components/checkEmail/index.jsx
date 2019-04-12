@@ -9,10 +9,10 @@ import {
 } from 'react-bootstrap';
 import Header from '../header/Header';
 
-const CheckEmail = ({ history, data }) => (
+const CheckEmail = ({ data }) => (
   <div className="purple-gradient-bg">
     <Container>
-      <Header location={history.location.pathname} />
+      <Header />
     </Container>
     <Container>
       <Row>
@@ -27,7 +27,6 @@ const CheckEmail = ({ history, data }) => (
 );
 
 CheckEmail.propTypes = {
-  history: PropTypes.instanceOf(Object).isRequired,
   data: PropTypes.instanceOf(Object).isRequired,
 };
 

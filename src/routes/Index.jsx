@@ -10,9 +10,10 @@ import ResetPassword from '../views/passwordReset/ResetPassword';
 import CreateArticle from '../views/createArticle';
 import Article from '../views/Article/Article';
 import Signup from '../views/signup/Index';
-import VerifyEmail from '../components/checkEmail';
+// import VerifyEmail from '../components/checkEmail';
 import VerifyAccount from '../components/verifyEmail';
 import Profile from '../views/profile/Index';
+import AuthRequired from '../components/authRequired';
 
 const Routes = () => (
   <Switch>
@@ -20,11 +21,11 @@ const Routes = () => (
     <Route path="/requestpasswordreset" exact component={RequestPasswordReset} />
     <Route path="/resetpassword/:key" exact component={ResetPassword} />
     <Route path="/login" exact component={LoginPage} />
-    <Route path="/create-article" exact component={CreateArticle} />
+    <AuthRequired path="/create-article" exact component={CreateArticle} />
     <Route path="/articles/:slug" component={Article} />
     <Route path="/signup" exact component={Signup} />
-    <Route path="/verify_email" component={VerifyEmail} />
-    <Route path="/verify" component={VerifyAccount} />
+    {/* <Route path="/verify_email" component={VerifyEmail} /> */}
+    <Route path="/verify/:id" component={VerifyAccount} />
     <Route path="/profile" component={Profile} />
     <Route component={NotFound} />
   </Switch>

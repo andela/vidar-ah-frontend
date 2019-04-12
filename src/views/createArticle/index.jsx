@@ -31,6 +31,7 @@ function CreateArticle(props) {
       setErrors(errors);
     }
     setSuccessMessage(res.message);
+    props.history.push(`/articles/${res.article.slug}`);
   }
 
   function runValidators(e) {
@@ -64,11 +65,10 @@ function CreateArticle(props) {
     return message ? <Alert variant="success">{message}</Alert> : null;
   }
 
-  const { history: { location: { pathname } } } = props;
   return (
     <div className="create-article-container">
       <Container>
-        <Header location={pathname} />
+        <Header type="purple" />
         {renderErrors(errorsArray)}
         {renderSuccess(successMessage)}
       </Container>
@@ -100,8 +100,7 @@ function CreateArticle(props) {
 
 
 CreateArticle.propTypes = {
-  createArticle: PropTypes.func.isRequired,
-  history: PropTypes.object.isRequired
+  createArticle: PropTypes.func.isRequired
 };
 
 export default connect(() => ({}), { createArticle })(CreateArticle);

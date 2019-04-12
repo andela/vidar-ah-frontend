@@ -1,41 +1,61 @@
+/* eslint-disable no-unused-expressions */
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 import { Navbar, Nav } from 'react-bootstrap';
+
 import PropTypes from 'prop-types';
 import './header.scss';
 
-const Header = ({ location }) => (
-  <>
-    <Navbar collapseOnSelect expand="lg">
-      {
-        (location.includes('article')) ? <Link to="/" className="purple-link">authorsHAVEN</Link> : <Link to="/" className="white-link">authorsHAVEN</Link>
-      }
-      <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-      <Navbar.Collapse id="responsive-navbar-nav">
-        <Nav className="mr-auto" />
-        <Nav>
-          {
-            (location.includes('article')) ? <Link to="/signup" className="white-link">Signup</Link> : <span />
-          }
-          {
-            (location.includes('article') || location === '/requestpasswordreset' || location === '/signup') ? <Link to="/login" className="white-link">Login</Link> : <span />
-          }
-          {
-            (location.includes('article') || location === 'profile') ? (
-              <div>
-                <a href="" className="purple-link">Home</a>
-                <a href="" className="purple-link">Create post</a>
-                <img className="img-icon" title="share on facebook" src="https://res.cloudinary.com/djdsxql5q/image/upload/v1554929659/Authors%20Haven/iconmonstr-facebook-1.png" alt="facebook share" style={{ width: '2rem' }} />
-                <img className="img-icon" title="share on twitter" src="https://res.cloudinary.com/djdsxql5q/image/upload/v1554929740/Authors%20Haven/iconmonstr-twitter-1.png" alt="twitter share" style={{ width: '2rem' }} />
-              </div>
-            ) : <span />
-          }
-        </Nav>
-      </Navbar.Collapse>
-    </Navbar>
-  </>
-);
-Header.propTypes = {
-  location: PropTypes.string.isRequired
+const Header = (props) => {
+  let className;
+  const {
+    type,
+    isLoggedIn,
+  } = props;
+
+  type === 'purple' ? className = 'purple-link' : className = 'white-link';
+
+  return (
+    <>
+      <Navbar collapseOnSelect expand="lg">
+        <Link to="/" className={className}>authorsHAVEN</Link>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav className="mr-auto" />
+          <Nav>
+            {
+              isLoggedIn ? (
+                <div>
+                  <Link to="/" className={className}>Home</Link>
+                  <Link to="/create-article" className={className}>Create post</Link>
+                </div>
+              ) : (
+                <div>
+                  <Link to="/signup" className={className}>Signup</Link>
+                  <Link to="/login" className={className}>Login</Link>
+                </div>
+              )
+            }
+          </Nav>
+        </Navbar.Collapse>
+      </Navbar>
+    </>
+  );
 };
-export default Header;
+
+Header.propTypes = {
+  type: PropTypes.string,
+  isLoggedIn: PropTypes.bool.isRequired
+};
+
+Header.defaultProps = {
+  type: 'white'
+};
+
+const mapStateToProps = state => ({
+  isLoggedIn: state.authReducer.isLoggedIn,
+  user: state.authReducer.currentUser
+});
+
+export default connect(() => mapStateToProps, {})(Header);
