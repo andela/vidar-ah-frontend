@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import ArticleSummary from '../../components/articleSummary/ArticleSummary';
+import ArticleSummary from '../../components/articleSummary/Index';
 
 describe('ArticleSummary component', () => {
   it('should render article cards', () => {

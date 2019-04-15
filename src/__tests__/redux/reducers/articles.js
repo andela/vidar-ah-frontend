@@ -1,10 +1,11 @@
 import articleReducer from '../../../redux/reducers/articleReducer';
 import * as types from '../../../redux/actions/actionTypes';
 
-
 const initialState = {
+  articles: [],
   article: null,
   recommendedArticles: [],
+  trendingArticles: []
 };
 
 describe('article reducer', () => {
