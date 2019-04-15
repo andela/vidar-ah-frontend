@@ -1,0 +1,35 @@
+@import '../../assets/default';
+
+.white-link,
+.navbar-brand {
+  color: $white-color;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-right: 20px;
+  padding-left: 0;
+}
+
+.purple-link,
+.navbar-brand {
+  color: $text-color;
+  font-family: 'Lato', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-right: 20px;
+  padding-left: 0;
+}
+
+.purple-link:hover {
+  color: #ccc;
+  text-decoration: none;
+}
+
+.white-link:hover {
+  color: #ccc;
+  text-decoration: none;
+}
+
+.img-icon {
+  cursor: pointer;
+  padding: 0.3rem;
+}
