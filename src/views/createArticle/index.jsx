@@ -10,7 +10,7 @@ import { createArticle } from '../../redux/actions/articles';
 import Header from '../../components/header/Header';
 import './createArticle.scss';
 
-function CreateArticle(props) {
+const CreateArticle = (props) => {
   const { user } = props;
   const [articleData, setArticleData] = useState({
     title: null,
@@ -32,47 +32,43 @@ function CreateArticle(props) {
     successMessage
   } = state;
 
-  async function completeArticleCreation() {
+  const completeArticleCreation = async () => {
     setState({ ...state, errors: [], loading: true });
     const res = await props.createArticle(articleData);
     const { errors: errorsArr } = res;
     setState({ ...state, loading: false });
-    if (errors) {
-      setState({ ...state, errors: [errorsArr] });
+    if (errorsArr) {
+      setState({ ...state, errors: errorsArr });
     }
     setState({ ...state, successMessage: res.message });
     props.history.push(`/articles/${res.article.slug}`);
-  }
+  };
 
-  function runValidators(e) {
-    e.preventDefault();
-    const validatonErrors = validateArticle(articleData);
-    if (errors.length > 0) {
-      return setState({ ...state, component: 'write', errors: validatonErrors });
+  const runValidators = (event) => {
+    event.preventDefault();
+    const validationErrors = validateArticle(articleData);
+    if (validationErrors.length > 0) {
+      return setState({ ...state, component: 'write', errors: validationErrors });
     }
     return completeArticleCreation();
-  }
+  };
 
-  function updateInput(e) {
-    if (!(e.target.name === 'image')) {
-      return setArticleData({ ...articleData, [e.target.name]: e.target.value });
+  const updateInput = (event) => {
+    if (!(event.target.name === 'image')) {
+      return setArticleData({ ...articleData, [event.target.name]: event.target.value });
     }
-    return setArticleData({ ...articleData, image: e.target.files[0] });
-  }
+    return setArticleData({ ...articleData, image: event.target.files[0] });
+  };
 
-  function deleteArticle() {
-    window.location = '/create-article';
-  }
+  const deleteArticle = () => {
+    props.history.push('/');
+  };
 
-  function renderErrors(errorsArr) {
-    return errorsArr.map(error => (
-      <Alert key={error} variant="danger">{error}</Alert>
-    ));
-  }
+  const renderErrors = errorsArr => errorsArr.map(error => (
+    <Alert key={error} variant="danger">{error}</Alert>
+  ));
 
-  function renderSuccess(message) {
-    return message ? <Alert variant="success">{message}</Alert> : null;
-  }
+  const renderSuccess = message => (message ? <Alert variant="success">{message}</Alert> : null);
 
   return (
     <div className="create-article-container">
@@ -90,7 +86,7 @@ function CreateArticle(props) {
                 onSubmit={() => setState({ ...state, component: 'preview' })}
                 onDelete={deleteArticle}
                 article={articleData}
-                user={user || { fullname: 'Olaiuvne' }}
+                user={user}
               />
             )
             : (
@@ -106,7 +102,7 @@ function CreateArticle(props) {
       </div>
     </div>
   );
-}
+};
 
 
 CreateArticle.propTypes = {
@@ -116,7 +112,7 @@ CreateArticle.propTypes = {
 };
 
 CreateArticle.defaultProps = {
-  history: {}
+  history: {},
 };
 
 const mapStateToProps = state => ({

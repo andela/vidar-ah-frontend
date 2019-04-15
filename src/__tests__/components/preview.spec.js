@@ -3,7 +3,7 @@ import React from 'react';
 import { mount } from 'enzyme';
 import Preview from '../../components/previewArticle/Preview';
 
-describe('Preview shallow tests', () => {
+describe('Preview component', () => {
   const article = {
     title: 'Interesting day at andela',
     description: 'Interesting day at andela',

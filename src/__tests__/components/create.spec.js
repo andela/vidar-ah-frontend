@@ -3,13 +3,13 @@ import React from 'react';
 import { mount } from 'enzyme';
 import Create from '../../components/createForms/Create';
 
-describe('Create shallow tests', () => {
+describe('Create component', () => {
   const article = {
     title: 'Interesting day at andela',
     description: 'Interesting day at andela',
     body: 'Interesting day at andela',
   };
-  it('should render footer', () => {
+  it('should render the create component', () => {
     const wrapper = mount(
       <Create
         onChangeText={f => f}

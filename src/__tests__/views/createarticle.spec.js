@@ -6,7 +6,7 @@ import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import CreateArticle from '../../views/createArticle/index';
 
-describe('Create Article', () => {
+describe('CreateArticle component', () => {
   const mockStore = configureStore([thunk]);
   let component;
   it('renders correctly', () => {

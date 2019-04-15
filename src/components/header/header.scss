@@ -1,35 +1,25 @@
-$white: #fff;
-$purple-link: #8932b4;
-$color-ccc: #ccc;
+@import '../../assets/default';
 
 .white-link,
 .navbar-brand {
-  color: $white;
-  font-size: 1.2em;
+  color: $white-color;
+  font-size: 1.2rem;
+  font-weight: 600;
   margin-right: 20px;
   padding-left: 0;
 }
 
 .purple-link,
 .navbar-brand {
-  color: $purple-link;
-  font-size: 1.2em;
+  color: $text-color;
+  font-family: 'Lato', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
   margin-right: 20px;
   padding-left: 0;
 }
 
-a {
-  .purple-link {
-    &:hover {
-      color: $color-ccc;
-      text-decoration: none;
-    }
-}
-
-  .white-link {
-    &:hover {
-      color: $color-ccc;
-      text-decoration: none;
-    }
-  }
+.img-icon {
+  cursor: pointer;
+  padding: .3rem;
 }

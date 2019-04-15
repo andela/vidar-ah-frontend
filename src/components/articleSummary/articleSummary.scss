@@ -1,0 +1,23 @@
+@import '../../assets/default';
+
+.outline {
+  box-shadow: $box-shadow-color;
+  margin: 1%;
+}
+
+h3 {
+  font-weight: 400;
+  padding: 1rem;
+}
+
+.card-pad {
+  padding-bottom: 0;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.card-image {
+  height: 8rem;
+}

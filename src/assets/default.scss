@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Lato|Merriweather'); // sass-lint:disable-line no-url-domains, no-url-protocols
+
+$primary-color: #999;
+$text-color: #6f42c1;
+$box-shadow-color: 0 6px 20px 1px rgba(0, 0, 0, .15);
+$white-color: #fff;
 $font-stack:    Helvetica, sans-serif;
 $primary-color: #999;
 $deep-purple: hsl(279, 68%, 19%);
@@ -9,6 +15,24 @@ $ddd-border: #ddd;
 $black-trans-bg: rgba(0, 0, 0, .6);
 $color-ccc: #ccc;
 $white: #fff;
+
+
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+html {
+  font-size: 1rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Merriweather', serif;
+}
 
 
 a,

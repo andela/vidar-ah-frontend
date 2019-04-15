@@ -5,53 +5,49 @@ import { Container, Row, Col } from 'react-bootstrap';
 import Button from '../button/Button';
 import ArticleTitle from '../articleTitle/ArticleTitle';
 import ArticleBody from '../articleBody/ArticleBody';
-import Spinner from '../spinner/Spinner';
 import '../../views/createArticle/createArticle.scss';
+import Loader from '../loader/Loader';
 
-export default function Preview(props) {
+const Preview = (props) => {
   const {
     onSubmit, article, continueEdit, loading
   } = props;
+  const image = article.image ? URL.createObjectURL(article.image) : 'https://via.placeholder.com/700x400';
   return (
-    <div className="form-field">
-      <div className="form text-center">
-        <ArticleTitle title={article.title || ''} />
-        <img
-          alt="image"
-          src={article.image ? URL.createObjectURL(article.image) : 'https://via.placeholder.com/700x400'}
-          className="header-img img-responsive"
-        />
-        <ArticleBody body={article.body || ''} />
-      </div>
-      <div className="center-button">
-        {
-          loading
-            ? <Spinner />
-            : (
-              <Container>
-                <Row>
-                  <Col md={{ span: 1, offset: 4 }}>
-                    <Button text="Edit" onClick={continueEdit} />
-                  </Col>
-                  <Col md={{ span: 1, offset: 1 }}>
-                    <Button onClick={onSubmit} text="Publish" />
-                  </Col>
-                </Row>
-              </Container>
-            )
-        }
+    <div>
+      {loading && <Loader />}
+      <div className="form-field">
+        <div className="form text-center">
+          <ArticleTitle title={article.title || ''} />
+          <img
+              alt="image"
+              src={image}
+              className="header-img img-responsive"
+            />
+          <ArticleBody body={article.body || ''} />
+        </div>
+        <div className="center-button">
+          <Container>
+            <Row>
+              <Col md={{ span: 1, offset: 4 }}>
+                <Button text="Edit" onClick={continueEdit} />
+              </Col>
+              <Col md={{ span: 1, offset: 1 }}>
+                <Button onClick={onSubmit} text="Publish" />
+              </Col>
+            </Row>
+          </Container>
+        </div>
       </div>
     </div>
   );
-}
+};
 
 Preview.propTypes = {
   onSubmit: PropTypes.func.isRequired,
   article: PropTypes.object.isRequired,
   continueEdit: PropTypes.func.isRequired,
-  loading: PropTypes.bool
+  loading: PropTypes.bool.isRequired
 };
 
-Preview.defaultProps = {
-  loading: false
-};
+export default Preview;

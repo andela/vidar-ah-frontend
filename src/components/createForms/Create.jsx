@@ -1,6 +1,9 @@
+/* eslint-disable react/jsx-no-bind */
 import React from 'react';
 import PropTypes from 'prop-types';
+import ReactQuill from 'react-quill';
 import { Container, Row, Col } from 'react-bootstrap';
+
 import Button from '../button/Button';
 import '../../views/createArticle/createArticle.scss';
 
@@ -13,7 +16,7 @@ const fields = [
   }
 ];
 
-export default function Create(props) {
+const Create = (props) => {
   const {
     onChangeText,
     onSubmit,
@@ -21,6 +24,8 @@ export default function Create(props) {
     article,
     user
   } = props;
+  const updateEditor = text => onChangeText({ target: { name: 'body', value: text } });
+
   return (
     <div className="form-field">
       {
@@ -52,14 +57,11 @@ export default function Create(props) {
           <Col>{new Date(Date.now()).toLocaleDateString()}</Col>
         </Row>
       </Container>
-      <textarea
-        rows="12"
+      <ReactQuill
+        value={article.body}
+        theme="snow"
+        onChange={updateEditor}
         className="form-body"
-        type="text"
-        name="body"
-        placeholder="Body"
-        value={article.body || ''}
-        onChange={onChangeText}
       />
       <div className="center-button">
         <Container>
@@ -75,7 +77,7 @@ export default function Create(props) {
       </div>
     </div>
   );
-}
+};
 
 Create.propTypes = {
   onChangeText: PropTypes.func.isRequired,
@@ -84,3 +86,5 @@ Create.propTypes = {
   article: PropTypes.object.isRequired,
   user: PropTypes.object.isRequired
 };
+
+export default Create;
