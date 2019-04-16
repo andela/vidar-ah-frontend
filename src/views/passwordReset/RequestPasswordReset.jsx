@@ -9,36 +9,40 @@ import {
 } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import Header from '../../components/header/Header';
 import Button from '../../components/button/Button';
 import { requestPasswordRequest } from '../../redux/actions/passwordReset';
 
 const RequestPasswordReset = (props) => {
-  const { history } = props;
-  const [email, setEmail] = useState(null);
-  const [error, setError] = useState(null);
-  const [message, setMessage] = useState(null);
+  const [state, setState] = useState({
+    email: null,
+    error: null,
+    message: null
+  });
 
-  const updateInput = e => setEmail(e.target.value);
+  const updateInput = e => setState({
+    ...state,
+    email: e.target.value,
+    error: null,
+    message: null
+  });
 
   const completeRequest = async (e) => {
     e.preventDefault();
-    setError(null);
-    const res = await props.requestPasswordRequest(email);
-    if (!res.success) setError(res.errors[0]);
-    else setMessage(res.message);
+    setState({ ...state, error: null, message: null });
+    const res = await props.requestPasswordRequest(state.email);
+    if (!res.success) setState({ ...state, error: res.errors[0] });
+    else setState({ ...state, message: res.message });
   };
 
   return (
     <>
       <div className="purple-gradient-bg">
         <Container>
-          <Header location={history.location.pathname} />
           {
-            message ? <Alert variant="success">{message}</Alert> : null
+            state.message ? <Alert variant="success">{state.message}</Alert> : null
           }
           {
-            error ? <Alert variant="danger">{error}</Alert> : null
+            state.error ? <Alert variant="danger">{state.error}</Alert> : null
           }
         </Container>
         <Container>
@@ -64,8 +68,9 @@ const RequestPasswordReset = (props) => {
     </>
   );
 };
+
 RequestPasswordReset.propTypes = {
-  history: PropTypes.object.isRequired,
   requestPasswordRequest: PropTypes.func.isRequired
 };
+
 export default connect(() => ({}), { requestPasswordRequest })(RequestPasswordReset);

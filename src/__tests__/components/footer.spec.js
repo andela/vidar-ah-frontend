@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import Footer from '../../components/footer/Footer';
 
-describe('Footer shallow tests', () => {
+describe('Footer component', () => {
   it('should render footer', () => {
     const wrapper = shallow(<Footer />);
 

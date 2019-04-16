@@ -5,7 +5,7 @@ import './articleDescription.scss';
 const ArticleDescription = (props) => {
   const { description } = props;
   return (
-    <div style={{ textAlign: 'center' }}>
+    <div className="center-div">
       <p className="description-text">{description}</p>
     </div>
   );

@@ -1,6 +1,11 @@
-/* eslint-disable import/prefer-default-export */
+// /* eslint-disable import/prefer-default-export */
 import axios from 'axios';
-import { CREATE_ARTICLE, SET_ARTICLE, SET_ARTICLE_ERROR } from './actionTypes';
+import {
+  CREATE_ARTICLE,
+  SET_ARTICLE,
+  SET_ARTICLE_ERROR,
+  GET_RECOMMENDED_ARTICLES
+} from './actionTypes';
 
 const apiUrl = 'https://vidar-ah-backend-production.herokuapp.com/api/v1';
 
@@ -41,6 +46,12 @@ export const createArticle = articleData => async (dispatch) => {
 };
 
 
+export const setRecommendedArticles = articles => ({
+  type: GET_RECOMMENDED_ARTICLES,
+  payload: articles
+});
+
+// eslint-disable-next-line import/prefer-default-export
 export const getArticleRequest = slug => async (dispatch) => {
   try {
     const response = await axios.get(`${apiUrl}/articles/${slug}`);
@@ -50,4 +61,10 @@ export const getArticleRequest = slug => async (dispatch) => {
   } catch (error) {
     dispatch(setArticleError(error.response.message));
   }
+};
+
+
+export const getRecommendedArticles = () => async (dispatch) => {
+  const { data: { articles } } = await axios.get(`${apiUrl}/articles/order?type=latest&amount=4`);
+  dispatch(setRecommendedArticles(articles));
 };

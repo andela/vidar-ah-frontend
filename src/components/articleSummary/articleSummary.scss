@@ -1,4 +1,4 @@
-    @import '../../assets/default.scss';
+@import '../../assets/scss/default';
 
 .outline {
   box-shadow: $box-shadow-color;
@@ -12,4 +12,12 @@ h3 {
 
 .card-pad {
   padding-bottom: 0;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.card-image {
+  height: 8rem;
 }

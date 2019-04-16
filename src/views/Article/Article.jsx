@@ -6,31 +6,28 @@ import {
 } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import Header from '../../components/header/Header';
 import ArticleTitle from '../../components/articleTitle/ArticleTitle';
 import ArticleBody from '../../components/articleBody/ArticleBody';
 import ImageContainer from '../../components/imageContainer/ImageContainer';
 import ArticleSummary from '../../components/articleSummary/ArticleSummary';
 import ArticleDescription from '../../components/articleDescription/ArticleDescription';
-import { getArticleRequest } from '../../redux/actions/articles';
+import { getArticleRequest, getRecommendedArticles } from '../../redux/actions/articles';
 import Footer from '../../components/footer/Footer';
-
 import Loader from '../../components/loader/Loader';
 
+
 const Article = (props) => {
-  const { article, getArticle } = props;
+  const { article, getArticle, getRecommendedArticles: getArticles } = props;
   const { match: { params: { slug } } } = props;
   useEffect(() => {
     getArticle(slug);
-  }, []);
+    getArticles();
+  }, [slug]);
 
   if (!article) return <Loader />;
 
   return (
     <div className="article-container">
-      <Container>
-        <Header type="purple" />
-      </Container>
       <Container>
         <ArticleTitle title={article.title} />
         <ArticleDescription description={article.description} />
@@ -42,16 +39,16 @@ const Article = (props) => {
         <h3>Also recommended for you</h3>
         <CardDeck>
           {
-              props.recommendedArticles.map(recArticle => (
-                <ArticleSummary
-                          key={recArticle.id}
-                          src={recArticle.images[0]}
-                          header={recArticle.title}
-                          slug={recArticle.slug}
-                          time={recArticle.updatedAt}
-                        />
-              ))
-            }
+            props.recommendedArticles.map(recArticle => (
+              <ArticleSummary
+                key={recArticle.id}
+                src={recArticle.images[0]}
+                header={recArticle.title}
+                slug={recArticle.slug}
+                time={recArticle.updatedAt}
+              />
+            ))
+          }
         </CardDeck>
       </Container>
       <Footer />
@@ -61,21 +58,23 @@ const Article = (props) => {
 Article.propTypes = {
   article: PropTypes.instanceOf(Object),
   getArticle: PropTypes.func.isRequired,
-  match: PropTypes.object.isRequired,
-  recommendedArticles: PropTypes.array.isRequired
+  recommendedArticles: PropTypes.array.isRequired,
+  getRecommendedArticles: PropTypes.func.isRequired,
+  match: PropTypes.object.isRequired
 };
 
 Article.defaultProps = {
-  article: null,
+  article: null
 };
 
 const mapStateToProps = state => ({
   article: state.articleReducer.article,
-  recommendedArticles: state.articleReducer.trendingArticles.slice(0, 4)
+  recommendedArticles: state.articleReducer.recommendedArticles
 });
 
 const mapDispatchToProps = dispatch => ({
   getArticle: slug => dispatch(getArticleRequest(slug)),
+  getRecommendedArticles: () => dispatch(getRecommendedArticles())
 });
 
 const ConnectedArticle = connect(mapStateToProps, mapDispatchToProps)(Article);

@@ -5,7 +5,7 @@ import './articleBody.scss';
 const ArticleBody = (props) => {
   const { body } = props;
   return (
-    <div style={{ textAlign: 'center' }}>
+    <div className="align-div">
       <p className="body-text">{body}</p>
     </div>
   );

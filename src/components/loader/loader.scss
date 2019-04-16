@@ -1,0 +1,18 @@
+$loader-bg: rgba(0, 0, 0, .8);
+
+.loader {
+  align-items: center;
+  background: $loader-bg;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  z-index: 99;
+}
+
+.loader > img {
+  height: 7rem;
+  width: 7rem;
+}

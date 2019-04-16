@@ -5,7 +5,7 @@ import './articleTitle.scss';
 const ArticleTitle = (props) => {
   const { title } = props;
   return (
-    <div style={{ textAlign: 'center' }}>
+    <div className="align-title">
       <h1 className="title">{title}</h1>
     </div>
   );

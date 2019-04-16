@@ -1,53 +1,37 @@
 @import './settings.scss';
 @import url('https://fonts.googleapis.com/css?family=Lato|Merriweather'); // sass-lint:disable-line no-url-domains, no-url-protocols
 
-$font-family-header: 'Merriweather', sans-serif;
+$font-stack:    Helvetica, sans-serif;
 $primary-color: #999;
 $deep-purple: hsl(279, 68%, 19%);
-$deep-purple-grad: rgba(60, 16, 83, 0.9);
+$deep-purple-grad: rgba(60, 16, 83, .9);
 $light-blue: #0575e6;
-$light-purple-grad: rgba(173, 83, 137, 0.9);
+$light-purple-grad: rgba(173, 83, 137, .9);
 $aaa-border: #aaa;
 $ddd-border: #ddd;
-$black-trans-bg: rgba(0, 0, 0, 0.6);
+$black-trans-bg: rgba(0, 0, 0, .6);
 $color-ccc: #ccc;
 $white: #fff;
-
-html,
-p {
-  font-size: 1rem;
-};
-
-h1 {
-  font-family: $font-family-header;
-  font-size: 2.074rem;
-};
-
-h2 {
-  font-family: $font-family-header;
-  font-size: 1.728rem;
-};
-
-h3 {
-  font-family: $font-family-header;
-  font-size: 1.44rem;
-};
-
-h4 {
-  font-family: $font-family-header;
-  font-size: 0.8rem;
-};
-
-small { font-size: .5rem; };
-
-.box { padding: 1.25rem; };
-
-@media screen and (min-width: 1400px) {
-  html { font-size: 1.25rem; }
-};
+$primary-color: #999;
+$text-color: #6f42c1;
+$box-shadow-color: 0 6px 20px 1px rgba(0, 0, 0, .15);
+$white-color: #fff;
 
 body {
-  font-family: 'Lato', serif;
+  font-family: 'Lato', sans-serif;
+}
+
+html {
+  font-size: 1rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Merriweather', serif;
 }
 
 a,

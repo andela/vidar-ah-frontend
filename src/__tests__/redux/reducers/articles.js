@@ -4,8 +4,7 @@ import * as types from '../../../redux/actions/actionTypes';
 
 const initialState = {
   article: null,
-  articles: [],
-  trendingArticles: []
+  recommendedArticles: [],
 };
 
 describe('article reducer', () => {

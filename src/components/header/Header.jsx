@@ -1,3 +1,5 @@
+/* eslint-disable react/jsx-indent */
+/* eslint-disable indent */
 /* eslint-disable no-unused-expressions */
 import React from 'react';
 import { Link } from 'react-router-dom';
@@ -31,31 +33,28 @@ const Header = (props) => {
                   <Link to="/create-article" className={className}>Create post</Link>
                 </div>
               ) : (
-                <div>
-                  <Link to="/signup" className={className}>Signup</Link>
-                  <Link to="/login" className={className}>Login</Link>
-                </div>
-              )
+                  <div>
+                    <Link to="/signup" className={className}>Signup</Link>
+                    <Link to="/login" className={className}>Login</Link>
+                  </div>
+                )
             }
+            ;
           </Nav>
         </Navbar.Collapse>
       </Navbar>
     </>
   );
 };
-
 Header.propTypes = {
   type: PropTypes.string,
   isLoggedIn: PropTypes.bool.isRequired
 };
-
 Header.defaultProps = {
   type: 'white'
 };
-
 const mapStateToProps = state => ({
   isLoggedIn: state.authReducer.isLoggedIn,
   user: state.authReducer.currentUser
 });
-
 export default connect(() => mapStateToProps, {})(Header);

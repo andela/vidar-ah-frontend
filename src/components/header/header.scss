@@ -1,23 +1,41 @@
-.white-link, .navbar-brand {
-  color: #fff;
-  font-size: 1.2em;
+@import '../../assets/scss/default';
+
+.white-link,
+.navbar-brand {
+  color: $white-color;
+  font-size: 1.2rem;
+  font-weight: 600;
   margin-right: 20px;
   padding-left: 0;
 }
 
-.purple-link, .navbar-brand {
-  color: #8932b4;
-  font-size: 1.2em;
+.purple-link,
+.navbar-brand {
+  color: $text-color;
+  font-family: 'Lato', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
   margin-right: 20px;
   padding-left: 0;
 }
 
-a.purple-link:hover {
-  color: #ccc;
-  text-decoration: none;
+.img-icon {
+  cursor: pointer;
+  padding: .3rem;
 }
 
-a.white-link:hover {
-  color: #ccc;
-  text-decoration: none;
+a {
+  .purple-link {
+    &:hover {
+      color: $color-ccc;
+      text-decoration: none;
+    }
+}
+
+  .white-link {
+    &:hover {
+      color: $color-ccc;
+      text-decoration: none;
+    }
+  }
 }

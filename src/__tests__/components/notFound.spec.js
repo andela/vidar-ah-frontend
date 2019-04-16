@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import NotFound from '../../components/404';
 
-describe('Notfound shallow tests', () => {
+describe('Notfound component', () => {
   it('should render 404 page', () => {
     const wrapper = shallow(<NotFound />);
 

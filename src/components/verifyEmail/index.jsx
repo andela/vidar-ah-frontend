@@ -11,7 +11,7 @@ import Header from '../header/Header';
 const VerifyEmail = (props) => {
   const [success, setSuccess] = useState(null);
   const [error, setError] = useState(null);
-  
+
   const verify = async () => {
     try {
       const { match: { params: { id } } } = props;

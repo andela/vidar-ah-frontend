@@ -9,30 +9,45 @@ import {
 } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import Header from '../../components/header/Header';
 import Button from '../../components/button/Button';
 import { resetPassword } from '../../redux/actions/passwordReset';
 
 const ResetPassword = (props) => {
-  const { history, match } = props;
-  const [password, setPassword] = useState(null);
-  const [password2, setPassword2] = useState(null);
-  const [error, setError] = useState(null);
-  const [message, setMessage] = useState(null);
+  const { match } = props;
+  const [state, setState] = useState({
+    password: null,
+    password2: null,
+    error: null,
+    message: null
+  });
 
-  const updateInput = e => setPassword(e.target.value);
-  const updateInput2 = e => setPassword2(e.target.value);
+
+  const updateInput = (e) => {
+    setState({
+      ...state,
+      password: e.target.value,
+      error: null,
+      message: null
+    });
+  };
+  const updateInput2 = (e) => {
+    setState({
+      ...state,
+      password2: e.target.value,
+      error: null,
+      message: null
+    });
+  };
 
   const completeRequest = async (e) => {
     e.preventDefault();
-    setError(null);
-
-    if (password !== password2 || !password) {
-      setError('Passwords do not match');
+    setState({ ...state, error: null, message: null });
+    if (state.password !== state.password2 || !state.password) {
+      setState({ ...state, error: 'Passwords do not match' });
     } else {
-      const res = await props.resetPassword(match.params.key, password);
-      if (!res.success) setError(res.errors[0]);
-      else setMessage(res.message);
+      const res = await props.resetPassword(match.params.key, state.password);
+      if (!res.success) setState({ ...state, error: res.errors[0] });
+      else setState({ ...state, message: res.message });
     }
   };
 
@@ -40,12 +55,11 @@ const ResetPassword = (props) => {
     <>
       <div className="purple-gradient-bg">
         <Container>
-          <Header location={history.location.pathname} />
           {
-            message ? <Alert variant="success">{message}</Alert> : null
+            state.message ? <Alert variant="success">{state.message}</Alert> : null
           }
           {
-            error ? <Alert variant="danger">{error}</Alert> : null
+            state.error ? <Alert variant="danger">{state.error}</Alert> : null
           }
         </Container>
         <Container>
@@ -74,7 +88,6 @@ const ResetPassword = (props) => {
 };
 
 ResetPassword.propTypes = {
-  history: PropTypes.object.isRequired,
   match: PropTypes.object.isRequired,
   resetPassword: PropTypes.func.isRequired
 };
