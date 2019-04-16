@@ -6,14 +6,14 @@ import {
 } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import ArticleTitle from '../../components/articleTitle/ArticleTitle';
-import ArticleBody from '../../components/articleBody/ArticleBody';
-import ImageContainer from '../../components/imageContainer/ImageContainer';
-import ArticleSummary from '../../components/articleSummary/ArticleSummary';
-import ArticleDescription from '../../components/articleDescription/ArticleDescription';
+import ArticleTitle from '../../components/articleTitle/Index';
+import ArticleBody from '../../components/articleBody/Index';
+import ImageContainer from '../../components/imageContainer/Index';
+import ArticleSummary from '../../components/articleSummary/Index';
+import ArticleDescription from '../../components/articleDescription/Index';
 import { getArticleRequest, getRecommendedArticles } from '../../redux/actions/articles';
-import Footer from '../../components/footer/Footer';
-import Loader from '../../components/loader/Loader';
+import Footer from '../../components/footer/Index';
+import Loader from '../../components/loader/Index';
 
 
 const Article = (props) => {
@@ -44,7 +44,7 @@ const Article = (props) => {
                 key={recArticle.id}
                 src={recArticle.images[0]}
                 header={recArticle.title}
-                slug={recArticle.slug}
+                url={`/articles/${recArticle.slug}`}
                 time={recArticle.updatedAt}
               />
             ))
