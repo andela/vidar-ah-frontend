@@ -1,4 +1,5 @@
 /* eslint-disable react/jsx-no-bind */
+/* eslint-disable operator-linebreak */
 import React, { useState } from 'react';
 import {
   Container,
@@ -47,7 +48,9 @@ const ResetPassword = (props) => {
     } else {
       const res = await props.resetPassword(match.params.key, state.password);
       if (!res.success) setState({ ...state, error: res.errors[0] });
-      else setState({ ...state, message: res.message });
+      else {
+        setState({ ...state, message: res.message });
+      }
     }
   };
 
@@ -56,7 +59,15 @@ const ResetPassword = (props) => {
       <div className="purple-gradient-bg">
         <Container>
           {
-            state.message ? <Alert variant="success">{state.message}</Alert> : null
+            state.message ?
+              (
+                <Alert variant="success">
+                  {state.message}
+                  Please click
+                  <a href="../login"> here </a>
+                  to login
+                </Alert>
+              ) : null
           }
           {
             state.error ? <Alert variant="danger">{state.error}</Alert> : null
