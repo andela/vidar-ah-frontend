@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Lato|Merriweather'); // sass-lint:disable-line no-url-domains, no-url-protocols
 
 $primary-color: #999;
-$box-shadow-color: 0 6px 20px 1px rgba(0, 0, 0, 0.10);
+$box-shadow-color: 0 6px 20px 1px rgba(0, 0, 0, .10); //sass-lint:disable-line no-trailing-zero
 $white-color: #fff;
 $font-family-header: 'Merriweather', serif;
 $font-family-body: 'Lato', sans-serif;
@@ -53,12 +53,12 @@ h4 {
 a {
   color: $purple-nav;
 
-  &.purple-link:hover {
+  &.purple-link:hover { //sass-lint:disable-line force-pseudo-nesting
     color: $white-color;
     text-decoration: none;
   }
 
-  &.white-link:hover {
+  &.white-link:hover { //sass-lint:disable-line force-pseudo-nesting
     color: $white-color;
     text-decoration: none;
   }

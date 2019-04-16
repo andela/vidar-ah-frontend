@@ -39,7 +39,6 @@ const Header = (props) => {
                   </div>
                 )
             }
-            ;
           </Nav>
         </Navbar.Collapse>
       </Navbar>

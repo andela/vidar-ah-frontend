@@ -11,7 +11,7 @@ const ImageContainer = (props) => {
   const { src } = props;
 
   return (
-    <Container>
+    <Container className="image-container">
       <Row>
         <Col style={{ textAlign: 'center' }}>
           <Image fluid src={src} style={{ width: '80%', height: '100%' }} />
