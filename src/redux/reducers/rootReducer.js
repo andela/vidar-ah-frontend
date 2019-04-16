@@ -7,5 +7,5 @@ export default combineReducers({
   articles: articleReducer,
   articleReducer,
   authReducer,
-  fetchReducer,
+  fetchReducer
 });

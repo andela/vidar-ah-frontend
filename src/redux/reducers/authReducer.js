@@ -11,19 +11,19 @@ export default (state = initialState, action = {}) => {
       return {
         ...state,
         isLoggedIn: true,
-        currentUser: action.payload.currentUser,
+        currentUser: action.payload.currentUser
+      };
+    case CURRENT_USER:
+      return {
+        ...state,
+        isLoggedIn: true,
+        currentUser: action.payload.currentUser
       };
     case LOGOUT:
       return {
         ...state,
         isLoggedIn: false,
         currentUser: {}
-      };
-    case CURRENT_USER:
-      return {
-        ...state,
-        isLoggedIn: true,
-        currentUser: action.payload.currentUser,
       };
     default:
       return state;
