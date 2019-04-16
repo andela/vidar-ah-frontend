@@ -24,7 +24,7 @@ exports[`Test the Login Page it render the login page without failing 1`] = `
           "entries": Array [
             Object {
               "hash": "",
-              "key": "dusplz",
+              "key": "lvnf32",
               "pathname": "/",
               "search": "",
               "state": undefined,
@@ -38,7 +38,7 @@ exports[`Test the Login Page it render the login page without failing 1`] = `
           "listen": [Function],
           "location": Object {
             "hash": "",
-            "key": "dusplz",
+            "key": "lvnf32",
             "pathname": "/",
             "search": "",
             "state": undefined,
