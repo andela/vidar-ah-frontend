@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-no-bind */
 import React from 'react';
 import { mount } from 'enzyme';
-import ImageContainer from '../../components/imageContainer/ImageContainer';
+import ImageContainer from '../../components/imageContainer/Index';
 
 describe('imageContainer component', () => {
   it('should render image container', () => {

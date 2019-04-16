@@ -3,10 +3,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Container, Row, Col } from 'react-bootstrap';
 import Button from '../button/Button';
-import ArticleTitle from '../articleTitle/ArticleTitle';
-import ArticleBody from '../articleBody/ArticleBody';
+import ArticleTitle from '../articleTitle/Index';
+import ArticleBody from '../articleBody/Index';
 import '../../views/createArticle/createArticle.scss';
-import Loader from '../loader/Loader';
+import Loader from '../loader/Index';
 
 const Preview = (props) => {
   const {

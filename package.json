@@ -16,9 +16,9 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage --colors",
-    "lint": "eslint . --ext .js,.jsx --fix && npm run sass-lint",
+    "lint": "eslint . --ext .js,.jsx, --fix && npm run sass-lint",
     "sass-lint": "sass-lint 'src/**/*.scss' -q -v",
-    "sass-lint:fix": "sass-lint-auto-fix"
+    "sass-lint:fix": "sass-lint-auto-fix 'src/**/*.scss' "
   },
   "pre-commit": [
     "lint",
@@ -38,6 +38,7 @@
   "dependencies": {
     "autoprefixer": "^9.5.0",
     "axios": "^0.18.0",
+    "babel-polyfill": "^6.26.0",
     "bootstrap": "^4.3.1",
     "express": "^4.16.4",
     "form-data": "^2.3.3",
@@ -61,7 +62,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.4.0",
-    "@babel/polyfill": "^7.4.0",
+    "@babel/polyfill": "^7.4.3",
     "@babel/preset-env": "^7.4.2",
     "@babel/preset-es2015": "^7.0.0-beta.53",
     "@babel/preset-react": "^7.0.0",
