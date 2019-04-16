@@ -1,15 +1,15 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import Home from '../components/Home';
 import NotFound from '../components/404';
-import Login from '../components/auth/Login';
-import Article from '../views/Article/Article';
+import Login from '../components/auth/Index';
+import Article from '../views/article/Index';
+import LandingPage from '../views/landingPage/Index';
 
 const Routes = () => (
   <Switch>
-    <Route path="/" exact component={Home} />
     <Route path="/login" exact component={Login} />
     <Route path="/articles/:slug" component={Article} />
+    <Route path="/" exact component={LandingPage} />
     <Route component={NotFound} />
   </Switch>
 );
