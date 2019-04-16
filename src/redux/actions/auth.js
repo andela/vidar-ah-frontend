@@ -1,3 +1,4 @@
+/* eslint-disable import/prefer-default-export */
 import axios from 'axios';
 import { LOGIN, LOGOUT } from './actionTypes';
 import { stopFetching, startFetching } from './fetching';
@@ -42,7 +43,6 @@ export const logOut = () => (
     removeToken();
     dispatch({
       type: LOGOUT,
-      payload: {}
     });
   }
 );

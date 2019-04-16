@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-bind */
 /* eslint-disable react/jsx-indent */
 /* eslint-disable indent */
 /* eslint-disable no-unused-expressions */
@@ -5,9 +6,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Navbar, Nav } from 'react-bootstrap';
-
 import PropTypes from 'prop-types';
 import './header.scss';
+import { logOut } from '../../redux/actions/auth';
 
 const Header = (props) => {
   let className;
@@ -17,8 +18,14 @@ const Header = (props) => {
   } = props;
 
   type === 'purple' ? className = 'purple-link' : className = 'white-link';
+
+  const logout = () => {
+    props.logOut();
+    props.history.push('/');
+  };
+
   return (
-    <>
+    <div className="header-container">
       <Navbar collapseOnSelect expand="lg">
         <Link to="/" className={className}>authorsHAVEN</Link>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -30,6 +37,7 @@ const Header = (props) => {
                 <div>
                   <Link to="/" className={className}>Home</Link>
                   <Link to="/create-article" className={className}>Create post</Link>
+                  <a href="#" onClick={logout} className={className}>Log out</a>
                 </div>
               ) : (
                   <div>
@@ -41,18 +49,23 @@ const Header = (props) => {
           </Nav>
         </Navbar.Collapse>
       </Navbar>
-    </>
+    </div>
   );
 };
 Header.propTypes = {
   type: PropTypes.string,
-  isLoggedIn: PropTypes.bool.isRequired
+  isLoggedIn: PropTypes.bool,
+  logOut: PropTypes.func.isRequired,
+  history: PropTypes.object.isRequired
 };
 Header.defaultProps = {
-  type: 'white'
+  type: 'white',
+  isLoggedIn: false
 };
+
 const mapStateToProps = state => ({
   isLoggedIn: state.authReducer.isLoggedIn,
   user: state.authReducer.currentUser
 });
-export default connect(() => mapStateToProps, {})(Header);
+
+export default connect(() => mapStateToProps, { logOut })(Header);

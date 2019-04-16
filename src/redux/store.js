@@ -14,8 +14,9 @@ const store = createStore(
 );
 
 const user = localStorage.getItem('user');
+const token = localStorage.getItem('token');
 
-if (user) {
+if (user && token) {
   store.dispatch({
     type: CURRENT_USER,
     payload: {

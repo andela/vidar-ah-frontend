@@ -13,6 +13,9 @@ import Loader from '../../components/loader/Index';
 import './login.scss';
 
 
+const googleUrl = 'https://vidar-ah-backend-production.herokuapp.com/api/v1/auth/google';
+const facebookUrl = 'https://vidar-ah-backend-production.herokuapp.com/api/v1/auth/facebook';
+
 export const Login = ({ history, loginUser: handleLogin, loading }) => {
   const [userCredentials, setUserCredentials] = useState({
     email: null,
@@ -82,21 +85,19 @@ export const Login = ({ history, loginUser: handleLogin, loading }) => {
             <div className="container-social-login">
               <span className="info">Or login using </span>
               <SocialIcon
-                  url="http://twitter.com"
+                  url={googleUrl}
+                  network="google"
                   className="social-media-icons"
                 />
               <SocialIcon
-                  url="http://facebook.com"
+                  url={facebookUrl}
                   className="social-media-icons"
-                />
-              <SocialIcon
-                  url="http://google.com"
-                  className="social-media-icons"
+                  network="facebook"
                 />
             </div>
             <div className="container-directing-to-signup">
               <span>
-                  Don't have an account? Singn up
+                  Don't have an account? Sign up
                 <NavLink to="/signup" className="link-to-another-page">
                     here
                 </NavLink>

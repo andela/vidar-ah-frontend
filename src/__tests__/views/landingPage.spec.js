@@ -9,9 +9,6 @@ import LandingPage from '../../views/landingPage/Index';
 describe('LandingPage', () => {
   const mockStore = configureStore([thunk]);
   let component;
-  const authReducer = {
-    isLoggedIn: true,
-  };
   const articles = {
     articles: [
       {
@@ -49,7 +46,10 @@ describe('LandingPage', () => {
   it('renders correctly', () => {
     const store = mockStore({
       articles,
-      authReducer
+      authReducer: {
+        isLoggedIn: false,
+        currentUser: {}
+      }
     });
 
     component = mount(

@@ -24,7 +24,7 @@ exports[`Login page it render the login page without failing 1`] = `
           "entries": Array [
             Object {
               "hash": "",
-              "key": "2zr7ht",
+              "key": "qayc7t",
               "pathname": "/",
               "search": "",
               "state": undefined,
@@ -38,7 +38,7 @@ exports[`Login page it render the login page without failing 1`] = `
           "listen": [Function],
           "location": Object {
             "hash": "",
-            "key": "2zr7ht",
+            "key": "qayc7t",
             "pathname": "/",
             "search": "",
             "state": undefined,
@@ -76,184 +76,196 @@ exports[`Login page it render the login page without failing 1`] = `
                 <Header
                   isLoggedIn={true}
                   location=""
+                  logOut={[Function]}
                   type="white"
                   user={Object {}}
                 >
-                  <Bootstrap(undefined)
-                    collapseOnSelect={true}
-                    expand="lg"
+                  <div
+                    className="header-container"
                   >
-                    <ForwardRef
-                      bsPrefix="navbar"
+                    <Bootstrap(undefined)
                       collapseOnSelect={true}
                       expand="lg"
-                      innerRef={null}
                     >
-                      <Uncontrolled(Navbar)
+                      <ForwardRef
                         bsPrefix="navbar"
                         collapseOnSelect={true}
                         expand="lg"
                         innerRef={null}
                       >
-                        <Navbar
-                          as="nav"
+                        <Uncontrolled(Navbar)
                           bsPrefix="navbar"
                           collapseOnSelect={true}
                           expand="lg"
-                          onToggle={[Function]}
-                          variant="light"
+                          innerRef={null}
                         >
-                          <nav
-                            className="navbar navbar-expand-lg navbar-light"
+                          <Navbar
+                            as="nav"
+                            bsPrefix="navbar"
+                            collapseOnSelect={true}
+                            expand="lg"
+                            onToggle={[Function]}
+                            variant="light"
                           >
-                            <Link
-                              className="white-link"
-                              to="/"
+                            <nav
+                              className="navbar navbar-expand-lg navbar-light"
                             >
-                              <a
+                              <Link
                                 className="white-link"
-                                href="/"
-                                onClick={[Function]}
+                                to="/"
                               >
-                                authorsHAVEN
-                              </a>
-                            </Link>
-                            <NavbarToggle
-                              aria-controls="responsive-navbar-nav"
-                              as="button"
-                              label="Toggle navigation"
-                            >
-                              <button
+                                <a
+                                  className="white-link"
+                                  href="/"
+                                  onClick={[Function]}
+                                >
+                                  authorsHAVEN
+                                </a>
+                              </Link>
+                              <NavbarToggle
                                 aria-controls="responsive-navbar-nav"
-                                aria-label="Toggle navigation"
-                                className="navbar-toggler"
-                                onClick={[Function]}
-                                type="button"
+                                as="button"
+                                label="Toggle navigation"
                               >
-                                <span
-                                  className="navbar-toggler-icon"
-                                />
-                              </button>
-                            </NavbarToggle>
-                            <NavbarCollapse
-                              id="responsive-navbar-nav"
-                            >
-                              <Collapse
-                                appear={false}
-                                dimension="height"
-                                getDimensionValue={[Function]}
+                                <button
+                                  aria-controls="responsive-navbar-nav"
+                                  aria-label="Toggle navigation"
+                                  className="navbar-toggler"
+                                  onClick={[Function]}
+                                  type="button"
+                                >
+                                  <span
+                                    className="navbar-toggler-icon"
+                                  />
+                                </button>
+                              </NavbarToggle>
+                              <NavbarCollapse
                                 id="responsive-navbar-nav"
-                                in={false}
-                                mountOnEnter={false}
-                                timeout={300}
-                                unmountOnExit={false}
                               >
-                                <Transition
-                                  addEndListener={[Function]}
+                                <Collapse
                                   appear={false}
-                                  aria-expanded={null}
-                                  enter={true}
-                                  exit={true}
+                                  dimension="height"
+                                  getDimensionValue={[Function]}
                                   id="responsive-navbar-nav"
                                   in={false}
                                   mountOnEnter={false}
-                                  onEnter={[Function]}
-                                  onEntered={[Function]}
-                                  onEntering={[Function]}
-                                  onExit={[Function]}
-                                  onExited={[Function]}
-                                  onExiting={[Function]}
                                   timeout={300}
                                   unmountOnExit={false}
                                 >
-                                  <div
+                                  <Transition
+                                    addEndListener={[Function]}
+                                    appear={false}
                                     aria-expanded={null}
-                                    className="navbar-collapse collapse"
+                                    enter={true}
+                                    exit={true}
                                     id="responsive-navbar-nav"
+                                    in={false}
+                                    mountOnEnter={false}
+                                    onEnter={[Function]}
+                                    onEntered={[Function]}
+                                    onEntering={[Function]}
+                                    onExit={[Function]}
+                                    onExited={[Function]}
+                                    onExiting={[Function]}
+                                    timeout={300}
+                                    unmountOnExit={false}
                                   >
-                                    <Nav
-                                      as="div"
-                                      className="mr-auto"
-                                      fill={false}
-                                      justify={false}
+                                    <div
+                                      aria-expanded={null}
+                                      className="navbar-collapse collapse"
+                                      id="responsive-navbar-nav"
                                     >
-                                      <ContextTransform(AbstractNav)
+                                      <Nav
                                         as="div"
-                                        className="mr-auto navbar-nav"
-                                        onSelect={[Function]}
+                                        className="mr-auto"
+                                        fill={false}
+                                        justify={false}
                                       >
-                                        <AbstractNav
+                                        <ContextTransform(AbstractNav)
                                           as="div"
                                           className="mr-auto navbar-nav"
                                           onSelect={[Function]}
-                                          parentOnSelect={[Function]}
                                         >
-                                          <div
+                                          <AbstractNav
+                                            as="div"
                                             className="mr-auto navbar-nav"
-                                            onKeyDown={[Function]}
-                                          />
-                                        </AbstractNav>
-                                      </ContextTransform(AbstractNav)>
-                                    </Nav>
-                                    <Nav
-                                      as="div"
-                                      fill={false}
-                                      justify={false}
-                                    >
-                                      <ContextTransform(AbstractNav)
+                                            onSelect={[Function]}
+                                            parentOnSelect={[Function]}
+                                          >
+                                            <div
+                                              className="mr-auto navbar-nav"
+                                              onKeyDown={[Function]}
+                                            />
+                                          </AbstractNav>
+                                        </ContextTransform(AbstractNav)>
+                                      </Nav>
+                                      <Nav
                                         as="div"
-                                        className="navbar-nav"
-                                        onSelect={[Function]}
+                                        fill={false}
+                                        justify={false}
                                       >
-                                        <AbstractNav
+                                        <ContextTransform(AbstractNav)
                                           as="div"
                                           className="navbar-nav"
                                           onSelect={[Function]}
-                                          parentOnSelect={[Function]}
                                         >
-                                          <div
+                                          <AbstractNav
+                                            as="div"
                                             className="navbar-nav"
-                                            onKeyDown={[Function]}
+                                            onSelect={[Function]}
+                                            parentOnSelect={[Function]}
                                           >
-                                            <div>
-                                              <Link
-                                                className="white-link"
-                                                to="/"
-                                              >
+                                            <div
+                                              className="navbar-nav"
+                                              onKeyDown={[Function]}
+                                            >
+                                              <div>
+                                                <Link
+                                                  className="white-link"
+                                                  to="/"
+                                                >
+                                                  <a
+                                                    className="white-link"
+                                                    href="/"
+                                                    onClick={[Function]}
+                                                  >
+                                                    Home
+                                                  </a>
+                                                </Link>
+                                                <Link
+                                                  className="white-link"
+                                                  to="/create-article"
+                                                >
+                                                  <a
+                                                    className="white-link"
+                                                    href="/create-article"
+                                                    onClick={[Function]}
+                                                  >
+                                                    Create post
+                                                  </a>
+                                                </Link>
                                                 <a
                                                   className="white-link"
-                                                  href="/"
+                                                  href="#"
                                                   onClick={[Function]}
                                                 >
-                                                  Home
+                                                  Log out
                                                 </a>
-                                              </Link>
-                                              <Link
-                                                className="white-link"
-                                                to="/create-article"
-                                              >
-                                                <a
-                                                  className="white-link"
-                                                  href="/create-article"
-                                                  onClick={[Function]}
-                                                >
-                                                  Create post
-                                                </a>
-                                              </Link>
+                                              </div>
                                             </div>
-                                          </div>
-                                        </AbstractNav>
-                                      </ContextTransform(AbstractNav)>
-                                    </Nav>
-                                  </div>
-                                </Transition>
-                              </Collapse>
-                            </NavbarCollapse>
-                          </nav>
-                        </Navbar>
-                      </Uncontrolled(Navbar)>
-                    </ForwardRef>
-                  </Bootstrap(undefined)>
+                                          </AbstractNav>
+                                        </ContextTransform(AbstractNav)>
+                                      </Nav>
+                                    </div>
+                                  </Transition>
+                                </Collapse>
+                              </NavbarCollapse>
+                            </nav>
+                          </Navbar>
+                        </Uncontrolled(Navbar)>
+                      </ForwardRef>
+                    </Bootstrap(undefined)>
+                  </div>
                 </Header>
               </Connect(Header)>
             </div>
@@ -422,238 +434,13 @@ exports[`Login page it render the login page without failing 1`] = `
                           </span>
                           <SocialIcon
                             className="social-media-icons"
-                            url="http://twitter.com"
-                          >
-                            <a
-                              aria-label="twitter"
-                              className="social-icon social-media-icons"
-                              href="http://twitter.com"
-                              style={
-                                Object {
-                                  "display": "inline-block",
-                                  "height": "50px",
-                                  "overflow": "hidden",
-                                  "position": "relative",
-                                  "verticalAlign": "middle",
-                                  "width": "50px",
-                                }
-                              }
-                            >
-                              <div
-                                className="social-container"
-                                style={
-                                  Object {
-                                    "height": "100%",
-                                    "left": 0,
-                                    "position": "absolute",
-                                    "top": 0,
-                                    "width": "100%",
-                                  }
-                                }
-                              >
-                                <svg
-                                  className="social-svg"
-                                  style={
-                                    Object {
-                                      "borderRadius": "50%",
-                                      "fillRule": "evenodd",
-                                      "height": "100%",
-                                      "left": 0,
-                                      "position": "absolute",
-                                      "top": 0,
-                                      "width": "100%",
-                                    }
-                                  }
-                                  viewBox="0 0 64 64"
-                                >
-                                  <Background>
-                                    <g
-                                      className="social-svg-background"
-                                      style={
-                                        Object {
-                                          "MozTransition": "fill 170ms ease-in-out",
-                                          "OTransition": "fill 170ms ease-in-out",
-                                          "WebkitTransition": "fill 170ms ease-in-out",
-                                          "fill": "transparent",
-                                          "msTransition": "fill 170ms ease-in-out",
-                                          "transition": "fill 170ms ease-in-out",
-                                        }
-                                      }
-                                    >
-                                      <circle
-                                        cx="32"
-                                        cy="32"
-                                        r="31"
-                                      />
-                                    </g>
-                                  </Background>
-                                  <Icon
-                                    networkKey="twitter"
-                                  >
-                                    <g
-                                      className="social-svg-icon"
-                                      style={
-                                        Object {
-                                          "MozTransition": "fill 170ms ease-in-out",
-                                          "OTransition": "fill 170ms ease-in-out",
-                                          "WebkitTransition": "fill 170ms ease-in-out",
-                                          "fill": "transparent",
-                                          "msTransition": "fill 170ms ease-in-out",
-                                          "transition": "fill 170ms ease-in-out",
-                                        }
-                                      }
-                                    >
-                                      <path
-                                        d="M48,22.1c-1.2,0.5-2.4,0.9-3.8,1c1.4-0.8,2.4-2.1,2.9-3.6c-1.3,0.8-2.7,1.3-4.2,1.6 C41.7,19.8,40,19,38.2,19c-3.6,0-6.6,2.9-6.6,6.6c0,0.5,0.1,1,0.2,1.5c-5.5-0.3-10.3-2.9-13.5-6.9c-0.6,1-0.9,2.1-0.9,3.3 c0,2.3,1.2,4.3,2.9,5.5c-1.1,0-2.1-0.3-3-0.8c0,0,0,0.1,0,0.1c0,3.2,2.3,5.8,5.3,6.4c-0.6,0.1-1.1,0.2-1.7,0.2c-0.4,0-0.8,0-1.2-0.1 c0.8,2.6,3.3,4.5,6.1,4.6c-2.2,1.8-5.1,2.8-8.2,2.8c-0.5,0-1.1,0-1.6-0.1c2.9,1.9,6.4,2.9,10.1,2.9c12.1,0,18.7-10,18.7-18.7 c0-0.3,0-0.6,0-0.8C46,24.5,47.1,23.4,48,22.1z"
-                                      />
-                                    </g>
-                                  </Icon>
-                                  <Mask
-                                    networkKey="twitter"
-                                  >
-                                    <g
-                                      className="social-svg-mask"
-                                      style={
-                                        Object {
-                                          "MozTransition": "fill 170ms ease-in-out",
-                                          "OTransition": "fill 170ms ease-in-out",
-                                          "WebkitTransition": "fill 170ms ease-in-out",
-                                          "fill": "#00aced",
-                                          "msTransition": "fill 170ms ease-in-out",
-                                          "transition": "fill 170ms ease-in-out",
-                                        }
-                                      }
-                                    >
-                                      <path
-                                        d="M0,0v64h64V0H0z M44.7,25.5c0,0.3,0,0.6,0,0.8C44.7,35,38.1,45,26.1,45c-3.7,0-7.2-1.1-10.1-2.9 c0.5,0.1,1,0.1,1.6,0.1c3.1,0,5.9-1,8.2-2.8c-2.9-0.1-5.3-2-6.1-4.6c0.4,0.1,0.8,0.1,1.2,0.1c0.6,0,1.2-0.1,1.7-0.2 c-3-0.6-5.3-3.3-5.3-6.4c0,0,0-0.1,0-0.1c0.9,0.5,1.9,0.8,3,0.8c-1.8-1.2-2.9-3.2-2.9-5.5c0-1.2,0.3-2.3,0.9-3.3 c3.2,4,8.1,6.6,13.5,6.9c-0.1-0.5-0.2-1-0.2-1.5c0-3.6,2.9-6.6,6.6-6.6c1.9,0,3.6,0.8,4.8,2.1c1.5-0.3,2.9-0.8,4.2-1.6 c-0.5,1.5-1.5,2.8-2.9,3.6c1.3-0.2,2.6-0.5,3.8-1C47.1,23.4,46,24.5,44.7,25.5z"
-                                      />
-                                    </g>
-                                  </Mask>
-                                </svg>
-                              </div>
-                            </a>
-                          </SocialIcon>
-                          <SocialIcon
-                            className="social-media-icons"
-                            url="http://facebook.com"
-                          >
-                            <a
-                              aria-label="facebook"
-                              className="social-icon social-media-icons"
-                              href="http://facebook.com"
-                              style={
-                                Object {
-                                  "display": "inline-block",
-                                  "height": "50px",
-                                  "overflow": "hidden",
-                                  "position": "relative",
-                                  "verticalAlign": "middle",
-                                  "width": "50px",
-                                }
-                              }
-                            >
-                              <div
-                                className="social-container"
-                                style={
-                                  Object {
-                                    "height": "100%",
-                                    "left": 0,
-                                    "position": "absolute",
-                                    "top": 0,
-                                    "width": "100%",
-                                  }
-                                }
-                              >
-                                <svg
-                                  className="social-svg"
-                                  style={
-                                    Object {
-                                      "borderRadius": "50%",
-                                      "fillRule": "evenodd",
-                                      "height": "100%",
-                                      "left": 0,
-                                      "position": "absolute",
-                                      "top": 0,
-                                      "width": "100%",
-                                    }
-                                  }
-                                  viewBox="0 0 64 64"
-                                >
-                                  <Background>
-                                    <g
-                                      className="social-svg-background"
-                                      style={
-                                        Object {
-                                          "MozTransition": "fill 170ms ease-in-out",
-                                          "OTransition": "fill 170ms ease-in-out",
-                                          "WebkitTransition": "fill 170ms ease-in-out",
-                                          "fill": "transparent",
-                                          "msTransition": "fill 170ms ease-in-out",
-                                          "transition": "fill 170ms ease-in-out",
-                                        }
-                                      }
-                                    >
-                                      <circle
-                                        cx="32"
-                                        cy="32"
-                                        r="31"
-                                      />
-                                    </g>
-                                  </Background>
-                                  <Icon
-                                    networkKey="facebook"
-                                  >
-                                    <g
-                                      className="social-svg-icon"
-                                      style={
-                                        Object {
-                                          "MozTransition": "fill 170ms ease-in-out",
-                                          "OTransition": "fill 170ms ease-in-out",
-                                          "WebkitTransition": "fill 170ms ease-in-out",
-                                          "fill": "transparent",
-                                          "msTransition": "fill 170ms ease-in-out",
-                                          "transition": "fill 170ms ease-in-out",
-                                        }
-                                      }
-                                    >
-                                      <path
-                                        d="M34.1,47V33.3h4.6l0.7-5.3h-5.3v-3.4c0-1.5,0.4-2.6,2.6-2.6l2.8,0v-4.8c-0.5-0.1-2.2-0.2-4.1-0.2 c-4.1,0-6.9,2.5-6.9,7V28H24v5.3h4.6V47H34.1z"
-                                      />
-                                    </g>
-                                  </Icon>
-                                  <Mask
-                                    networkKey="facebook"
-                                  >
-                                    <g
-                                      className="social-svg-mask"
-                                      style={
-                                        Object {
-                                          "MozTransition": "fill 170ms ease-in-out",
-                                          "OTransition": "fill 170ms ease-in-out",
-                                          "WebkitTransition": "fill 170ms ease-in-out",
-                                          "fill": "#3b5998",
-                                          "msTransition": "fill 170ms ease-in-out",
-                                          "transition": "fill 170ms ease-in-out",
-                                        }
-                                      }
-                                    >
-                                      <path
-                                        d="M0,0v64h64V0H0z M39.6,22l-2.8,0c-2.2,0-2.6,1.1-2.6,2.6V28h5.3l-0.7,5.3h-4.6V47h-5.5V33.3H24V28h4.6V24 c0-4.6,2.8-7,6.9-7c2,0,3.6,0.1,4.1,0.2V22z"
-                                      />
-                                    </g>
-                                  </Mask>
-                                </svg>
-                              </div>
-                            </a>
-                          </SocialIcon>
-                          <SocialIcon
-                            className="social-media-icons"
-                            url="http://google.com"
+                            network="google"
+                            url="https://vidar-ah-backend-production.herokuapp.com/api/v1/auth/google"
                           >
                             <a
                               aria-label="google"
                               className="social-icon social-media-icons"
-                              href="http://google.com"
+                              href="https://vidar-ah-backend-production.herokuapp.com/api/v1/auth/google"
                               style={
                                 Object {
                                   "display": "inline-block",
@@ -759,12 +546,126 @@ exports[`Login page it render the login page without failing 1`] = `
                               </div>
                             </a>
                           </SocialIcon>
+                          <SocialIcon
+                            className="social-media-icons"
+                            network="facebook"
+                            url="https://vidar-ah-backend-production.herokuapp.com/api/v1/auth/facebook"
+                          >
+                            <a
+                              aria-label="facebook"
+                              className="social-icon social-media-icons"
+                              href="https://vidar-ah-backend-production.herokuapp.com/api/v1/auth/facebook"
+                              style={
+                                Object {
+                                  "display": "inline-block",
+                                  "height": "50px",
+                                  "overflow": "hidden",
+                                  "position": "relative",
+                                  "verticalAlign": "middle",
+                                  "width": "50px",
+                                }
+                              }
+                            >
+                              <div
+                                className="social-container"
+                                style={
+                                  Object {
+                                    "height": "100%",
+                                    "left": 0,
+                                    "position": "absolute",
+                                    "top": 0,
+                                    "width": "100%",
+                                  }
+                                }
+                              >
+                                <svg
+                                  className="social-svg"
+                                  style={
+                                    Object {
+                                      "borderRadius": "50%",
+                                      "fillRule": "evenodd",
+                                      "height": "100%",
+                                      "left": 0,
+                                      "position": "absolute",
+                                      "top": 0,
+                                      "width": "100%",
+                                    }
+                                  }
+                                  viewBox="0 0 64 64"
+                                >
+                                  <Background>
+                                    <g
+                                      className="social-svg-background"
+                                      style={
+                                        Object {
+                                          "MozTransition": "fill 170ms ease-in-out",
+                                          "OTransition": "fill 170ms ease-in-out",
+                                          "WebkitTransition": "fill 170ms ease-in-out",
+                                          "fill": "transparent",
+                                          "msTransition": "fill 170ms ease-in-out",
+                                          "transition": "fill 170ms ease-in-out",
+                                        }
+                                      }
+                                    >
+                                      <circle
+                                        cx="32"
+                                        cy="32"
+                                        r="31"
+                                      />
+                                    </g>
+                                  </Background>
+                                  <Icon
+                                    networkKey="facebook"
+                                  >
+                                    <g
+                                      className="social-svg-icon"
+                                      style={
+                                        Object {
+                                          "MozTransition": "fill 170ms ease-in-out",
+                                          "OTransition": "fill 170ms ease-in-out",
+                                          "WebkitTransition": "fill 170ms ease-in-out",
+                                          "fill": "transparent",
+                                          "msTransition": "fill 170ms ease-in-out",
+                                          "transition": "fill 170ms ease-in-out",
+                                        }
+                                      }
+                                    >
+                                      <path
+                                        d="M34.1,47V33.3h4.6l0.7-5.3h-5.3v-3.4c0-1.5,0.4-2.6,2.6-2.6l2.8,0v-4.8c-0.5-0.1-2.2-0.2-4.1-0.2 c-4.1,0-6.9,2.5-6.9,7V28H24v5.3h4.6V47H34.1z"
+                                      />
+                                    </g>
+                                  </Icon>
+                                  <Mask
+                                    networkKey="facebook"
+                                  >
+                                    <g
+                                      className="social-svg-mask"
+                                      style={
+                                        Object {
+                                          "MozTransition": "fill 170ms ease-in-out",
+                                          "OTransition": "fill 170ms ease-in-out",
+                                          "WebkitTransition": "fill 170ms ease-in-out",
+                                          "fill": "#3b5998",
+                                          "msTransition": "fill 170ms ease-in-out",
+                                          "transition": "fill 170ms ease-in-out",
+                                        }
+                                      }
+                                    >
+                                      <path
+                                        d="M0,0v64h64V0H0z M39.6,22l-2.8,0c-2.2,0-2.6,1.1-2.6,2.6V28h5.3l-0.7,5.3h-4.6V47h-5.5V33.3H24V28h4.6V24 c0-4.6,2.8-7,6.9-7c2,0,3.6,0.1,4.1,0.2V22z"
+                                      />
+                                    </g>
+                                  </Mask>
+                                </svg>
+                              </div>
+                            </a>
+                          </SocialIcon>
                         </div>
                         <div
                           className="container-directing-to-signup"
                         >
                           <span>
-                            Don't have an account? Singn up
+                            Don't have an account? Sign up
                             <NavLink
                               className="link-to-another-page"
                               to="/signup"
