@@ -48,8 +48,12 @@ ArticleSummary.propTypes = {
   src: PropTypes.string.isRequired,
   header: PropTypes.string.isRequired,
   time: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
+  name: PropTypes.string,
   url: PropTypes.string.isRequired
+};
+
+ArticleSummary.defaultProps = {
+  name: ''
 };
 
 export default ArticleSummary;

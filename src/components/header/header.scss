@@ -1,4 +1,4 @@
-@import '../../assets/default';
+@import '../../assets/scss/default';
 
 .white-link,
 .navbar-brand {
@@ -22,4 +22,20 @@
 .img-icon {
   cursor: pointer;
   padding: .3rem;
+}
+
+a {
+  .purple-link {
+    &:hover {
+      color: $color-ccc;
+      text-decoration: none;
+    }
+}
+
+  .white-link {
+    &:hover {
+      color: $color-ccc;
+      text-decoration: none;
+    }
+  }
 }

@@ -18,7 +18,7 @@ const RectArticleSummary = (props) => {
     <Card style={{ }} className="card-outline">
       <Card.Body>
         <Link className="link" to={`${url}`}>
-          <Card.Text><h4>{header}</h4></Card.Text>
+          <h5>{header}</h5>
         </Link>
       </Card.Body>
       <Card.Footer className="text-muted">

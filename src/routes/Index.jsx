@@ -6,6 +6,8 @@ import CreateArticle from '../views/createArticle';
 import Login from '../components/auth/Index';
 import Article from '../views/Article/Index';
 import LandingPage from '../views/landingPage/Index';
+import RequestPasswordReset from '../views/passwordReset/RequestPasswordReset';
+import ResetPassword from '../views/passwordReset/ResetPassword';
 
 const Routes = () => (
   <Switch>
@@ -13,6 +15,8 @@ const Routes = () => (
     <Route path="/create-article" exact component={CreateArticle} />
     <Route path="/login" exact component={Login} />
     <Route path="/articles/:slug" component={Article} />
+    <Route path="/requestpasswordreset" exact component={RequestPasswordReset} />
+    <Route path="/resetpassword/:key" exact component={ResetPassword} />
     <Route component={NotFound} />
   </Switch>
 );
