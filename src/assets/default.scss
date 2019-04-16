@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Lato|Merriweather'); // sass-lint:disable-line no-url-domains, no-url-protocols
 
 $primary-color: #999;
-$box-shadow-color: 0 6px 20px 1px rgba(0, 0, 0, 0.10);
+$box-shadow-color: 0 6px 20px 1px rgba(0, 0, 0, .10); //sass-lint:disable-line no-trailing-zero
 $white-color: #fff;
 $font-family-header: 'Merriweather', serif;
 $font-family-body: 'Lato', sans-serif;
@@ -53,12 +53,12 @@ h4 {
 a {
   color: $purple-nav;
 
-  &.purple-link:hover {
+  &.purple-link:hover { //sass-lint:disable-line force-pseudo-nesting
     color: $white-color;
     text-decoration: none;
   }
 
-  &.white-link:hover {
+  &.white-link:hover { //sass-lint:disable-line force-pseudo-nesting
     color: $white-color;
     text-decoration: none;
   }
@@ -126,58 +126,4 @@ a {
   font-size: 1.2em;
   margin-right: 20px;
   padding-left: 0;
-}
-
-
-a,
-.yellow-button {
-  transition: ease-in-out .4s;
-}
-
-.purple-gradient-bg {
-  background-attachment: fixed;
-  background-image: linear-gradient(97.8deg, $deep-purple 37.49%, $light-purple-grad 102.07%, $light-purple-grad 102.07%), url('https://res.cloudinary.com/jessam/image/upload/v1554725326/tachina-lee-42980-unsplash_1.jpg'); // sass-lint:disable-line no-url-domains, no-url-protocols
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100%;
-  position: fixed;
-  width: 100%;
-}
-
-input,
-select {
-  &.dark-forms {
-    background-color: transparent;
-    border: $aaa-border 1px solid;
-    border-radius: 0;
-    box-sizing: border-box;
-    color: $ddd-border;
-    font-size: .9em;
-    margin: 20px auto;
-    padding: 20px;
-    width: 80%;
-  }
-}
-
-.form-black-bg {
-  background: $black-trans-bg;
-  color: $color-ccc;
-  font-weight: 100;
-  margin: 50px auto;
-  padding: 40px 10px;
-  text-align: center;
-
-  & a {
-    color: $white;
-    text-decoration: underline;
-
-    &:hover {
-      color: $color-ccc;
-    }
-  }
-
-  & h3 {
-    color: $white;
-  }
-
 }

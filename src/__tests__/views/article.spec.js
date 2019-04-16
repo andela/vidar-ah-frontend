@@ -4,7 +4,7 @@ import { MemoryRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
-import Article from '../../views/article/Index';
+import Article from '../../views/Article/Index';
 
 describe('get an article by its slug', () => {
   const mockStore = configureStore([thunk]);
