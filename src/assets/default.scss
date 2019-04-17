@@ -14,23 +14,119 @@ $ddd-border: #ddd;
 $black-trans-bg: rgba(0, 0, 0, .6);
 $color-ccc: #ccc;
 $primary-color: #999;
-$box-shadow-color: 0 6px 20px 1px rgba(0, 0, 0, .15);
+$box-shadow-color: 0 6px 20px 1px rgba(0, 0, 0, 0.15);
 $white-color: #fff;
 $yellow: #e2d754;
-$deep-purple-grad: rgba(60, 16, 83, .9);
-$light-purple-grad: rgba(173, 83, 137, .9);
+$deep-purple: hsl(279, 68%, 19%);
+$deep-purple-grad: rgba(60, 16, 83, 0.9);
+$light-blue: #0575e6;
+$deep-purple-grad: rgba(60, 16, 83, 0.9);
+$light-purple-grad: rgba(173, 83, 137, 0.9);
 $white: #fff;
 $button-shadow: rgba(111, 102, 3, .5);
-$hover-button-shadow: rgba(111, 102, 3, .8);
+$hover-button-shadow: rgba(111, 102, 3, 0.8);
 $hover-button-shadow-1: 0 12px 60px;
 $hover-color: rgb(46, 39, 53);
 $hover-background: rgb(172, 163, 64);
 $box-shadow: 0 12px 60px;
 $yellow-button-color: #51455c;
 $purple-nav: #8932b4;
+$yellow-color: #e2d754;
+$black-color: #000000;
+$button-yellow: #e2d754;
+$button-yellow-hover: rgb(172, 163, 64);
+$button-shadow: rgba(111, 102, 3, 0.5);
+$button-shadow-hover: rgba(111, 102, 3, 0.8);
+$button-text: #51455c;
+$button-text-hover: rgb(46, 39, 53);
 
 // input sizes
 $input-field-width: 80%;
+
+
+a,
+.yellow-button {
+  transition: ease-in-out 0.4s;
+}
+
+.purple-gradient-bg {
+  background-attachment: fixed;
+  background-image: linear-gradient(to right, $deep-purple-grad, $light-purple-grad),
+  url('https://res.cloudinary.com/jessam/image/upload/v1554725326/tachina-lee-42980-unsplash_1.jpg');// sass-lint:disable-line no-url-domains, no-url-protocols
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  position: fixed;
+  width: 100%;
+}
+
+input,
+select {
+  &.dark-forms {
+    background-color: transparent;
+    border: $aaa-border 1px solid;
+    border-radius: 0;
+    box-sizing: border-box;
+    color: $ddd-border;
+    font-size: 0.9em;
+    margin: 20px auto;
+    padding: 20px;
+    width: 80%;
+  }
+}
+
+input.dark-forms, select.dark-forms {
+  background-color: $white;
+  border: $aaa-border 1px solid;
+  border-radius: 0;
+  box-sizing: border-box;
+  color: $ddd-border;
+  font-size: 0.9em;
+  margin: 20px auto;
+  padding: 20px;
+  width: $input-field-width;
+}
+
+.form-black-bg {
+  background: $black-trans-bg;
+  color: $color-ccc;
+  font-weight: 100;
+  margin: 50px auto;
+  padding: 40px 10px;
+  text-align: center;
+
+  a {
+    color: $white;
+    text-decoration: underline;
+
+    &:hover {
+      color: $color-ccc;
+    }
+  }
+
+  h3 {
+    color: $white;
+  }
+
+}
+
+.container-social-login {
+  margin-bottom: 3rem;
+  margin-top: 3rem;
+
+  .info {
+    display: block;
+    font-size: 0.9rem;
+    font-style: $font-family-body;
+    margin-bottom: 1rem;
+  }
+
+  .social-media-icons {
+    margin: 0 0.8rem;
+  }
+}
+
+
 
 body {
   font-family: $font-family-body;
@@ -57,24 +153,22 @@ h3 {
   font-size: 1.44rem;
 }
 
-h4 {
-  font-family: $font-family-header;
-  font-size: 0.7rem;
-}
 
 h5 {
   font-family: $font-family-header;
-  font-size: 0.5rem;
+  font-size: 1rem;
 }
+
 
 h6 {
   font-family: $font-family-header;
   font-size: 0.3rem;
 }
 
+
 a {
   color: $purple-nav;
-  transition: ease-in-out .4s;
+  transition: ease-in-out 0.4s;
 
   &.purple-link:hover { //sass-lint:disable-line force-pseudo-nesting
     color: $hover-color;
@@ -150,83 +244,5 @@ a {
   font-size: 1.2em;
   margin-right: 20px;
   padding-left: 0;
-}
-
-.purple-gradient-bg {
-  background-attachment: fixed;
-  background-image: linear-gradient(to right, $deep-purple-grad, $light-purple-grad),
-  url('https://res.cloudinary.com/jessam/image/upload/v1554725326/tachina-lee-42980-unsplash_1.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100%;
-  position: fixed;
-  width: 100%;
-}
-
-input,
-select {
-  .dark-forms {
-    background-color: transparent;
-    border: $aaa-border 1px solid;
-    border-radius: 0;
-    box-sizing: border-box;
-    color: $ddd-border;
-    font-size: .9em;
-    margin: 20px auto;
-    padding: 20px;
-    width: 80%;
-  }
-}
-
-input.dark-forms, select.dark-forms {
-  background-color: $white;
-  border: $aaa-border 1px solid;
-  border-radius: 0 !important;
-  box-sizing: border-box;
-  color: $ddd-border;
-  font-size: 0.9em;
-  margin: 20px auto;
-  padding: 20px;
-  width: $input-field-width;
-}
-
-.form-black-bg {
-  background: $black-trans-bg;
-  color: $color-ccc;
-  font-weight: 100;
-  margin: 50px auto;
-  padding: 40px 10px;
-  text-align: center;
-
-  a {
-    color: $white;
-    text-decoration: underline;
-
-    &:hover {
-      color: $color-ccc;
-    }
-  }
-
-  h3 {
-    color: $white;
-  }
-
-}
-
-.container-social-login {
-  margin-bottom: 3rem;
-  margin-top: 3rem;
-
-  .info {
-    display: block;
-    font-size: .9rem;
-    font-style: $font-family-body;
-    margin-bottom: 1rem;
-  }
-
-  .social-media-icons {
-    margin: 0 .8rem;
-  }
-
 }
 

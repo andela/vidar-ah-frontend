@@ -6,9 +6,9 @@ import { Provider } from 'react-redux';
 import { render } from 'react-dom';
 import { ToastContainer, Flip } from 'react-toastify';
 import 'bootstrap/dist/css/bootstrap.css';
+import './assets/default.scss';
 import App from './app';
 import store from './redux/store';
-import './assets/default.scss';
 import 'react-quill/dist/quill.snow.css';
 
 

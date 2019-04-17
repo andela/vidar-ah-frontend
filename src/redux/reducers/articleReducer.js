@@ -3,6 +3,7 @@ import {
 } from '../actions/actionTypes';
 import initialState from './initialState';
 
+
 export default (state = initialState, action) => {
   switch (action.type) {
     case SET_ARTICLE:
@@ -10,9 +11,9 @@ export default (state = initialState, action) => {
     case GET_RECOMMENDED_ARTICLES:
       return { ...state, recommendedArticles: action.payload };
     case GET_LATEST_ARTICLES:
-      return { ...state, articles: state.articles.concat(action.data) };
+      return { ...state, articles: action.data };
     case GET_TRENDING_ARTICLES:
-      return { ...state, trendingArticles: state.trendingArticles.concat(action.data) };
+      return { ...state, trendingArticles: action.data };
     default: return state;
   }
 };

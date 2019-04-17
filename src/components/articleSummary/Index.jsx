@@ -45,7 +45,7 @@ const ArticleSummary = (props) => {
 };
 
 ArticleSummary.propTypes = {
-  src: PropTypes.string.isRequired,
+  src: PropTypes.string,
   header: PropTypes.string.isRequired,
   time: PropTypes.string.isRequired,
   name: PropTypes.string,
@@ -53,7 +53,8 @@ ArticleSummary.propTypes = {
 };
 
 ArticleSummary.defaultProps = {
-  name: ''
+  name: '',
+  src: 'https://res.cloudinary.com/djdsxql5q/image/upload/v1554806589/Authors%20Haven/culture.jpg'
 };
 
 export default ArticleSummary;

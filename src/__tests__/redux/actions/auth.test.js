@@ -27,7 +27,7 @@ describe('loginUser()', () => {
       data: { ...successResponse },
     }));
     await loginUser()(dispatch);
-    expect(dispatch).toHaveBeenCalledTimes(3);
+    expect(dispatch).toHaveBeenCalledTimes(4);
     expect(dispatch.mock.calls[1][0]).toEqual({
       payload: { currentUser: loggedInUser },
       type: 'LOGIN'

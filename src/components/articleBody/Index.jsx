@@ -6,8 +6,8 @@ import './articleBody.scss';
 const ArticleBody = (props) => {
   const { body } = props;
   return (
-    <div className="align-div">
-      <p className="body-text">{ReactHtmlParser(body)}</p>
+    <div className="align-div body-text">
+      {ReactHtmlParser(body)}
     </div>
   );
 };

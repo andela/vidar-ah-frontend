@@ -9,7 +9,7 @@ describe('GET_LATEST_ARTICLES', () => {
     };
     const action = {
       type: GET_LATEST_ARTICLES,
-      data: { one: 'one' }
+      data: [{ one: 'one' }]
     };
     const expectedState = {
       articles: [{ one: 'one' }],
@@ -28,7 +28,7 @@ describe('GET_TRENDING_ARTICLES', () => {
     };
     const action = {
       type: GET_TRENDING_ARTICLES,
-      data: { one: 'one' }
+      data: [{ one: 'one' }]
     };
     const expectedState = {
       articles: [],

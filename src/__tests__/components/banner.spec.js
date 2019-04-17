@@ -44,5 +44,7 @@ const { mountWrapper: component } = getBanner();
 describe('Banner component', () => {
   it('renders correctly', () => {
     expect(component.find('.cont').exists()).toBe(true);
+    const btn = component.find('.button button');
+    btn.simulate('click');
   });
 });

@@ -72,8 +72,8 @@ const CreateArticle = (props) => {
 
   return (
     <div className="create-article-container">
+      <Header type="purple" />
       <Container>
-        <Header type="purple" />
         {renderErrors(errors)}
         {renderSuccess(successMessage)}
       </Container>
