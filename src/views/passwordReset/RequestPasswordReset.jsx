@@ -68,9 +68,7 @@ const RequestPasswordReset = (props) => {
     </>
   );
 };
-
 RequestPasswordReset.propTypes = {
   requestPasswordRequest: PropTypes.func.isRequired
 };
-
 export default connect(() => ({}), { requestPasswordRequest })(RequestPasswordReset);

@@ -1,0 +1,56 @@
+@import "../../assets/default";
+
+.yellow-button-login {
+  width: $input-field-width;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.container-extras {
+  display: flex;
+  font-size: 1em;
+  justify-content: center;
+  margin: 20px auto;
+  width: $input-field-width;
+
+  & span {
+    display: block;
+    font-size: 1em;
+
+    & .checkbox {
+      height: 1em;
+      margin-right: .5em;
+      width: 1em;
+    }
+
+    & .link-to-another-page {
+      color: $yellow;
+      font-size: 1em;
+      text-decoration: none;
+
+      &:hover {
+        color: $white;
+      }
+
+    }
+
+  }
+}
+
+.container-directing-to-signup {
+  margin: 6em 0 2em;
+
+  & span {
+    display: block;
+    font-size: 1em;
+
+    & .link-to-another-page {
+      color: $yellow;
+      font-size: 1em;
+      margin: 0 .5em;
+      text-decoration: none;
+    }
+  }
+}

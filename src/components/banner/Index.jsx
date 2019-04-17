@@ -8,7 +8,7 @@ import {
 import PropTypes from 'prop-types';
 import Button from '../button/Index';
 import HeaderText from '../headerText/Index';
-import Header from '../header/Index';
+import Header from '../header/Header';
 
 
 export default function Banner(props) {

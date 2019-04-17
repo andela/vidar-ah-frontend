@@ -18,7 +18,7 @@ const ArticleSummary = (props) => {
 
   return (
     <Card className="card-outline" style={{ height: '16rem' }}>
-      <Card.Img style={{ height: '7rem' }} fluid variant="top" src={imageSource} />
+      <Card.Img style={{ height: '7rem' }} fluid="true" variant="top" src={imageSource} />
       <div className="summary-card-body">
         <Link className="link" to={`${url}`}>
           <Card.Text className="card-pad">{header}</Card.Text>

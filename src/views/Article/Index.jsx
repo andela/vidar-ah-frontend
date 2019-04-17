@@ -14,6 +14,8 @@ import ArticleDescription from '../../components/articleDescription/Index';
 import { getArticleRequest, getRecommendedArticles } from '../../redux/actions/articles';
 import Footer from '../../components/footer/Index';
 import Loader from '../../components/loader/Index';
+import Button from '../../components/button/Index';
+import './article.scss';
 
 
 const Article = (props) => {
@@ -33,6 +35,10 @@ const Article = (props) => {
         <ArticleDescription description={article.description} />
         <ImageContainer src={article.images[0] || 'https://res.cloudinary.com/djdsxql5q/image/upload/v1554806589/Authors%20Haven/culture.jpg'} />
         <ArticleBody body={article.body} />
+        <div className="edit-delete-container">
+          <Button className="btn" text="Edit" />
+          <Button className="btn" text="Delete" />
+        </div>
       </Container>
       <hr />
       <Container>
