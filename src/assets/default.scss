@@ -1,25 +1,36 @@
-@import url('https://fonts.googleapis.com/css?family=Lato|Merriweather'); // sass-lint:disable-line no-url-domains, no-url-protocols
+@import url("https://fonts.googleapis.com/css?family=Lato|Merriweather"); // sass-lint:disable-line no-url-domains, no-url-protocols
 
-$primary-color: #999;
-$text-color: #6f42c1;
-$box-shadow-color: 0 6px 20px 1px rgba(0, 0, 0, .15);
-$white-color: #fff;
+$font-family: 'Merriweather', serif;
 $font-family-header: 'Merriweather', serif;
 $font-family-body: 'Lato', sans-serif;
+
+
+// colors
+$text-color: #6f42c1;
+$deep-purple: hsl(279, 68%, 19%);
+$light-blue: #0575e6;
+$aaa-border: #aaa;
+$ddd-border: #ddd;
+$black-trans-bg: rgba(0, 0, 0, .6);
+$color-ccc: #ccc;
+$primary-color: #999;
+$box-shadow-color: 0 6px 20px 1px rgba(0, 0, 0, .15);
+$white-color: #fff;
 $yellow: #e2d754;
-$input-field-width: 80%;
 $deep-purple-grad: rgba(60, 16, 83, .9);
 $light-purple-grad: rgba(173, 83, 137, .9);
 $white: #fff;
-$button-shadow: rgba(111, 102, 3, 0.5);
-$hover-button-shadow: rgba(111, 102, 3, 0.8);
+$button-shadow: rgba(111, 102, 3, .5);
+$hover-button-shadow: rgba(111, 102, 3, .8);
 $hover-button-shadow-1: 0 12px 60px;
 $hover-color: rgb(46, 39, 53);
 $hover-background: rgb(172, 163, 64);
 $box-shadow: 0 12px 60px;
 $yellow-button-color: #51455c;
 $purple-nav: #8932b4;
-$text-color: #6f42c1;
+
+// input sizes
+$input-field-width: 80%;
 
 body {
   font-family: $font-family-body;
@@ -27,7 +38,7 @@ body {
 }
 
 html {
-  font-family: $font-family-header;
+  font-family: $font-family-body;
   font-size: 1rem;
 }
 
@@ -51,11 +62,22 @@ h4 {
   font-size: 0.7rem;
 }
 
+h5 {
+  font-family: $font-family-header;
+  font-size: 0.5rem;
+}
+
+h6 {
+  font-family: $font-family-header;
+  font-size: 0.3rem;
+}
+
 a {
   color: $purple-nav;
+  transition: ease-in-out .4s;
 
   &.purple-link:hover { //sass-lint:disable-line force-pseudo-nesting
-    color: $white-color;
+    color: $hover-color;
     text-decoration: none;
   }
 
@@ -85,7 +107,7 @@ a {
 
 .cont {
   background-image: linear-gradient(to right, $deep-purple-grad, $light-purple-grad),
-  url('https://res.cloudinary.com/jessam/image/upload/v1554725326/tachina-lee-42980-unsplash_1.jpg'); // sass-lint:disable-line no-url-domains, no-url-protocols
+  url("https://res.cloudinary.com/jessam/image/upload/v1554725326/tachina-lee-42980-unsplash_1.jpg"); // sass-lint:disable-line no-url-domains, no-url-protocols
   background-position: center;
   background-size: cover;
   color: $white;
@@ -105,6 +127,7 @@ a {
   line-height: normal;
   padding: 12px 25px;
   text-align: center;
+  transition: ease-in-out .4s;
 
   &:hover {
     background: $hover-background;
@@ -128,3 +151,82 @@ a {
   margin-right: 20px;
   padding-left: 0;
 }
+
+.purple-gradient-bg {
+  background-attachment: fixed;
+  background-image: linear-gradient(to right, $deep-purple-grad, $light-purple-grad),
+  url('https://res.cloudinary.com/jessam/image/upload/v1554725326/tachina-lee-42980-unsplash_1.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  position: fixed;
+  width: 100%;
+}
+
+input,
+select {
+  .dark-forms {
+    background-color: transparent;
+    border: $aaa-border 1px solid;
+    border-radius: 0;
+    box-sizing: border-box;
+    color: $ddd-border;
+    font-size: .9em;
+    margin: 20px auto;
+    padding: 20px;
+    width: 80%;
+  }
+}
+
+input.dark-forms, select.dark-forms {
+  background-color: $white;
+  border: $aaa-border 1px solid;
+  border-radius: 0 !important;
+  box-sizing: border-box;
+  color: $ddd-border;
+  font-size: 0.9em;
+  margin: 20px auto;
+  padding: 20px;
+  width: $input-field-width;
+}
+
+.form-black-bg {
+  background: $black-trans-bg;
+  color: $color-ccc;
+  font-weight: 100;
+  margin: 50px auto;
+  padding: 40px 10px;
+  text-align: center;
+
+  a {
+    color: $white;
+    text-decoration: underline;
+
+    &:hover {
+      color: $color-ccc;
+    }
+  }
+
+  h3 {
+    color: $white;
+  }
+
+}
+
+.container-social-login {
+  margin-bottom: 3rem;
+  margin-top: 3rem;
+
+  .info {
+    display: block;
+    font-size: .9rem;
+    font-style: $font-family-body;
+    margin-bottom: 1rem;
+  }
+
+  .social-media-icons {
+    margin: 0 .8rem;
+  }
+
+}
+

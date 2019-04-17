@@ -17,7 +17,6 @@ const Header = (props) => {
   } = props;
 
   type === 'purple' ? className = 'purple-link' : className = 'white-link';
-
   return (
     <>
       <Navbar collapseOnSelect expand="lg">

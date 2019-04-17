@@ -1,0 +1,14 @@
+.edit-delete-container {
+  border: 1px solid black;
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+
+  .btn {
+    display: inline-block;
+    width: 5rem;
+    text-align: center;
+
+  }
+}

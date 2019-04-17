@@ -48,7 +48,7 @@ const getLoginPage = () => {
 
 const { mountWrapper } = getLoginPage();
 
-describe('Test the Login Page', () => {
+describe('Login page', () => {
   it('it render the login page without failing', () => {
     expect(toJson(mountWrapper)).toMatchSnapshot();
   });
@@ -60,6 +60,6 @@ describe('Test the Login Page', () => {
     expect(mountWrapper.find('SocialIcon')).toHaveLength(3);
   });
   it('it render form inputs, buttons and links', () => {
-    expect(mountWrapper.find('Container')).toHaveLength(2);
+    expect(mountWrapper.find('Container')).toHaveLength(3);
   });
 });

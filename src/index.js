@@ -6,7 +6,6 @@ import { Provider } from 'react-redux';
 import { render } from 'react-dom';
 import { ToastContainer, Flip } from 'react-toastify';
 import 'bootstrap/dist/css/bootstrap.css';
-import './assets/scss/default.scss';
 import App from './app';
 import store from './redux/store';
 import './assets/default.scss';

@@ -38,19 +38,20 @@ export const Login = ({ history, loginUser: handleLogin, loading }) => {
   }
 
   return (
-    <>
-      <div className="purple-gradient-bg">
-        {loading && <Loader />}
-        <Container>
-          <Header location={history.location.pathname} />
-        </Container>
-        <Container>
-          {renderErrors(errors)}
-          <Row>
-            <Col md={{ span: 6, offset: 3 }} className="form-black-bg">
-              <h3>Login</h3>
-              <Form onSubmit={onSubmit} className="form-login">
-                <Form.Control
+    <div className="purple-gradient-bg">
+      {loading && <Loader />}
+      <Container>
+        <Header location={history.location.pathname} />
+      </Container>
+      <Container>
+        <Row><Col md={{ span: 6, offset: 3 }}>{renderErrors(errors)}</Col></Row>
+      </Container>
+      <Container>
+        <Row>
+          <Col md={{ span: 6, offset: 3 }} className="form-black-bg">
+            <h3>Login</h3>
+            <Form onSubmit={onSubmit} className="form-login">
+              <Form.Control
                   type="email"
                   name="email"
                   placeholder="Email"
@@ -58,7 +59,7 @@ export const Login = ({ history, loginUser: handleLogin, loading }) => {
                   required
                   onChange={updateLocalState}
                 />
-                <Form.Control
+              <Form.Control
                   type="password"
                   name="password"
                   placeholder="Password"
@@ -66,46 +67,45 @@ export const Login = ({ history, loginUser: handleLogin, loading }) => {
                   required
                   onChange={updateLocalState}
                 />
-                <Button text="Login" />
-                <div className="container-extras">
-                  <span>
-                    <NavLink
+              <Button text="Login" />
+              <div className="container-extras">
+                <span>
+                  <NavLink
                       to="/requestpasswordreset"
                       className="link-to-another-page"
                     >
                       Forgotten password?
-                    </NavLink>
-                  </span>
-                </div>
-              </Form>
-              <div className="container-social-login">
-                <span className="info">Or login using </span>
-                <SocialIcon
-                  url="http://twitter.com"
-                  className="social-media-icons"
-                />
-                <SocialIcon
-                  url="http://facebook.com"
-                  className="social-media-icons"
-                />
-                <SocialIcon
-                  url="http://google.com"
-                  className="social-media-icons"
-                />
-              </div>
-              <div className="container-directing-to-signup">
-                <span>
-                  Don't have an account? Singn up
-                  <NavLink to="/signup" className="link-to-another-page">
-                    here
                   </NavLink>
                 </span>
               </div>
-            </Col>
-          </Row>
-        </Container>
-      </div>
-    </>
+            </Form>
+            <div className="container-social-login">
+              <span className="info">Or login using </span>
+              <SocialIcon
+                  url="http://twitter.com"
+                  className="social-media-icons"
+                />
+              <SocialIcon
+                  url="http://facebook.com"
+                  className="social-media-icons"
+                />
+              <SocialIcon
+                  url="http://google.com"
+                  className="social-media-icons"
+                />
+            </div>
+            <div className="container-directing-to-signup">
+              <span>
+                  Don't have an account? Singn up
+                <NavLink to="/signup" className="link-to-another-page">
+                    here
+                </NavLink>
+              </span>
+            </div>
+          </Col>
+        </Row>
+      </Container>
+    </div>
   );
 };
 
