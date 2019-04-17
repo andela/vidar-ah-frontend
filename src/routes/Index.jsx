@@ -7,11 +7,13 @@ import RequestPasswordReset from '../views/passwordReset/RequestPasswordReset';
 import ResetPassword from '../views/passwordReset/ResetPassword';
 import LoginPage from '../views/LoginPage';
 import CreateArticle from '../views/createArticle';
+import Social from '../views/socialCallback/Index';
 
 const Routes = () => (
   <Switch>
     <Route path="/" exact component={LandingPage} />
     <Route path="/create-article" exact component={CreateArticle} />
+    <Route path="/social/callback" exact component={Social} />
     <Route path="/articles/:slug" component={Article} />
     <Route path="/requestpasswordreset" exact component={RequestPasswordReset} />
     <Route path="/resetpassword/:key" exact component={ResetPassword} />

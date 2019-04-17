@@ -57,7 +57,7 @@ describe('Login page', () => {
     expect(mountWrapper.find(Button)).toHaveLength(1);
   });
   it('it render social media icons', () => {
-    expect(mountWrapper.find('SocialIcon')).toHaveLength(3);
+    expect(mountWrapper.find('SocialIcon')).toHaveLength(2);
   });
   it('it render form inputs, buttons and links', () => {
     expect(mountWrapper.find('Container')).toHaveLength(3);
