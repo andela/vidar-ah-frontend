@@ -24,7 +24,7 @@ exports[`Login page it render the login page without failing 1`] = `
           "entries": Array [
             Object {
               "hash": "",
-              "key": "qayc7t",
+              "key": "kuvvsc",
               "pathname": "/",
               "search": "",
               "state": undefined,
@@ -38,7 +38,7 @@ exports[`Login page it render the login page without failing 1`] = `
           "listen": [Function],
           "location": Object {
             "hash": "",
-            "key": "qayc7t",
+            "key": "kuvvsc",
             "pathname": "/",
             "search": "",
             "state": undefined,
@@ -244,13 +244,19 @@ exports[`Login page it render the login page without failing 1`] = `
                                                     Create post
                                                   </a>
                                                 </Link>
-                                                <a
+                                                <Link
                                                   className="white-link"
-                                                  href="#"
                                                   onClick={[Function]}
+                                                  to="#"
                                                 >
-                                                  Log out
-                                                </a>
+                                                  <a
+                                                    className="white-link"
+                                                    href="/"
+                                                    onClick={[Function]}
+                                                  >
+                                                    Log out
+                                                  </a>
+                                                </Link>
                                               </div>
                                             </div>
                                           </AbstractNav>

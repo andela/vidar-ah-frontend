@@ -3,7 +3,7 @@ import * as types from '../../../redux/actions/actionTypes';
 
 const initialState = {
   articles: [],
-  article: null,
+  article: {},
   recommendedArticles: [],
   trendingArticles: []
 };

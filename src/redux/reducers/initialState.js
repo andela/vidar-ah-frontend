@@ -1,6 +1,6 @@
 const initialState = {
   articles: [],
-  article: null,
+  article: {},
   recommendedArticles: [],
   trendingArticles: []
 };
