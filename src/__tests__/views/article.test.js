@@ -13,10 +13,10 @@ describe('get an article by its slug', () => {
     id: 1,
     title: 'test',
     description: 'description',
-    images: ['image'],
     body: 'body',
     updatedAt: 'time',
     slug: 'slug',
+    images: ['https://res.cloudinary.com/djdsxql5q/image/upload/v1554806589/Authors%20Haven/culture.jpg']
   };
   const recommendedArticles = [article];
 
@@ -34,6 +34,7 @@ describe('get an article by its slug', () => {
           <Article
             history={{ location: { pathname: '/articles/:slug' } }}
             match={{ params: { slug: 'poierwjvoejcijwoei' } }}
+            article={article}
           />
         </MemoryRouter>
       </Provider>
@@ -43,7 +44,7 @@ describe('get an article by its slug', () => {
 
 
   it('tests for when the initial state of the article is null', () => {
-    article = null;
+    article = {};
     const store = mockStore({
       articleReducer: {
         article,
@@ -53,13 +54,16 @@ describe('get an article by its slug', () => {
 
     component = mount(
       <Provider store={store}>
-        <Article
-          history={{ location: { pathname: '/articles/:slug' } }}
-          match={{ params: { slug: 'poierwjvoejcijwoei' } }}
-        />
+        <MemoryRouter>
+          <Article
+              history={{ location: { pathname: '/articles/:slug' } }}
+              match={{ params: { slug: 'poierwjvoejcijwoei' } }}
+              article={article}
+            />
+        </MemoryRouter>
       </Provider>
     );
 
-    expect(component.find('.article-container').exists()).toBe(false);
+    expect(component.find('.article-container').exists()).toBe(true);
   });
 });

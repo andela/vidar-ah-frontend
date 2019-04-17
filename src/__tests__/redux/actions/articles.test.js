@@ -48,7 +48,7 @@ describe('handles getArticleRequest', () => {
       type: types.SET_ARTICLE,
       payload: mockData.article,
     }];
-    const store = mockStore({ article: null });
+    const store = mockStore({ article: {} });
 
     return store.dispatch(actions.getArticleRequest('slug')).then(() => {
       expect(store.getActions()).toEqual(expectedActions);
@@ -70,7 +70,7 @@ describe('handles getArticleRequest', () => {
       payload: mockData.response.message,
     }];
 
-    const store = mockStore({ article: null });
+    const store = mockStore({ article: {} });
 
     return store.dispatch(actions.getArticleRequest('slug')).then(() => {
       expect(store.getActions()).toEqual(expectedActions);
