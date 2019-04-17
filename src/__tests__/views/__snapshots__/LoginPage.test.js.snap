@@ -24,7 +24,7 @@ exports[`Login page it render the login page without failing 1`] = `
           "entries": Array [
             Object {
               "hash": "",
-              "key": "2zr7ht",
+              "key": "vmudor",
               "pathname": "/",
               "search": "",
               "state": undefined,
@@ -38,7 +38,7 @@ exports[`Login page it render the login page without failing 1`] = `
           "listen": [Function],
           "location": Object {
             "hash": "",
-            "key": "2zr7ht",
+            "key": "vmudor",
             "pathname": "/",
             "search": "",
             "state": undefined,
