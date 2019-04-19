@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { GET_LATEST_ARTICLES, GET_TRENDING_ARTICLES } from './actionTypes';
+import { GET_LATEST_ARTICLES, GET_TRENDING_ARTICLES, SAVE_ARTICLE_DATA } from './actionTypes';
 
 const apiUrl = 'https://vidar-ah-backend-production.herokuapp.com/api';
 
@@ -29,3 +29,5 @@ export const getTrendingArticles = params => async (dispatch) => {
     return error.response;
   }
 };
+
+export const saveArticleDataToStore = payload => ({ type: SAVE_ARTICLE_DATA, payload });

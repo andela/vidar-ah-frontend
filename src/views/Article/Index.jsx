@@ -6,6 +6,7 @@ import {
 } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import ArticleTitle from '../../components/articleTitle/Index';
 import ArticleBody from '../../components/articleBody/Index';
 import ImageContainer from '../../components/imageContainer/Index';
@@ -14,30 +15,37 @@ import ArticleDescription from '../../components/articleDescription/Index';
 import { getArticleRequest, getRecommendedArticles } from '../../redux/actions/articles';
 import Footer from '../../components/footer/Index';
 import Loader from '../../components/loader/Index';
-import Button from '../../components/button/Index';
 import './article.scss';
 
 
 const Article = (props) => {
-  const { article, getArticle, getRecommendedArticles: getArticles } = props;
+  const defaultImg = 'https://res.cloudinary.com/djdsxql5q/image/upload/v1554806589/Authors%20Haven/culture.jpg';
+  const {
+    article, getArticle, getRecommendedArticles: getArticles, userEmail
+  } = props;
   const { match: { params: { slug } } } = props;
   useEffect(() => {
-    getArticle(slug);
-    getArticles();
+    async function fetchData() {
+      getArticle(slug);
+      getArticles();
+    }
+    fetchData();
   }, [slug]);
-
   if (!article) return <Loader />;
+  const { email: authorEmail } = article.author || { author: {} };
+
 
   return (
     <div className="article-container">
       <Container>
         <ArticleTitle title={article.title} />
         <ArticleDescription description={article.description} />
-        <ImageContainer src={article.images[0] || 'https://res.cloudinary.com/djdsxql5q/image/upload/v1554806589/Authors%20Haven/culture.jpg'} />
+        <ImageContainer src={(article.images && article.images[0]) || defaultImg} />
         <ArticleBody body={article.body} />
         <div className="edit-delete-container">
-          <Button className="btn" text="Edit" />
-          <Button className="btn" text="Delete" />
+          {(authorEmail && userEmail === authorEmail)
+            && <Link className="link link-edit" to={`/edit-article/${article.slug}`}>Edit</Link>
+          }
         </div>
       </Container>
       <hr />
@@ -48,7 +56,7 @@ const Article = (props) => {
             props.recommendedArticles.map(recArticle => (
               <ArticleSummary
                 key={recArticle.id}
-                src={recArticle.images[0]}
+                src={recArticle.images[0] ? recArticle.images[0] : defaultImg}
                 header={recArticle.title}
                 url={`/articles/${recArticle.slug}`}
                 time={recArticle.updatedAt}
@@ -66,14 +74,17 @@ Article.propTypes = {
   getArticle: PropTypes.func.isRequired,
   recommendedArticles: PropTypes.array.isRequired,
   getRecommendedArticles: PropTypes.func.isRequired,
-  match: PropTypes.object.isRequired
+  match: PropTypes.object.isRequired,
+  userEmail: PropTypes.string,
 };
 
 Article.defaultProps = {
-  article: null
+  article: null,
+  userEmail: ''
 };
 
 const mapStateToProps = state => ({
+  userEmail: state.authReducer.currentUser.email,
   article: state.articleReducer.article,
   recommendedArticles: state.articleReducer.recommendedArticles
 });

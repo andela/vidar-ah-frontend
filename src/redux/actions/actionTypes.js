@@ -15,3 +15,5 @@ export const LOGIN = 'LOGIN';
 export const LOGOUT = 'LOGOUT';
 export const START_FETCHING = 'START_FETCHING';
 export const STOP_FETCHING = 'STOP_FETCHING';
+export const SAVE_ARTICLE_DATA = 'SAVE_ARTICLE_DATA';
+export const EDIT_ARTICLE = 'UPDATE_ARTICLE';

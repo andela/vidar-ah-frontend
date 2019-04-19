@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/img-redundant-alt */
 /* eslint-disable react/jsx-no-bind */
 import React from 'react';
 import PropTypes from 'prop-types';
@@ -20,11 +21,23 @@ const Create = (props) => {
   const {
     onChangeText,
     onSubmit,
-    onDelete,
+    onCancel,
     article,
-    user
+    user,
+    // actionType,
   } = props;
   const updateEditor = text => onChangeText({ target: { name: 'body', value: text } });
+
+  let image;
+
+
+  if (!article.image) {
+    image = 'https://via.placeholder.com/700x400';
+  } else if (typeof article.image === 'string') {
+    image = article.image;
+  } else {
+    image = URL.createObjectURL(article.image);
+  }
 
   return (
     <div className="form-field">
@@ -42,7 +55,12 @@ const Create = (props) => {
         ))
       }
       <div className="upload-btn-wrapper">
-        <button className="btn">Add Image</button>
+        <img
+          alt="image"
+          src={image}
+          className="img-placeholder"
+        />
+        <button className="btn btn-upload-img">Add Image</button>
         <input
           type="file"
           name="image"
@@ -70,7 +88,11 @@ const Create = (props) => {
               <Button text="Preview" onClick={onSubmit} type="solid" />
             </Col>
             <Col md={{ span: 1, offset: 1 }}>
-              <Button onClick={onDelete} text="Delete" />
+              {/* { (actionType === 'EDIT_ARTICLE')
+                ? (<Button onClick={onDelete} text="Cancel" />)
+                : (<Button onClick={onDelete} text="Delete" />)
+              } */}
+              <Button onClick={onCancel} text="Cancel" />
             </Col>
           </Row>
         </Container>
@@ -82,9 +104,14 @@ const Create = (props) => {
 Create.propTypes = {
   onChangeText: PropTypes.func.isRequired,
   onSubmit: PropTypes.func.isRequired,
-  onDelete: PropTypes.func.isRequired,
+  onCancel: PropTypes.func.isRequired,
   article: PropTypes.object.isRequired,
-  user: PropTypes.object.isRequired
+  user: PropTypes.object.isRequired,
+  // actionType: PropTypes.string,
 };
+
+// Create.defaultProps = {
+//   actionType: 'CREATE_ARTICLE',
+// };
 
 export default Create;

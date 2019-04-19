@@ -12,7 +12,16 @@ const Preview = (props) => {
   const {
     onSubmit, article, continueEdit, loading
   } = props;
-  const image = article.image ? URL.createObjectURL(article.image) : 'https://via.placeholder.com/700x400';
+  let image;
+
+
+  if (!article.image) {
+    image = 'https://via.placeholder.com/700x400';
+  } else if (typeof article.image === 'string') {
+    image = article.image;
+  } else {
+    image = URL.createObjectURL(article.image);
+  }
   return (
     <div>
       {loading && <Loader />}

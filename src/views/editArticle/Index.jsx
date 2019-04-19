@@ -6,17 +6,18 @@ import { Container, Alert } from 'react-bootstrap';
 import Create from '../../components/createForms/Create';
 import Preview from '../../components/previewArticle/Preview';
 import { validateArticle } from '../../utils/validator';
-import { createArticle } from '../../redux/actions/articles';
+import { editArticle } from '../../redux/actions/articles';
 import Header from '../../components/header/Header';
-import './createArticle.scss';
+import './editArticle.scss';
 
-const CreateArticle = (props) => {
-  const { user } = props;
+const EditArticle = (props) => {
+  const { user, article } = props;
   const [articleData, setArticleData] = useState({
-    title: null,
-    description: null,
-    body: null,
-    image: null
+    title: article.title,
+    description: article.description,
+    body: article.body,
+    slug: article.slug,
+    image: article.images && article.images.length > 0 ? article.images[0] : 'https://via.placeholder.com/700x400',
   });
   const [state, setState] = useState({
     component: 'write',
@@ -32,16 +33,17 @@ const CreateArticle = (props) => {
     successMessage
   } = state;
 
-  const completeArticleCreation = async () => {
+  const completeArticleUpdate = async () => {
     setState({ ...state, errors: [], loading: true });
-    const res = await props.createArticle(articleData);
+    const res = await props.editArticle(articleData);
     const { errors: errorsArr } = res;
     setState({ ...state, loading: false });
     if (errorsArr) {
       setState({ ...state, errors: errorsArr });
+    } else {
+      setState({ ...state, successMessage: res.message });
+      props.history.push(`/articles/${article.slug}`);
     }
-    setState({ ...state, successMessage: res.message });
-    props.history.push(`/articles/${res.article.slug}`);
   };
 
   const runValidators = (event) => {
@@ -50,7 +52,7 @@ const CreateArticle = (props) => {
     if (validationErrors.length > 0) {
       return setState({ ...state, component: 'write', errors: validationErrors });
     }
-    return completeArticleCreation();
+    return completeArticleUpdate();
   };
 
   const updateInput = (event) => {
@@ -61,11 +63,11 @@ const CreateArticle = (props) => {
   };
 
   const cancelArticle = () => {
-    props.history.push('/');
+    props.history.push(`/articles/${article.slug}`);
   };
 
   const renderErrors = errorsArr => errorsArr.map(error => (
-    <Alert key={error} variant="danger">{error}</Alert>
+    <Alert className="errorMsg" key={error} variant="danger">{error}</Alert>
   ));
 
   const renderSuccess = message => (message ? <Alert variant="success">{message}</Alert> : null);
@@ -87,6 +89,7 @@ const CreateArticle = (props) => {
                 onCancel={cancelArticle}
                 article={articleData}
                 user={user}
+                // actionType="EDIT_ARTICLE"
               />
             )
             : (
@@ -105,18 +108,20 @@ const CreateArticle = (props) => {
 };
 
 
-CreateArticle.propTypes = {
-  createArticle: PropTypes.func.isRequired,
+EditArticle.propTypes = {
+  editArticle: PropTypes.func.isRequired,
   history: PropTypes.object,
-  user: PropTypes.object.isRequired
+  user: PropTypes.object.isRequired,
+  article: PropTypes.object.isRequired,
 };
 
-CreateArticle.defaultProps = {
+EditArticle.defaultProps = {
   history: {},
 };
 
 const mapStateToProps = state => ({
-  user: state.authReducer.currentUser
+  user: state.authReducer.currentUser,
+  article: state.articleReducer.article,
 });
 
-export default connect(() => mapStateToProps, { createArticle })(CreateArticle);
+export default connect(() => mapStateToProps, { editArticle })(EditArticle);

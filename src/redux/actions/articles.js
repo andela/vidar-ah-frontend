@@ -7,7 +7,8 @@ import {
   CREATE_ARTICLE,
   SET_ARTICLE,
   SET_ARTICLE_ERROR,
-  GET_RECOMMENDED_ARTICLES
+  GET_RECOMMENDED_ARTICLES,
+  EDIT_ARTICLE,
 } from './actionTypes';
 
 const apiUrl = 'https://vidar-ah-backend-production.herokuapp.com/api/v1';
@@ -69,6 +70,33 @@ export const createArticle = articleData => async (dispatch) => {
     dispatch({
       type: CREATE_ARTICLE,
     });
+    return error.response.data;
+  }
+};
+
+export const editArticle = articleData => async (dispatch) => {
+  try {
+    const form = new formData();
+    for (const key in articleData) {
+      form.append(key, articleData[key]);
+    }
+    const token = localStorage.getItem('token');
+    const { data } = await axios.put(
+      `${apiUrl}/articles/${articleData.slug}`,
+      form,
+      {
+        headers: {
+          'x-access-token': token,
+          'Content-Type': `multipart/form-data; boundary=${form._boundary}`,
+        },
+      }
+    );
+    dispatch({
+      type: EDIT_ARTICLE,
+      payload: articleData
+    });
+    return data;
+  } catch (error) {
     return error.response.data;
   }
 };
