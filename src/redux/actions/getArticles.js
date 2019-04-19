@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { GET_LATEST_ARTICLES, GET_TRENDING_ARTICLES, SEARCH } from './actionTypes';
+import { GET_LATEST_ARTICLES, GET_TRENDING_ARTICLES, SAVE_ARTICLE_DATA, SEARCH } from './actionTypes';
 
 export const runSearch = () => ({
   type: SEARCH
@@ -43,3 +43,4 @@ export const searchArticles = query => async (dispatch) => {
     return error.response.data;
   }
 };
+export const saveArticleDataToStore = payload => ({ type: SAVE_ARTICLE_DATA, payload });

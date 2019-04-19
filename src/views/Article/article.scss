@@ -1,35 +1,39 @@
 @import '../../assets/default';
 
 .edit-delete-container {
-  border: 1px solid $black-color;
-  display: flex;
-  justify-content: space-around;
-  margin: auto;
-  width: 80%;
+    border: 1px solid $black-color;
+    width: 30%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+    width: 80%;
 
-  .btn {
-    display: inline-block;
-    text-align: center;
-    width: 5rem;
+    .btn {
+      display: inline-block;
+    .btnEdit,
+    .btnDelete {
+      width: 7rem;
+      text-align: center;
+      width: 5rem;
 
+    }
   }
-}
+  html,
+  body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
 
-html,
-body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
+  .file-input {
+    cursor: pointer;
+    padding: 10px;
+  }
 
-.file-input {
-  cursor: pointer;
-  padding: 10px;
-}
-
-.article-container {
-  height: 100%;
-}
+  .article-container {
+    height: 100%;
+  }
 
 .progress-bar {
   color: $purple-nav;

@@ -14,6 +14,7 @@ import EditProfile from '../views/profilePage/EditProfile';
 import Signup from '../views/signup/Index';
 import VerifyAccount from '../components/VerifyEmail';
 import ReportsPage from '../views/reportedArticles/Index';
+import EditArticle from '../views/editArticle/Index';
 
 const Routes = () => (
   <Switch>
@@ -21,6 +22,7 @@ const Routes = () => (
     <AuthWrapper path="/create-article" exact component={CreateArticle} />
     <Route path="/signup" exact component={Signup} />
     <Route path="/social/callback" exact component={Social} />
+    <Route path="/edit-article/:slug" exact component={EditArticle} />
     <Route path="/articles/:slug" component={Article} />
     <Route path="/requestpasswordreset" exact component={RequestPasswordReset} />
     <Route path="/resetpassword/:key" exact component={ResetPassword} />

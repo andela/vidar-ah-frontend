@@ -23,6 +23,7 @@ import {
   EmailShareButton
 } from 'react-share';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import ArticleTitle from '../../components/articleTitle/Index';
 import ArticleBody from '../../components/articleBody/Index';
 import ImageContainer from '../../components/imageContainer/Index';
@@ -53,7 +54,8 @@ const Article = (props) => {
     articlePayload,
     getArticle,
     getRecommendedArticles: getArticles,
-    isLoggedIn
+    isLoggedIn,
+    userEmail
   } = props;
 
   const {
@@ -94,6 +96,17 @@ const Article = (props) => {
     getArticles();
     window.addEventListener('scroll', handleScroll);
   }, [slug]);
+  const defaultImg = 'https://res.cloudinary.com/djdsxql5q/image/upload/v1554806589/Authors%20Haven/culture.jpg';
+
+  useEffect(() => {
+    async function fetchData() {
+      getArticle(slug);
+      getArticles();
+    }
+    fetchData();
+  }, [slug]);
+  if (!article) return <Loader />;
+  const { email: authorEmail } = article.author || { author: {} };
 
 
   if (!article) return <Loader />;
@@ -236,6 +249,13 @@ const Article = (props) => {
           )
         }
         </Row>
+        <ImageContainer src={(article.images && article.images[0]) || defaultImg} />
+        <ArticleBody body={article.body} />
+        <div className="edit-delete-container">
+          {(authorEmail && userEmail === authorEmail)
+            && <Link className="link link-edit" to={`/edit-article/${article.slug}`}>Edit</Link>
+          }
+        </div>
       </Container>
 
       <Container>
@@ -260,16 +280,18 @@ const Article = (props) => {
       <Container>
         <h3>Also recommended for you</h3>
         <CardDeck>
-          {props.recommendedArticles.map(recArticle => (
-            <ArticleSummary
-              key={recArticle.id}
-              src={recArticle.images[0]}
-              header={recArticle.title}
-              url={`/articles/${recArticle.slug}`}
-              time={recArticle.updatedAt}
-              name={recArticle.name}
-            />
-          ))}
+          {
+            props.recommendedArticles.map(recArticle => (
+              <ArticleSummary
+                key={recArticle.id}
+                src={recArticle.images[0] ? recArticle.images[0] : defaultImg}
+                header={recArticle.title}
+                url={`/articles/${recArticle.slug}`}
+                time={recArticle.updatedAt}
+                name={recArticle.name}
+              />
+            ))
+          }
         </CardDeck>
       </Container>
       <Footer />
@@ -285,19 +307,23 @@ Article.propTypes = {
   match: PropTypes.object.isRequired,
   likeArticleRequest: PropTypes.func.isRequired,
   dislikeArticleRequest: PropTypes.func.isRequired,
-  isLoggedIn: PropTypes.bool
+  isLoggedIn: PropTypes.bool,
+  userEmail: PropTypes.string,
 };
 
 Article.defaultProps = {
   articlePayload: { article: { Comments: [] } },
-  isLoggedIn: false
+  isLoggedIn: false,
+  userEmail: ''
 };
 
 const mapStateToProps = state => ({
   articlePayload: state.articleReducer.article,
+  userEmail: state.authReducer.currentUser.email,
   recommendedArticles: state.articleReducer.recommendedArticles,
-  isLoggedIn: state.authReducer.isLoggedIn
+  isLoggedIn: state.authReducer.isLoggedIn,
 });
+
 const mapDispatchToProps = dispatch => ({
   getArticle: slug => dispatch(getArticleRequest(slug)),
   getRecommendedArticles: () => dispatch(getRecommendedArticles()),
