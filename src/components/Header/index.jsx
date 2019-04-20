@@ -99,12 +99,12 @@ Header.defaultProps = {
   isLoggedIn: false,
   profile: { image: "https://res.cloudinary.com/dqyytlxwe/image/upload/v1555941949/avatar.png" }
 };
-
 const mapStateToProps = state => ({
   isLoggedIn: state.authReducer.isLoggedIn,
   user: state.authReducer.currentUser,
   profile: state.authReducer.profile,
   role: state.authReducer.currentUser.role
 });
+
 
 export default connect(() => mapStateToProps, { logOut })(Header);

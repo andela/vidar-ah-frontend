@@ -18,6 +18,9 @@ import ContentHeader from '../../components/ContentHeader';
 import './landingPage.scss';
 import Footer from '../../components/Footer';
 import DefaultButton from '../../components/Button';
+// import Footer from '../../components/footer/Index';
+// import DefaultButton from '../../components/button/Index';
+import AlertMsg from '../../components/AlertMsg';
 
 
 const LandingPage = (props) => {
@@ -33,7 +36,7 @@ const LandingPage = (props) => {
     searchRequest: false
   });
 
-  const { history, articles, trendingArticles } = props;
+  const { history, articles, trendingArticles, successMessage } = props;
   useEffect(() => {
     props.getArticles(3).then();
     props.getTrendingArticles(6).then();
@@ -117,6 +120,11 @@ const LandingPage = (props) => {
         </Form>
       </Container>
       <Container>
+        <Row>
+          <Col md={{ span: 6, offset: 3 }}>
+            {(successMessage.length > 1) && <AlertMsg message={successMessage} />}
+          </Col>
+        </Row>
         <Row>
           <Col className="trending" md={8}>
             {
@@ -211,7 +219,8 @@ const LandingPage = (props) => {
 
 const mapStateToProps = state => ({
   articles: state.articles.articles,
-  trendingArticles: state.articles.trendingArticles
+  trendingArticles: state.articles.trendingArticles,
+  successMessage: state.articles.successMessage
 });
 
 const mapDispatchToProps = {
@@ -225,11 +234,17 @@ LandingPage.propTypes = {
   getTrendingArticles: PropTypes.func.isRequired,
   articles: PropTypes.array.isRequired,
   getArticles: PropTypes.func.isRequired,
-  searchArticles: PropTypes.func.isRequired
+  searchArticles: PropTypes.func.isRequired,
+  successMessage: PropTypes.string,
 };
 
 LandingPage.propTypes = {
-  history: PropTypes.instanceOf(Object).isRequired,
+  history: PropTypes.instanceOf(Object)
+};
+
+LandingPage.defaultProps = {
+  history: {},
+  successMessage: '',
 };
 
 export default connect(() => mapStateToProps, mapDispatchToProps)(LandingPage);

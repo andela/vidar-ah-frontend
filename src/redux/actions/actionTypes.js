@@ -36,3 +36,4 @@ export const FOLLOW = 'FOLLOW';
 export const UNFOLLOW = 'UNFOLLOW';
 export const SAVE_ARTICLE_DATA = 'SAVE_ARTICLE_DATA';
 export const EDIT_ARTICLE = 'UPDATE_ARTICLE';
+export const DELETE_ARTICLE = 'DELETE_ARTICLE';

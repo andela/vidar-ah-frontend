@@ -57,33 +57,40 @@ $black: #000;
   background: $white;
   color: $black;
   font-size: 1rem;
-  height: 15rem;
   margin: auto;
   margin-bottom: 4%;
+  min-height: 15rem;
   outline: none;
   padding: 1rem;
   width: 72.7%;
 }
 
-.center-button {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  text-align: center;
+.ql-container {
+  min-height: 15rem;
 }
 
-.header-img {
-  height: 400px;
-  width: 700px;
+.center-button {
+  align-items: space-around;
+  display: flex;
+  justify-content: space-around;
+
+  &-create-form,
+  &-preview-form {
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    margin: auto;
+    margin-top: 4%;
+    width: 70%;
+  }
 }
 
 .upload-btn-wrapper {
-  background: transparent;
+  background: $white;
   border: 1px solid $cream;
   box-sizing: border-box;
   display: inline-block;
   font-size: 1rem;
-  height: 10rem;
+  height: 100px;
   margin-bottom: 4%;
   outline: none;
   overflow: hidden;
@@ -91,20 +98,16 @@ $black: #000;
   position: relative;
   text-align: center;
   width: 70%;
-  position: relative;
 }
 
-.btn-upload-img {
+.btn {
   background-color: $white;
   border-radius: 8px;
   bottom: 16px;
   color: $dark-col;
   font-size: 20px;
   font-weight: bold;
-  padding: 8px 20px;
-  position: absolute;
-  top: 20%;
-  left: 45%;
+  position: relative;
 }
 
 
@@ -116,10 +119,19 @@ $black: #000;
   top: 0;
 }
 
-.img-placeholder {
-  border: 2px solid black;
-  display: block;
-  height: 100%;
-  width: 100%;
-  margin: 0 auto;
+.text-center {
+  margin: auto;
+  width: 70%;
+}
+
+@media (max-width: 360px) {
+  .center-button {
+    align-items: space-around;
+    flex-direction: column;
+
+    &-btn,
+    &-btn {
+      margin-top: 1rem;
+    }
+  }
 }

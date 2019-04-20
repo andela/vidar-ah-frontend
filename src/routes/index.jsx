@@ -14,8 +14,8 @@ import EditProfile from '../views/ProfilePage/EditProfile';
 import Signup from '../views/Signup/index';
 import VerifyAccount from '../components/VerifyEmail';
 import ReportsPage from '../views/ReportedArticles/index';
-// import ReportsPage from '../views/reportedArticles/Index';
-import EditArticle from '../views/editArticle/Index';
+import EditArticle from '../views/EditArticle';
+
 
 const Routes = () => (
   <Switch>

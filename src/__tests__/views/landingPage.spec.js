@@ -9,6 +9,19 @@ import LandingPage from '../../views/LandingPage';
 describe('LandingPage', () => {
   const mockStore = configureStore([thunk]);
   let component;
+  const props = {
+    article: [],
+    trendingArticles: [],
+    getArticles: jest.fn(),
+    getTrendingArticles: jest.fn(),
+    history: {
+      push: jest.fn(),
+      location: {
+        pathname: ''
+      }
+    },
+  };
+
   const articles = {
     articles: [
       {
@@ -55,7 +68,7 @@ describe('LandingPage', () => {
     component = mount(
       <Provider store={store}>
         <BrowserRouter>
-          <LandingPage />
+          <LandingPage {...props} />
         </BrowserRouter>
       </Provider>
     );

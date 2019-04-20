@@ -11,6 +11,7 @@ import {
   LIKE_ARTICLE,
   DISLIKE_ARTICLE,
   EDIT_ARTICLE,
+  DELETE_ARTICLE
 } from './actionTypes';
 
 const apiUrl = 'https://vidar-ah-backend-production.herokuapp.com/api/v1';
@@ -158,6 +159,29 @@ export const editArticle = articleData => async (dispatch) => {
     });
     return data;
   } catch (error) {
-    return error.response.data;
+    return error.response ? error.response.data : error.message;
+  }
+};
+
+export const deleteArticle = article => async (dispatch) => {
+  try {
+    const token = localStorage.getItem('token');
+    const { data } = await axios.delete(
+      `${apiUrl}/articles/${article.slug}`,
+      {
+        headers: {
+          'x-access-token': token,
+          'Content-Type': 'multipart/form-data;',
+        }
+      }
+    );
+    dispatch({
+      type: DELETE_ARTICLE,
+      successMessage: 'Article Deleted',
+      payload: { article }
+    });
+    return data;
+  } catch (error) {
+    return error.response ? error.response.data : error.message;
   }
 };

@@ -1,5 +1,3 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable jsx-a11y/no-autofocus */
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -103,6 +101,7 @@ EditProfile.propTypes = {
   editProfile: PropTypes.func.isRequired,
   history: PropTypes.object.isRequired,
   profile: PropTypes.object.isRequired,
+  getProfileRequest: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => ({
