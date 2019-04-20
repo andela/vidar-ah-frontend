@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
+import './imgcontainer.scss';
 import {
   Container,
   Row,
@@ -14,7 +16,7 @@ const ImageContainer = (props) => {
     <Container className="image-container">
       <Row>
         <Col style={{ textAlign: 'center' }}>
-          <Image fluid="true" src={src} style={{ width: '80%', height: '100%' }} />
+          <Image fluid src={src} className="img" />
         </Col>
       </Row>
     </Container>

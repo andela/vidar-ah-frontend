@@ -7,21 +7,14 @@ import ArticleTitle from '../articleTitle/Index';
 import ArticleBody from '../articleBody/Index';
 import '../../views/createArticle/createArticle.scss';
 import Loader from '../loader/Index';
+import setArticleImage from '../../utils/setArticleImage';
 
 const Preview = (props) => {
   const {
     onSubmit, article, continueEdit, loading
   } = props;
-  let image;
 
-
-  if (!article.image) {
-    image = 'https://via.placeholder.com/700x400';
-  } else if (typeof article.image === 'string') {
-    image = article.image;
-  } else {
-    image = URL.createObjectURL(article.image);
-  }
+  const image = setArticleImage(article);
   return (
     <div>
       {loading && <Loader />}

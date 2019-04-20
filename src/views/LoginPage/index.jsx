@@ -52,9 +52,9 @@ export const Login = ({ history, loginUser: handleLogin, loading }) => {
       </Container>
       <Container>
         <Row>
-          <Col md={{ span: 6, offset: 3 }} className="form-black-bg">
+          <Col md={{ span: 6, offset: 3 }} className="form-black-bg" id="form-black-bg-login">
             <h3>Login</h3>
-            <Form onSubmit={onSubmit} className="form-login">
+            <Form onSubmit={onSubmit} className="form-login" id="form-login">
               <Form.Control
                 type="email"
                 name="email"

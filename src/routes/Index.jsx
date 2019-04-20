@@ -16,6 +16,7 @@ import VerifyAccount from '../components/VerifyEmail';
 import ReportsPage from '../views/reportedArticles/Index';
 import EditArticle from '../views/editArticle/Index';
 
+
 const Routes = () => (
   <Switch>
     <Route path="/" exact component={LandingPage} />

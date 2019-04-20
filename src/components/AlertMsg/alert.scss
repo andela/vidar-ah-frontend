@@ -1,0 +1,35 @@
+$red: #f00;
+$success-bg: #fff3cd;
+$success-text-color: #533f03;
+
+.notification {
+  align-items: center;
+  background-color: $success-bg;
+  border-radius: 2px;
+  color: $success-text-color;
+  display: flex;
+  justify-content: space-between;
+  max-width: 60%;
+  min-width: 30%;
+  padding: 0 1em;
+  position: fixed;
+  right: 33%;
+  top: 4em;
+  z-index: 99999;
+
+  &-message {
+    margin: 0;
+  }
+
+  &-button {
+    background: transparent;
+    border: 0;
+    color: $success-text-color;
+    margin:  0.5em 0;
+    outline: none;
+
+    &:active {
+      outline: none;
+    }
+  }
+}

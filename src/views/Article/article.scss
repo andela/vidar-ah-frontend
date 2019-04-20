@@ -1,39 +1,66 @@
 @import '../../assets/default';
+@import '../createArticle/createArticle';
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.file-input {
+  cursor: pointer;
+  padding: 10px;
+}
+
+.article-container {
+  height: 100%;
+}
 
 .edit-delete-container {
-    border: 1px solid $black-color;
-    width: 30%;
-    margin: auto;
-    display: flex;
-    justify-content: space-around;
-    margin: auto;
-    width: 80%;
+  display: flex;
+  justify-content: space-around;
+  margin: auto;
+  margin-bottom: 3em;
+  width: 70%;
 
-    .btn {
-      display: inline-block;
-    .btnEdit,
-    .btnDelete {
-      width: 7rem;
-      text-align: center;
-      width: 5rem;
+  .link-edit-article {
+    background-color: $white;
+    border: 1px solid $purple-nav;
+    box-shadow: none;
+    color: $deep-purple;
+    display: block;
+    font-size: 1.2em;
+    font-weight: 500;
+    line-height: normal;
+    padding: 0.2rem 1.2rem;
+    text-align: center;
+    text-decoration: none;
+    transition: ease-in-out 0.4s;
+    width: 5.5em;
+  }
 
+  .btn-delete-article {
+    background-color: $white;
+    border: 1px solid $purple-nav;
+    box-shadow: none;
+    color: $deep-purple;
+    display: block;
+    font-size: 1.2em;
+    font-weight: 500;
+    line-height: normal;
+    padding: 0.2rem 1.2rem;
+    text-align: center;
+    text-decoration: none;
+    transition: ease-in-out 0.4s;
+    width: 5.5em;
+
+    &:hover {
+      background-color: $red;
+      color: $white;
     }
   }
-  html,
-  body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-  }
-
-  .file-input {
-    cursor: pointer;
-    padding: 10px;
-  }
-
-  .article-container {
-    height: 100%;
-  }
+}
 
 .progress-bar {
   color: $purple-nav;

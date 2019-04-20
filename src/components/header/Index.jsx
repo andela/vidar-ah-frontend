@@ -79,11 +79,11 @@ Header.defaultProps = {
   type: 'white',
   isLoggedIn: false
 };
-
 const mapStateToProps = state => ({
   isLoggedIn: state.authReducer.isLoggedIn,
   user: state.authReducer.currentUser,
   profile: state.authReducer.profile
 });
+
 
 export default connect(() => mapStateToProps, { logOut })(Header);

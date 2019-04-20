@@ -5,6 +5,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 
 import Button from '../button/Index';
 import '../../views/createArticle/createArticle.scss';
+import setArticleImage from '../../utils/setArticleImage';
 
 const fields = [
   {
@@ -22,20 +23,10 @@ const Create = (props) => {
     onCancel,
     article,
     user,
-    // actionType,
   } = props;
   const updateEditor = text => onChangeText({ target: { name: 'body', value: text } });
 
-  let image;
-
-
-  if (!article.image) {
-    image = 'https://via.placeholder.com/700x400';
-  } else if (typeof article.image === 'string') {
-    image = article.image;
-  } else {
-    image = URL.createObjectURL(article.image);
-  }
+  const image = setArticleImage(article);
 
   return (
     <div className="form-field">
@@ -54,7 +45,7 @@ const Create = (props) => {
       }
       <div className="upload-btn-wrapper">
         <img
-          alt="image"
+          alt="placeholder"
           src={image}
           className="img-placeholder"
         />
@@ -86,10 +77,6 @@ const Create = (props) => {
               <Button text="Preview" onClick={onSubmit} type="solid" />
             </Col>
             <Col md={{ span: 1, offset: 1 }}>
-              {/* { (actionType === 'EDIT_ARTICLE')
-                ? (<Button onClick={onDelete} text="Cancel" />)
-                : (<Button onClick={onDelete} text="Delete" />)
-              } */}
               <Button onClick={onCancel} text="Cancel" />
             </Col>
           </Row>
@@ -105,11 +92,6 @@ Create.propTypes = {
   onCancel: PropTypes.func.isRequired,
   article: PropTypes.object.isRequired,
   user: PropTypes.object.isRequired,
-  // actionType: PropTypes.string,
 };
-
-// Create.defaultProps = {
-//   actionType: 'CREATE_ARTICLE',
-// };
 
 export default Create;

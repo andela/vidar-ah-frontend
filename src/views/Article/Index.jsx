@@ -38,10 +38,13 @@ import {
 import Footer from '../../components/footer/Index';
 import Header from '../../components/header/Index';
 import Loader from '../../components/loader/Index';
+import Button from '../../components/button/Index';
 import './article.scss';
 import Comment from '../../components/comment/Index';
 import ViewComment from '../../components/viewComment/Index';
 import ReportModal from '../../components/reportArticle/Index';
+import DeleteModal from '../../components/DeleteModal';
+
 
 const Article = (props) => {
   const [progress, setProgress] = useState(0);
@@ -98,6 +101,9 @@ const Article = (props) => {
   }, [slug]);
   const defaultImg = 'https://res.cloudinary.com/djdsxql5q/image/upload/v1554806589/Authors%20Haven/culture.jpg';
 
+  const [modalState, setModalState] = useState({
+    display: false
+  });
   useEffect(() => {
     async function fetchData() {
       getArticle(slug);
@@ -108,6 +114,13 @@ const Article = (props) => {
   if (!article) return <Loader />;
   const { email: authorEmail } = article.author || { author: {} };
 
+  const openModal = () => {
+    setModalState({ ...modalState, display: true });
+  };
+
+  const hideModal = () => {
+    setModalState({ display: false }); // This is the correct one
+  };
 
   if (!article) return <Loader />;
   const sendLikeRequest = async (event) => {
@@ -142,6 +155,7 @@ const Article = (props) => {
           closeModal={() => setState({ modalIsVisible: false, dropDownIsVisible: false })}
           articleSlug={article.slug}
         />
+        <DeleteModal displayModal={modalState.display} closeModal={hideModal} />
         <ArticleTitle title={article.title} />
         <ArticleDescription description={article.description} />
         {
@@ -152,6 +166,14 @@ const Article = (props) => {
           ) : null
         }
         <ArticleBody body={article.body} />
+        {(authorEmail && userEmail === authorEmail)
+          && (
+            <div className="edit-delete-container">
+              <Link className="link link-edit-article" to={`/edit-article/${article.slug}`}>Edit</Link>
+              <Button text="Delete" className="btn-delete-article" onClick={openModal} />
+            </div>
+          )
+        }
       </Container>
       <Container>
         <Row>
@@ -249,13 +271,6 @@ const Article = (props) => {
           )
         }
         </Row>
-        <ImageContainer src={(article.images && article.images[0]) || defaultImg} />
-        <ArticleBody body={article.body} />
-        <div className="edit-delete-container">
-          {(authorEmail && userEmail === authorEmail)
-            && <Link className="link link-edit" to={`/edit-article/${article.slug}`}>Edit</Link>
-          }
-        </div>
       </Container>
 
       <Container>
