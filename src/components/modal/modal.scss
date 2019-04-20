@@ -1,0 +1,72 @@
+$purple-nav: #8932b4;
+$deep-purple-grad-2: rgba(60, 16, 83, .9);
+$deep-purple-grad: rgba(60, 16, 83, .7);
+$light-purple-grad: rgba(173, 83, 137, .7);
+
+.Overlay {
+  width: 100vw;
+  height: 100vh;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // background: rgba(0, 0, 0, 0.7);
+   background-image: linear-gradient(to right, $deep-purple-grad, $light-purple-grad),
+  url("https://res.cloudinary.com/jessam/image/upload/v1554725326/tachina-lee-42980-unsplash_1.jpg"); 
+  background-position: center;
+  background-size: cover;
+  opacity: .98;
+}
+
+.Modal {
+  border-radius: .5em;
+  // background-color: black;
+  background: $deep-purple-grad-2;
+  color: white;
+  width: 50%;
+  height: 50%;
+  // opacity: 0.5;
+  // border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.p-tag{
+  box-sizing: border-box;
+  width: 60%;
+  letter-spacing: .07em;
+  text-align: center;
+  // color: red;
+  color: white;
+  font-weight: bold;
+  font-style: italic;
+  margin-bottom: 4em;
+  border-bottom: 1px solid red;
+}
+
+.container-modal-content{
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  
+  .btn-modal {
+    width: 5em;
+    height: 2em;
+    background-color: white;
+    border-radius: .2em;
+  }
+
+   .proceed {
+      color: red;
+    }
+
+    .cancel {
+      color: $purple-nav;
+    }
+}

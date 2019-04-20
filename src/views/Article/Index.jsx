@@ -1,5 +1,6 @@
+/* eslint-disable react/jsx-no-bind */
 /* eslint-disable react/destructuring-assignment */
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Container,
   CardDeck
@@ -15,7 +16,10 @@ import ArticleDescription from '../../components/articleDescription/Index';
 import { getArticleRequest, getRecommendedArticles } from '../../redux/actions/articles';
 import Footer from '../../components/footer/Index';
 import Loader from '../../components/loader/Index';
+import Button from '../../components/button/Index';
 import './article.scss';
+
+import OptionModal from '../../components/modal';
 
 
 const Article = (props) => {
@@ -24,6 +28,9 @@ const Article = (props) => {
     article, getArticle, getRecommendedArticles: getArticles, userEmail
   } = props;
   const { match: { params: { slug } } } = props;
+  const [modalState, setState] = useState({
+    display: false
+  });
   useEffect(() => {
     async function fetchData() {
       getArticle(slug);
@@ -34,19 +41,30 @@ const Article = (props) => {
   if (!article) return <Loader />;
   const { email: authorEmail } = article.author || { author: {} };
 
+  const openModal = () => {
+    setState({ ...modalState, display: true });
+  };
+
+  const hideModal = () => {
+    setState({ display: false });
+  };
 
   return (
     <div className="article-container">
       <Container>
+        <OptionModal displayModal={modalState.display} closeModal={hideModal} />
         <ArticleTitle title={article.title} />
         <ArticleDescription description={article.description} />
         <ImageContainer src={(article.images && article.images[0]) || defaultImg} />
         <ArticleBody body={article.body} />
+        {(authorEmail && userEmail === authorEmail)
+        && (
         <div className="edit-delete-container">
-          {(authorEmail && userEmail === authorEmail)
-            && <Link className="link link-edit" to={`/edit-article/${article.slug}`}>Edit</Link>
-          }
+          <Link className="link link-edit" to={`/edit-article/${article.slug}`}>Edit</Link>
+          <Button text="Delete" onClick={openModal} />
         </div>
+        )
+          }
       </Container>
       <hr />
       <Container>

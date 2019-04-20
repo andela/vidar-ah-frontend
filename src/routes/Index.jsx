@@ -9,6 +9,7 @@ import LoginPage from '../views/LoginPage';
 import CreateArticle from '../views/createArticle';
 import EditArticle from '../views/editArticle/Index';
 
+
 const Routes = () => (
   <Switch>
     <Route path="/" exact component={LandingPage} />

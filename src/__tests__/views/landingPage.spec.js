@@ -12,6 +12,20 @@ describe('LandingPage', () => {
   const authReducer = {
     isLoggedIn: true,
   };
+
+  const props = {
+    article: [],
+    trendingArticles: [],
+    getArticles: jest.fn(),
+    getTrendingArticles: jest.fn(),
+    history: {
+      push: jest.fn(),
+      location: {
+        pathname: ''
+      }
+    },
+  };
+
   const articles = {
     articles: [
       {
@@ -55,7 +69,7 @@ describe('LandingPage', () => {
     component = mount(
       <Provider store={store}>
         <BrowserRouter>
-          <LandingPage />
+          <LandingPage {...props} />
         </BrowserRouter>
       </Provider>
     );

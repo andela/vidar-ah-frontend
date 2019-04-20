@@ -5,6 +5,7 @@ import {
   GET_TRENDING_ARTICLES,
   SAVE_ARTICLE_DATA,
   EDIT_ARTICLE,
+  DELETE_ARTICLE,
 } from '../actions/actionTypes';
 import initialState from './initialState';
 
@@ -22,6 +23,11 @@ export default (state = initialState, action) => {
       return { ...state, article: action.payload };
     case EDIT_ARTICLE:
       return { ...state, article: action.payload };
+    case DELETE_ARTICLE:
+      return {
+        ...state,
+        articles: state.articles.filter(article => (article.slug !== action.payload.article.slug))
+      };
     default: return state;
   }
 };

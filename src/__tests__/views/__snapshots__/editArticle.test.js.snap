@@ -1,0 +1,506 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Article editing page should render without crashing 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <MemoryRouter>
+    <Router
+      history={
+        Object {
+          "action": "POP",
+          "block": [Function],
+          "canGo": [Function],
+          "createHref": [Function],
+          "entries": Array [
+            Object {
+              "hash": "",
+              "key": "juvr3j",
+              "pathname": "/",
+              "search": "",
+              "state": undefined,
+            },
+          ],
+          "go": [Function],
+          "goBack": [Function],
+          "goForward": [Function],
+          "index": 0,
+          "length": 1,
+          "listen": [Function],
+          "location": Object {
+            "hash": "",
+            "key": "juvr3j",
+            "pathname": "/",
+            "search": "",
+            "state": undefined,
+          },
+          "push": [Function],
+          "replace": [Function],
+        }
+      }
+    >
+      <Connect(EditArticle)
+        article={Object {}}
+        editArticle={[MockFunction]}
+        history={
+          Object {
+            "location": Object {
+              "pathname": "",
+            },
+            "push": [MockFunction],
+          }
+        }
+        user={Object {}}
+      >
+        <EditArticle
+          article={
+            Object {
+              "body": "body",
+              "description": "description",
+              "id": 1,
+              "images": Array [
+                "image",
+              ],
+              "slug": "slug",
+              "title": "test",
+              "updatedAt": "time",
+            }
+          }
+          editArticle={[Function]}
+          history={
+            Object {
+              "location": Object {
+                "pathname": "",
+              },
+              "push": [MockFunction],
+            }
+          }
+          user={
+            Object {
+              "email": "test@email.com",
+              "name": "testName",
+              "role": "admin",
+              "username": "testUsername",
+            }
+          }
+        >
+          <div
+            className="create-article-container"
+          >
+            <Container
+              as="div"
+              fluid={false}
+            >
+              <div
+                className="container"
+              >
+                <Connect(Header)
+                  type="purple"
+                >
+                  <Header
+                    isLoggedIn={true}
+                    type="purple"
+                    user={
+                      Object {
+                        "email": "test@email.com",
+                        "name": "testName",
+                        "role": "admin",
+                        "username": "testUsername",
+                      }
+                    }
+                  >
+                    <Bootstrap(undefined)
+                      collapseOnSelect={true}
+                      expand="lg"
+                    >
+                      <ForwardRef
+                        bsPrefix="navbar"
+                        collapseOnSelect={true}
+                        expand="lg"
+                        innerRef={null}
+                      >
+                        <Uncontrolled(Navbar)
+                          bsPrefix="navbar"
+                          collapseOnSelect={true}
+                          expand="lg"
+                          innerRef={null}
+                        >
+                          <Navbar
+                            as="nav"
+                            bsPrefix="navbar"
+                            collapseOnSelect={true}
+                            expand="lg"
+                            onToggle={[Function]}
+                            variant="light"
+                          >
+                            <nav
+                              className="navbar navbar-expand-lg navbar-light"
+                            >
+                              <Link
+                                className="purple-link"
+                                to="/"
+                              >
+                                <a
+                                  className="purple-link"
+                                  href="/"
+                                  onClick={[Function]}
+                                >
+                                  authorsHAVEN
+                                </a>
+                              </Link>
+                              <NavbarToggle
+                                aria-controls="responsive-navbar-nav"
+                                as="button"
+                                label="Toggle navigation"
+                              >
+                                <button
+                                  aria-controls="responsive-navbar-nav"
+                                  aria-label="Toggle navigation"
+                                  className="navbar-toggler"
+                                  onClick={[Function]}
+                                  type="button"
+                                >
+                                  <span
+                                    className="navbar-toggler-icon"
+                                  />
+                                </button>
+                              </NavbarToggle>
+                              <NavbarCollapse
+                                id="responsive-navbar-nav"
+                              >
+                                <Collapse
+                                  appear={false}
+                                  dimension="height"
+                                  getDimensionValue={[Function]}
+                                  id="responsive-navbar-nav"
+                                  in={false}
+                                  mountOnEnter={false}
+                                  timeout={300}
+                                  unmountOnExit={false}
+                                >
+                                  <Transition
+                                    addEndListener={[Function]}
+                                    appear={false}
+                                    aria-expanded={null}
+                                    enter={true}
+                                    exit={true}
+                                    id="responsive-navbar-nav"
+                                    in={false}
+                                    mountOnEnter={false}
+                                    onEnter={[Function]}
+                                    onEntered={[Function]}
+                                    onEntering={[Function]}
+                                    onExit={[Function]}
+                                    onExited={[Function]}
+                                    onExiting={[Function]}
+                                    timeout={300}
+                                    unmountOnExit={false}
+                                  >
+                                    <div
+                                      aria-expanded={null}
+                                      className="navbar-collapse collapse"
+                                      id="responsive-navbar-nav"
+                                    >
+                                      <Nav
+                                        as="div"
+                                        className="mr-auto"
+                                        fill={false}
+                                        justify={false}
+                                      >
+                                        <ContextTransform(AbstractNav)
+                                          as="div"
+                                          className="mr-auto navbar-nav"
+                                          onSelect={[Function]}
+                                        >
+                                          <AbstractNav
+                                            as="div"
+                                            className="mr-auto navbar-nav"
+                                            onSelect={[Function]}
+                                            parentOnSelect={[Function]}
+                                          >
+                                            <div
+                                              className="mr-auto navbar-nav"
+                                              onKeyDown={[Function]}
+                                            />
+                                          </AbstractNav>
+                                        </ContextTransform(AbstractNav)>
+                                      </Nav>
+                                      <Nav
+                                        as="div"
+                                        fill={false}
+                                        justify={false}
+                                      >
+                                        <ContextTransform(AbstractNav)
+                                          as="div"
+                                          className="navbar-nav"
+                                          onSelect={[Function]}
+                                        >
+                                          <AbstractNav
+                                            as="div"
+                                            className="navbar-nav"
+                                            onSelect={[Function]}
+                                            parentOnSelect={[Function]}
+                                          >
+                                            <div
+                                              className="navbar-nav"
+                                              onKeyDown={[Function]}
+                                            >
+                                              <div>
+                                                <Link
+                                                  className="purple-link"
+                                                  to="/"
+                                                >
+                                                  <a
+                                                    className="purple-link"
+                                                    href="/"
+                                                    onClick={[Function]}
+                                                  >
+                                                    Home
+                                                  </a>
+                                                </Link>
+                                                <Link
+                                                  className="purple-link"
+                                                  to="/create-article"
+                                                >
+                                                  <a
+                                                    className="purple-link"
+                                                    href="/create-article"
+                                                    onClick={[Function]}
+                                                  >
+                                                    Create post
+                                                  </a>
+                                                </Link>
+                                              </div>
+                                            </div>
+                                          </AbstractNav>
+                                        </ContextTransform(AbstractNav)>
+                                      </Nav>
+                                    </div>
+                                  </Transition>
+                                </Collapse>
+                              </NavbarCollapse>
+                            </nav>
+                          </Navbar>
+                        </Uncontrolled(Navbar)>
+                      </ForwardRef>
+                    </Bootstrap(undefined)>
+                  </Header>
+                </Connect(Header)>
+              </div>
+            </Container>
+            <div>
+              <Create
+                article={
+                  Object {
+                    "body": "<p>body</p>",
+                    "description": "description",
+                    "image": "image",
+                    "slug": "slug",
+                    "title": "test",
+                  }
+                }
+                onCancel={[Function]}
+                onChangeText={[Function]}
+                onSubmit={[Function]}
+                user={
+                  Object {
+                    "email": "test@email.com",
+                    "name": "testName",
+                    "role": "admin",
+                    "username": "testUsername",
+                  }
+                }
+              >
+                <div
+                  className="form-field"
+                >
+                  <input
+                    className="form-title"
+                    key="title"
+                    name="title"
+                    onChange={[Function]}
+                    placeholder="Title"
+                    type="text"
+                    value="test"
+                  />
+                  <input
+                    className="form-description"
+                    key="description"
+                    name="description"
+                    onChange={[Function]}
+                    placeholder="Description"
+                    type="text"
+                    value="description"
+                  />
+                  <div
+                    className="upload-btn-wrapper"
+                  >
+                    <img
+                      alt="image"
+                      className="img-placeholder"
+                      src="image"
+                    />
+                    <button
+                      className="btn btn-upload-img"
+                    >
+                      Add Image
+                    </button>
+                    <input
+                      name="image"
+                      onChange={[Function]}
+                      type="file"
+                    />
+                  </div>
+                  <Container
+                    as="div"
+                    fluid={false}
+                  >
+                    <div
+                      className="container"
+                    >
+                      <Bootstrap(Row)
+                        className="p-2"
+                      >
+                        <Row
+                          as="div"
+                          bsPrefix="row"
+                          className="p-2"
+                          noGutters={false}
+                        >
+                          <div
+                            className="p-2 row"
+                          >
+                            <Col
+                              as="div"
+                            >
+                              <div
+                                className="col"
+                              >
+                                <span />
+                              </div>
+                            </Col>
+                            <Col
+                              as="div"
+                            >
+                              <div
+                                className="col"
+                              >
+                                4/20/2019
+                              </div>
+                            </Col>
+                          </div>
+                        </Row>
+                      </Bootstrap(Row)>
+                    </div>
+                  </Container>
+                  <Quill
+                    className="form-body"
+                    modules={Object {}}
+                    onChange={[Function]}
+                    theme="snow"
+                    value="<p>body</p>"
+                  >
+                    <div
+                      className="quill form-body"
+                      key="0"
+                    >
+                      <div
+                        key="0"
+                      />
+                    </div>
+                  </Quill>
+                  <div
+                    className="center-button"
+                  >
+                    <Container
+                      as="div"
+                      fluid={false}
+                    >
+                      <div
+                        className="container"
+                      >
+                        <Bootstrap(Row)>
+                          <Row
+                            as="div"
+                            bsPrefix="row"
+                            noGutters={false}
+                          >
+                            <div
+                              className="row"
+                            >
+                              <Col
+                                as="div"
+                                md={
+                                  Object {
+                                    "offset": 4,
+                                    "span": 1,
+                                  }
+                                }
+                              >
+                                <div
+                                  className="col-md-1 offset-md-4"
+                                >
+                                  <Button
+                                    onClick={[Function]}
+                                    text="Preview"
+                                    type="solid"
+                                  >
+                                    <button
+                                      className="yellow-button"
+                                      onClick={[Function]}
+                                    >
+                                      Preview
+                                    </button>
+                                  </Button>
+                                </div>
+                              </Col>
+                              <Col
+                                as="div"
+                                md={
+                                  Object {
+                                    "offset": 1,
+                                    "span": 1,
+                                  }
+                                }
+                              >
+                                <div
+                                  className="col-md-1 offset-md-1"
+                                >
+                                  <Button
+                                    onClick={[Function]}
+                                    text="Cancel"
+                                  >
+                                    <button
+                                      className="yellow-button"
+                                      onClick={[Function]}
+                                    >
+                                      Cancel
+                                    </button>
+                                  </Button>
+                                </div>
+                              </Col>
+                            </div>
+                          </Row>
+                        </Bootstrap(Row)>
+                      </div>
+                    </Container>
+                  </div>
+                </div>
+              </Create>
+            </div>
+          </div>
+        </EditArticle>
+      </Connect(EditArticle)>
+    </Router>
+  </MemoryRouter>
+</Provider>
+`;

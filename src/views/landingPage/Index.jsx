@@ -127,7 +127,7 @@ LandingPage.propTypes = {
 };
 
 LandingPage.defaultProps = {
-  history: ''
+  history: {}
 };
 
 export default connect(() => mapStateToProps, mapDispatchToProps)(LandingPage);

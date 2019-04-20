@@ -12,13 +12,13 @@ const Preview = (props) => {
   const {
     onSubmit, article, continueEdit, loading
   } = props;
+
   let image;
-
-
   if (!article.image) {
     image = 'https://via.placeholder.com/700x400';
   } else if (typeof article.image === 'string') {
-    image = article.image;
+    const { image: img } = article;
+    image = img;
   } else {
     image = URL.createObjectURL(article.image);
   }

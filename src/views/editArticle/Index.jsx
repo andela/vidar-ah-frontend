@@ -19,6 +19,7 @@ const EditArticle = (props) => {
     slug: article.slug,
     image: article.images && article.images.length > 0 ? article.images[0] : 'https://via.placeholder.com/700x400',
   });
+
   const [state, setState] = useState({
     component: 'write',
     loading: false,
@@ -32,6 +33,7 @@ const EditArticle = (props) => {
     errors,
     successMessage
   } = state;
+
 
   const completeArticleUpdate = async () => {
     setState({ ...state, errors: [], loading: true });
@@ -71,7 +73,6 @@ const EditArticle = (props) => {
   ));
 
   const renderSuccess = message => (message ? <Alert variant="success">{message}</Alert> : null);
-
   return (
     <div className="create-article-container">
       <Container>
@@ -89,7 +90,6 @@ const EditArticle = (props) => {
                 onCancel={cancelArticle}
                 article={articleData}
                 user={user}
-                // actionType="EDIT_ARTICLE"
               />
             )
             : (

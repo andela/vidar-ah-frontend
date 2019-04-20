@@ -20,12 +20,23 @@ describe('get an article by its slug', () => {
   };
   const recommendedArticles = [article];
 
+  const currentUser = {
+    username: 'testUsername',
+    email: 'test@email.com',
+    name: 'testName',
+    role: 'admin',
+  };
+
   it('renders an article component correctly', () => {
     const store = mockStore({
       articleReducer: {
         article,
         recommendedArticles,
       },
+      authReducer: {
+        isLoggedIn: true,
+        currentUser,
+      }
     });
 
     component = mount(
@@ -49,6 +60,10 @@ describe('get an article by its slug', () => {
         article,
         recommendedArticles,
       },
+      authReducer: {
+        isLoggedIn: true,
+        currentUser,
+      }
     });
 
     component = mount(
