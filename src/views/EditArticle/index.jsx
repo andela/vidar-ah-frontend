@@ -1,14 +1,12 @@
-/* eslint-disable react/jsx-no-bind */
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Container, Alert } from 'react-bootstrap';
-import Create from '../../components/createForms/Create';
-import Preview from '../../components/previewArticle/Preview';
+import Create from '../../components/CreateForms';
+import Preview from '../../components/PreviewArticle';
 import { validateArticle } from '../../utils/validator';
 import { editArticle } from '../../redux/actions/articles';
-import Header from '../../components/header/Header';
-import './editArticle.scss';
+import Header from '../../components/Header';
 
 const EditArticle = (props) => {
   const { user, article } = props;
@@ -17,8 +15,9 @@ const EditArticle = (props) => {
     description: article.description,
     body: article.body,
     slug: article.slug,
-    image: article.images && article.images.length > 0 ? article.images[0] : 'https://via.placeholder.com/700x400',
+    image: article.images && article.images.length > 0 ? article.images[0] : '',
   });
+
   const [state, setState] = useState({
     component: 'write',
     loading: false,
@@ -32,6 +31,7 @@ const EditArticle = (props) => {
     errors,
     successMessage
   } = state;
+
 
   const completeArticleUpdate = async () => {
     setState({ ...state, errors: [], loading: true });
@@ -71,11 +71,10 @@ const EditArticle = (props) => {
   ));
 
   const renderSuccess = message => (message ? <Alert variant="success">{message}</Alert> : null);
-
   return (
     <div className="create-article-container">
       <Container>
-        <Header type="purple" />
+        <Header type="purple" history={props.history} />
         {renderErrors(errors)}
         {renderSuccess(successMessage)}
       </Container>
@@ -89,7 +88,6 @@ const EditArticle = (props) => {
                 onCancel={cancelArticle}
                 article={articleData}
                 user={user}
-                // actionType="EDIT_ARTICLE"
               />
             )
             : (
@@ -121,7 +119,7 @@ EditArticle.defaultProps = {
 
 const mapStateToProps = state => ({
   user: state.authReducer.currentUser,
-  article: state.articleReducer.article,
+  article: state.articleReducer.article.article,
 });
 
 export default connect(() => mapStateToProps, { editArticle })(EditArticle);

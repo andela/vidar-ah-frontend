@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ReactQuill from 'react-quill';
 import { Container, Row, Col } from 'react-bootstrap';
-
 import Button from '../Button';
 import '../../views/CreateArticle/createArticle.scss';
+// import setArticleImage from '../../utils/setArticleImage';
 
 const fields = [
   {
@@ -22,20 +22,10 @@ const Create = (props) => {
     onCancel,
     article,
     user,
-    // actionType,
   } = props;
   const updateEditor = text => onChangeText({ target: { name: 'body', value: text } });
 
-  let image;
-
-
-  if (!article.image) {
-    image = 'https://via.placeholder.com/700x400';
-  } else if (typeof article.image === 'string') {
-    image = article.image;
-  } else {
-    image = URL.createObjectURL(article.image);
-  }
+  // const image = setArticleImage(article);
 
   return (
     <div className="form-field">
@@ -53,12 +43,7 @@ const Create = (props) => {
         ))
       }
       <div className="upload-btn-wrapper">
-        <img
-          alt="image"
-          src={image}
-          className="img-placeholder"
-        />
-        <button className="btn btn-upload-img">Add Image</button>
+        <button className="btn">Add Image</button>
         <input
           type="file"
           name="image"
@@ -79,21 +64,9 @@ const Create = (props) => {
         onChange={updateEditor}
         className="form-body"
       />
-      <div className="center-button">
-        <Container>
-          <Row>
-            <Col md={{ span: 1, offset: 4 }}>
-              <Button text="Preview" onClick={onSubmit} type="solid" />
-            </Col>
-            <Col md={{ span: 1, offset: 1 }}>
-              {/* { (actionType === 'EDIT_ARTICLE')
-                ? (<Button onClick={onDelete} text="Cancel" />)
-                : (<Button onClick={onDelete} text="Delete" />)
-              } */}
-              <Button onClick={onCancel} text="Cancel" />
-            </Col>
-          </Row>
-        </Container>
+      <div className="center-button center-button-create-form">
+        <Button text="Preview" onClick={onSubmit} type="solid" className="center-button-btn" />
+        <Button onClick={onCancel} text="Delete" className="center-button-btn" />
       </div>
     </div>
   );
@@ -105,11 +78,6 @@ Create.propTypes = {
   onCancel: PropTypes.func.isRequired,
   article: PropTypes.object.isRequired,
   user: PropTypes.object.isRequired,
-  // actionType: PropTypes.string,
 };
-
-// Create.defaultProps = {
-//   actionType: 'CREATE_ARTICLE',
-// };
 
 export default Create;

@@ -20,11 +20,14 @@ import {
   EmailShareButton
 } from 'react-share';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+import Button from '../../components/Button';
 import ArticleTitle from '../../components/ArticleTitle/index';
 import ArticleBody from '../../components/ArticleBody/index';
 import ImageContainer from '../../components/ImageContainer/index';
 import ArticleSummary from '../../components/ArticleSummary/index';
 import ArticleDescription from '../../components/ArticleDescription/index';
+import DeleteModal from '../../components/DeleteModal';
 import {
   getArticleRequest,
   getRecommendedArticles,
@@ -46,7 +49,8 @@ const Article = (props) => {
     articlePayload,
     getArticle,
     getRecommendedArticles: getArticles,
-    isLoggedIn
+    isLoggedIn,
+    userEmail,
   } = props;
 
   const {
@@ -55,7 +59,6 @@ const Article = (props) => {
     userReaction,
     article
   } = articlePayload;
-
 
   const [progress, setProgress] = useState(0);
   const [state, setState] = useState({
@@ -89,8 +92,8 @@ const Article = (props) => {
     const { innerHeight } = window;
     const { documentElement: { scrollTop } } = document;
     const bodyElement = document.getElementById('article-container');
-    const clientDocument = bodyElement.getBoundingClientRect();
-    const heightIsHtml = clientDocument.height;
+    const clientDocument = bodyElement && bodyElement.getBoundingClientRect();
+    const heightIsHtml = bodyElement && clientDocument.height;
     const scrollMax = Math.ceil(heightIsHtml - innerHeight);
     setProgress((scrollTop / scrollMax) * 100);
   };
@@ -101,6 +104,13 @@ const Article = (props) => {
     window.addEventListener('scroll', handleScroll);
   }, [slug]);
 
+  const [modalState, setDeleteModalState] = useState({
+    display: false
+  });
+
+  const toggleDeleteModal = () => {
+    setDeleteModalState({ display: !modalState.display });
+  };
 
   const toFollowUser = (id) => {
     props.followUser(id).then((response) => {
@@ -115,6 +125,8 @@ const Article = (props) => {
   };
 
   if (!article) return <Loader />;
+  const { email: authorEmail } = article.author || { author: {} };
+
   const sendLikeRequest = async (event) => {
     event.preventDefault();
     await props.likeArticleRequest(slug);
@@ -157,7 +169,7 @@ const Article = (props) => {
             variant="primary"
           />
         )}
-
+        <DeleteModal displayModal={modalState.display} closeModal={toggleDeleteModal} />
         <ArticleTitle title={article.title} />
         <ArticleDescription description={article.description} />
         {
@@ -168,6 +180,14 @@ const Article = (props) => {
           ) : null
         }
         <ArticleBody body={article.body} />
+        {(authorEmail && userEmail === authorEmail)
+          && (
+            <div className="edit-delete-container">
+              <Link className="link link-edit-article" to={`/edit-article/${article.slug}`}>Edit</Link>
+              <Button text="Delete" className="btn-delete-article" onClick={toggleDeleteModal} />
+            </div>
+          )
+        }
       </Container>
       <Container className="fab-likes" lg={2} sm={2}>
         <Row className="icons-width-set" lg={1} sm={1}>
@@ -327,16 +347,20 @@ Article.propTypes = {
   dislikeArticleRequest: PropTypes.func.isRequired,
   isLoggedIn: PropTypes.bool,
   followUser: PropTypes.func.isRequired,
-  unFollowUser: PropTypes.func.isRequired
+  unFollowUser: PropTypes.func.isRequired,
+  userEmail: PropTypes.string,
+
 };
 
 Article.defaultProps = {
   articlePayload: { article: { Comments: [] } },
-  isLoggedIn: false
+  isLoggedIn: false,
+  userEmail: ''
 };
 
 const mapStateToProps = state => ({
   articlePayload: state.articleReducer.article,
+  userEmail: state.authReducer.currentUser.email,
   recommendedArticles: state.articleReducer.recommendedArticles,
   isLoggedIn: state.authReducer.isLoggedIn
 });
