@@ -1,4 +1,5 @@
 /* eslint-disable import/no-named-as-default */
+import { connect } from 'react-redux';
 import React from 'react';
 import './banner.scss';
 import {
@@ -11,7 +12,9 @@ import Button from '../button/Index';
 import HeaderText from '../headerText/Index';
 import Header from '../header/Index';
 
-export default function Banner({ history }) {
+const Banner = (props) => {
+  const { history, authStatus } = props;
+
   return (
     <section>
       <div className="cont">
@@ -23,17 +26,34 @@ export default function Banner({ history }) {
             </Col>
           </Row>
           <div className="button">
-            <Button
-            text="Get Started"
-            onClick={() => history.push('/signup')} // eslint-disable-line react/jsx-no-bind
-            />
+            {
+              authStatus ? (
+                <Button
+                  text="Create post"
+                  onClick={() => history.push('/create-article')} // eslint-disable-line react/jsx-no-bind
+                />
+              ) : (
+                <Button
+                    text="Get Started"
+                    onClick={() => history.push('/signup')} // eslint-disable-line react/jsx-no-bind
+                  />
+              )
+            }
+
           </div>
         </Container>
       </div>
     </section>
   );
-}
+};
 
 Banner.propTypes = {
   history: PropTypes.instanceOf(Object).isRequired,
+  authStatus: PropTypes.bool.isRequired
 };
+
+const mapStateToProps = state => ({
+  authStatus: state.authReducer.isLoggedIn
+});
+
+export default connect(() => mapStateToProps, {})(Banner);

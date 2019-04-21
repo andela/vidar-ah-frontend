@@ -13,7 +13,7 @@ import {
 import './profile.scss';
 import Footer from '../../components/footer/Index';
 import { editProfileRequest, getProfileRequest } from '../../redux/actions/profile';
-import Header from '../../components/header/Header';
+import Header from '../../components/header/Index';
 import ImageUpload from '../../components/imageUpload/Index';
 import FormContainer from '../../components/formContainer/Index';
 import { validateUserProfile } from '../../utils/validator';

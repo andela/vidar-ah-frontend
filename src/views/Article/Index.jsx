@@ -33,7 +33,7 @@ import {
   getRecommendedArticles
 } from '../../redux/actions/articles';
 import Footer from '../../components/footer/Index';
-import Header from '../../components/header/Header';
+import Header from '../../components/header/Index';
 import Loader from '../../components/loader/Index';
 import './article.scss';
 import Comment from '../../components/comment/Index';

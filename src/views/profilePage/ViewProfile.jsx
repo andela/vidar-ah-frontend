@@ -19,7 +19,7 @@ import following from '../../assets/images/following.png';
 import articleWritten from '../../assets/images/articles-written.png';
 import articleRead from '../../assets/images/article-read.png';
 import { getProfileRequest } from '../../redux/actions/profile';
-import Header from '../../components/header/Header';
+import Header from '../../components/header/Index';
 import ImageUpload from '../../components/imageUpload/Index';
 import './profile.scss';
 

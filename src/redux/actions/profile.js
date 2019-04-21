@@ -15,6 +15,7 @@ export const getProfileRequest = () => async (dispatch) => {
     const response = await axios.get(`${apiUrl}/userprofile`, {
       headers: { Authorization: token }
     });
+    localStorage.setItem('userprofile', JSON.stringify(response.data.body));
     dispatch(getProfile(response.data.body));
   } catch (error) {
     return error.response;
