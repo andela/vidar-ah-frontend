@@ -6,7 +6,6 @@ import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import ViewProfile from '../../views/profilePage/ViewProfile';
 
-
 describe('ViewProfile component', () => {
   const mockStore = configureStore([thunk]);
   let component;
@@ -23,7 +22,17 @@ describe('ViewProfile component', () => {
       authReducer: {
         profile,
         userProfile,
+        currentUser: {
+          id: 0,
+        }
       },
+      statsReducer: {
+        followers: 0,
+        followings: 0,
+        articlesRead: 0,
+        articlesWritten: 0,
+        authorId: 0,
+      }
     });
 
     component = mount(
@@ -47,7 +56,17 @@ describe('ViewProfile component', () => {
       authReducer: {
         profile,
         userProfile,
+        currentUser: {
+          id: 0,
+        }
       },
+      statsReducer: {
+        followers: 0,
+        followings: 0,
+        articlesRead: 0,
+        articlesWritten: 0,
+        authorId: 0,
+      }
     });
 
     component = mount(
