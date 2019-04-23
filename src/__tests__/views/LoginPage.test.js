@@ -8,7 +8,7 @@ import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import { Login } from '../../views/LoginPage';
 import Header from '../../components/header/Header';
-import Button from '../../components/button/Button';
+import Button from '../../components/button/Index';
 
 
 const getLoginPage = () => {

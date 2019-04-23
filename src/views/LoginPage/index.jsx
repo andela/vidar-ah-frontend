@@ -7,7 +7,7 @@ import {
 } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import Header from '../../components/header/Header';
-import Button from '../../components/button/Button';
+import Button from '../../components/button/Index';
 import { loginUser } from '../../redux/actions/auth';
 import Loader from '../../components/loader/Index';
 import './login.scss';

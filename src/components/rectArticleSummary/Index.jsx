@@ -7,12 +7,14 @@ import {
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import timeCalc from '../../utils/timeCalc';
+import nameSplit from '../../utils/nameSplit';
 
 const RectArticleSummary = (props) => {
   const {
     url, header, name, time
   } = props;
   const hrs = timeCalc(time);
+  const firstName = nameSplit(name);
 
   return (
     <Card style={{ }} className="card-outline">
@@ -24,7 +26,7 @@ const RectArticleSummary = (props) => {
       <Card.Footer className="text-muted">
         <Row className="small">
           <Col sm={1}><img alt="user" src="https://res.cloudinary.com/dqyytlxwe/image/upload/v1554891501/user-shape_1_1.png" /></Col>
-          <Col sm={6}>{name}</Col>
+          <Col sm={6}>{firstName}</Col>
           <Col>
             {hrs}
             {' '}

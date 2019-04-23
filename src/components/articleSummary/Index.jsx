@@ -8,12 +8,14 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import './articleSummary.scss';
 import timeCalc from '../../utils/timeCalc';
+import nameSplit from '../../utils/nameSplit';
 
 const ArticleSummary = (props) => {
   const {
     src, header, time, url, name
   } = props;
   const hrs = timeCalc(time);
+  const firstName = nameSplit(name);
   const imageSource = src || 'https://res.cloudinary.com/djdsxql5q/image/upload/v1554806589/Authors%20Haven/culture.jpg';
 
   return (
@@ -28,7 +30,7 @@ const ArticleSummary = (props) => {
         <Row className="small">
           <Col sm={2} className="p-0"><img alt="user" src="https://res.cloudinary.com/dqyytlxwe/image/upload/v1554891501/user-shape_1_1.png" /></Col>
           <Col sm={7} className="p-0">
-            {name}
+            {firstName}
           </Col>
           <Col sm={3} className="p-0">
             <small>

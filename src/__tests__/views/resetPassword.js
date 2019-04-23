@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import ResetPassword from '../../views/passwordReset/ResetPassword';
-import Button from '../../components/button/Button';
+import Button from '../../components/button/Index';
 
 describe('Reset password', () => {
   const mockStore = configureStore([thunk]);

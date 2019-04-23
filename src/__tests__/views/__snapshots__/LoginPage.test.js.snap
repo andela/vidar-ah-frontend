@@ -24,7 +24,7 @@ exports[`Login page it render the login page without failing 1`] = `
           "entries": Array [
             Object {
               "hash": "",
-              "key": "4szgb9",
+              "key": "0ne726",
               "pathname": "/",
               "search": "",
               "state": undefined,
@@ -38,7 +38,7 @@ exports[`Login page it render the login page without failing 1`] = `
           "listen": [Function],
           "location": Object {
             "hash": "",
-            "key": "4szgb9",
+            "key": "0ne726",
             "pathname": "/",
             "search": "",
             "state": undefined,
@@ -401,11 +401,12 @@ exports[`Login page it render the login page without failing 1`] = `
                               />
                             </FormControl>
                             <Button
+                              className=""
                               onClick={[Function]}
                               text="Login"
                             >
                               <button
-                                className="yellow-button"
+                                className="yellow-button "
                                 onClick={[Function]}
                               >
                                 Login

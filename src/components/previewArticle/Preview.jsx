@@ -2,7 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Container, Row, Col } from 'react-bootstrap';
-import Button from '../button/Button';
+import Button from '../button/Index';
 import ArticleTitle from '../articleTitle/Index';
 import ArticleBody from '../articleBody/Index';
 import '../../views/createArticle/createArticle.scss';

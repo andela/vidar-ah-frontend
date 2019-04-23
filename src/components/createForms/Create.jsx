@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import ReactQuill from 'react-quill';
 import { Container, Row, Col } from 'react-bootstrap';
 
-import Button from '../button/Button';
+import Button from '../button/Index';
 import '../../views/createArticle/createArticle.scss';
 
 const fields = [

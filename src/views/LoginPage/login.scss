@@ -1,4 +1,4 @@
-@import "../../assets/default";
+@import '../../assets/default';
 
 .yellow-button-login {
   width: $input-field-width;
@@ -21,7 +21,7 @@
 
     & .checkbox {
       height: 1em;
-      margin-right: .5em;
+      margin-right: 0.5em;
       width: 1em;
     }
 
@@ -49,7 +49,7 @@
     & .link-to-another-page {
       color: $yellow;
       font-size: 1em;
-      margin: 0 .5em;
+      margin: 0 0.5em;
       text-decoration: none;
     }
   }

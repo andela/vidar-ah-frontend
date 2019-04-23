@@ -15,24 +15,30 @@
   height: 0;
 }
 
-#image-form .avatar-btn {
-  background-color: $yellow-color;
-  border: 0;
-  border-color: $yellow-color;
-  border-radius: 0;
-  color: $black-color;
-  margin-top: 1.25rem;
-  outline-style: none;
+#image-form {
+
+  .avatar-btn {
+    background-color: $yellow-color;
+    border: 0;
+    border-color: $yellow-color;
+    border-radius: 0;
+    color: $black-color;
+    margin-top: 1.25rem;
+    outline-style: none;
+  }
 }
 
-#action-btn .avatar-btn {
-  background-color: $yellow-color;
-  border: 0;
-  border-color: $yellow-color;
-  border-radius: 0;
-  color: $black-color;
-  margin-top: 1.25rem;
-  outline-style: none;
+#action-btn {
+
+  .avatar-btn {
+    background-color: $yellow-color;
+    border: 0;
+    border-color: $yellow-color;
+    border-radius: 0;
+    color: $black-color;
+    margin-top: 1.25rem;
+    outline-style: none;
+  }
 }
 
 .align-btn {
