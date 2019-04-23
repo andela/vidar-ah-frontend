@@ -9,6 +9,7 @@ describe('ArticleSummary component', () => {
       header: 'header',
       time: 'time',
       slug: 'slug',
+      url: 'url'
     };
     const wrapper = shallow(<ArticleSummary {...props} />);
 

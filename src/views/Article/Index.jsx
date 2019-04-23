@@ -1,5 +1,7 @@
+/* eslint-disable react/jsx-no-bind */
 /* eslint-disable react/destructuring-assignment */
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
+import LoadingBar from 'react-top-loading-bar';
 import {
   Container,
   CardDeck,
@@ -32,17 +34,24 @@ import {
   getRecommendedArticles
 } from '../../redux/actions/articles';
 import Footer from '../../components/footer/Index';
+import Header from '../../components/header/Header';
 import Loader from '../../components/loader/Index';
 import './article.scss';
 
 const Article = (props) => {
   const { article, getArticle, getRecommendedArticles: getArticles } = props;
+  const [progress, setProgress] = useState(0);
   const { images } = article;
-  let image = 'https://res.cloudinary.com/djdsxql5q/image/upload/v1554806589/Authors%20Haven/culture.jpg';
 
-  if (images && images.length > 0) {
+  let imageSrc;
+
+  if (images) {
     const [url] = images;
-    image = url;
+    if (url) {
+      imageSrc = url;
+    } else {
+      imageSrc = 'https://res.cloudinary.com/djdsxql5q/image/upload/v1554806589/Authors%20Haven/culture.jpg';
+    }
   }
 
   const {
@@ -51,21 +60,45 @@ const Article = (props) => {
     }
   } = props;
   const shareUrl = `https://vidar-ah-frontend-staging.herokuapp.com/articles/${slug}`;
+
+  const handleScroll = () => {
+    const { innerHeight } = window;
+    const { documentElement: { scrollTop } } = document;
+    const bodyElement = document.getElementById('article-container');
+    const clientDocument = bodyElement.getBoundingClientRect();
+    const heightIsHtml = clientDocument.height;
+    const scrollMax = Math.ceil(heightIsHtml - innerHeight);
+    setProgress((scrollTop / scrollMax) * 100);
+  };
+
   useEffect(() => {
     getArticle(slug);
     getArticles();
+    window.addEventListener('scroll', handleScroll);
   }, [slug]);
 
-  if (!article) return <Loader />;
 
+  if (!article) return <Loader />;
   return (
-    <div className="article-container">
+    <div id="article-container">
+      <LoadingBar
+        progress={progress}
+        height={5}
+        color="#8932b4"
+        onLoaderFinished={() => setProgress(0)}
+        onRef={ref => ref}
+      />
+      <Header type="purple" />
       <Container>
         <ArticleTitle title={article.title} />
         <ArticleDescription description={article.description} />
-        <ImageContainer
-          src={image}
-        />
+        {
+          imageSrc ? (
+            <ImageContainer
+              src={imageSrc}
+            />
+          ) : null
+        }
         <ArticleBody body={article.body} />
       </Container>
       <Container>
@@ -137,16 +170,17 @@ const Article = (props) => {
     </div>
   );
 };
+
 Article.propTypes = {
   article: PropTypes.instanceOf(Object),
   getArticle: PropTypes.func.isRequired,
   recommendedArticles: PropTypes.array.isRequired,
   getRecommendedArticles: PropTypes.func.isRequired,
-  match: PropTypes.object.isRequired
+  match: PropTypes.object.isRequired,
 };
 
 Article.defaultProps = {
-  article: {}
+  article: {},
 };
 
 const mapStateToProps = state => ({

@@ -24,8 +24,8 @@ export default function Banner(props) {
           </Row>
           <div className="button">
             <Button
-            text="Get Started"
-            onClick={() => props.history.push('/signup')} // eslint-disable-line react/jsx-no-bind
+              text="Get Started"
+              onClick={() => props.history.push('/signup')} // eslint-disable-line react/jsx-no-bind
             />
           </div>
         </Container>

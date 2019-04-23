@@ -1,8 +1,14 @@
-import { LOGIN, LOGOUT, CURRENT_USER } from '../actions/actionTypes';
+import {
+  LOGIN,
+  LOGOUT,
+  CURRENT_USER,
+  VIEW_PROFILE,
+} from '../actions/actionTypes';
 
 const initialState = {
   isLoggedIn: false,
-  currentUser: {}
+  currentUser: {},
+  profile: {},
 };
 
 export default (state = initialState, action = {}) => {
@@ -24,6 +30,10 @@ export default (state = initialState, action = {}) => {
         ...state,
         isLoggedIn: false,
         currentUser: {}
+      };
+    case VIEW_PROFILE:
+      return {
+        ...state, profile: action.payload
       };
     default:
       return state;

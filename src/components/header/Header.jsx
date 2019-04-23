@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable react/jsx-no-bind */
 /* eslint-disable react/jsx-indent */
 /* eslint-disable indent */
@@ -37,6 +38,7 @@ const Header = (props) => {
                 <div>
                   <Link to="/" className={className}>Home</Link>
                   <Link to="/create-article" className={className}>Create post</Link>
+                  <Link to="/userprofile" className={className}>My Profile</Link>
                   <Link to="#" onClick={logout} className={className}>Log out</Link>
                 </div>
               ) : (
@@ -56,7 +58,6 @@ Header.propTypes = {
   type: PropTypes.string,
   isLoggedIn: PropTypes.bool,
   logOut: PropTypes.func.isRequired,
-  history: PropTypes.object.isRequired
 };
 Header.defaultProps = {
   type: 'white',

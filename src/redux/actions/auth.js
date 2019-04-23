@@ -3,6 +3,7 @@ import axios from 'axios';
 import { LOGIN, LOGOUT } from './actionTypes';
 import { stopFetching, startFetching } from './fetching';
 import { saveToken, removeToken } from '../../utils/localStorage';
+import { getProfileRequest } from './profile';
 
 
 const baseUrl = 'https://vidar-ah-backend-production.herokuapp.com';
@@ -24,6 +25,7 @@ export const loginUser = userData => async (dispatch) => {
           currentUser: data.user
         }
       });
+      dispatch(getProfileRequest());
       dispatch(stopFetching());
       return true;
     }

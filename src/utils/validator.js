@@ -13,3 +13,18 @@ export const validateArticle = (articleData) => {
   });
   return errors;
 };
+
+export const validateUserProfile = (userData) => {
+  const fieldsArr = Object.entries(userData);
+  const errors = [];
+  fieldsArr.forEach((field) => {
+    if (!field[1]) {
+      errors.push(`${field[0]} is required.`);
+    } else if (typeof field[1] !== 'string') {
+      errors.push(`${field[0]} is invalid`);
+    } else if (field[1].length > 255) {
+      errors.push(`${field[0]} should not be more than 255 characters long`);
+    }
+  });
+  return errors;
+};

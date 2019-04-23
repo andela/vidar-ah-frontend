@@ -3,7 +3,7 @@ import { mount } from 'enzyme';
 import { BrowserRouter } from 'react-router-dom';
 import Button from '../../components/button/Button';
 
-const testFunc = () => {};
+const testFunc = () => { };
 
 describe('Button component', () => {
   let component;

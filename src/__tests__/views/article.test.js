@@ -26,6 +26,9 @@ describe('get an article by its slug', () => {
         article,
         recommendedArticles,
       },
+      authReducer: {
+        isLoggedIn: true,
+      }
     });
 
     component = mount(
@@ -39,7 +42,7 @@ describe('get an article by its slug', () => {
         </MemoryRouter>
       </Provider>
     );
-    expect(component.find('.article-container').exists()).toBe(true);
+    expect(component.find('#article-container').exists()).toBe(true);
   });
 
 
@@ -50,20 +53,23 @@ describe('get an article by its slug', () => {
         article,
         recommendedArticles,
       },
+      authReducer: {
+        isLoggedIn: true
+      }
     });
 
     component = mount(
       <Provider store={store}>
         <MemoryRouter>
           <Article
-              history={{ location: { pathname: '/articles/:slug' } }}
-              match={{ params: { slug: 'poierwjvoejcijwoei' } }}
-              article={article}
-            />
+            history={{ location: { pathname: '/articles/:slug' } }}
+            match={{ params: { slug: 'poierwjvoejcijwoei' } }}
+            article={article}
+          />
         </MemoryRouter>
       </Provider>
     );
 
-    expect(component.find('.article-container').exists()).toBe(true);
+    expect(component.find('#article-container').exists()).toBe(true);
   });
 });

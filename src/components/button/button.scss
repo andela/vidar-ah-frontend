@@ -1,9 +1,4 @@
-$button-yellow: #e2d754;
-$button-yellow-hover: rgb(172, 163, 64);
-$button-shadow: rgba(111, 102, 3, .5);
-$button-shadow-hover: rgba(111, 102, 3, .8);
-$button-text: #51455c;
-$button-text-hover: rgb(46, 39, 53);
+@import '../../assets/default';
 
 .yellow-button {
   background: $button-yellow;

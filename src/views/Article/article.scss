@@ -1,14 +1,36 @@
+@import '../../assets/default';
+
 .edit-delete-container {
-  border: 1px solid black;
-  width: 80%;
-  margin: auto;
+  border: 1px solid $black-color;
   display: flex;
   justify-content: space-around;
+  margin: auto;
+  width: 80%;
 
   .btn {
     display: inline-block;
-    width: 5rem;
     text-align: center;
+    width: 5rem;
 
   }
+}
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.file-input {
+  cursor: pointer;
+  padding: 10px;
+}
+
+.article-container {
+  height: 100%;
+}
+
+.progress-bar {
+  color: $purple-nav;
+  height: 5px;
 }

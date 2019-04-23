@@ -1,4 +1,5 @@
 import authReducer from '../../../redux/reducers/authReducer';
+import * as types from '../../../redux/actions/actionTypes';
 
 const loggedInUser = {
   name: 'vidar',
@@ -9,7 +10,8 @@ const loggedInUser = {
 
 const initialState = {
   isLoggedIn: false,
-  currentUser: {}
+  currentUser: {},
+  profile: {},
 };
 
 const loginAction = {
@@ -27,5 +29,20 @@ describe('auth reducer', () => {
     expect(state.currentUser.username).toEqual(loggedInUser.username);
     expect(state.currentUser.email).toEqual(loggedInUser.email);
     expect(state.currentUser.role).toEqual(loggedInUser.role);
+  });
+});
+
+
+describe('auth reducer', () => {
+  it('should return the initial state', () => {
+    expect(authReducer(undefined, {})).toEqual(initialState);
+  });
+
+  it('should handle VIEW_PROFILE', () => {
+    initialState.profile = 'profile';
+    expect(authReducer(undefined, {
+      type: types.VIEW_PROFILE,
+      payload: 'profile'
+    })).toEqual(initialState);
   });
 });

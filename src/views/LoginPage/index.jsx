@@ -55,29 +55,29 @@ export const Login = ({ history, loginUser: handleLogin, loading }) => {
             <h3>Login</h3>
             <Form onSubmit={onSubmit} className="form-login">
               <Form.Control
-                  type="email"
-                  name="email"
-                  placeholder="Email"
-                  className="dark-forms"
-                  required
-                  onChange={updateLocalState}
-                />
+                type="email"
+                name="email"
+                placeholder="Email"
+                className="dark-forms"
+                required
+                onChange={updateLocalState}
+              />
               <Form.Control
-                  type="password"
-                  name="password"
-                  placeholder="Password"
-                  className="dark-forms"
-                  required
-                  onChange={updateLocalState}
-                />
+                type="password"
+                name="password"
+                placeholder="Password"
+                className="dark-forms"
+                required
+                onChange={updateLocalState}
+              />
               <Button text="Login" />
               <div className="container-extras">
                 <span>
                   <NavLink
-                      to="/requestpasswordreset"
-                      className="link-to-another-page"
-                    >
-                      Forgotten password?
+                    to="/requestpasswordreset"
+                    className="link-to-another-page"
+                  >
+                    Forgotten password?
                   </NavLink>
                 </span>
               </div>
@@ -85,21 +85,21 @@ export const Login = ({ history, loginUser: handleLogin, loading }) => {
             <div className="container-social-login">
               <span className="info">Or login using </span>
               <SocialIcon
-                  url={googleUrl}
-                  network="google"
-                  className="social-media-icons"
-                />
+                url={googleUrl}
+                network="google"
+                className="social-media-icons"
+              />
               <SocialIcon
-                  url={facebookUrl}
-                  className="social-media-icons"
-                  network="facebook"
-                />
+                url={facebookUrl}
+                className="social-media-icons"
+                network="facebook"
+              />
             </div>
             <div className="container-directing-to-signup">
               <span>
-                  Don't have an account? Sign up
+                Don't have an account? Sign up
                 <NavLink to="/signup" className="link-to-another-page">
-                    here
+                  here
                 </NavLink>
               </span>
             </div>
