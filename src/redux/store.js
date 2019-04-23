@@ -23,6 +23,9 @@ if (user && token) {
       currentUser: JSON.parse(user)
     }
   });
+}
+
+if (profile) {
   store.dispatch({
     type: VIEW_PROFILE,
     payload: JSON.parse(profile)

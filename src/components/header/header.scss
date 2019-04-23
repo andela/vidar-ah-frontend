@@ -1,7 +1,10 @@
+@import '../../assets/default';
+
 .white-link,
 .navbar-brand {
-  color: #fff;
-  font-size: 1.2em;
+  color: $white-color;
+  font-size: 1.2rem;
+  font-weight: 600;
   margin-right: 20px;
   padding-left: 0;
 }
