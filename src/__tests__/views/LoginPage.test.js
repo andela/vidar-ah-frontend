@@ -1,3 +1,4 @@
+/* eslint-disable import/no-named-as-default */
 /* eslint-env jest */
 import React from 'react';
 import { shallow, mount } from 'enzyme';
@@ -7,7 +8,7 @@ import { MemoryRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import { Login } from '../../views/LoginPage';
-import Header from '../../components/header/Header';
+import Header from '../../components/header/Index';
 import Button from '../../components/button/Index';
 
 

@@ -1,0 +1,60 @@
+$primary-color: #999;
+$form-bg: rgba(0, 0, 0, 0);
+$black-trans-bg: rgba(0, 0, 0, 0.6);
+$deep-purple-grad: rgba(60, 16, 83, 0.9);
+$light-purple-grad: rgba(173, 83, 137, 0.9);
+$font-family-body: 'Lato', sans-serif;
+$color-ccc: #ccc;
+$aaa-border: #aaa;
+$ddd-border: #ddd;
+$white: #fff;
+
+.w-80 {
+  width: 80%;
+}
+
+.purple-gradient-bg {
+  background-attachment: fixed;
+  background-image: linear-gradient(to right, $deep-purple-grad, $light-purple-grad), url('https://res.cloudinary.com/jessam/image/upload/v1554725326/tachina-lee-42980-unsplash_1.jpg'); // sass-lint:disable-line no-url-domains, no-url-protocols
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  position: fixed;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .form-black-bg {
+    background: $form-bg;
+  }
+}
+
+.form-black-bg {
+  background: $black-trans-bg;
+  color: $color-ccc;
+  font-weight: 100;
+  margin: 50px auto;
+  padding: 40px 10px;
+  text-align: center;
+
+  a {
+    color: $white;
+    text-decoration: underline;
+
+    &:hover {
+      color: $color-ccc;
+    }
+  }
+
+  h3 {
+    color: $white;
+  }
+}
+
+.container-social-login {
+
+  .info {
+    margin: 1rem;
+  }
+}

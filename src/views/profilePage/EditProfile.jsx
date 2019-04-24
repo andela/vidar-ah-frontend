@@ -78,7 +78,7 @@ const EditProfile = (props) => {
           <Row>
             <Col md={3}>
               <div className="previewComponent">
-                <form onSubmit={handleSubmit} id="image-form">
+                <form onSubmit={handleSubmit} className="image-form">
                   <Image
                     className="profile-image"
                     src={imageUrl}
@@ -152,7 +152,7 @@ const EditProfile = (props) => {
                 </div>
                 <h4>Actions</h4>
                 <hr className="hr" />
-                <div className="align-btn" id="action-btn">
+                <div className="align-btn action-btn">
                   <Button type="submit" className="avatar-btn">Save Profile</Button>
                   <Button onClick={cancelChanges} type="button" className="avatar-btn">Cancel</Button>
                 </div>

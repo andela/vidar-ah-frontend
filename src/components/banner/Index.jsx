@@ -1,3 +1,4 @@
+/* eslint-disable import/no-named-as-default */
 import React from 'react';
 import './banner.scss';
 import {
@@ -8,14 +9,13 @@ import {
 import PropTypes from 'prop-types';
 import Button from '../button/Index';
 import HeaderText from '../headerText/Index';
-import Header from '../header/Header';
+import Header from '../header/Index';
 
-
-export default function Banner(props) {
+export default function Banner({ history }) {
   return (
     <section>
       <div className="cont">
-        <Header />
+        <Header history={history} />
         <Container>
           <Row className="justify-content-md-center">
             <Col sm={8}>
@@ -24,8 +24,8 @@ export default function Banner(props) {
           </Row>
           <div className="button">
             <Button
-              text="Get Started"
-              onClick={() => props.history.push('/signup')} // eslint-disable-line react/jsx-no-bind
+            text="Get Started"
+            onClick={() => history.push('/signup')} // eslint-disable-line react/jsx-no-bind
             />
           </div>
         </Container>
@@ -35,5 +35,5 @@ export default function Banner(props) {
 }
 
 Banner.propTypes = {
-  history: PropTypes.instanceOf(Object).isRequired
+  history: PropTypes.instanceOf(Object).isRequired,
 };

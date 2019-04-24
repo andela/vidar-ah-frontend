@@ -1,8 +1,5 @@
 import {
-  LOGIN,
-  LOGOUT,
-  CURRENT_USER,
-  VIEW_PROFILE,
+  LOGIN, LOGOUT, CURRENT_USER, SIGNUP, SIGNUP_FAILURE, VIEW_PROFILE,
 } from '../actions/actionTypes';
 
 const initialState = {
@@ -34,6 +31,21 @@ export default (state = initialState, action = {}) => {
     case VIEW_PROFILE:
       return {
         ...state, profile: action.payload
+      };
+    case SIGNUP:
+      return {
+        ...state,
+        currentUser: {
+          ...action.payload
+        }
+      };
+
+    case SIGNUP_FAILURE:
+      return {
+        ...state,
+        errors: {
+          ...action.errors
+        }
       };
     default:
       return state;

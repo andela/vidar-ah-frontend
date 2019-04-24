@@ -123,11 +123,7 @@ LandingPage.propTypes = {
 };
 
 LandingPage.propTypes = {
-  history: PropTypes.instanceOf(Object)
-};
-
-LandingPage.defaultProps = {
-  history: ''
+  history: PropTypes.instanceOf(Object).isRequired,
 };
 
 export default connect(() => mapStateToProps, mapDispatchToProps)(LandingPage);

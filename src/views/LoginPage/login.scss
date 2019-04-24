@@ -13,7 +13,6 @@
   font-size: 1em;
   justify-content: center;
   margin: 20px auto;
-  width: $input-field-width;
 
   & span {
     display: block;
@@ -33,9 +32,7 @@
       &:hover {
         color: $white;
       }
-
     }
-
   }
 }
 
