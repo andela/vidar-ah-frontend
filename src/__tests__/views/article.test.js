@@ -16,7 +16,8 @@ describe('get an article by its slug', () => {
     body: 'body',
     updatedAt: 'time',
     slug: 'slug',
-    images: ['https://res.cloudinary.com/djdsxql5q/image/upload/v1554806589/Authors%20Haven/culture.jpg']
+    images: ['https://res.cloudinary.com/djdsxql5q/image/upload/v1554806589/Authors%20Haven/culture.jpg'],
+    Comments: []
   };
   const recommendedArticles = [article];
 
@@ -47,7 +48,7 @@ describe('get an article by its slug', () => {
 
 
   it('tests for when the initial state of the article is null', () => {
-    article = {};
+    article = { Comments: [] };
     const store = mockStore({
       articleReducer: {
         article,

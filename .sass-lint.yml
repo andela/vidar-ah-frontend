@@ -1,0 +1,20 @@
+options:
+  merge-default-rules: true
+  formatter: stylish
+  max-warnings: 50
+files:
+  include: '**/*.s+(a|c)ss'
+rules:
+  leading-zero:
+  - 1
+  -
+    include: true
+  no-important: 0
+  no-trailing-zero: 0
+  no-url-domains: 0
+  no-url-protocols: 0
+  no-color-literals: 0
+  force-pseudo-nesting: 0
+  no-qualifying-elements: 0
+  no-ids: 0
+

@@ -37,6 +37,9 @@ import Footer from '../../components/footer/Index';
 import Header from '../../components/header/Header';
 import Loader from '../../components/loader/Index';
 import './article.scss';
+import Comment from '../../components/comment/Index';
+import ViewComment from '../../components/viewComment/Index';
+
 
 const Article = (props) => {
   const { article, getArticle, getRecommendedArticles: getArticles } = props;
@@ -151,6 +154,25 @@ const Article = (props) => {
           </Col>
         </Row>
       </Container>
+
+      <Container>
+        <Col md={{ span: 6, offset: 3 }}>
+          <div><h3>Comments</h3></div>
+          <Comment slug={slug} />
+          { props.article.Comments ? (
+            props.article.Comments.map(comment => (
+              <ViewComment
+                key={comment.id}
+                comment={comment.comment}
+                time={comment.createdAt}
+                id={comment.id}
+                slug={comment.articleSlug}
+                userId={comment.userId} />
+            ))) : null
+          }
+        </Col>
+      </Container>
+
       <hr />
       <Container>
         <h3>Also recommended for you</h3>
@@ -162,6 +184,7 @@ const Article = (props) => {
               header={recArticle.title}
               url={`/articles/${recArticle.slug}`}
               time={recArticle.updatedAt}
+              name={recArticle.name}
             />
           ))}
         </CardDeck>
@@ -180,7 +203,7 @@ Article.propTypes = {
 };
 
 Article.defaultProps = {
-  article: {},
+  article: { Comments: [] }
 };
 
 const mapStateToProps = state => ({

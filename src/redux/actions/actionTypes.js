@@ -16,3 +16,6 @@ export const LOGOUT = 'LOGOUT';
 export const START_FETCHING = 'START_FETCHING';
 export const STOP_FETCHING = 'STOP_FETCHING';
 export const VIEW_PROFILE = 'VIEW_PROFILE';
+export const POST_COMMENT = 'POST_COMMENT';
+export const DELETE_COMMENT = 'DELETE_COMMENT';
+export const EDIT_COMMENT = 'EDIT_COMMENT';

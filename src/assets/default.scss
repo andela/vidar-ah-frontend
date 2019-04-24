@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Lato|Merriweather"); // sass-lint:disable-line no-url-domains, no-url-protocols
+@import url('https://fonts.googleapis.com/css?family=Lato|Merriweather'); // sass-lint:disable-line no-url-domains, no-url-protocols
 
 $font-family: 'Merriweather', serif;
 $font-family-header: 'Merriweather', serif;
@@ -11,7 +11,7 @@ $deep-purple: hsl(279, 68%, 19%);
 $light-blue: #0575e6;
 $aaa-border: #aaa;
 $ddd-border: #ddd;
-$black-trans-bg: rgba(0, 0, 0, .6);
+$black-trans-bg: rgba(0, 0, 0, 0.6);
 $color-ccc: #ccc;
 $primary-color: #999;
 $box-shadow-color: 0 6px 20px 1px rgba(0, 0, 0, 0.15);
@@ -20,10 +20,9 @@ $yellow: #e2d754;
 $deep-purple: hsl(279, 68%, 19%);
 $deep-purple-grad: rgba(60, 16, 83, 0.9);
 $light-blue: #0575e6;
-$deep-purple-grad: rgba(60, 16, 83, 0.9);
 $light-purple-grad: rgba(173, 83, 137, 0.9);
 $white: #fff;
-$button-shadow: rgba(111, 102, 3, .5);
+$button-shadow: rgba(111, 102, 3, 0.5);
 $hover-button-shadow: rgba(111, 102, 3, 0.8);
 $hover-button-shadow-1: 0 12px 60px;
 $hover-color: rgb(46, 39, 53);
@@ -32,7 +31,7 @@ $box-shadow: 0 12px 60px;
 $yellow-button-color: #51455c;
 $purple-nav: #8932b4;
 $yellow-color: #e2d754;
-$black-color: #000000;
+$black-color: #000;
 $button-yellow: #e2d754;
 $button-yellow-hover: rgb(172, 163, 64);
 $button-shadow: rgba(111, 102, 3, 0.5);
@@ -63,28 +62,16 @@ a,
 input,
 select {
   &.dark-forms {
-    background-color: transparent;
+    background-color: $white;
     border: $aaa-border 1px solid;
-    border-radius: 0;
+    border-radius: 0 !important;
     box-sizing: border-box;
     color: $ddd-border;
     font-size: 0.9em;
     margin: 20px auto;
     padding: 20px;
-    width: 80%;
+    width: $input-field-width;
   }
-}
-
-input.dark-forms, select.dark-forms {
-  background-color: $white;
-  border: $aaa-border 1px solid;
-  border-radius: 0;
-  box-sizing: border-box;
-  color: $ddd-border;
-  font-size: 0.9em;
-  margin: 20px auto;
-  padding: 20px;
-  width: $input-field-width;
 }
 
 .form-black-bg {
@@ -150,9 +137,13 @@ h2 {
 
 h3 {
   font-family: $font-family-header;
-  font-size: 1.44rem;
+  font-size: 1.00rem;
 }
 
+h4 {
+  font-family: $font-family-header;
+  font-size: 0.9rem;
+}
 
 h5 {
   font-family: $font-family-header;
@@ -191,6 +182,10 @@ a {
 .card-outline {
   box-shadow: $box-shadow-color;
   margin-top: 2rem;
+
+  &-comment {
+    margin-top: 1rem;
+  }
 }
 
 .summary-card-body {
@@ -201,7 +196,7 @@ a {
 
 .cont {
   background-image: linear-gradient(to right, $deep-purple-grad, $light-purple-grad),
-  url("https://res.cloudinary.com/jessam/image/upload/v1554725326/tachina-lee-42980-unsplash_1.jpg"); // sass-lint:disable-line no-url-domains, no-url-protocols
+  url('https://res.cloudinary.com/jessam/image/upload/v1554725326/tachina-lee-42980-unsplash_1.jpg'); // sass-lint:disable-line no-url-domains, no-url-protocols
   background-position: center;
   background-size: cover;
   color: $white;
@@ -221,12 +216,18 @@ a {
   line-height: normal;
   padding: 12px 25px;
   text-align: center;
-  transition: ease-in-out .4s;
+  transition: ease-in-out 0.4s;
 
   &:hover {
     background: $hover-background;
     box-shadow: $hover-button-shadow-1 $hover-button-shadow;
     color: $hover-color;
+  }
+
+  &-comment {
+    box-shadow: $box-shadow $button-shadow;
+    font-size: small;
+    padding: 6px 20px;
   }
 }
 
@@ -245,4 +246,3 @@ a {
   margin-right: 20px;
   padding-left: 0;
 }
-
