@@ -1,12 +1,11 @@
-/* eslint-disable react/jsx-no-bind */
-/* eslint-disable react/destructuring-assignment */
 import React, { useState, useEffect } from 'react';
 import LoadingBar from 'react-top-loading-bar';
 import {
   Container,
   CardDeck,
   Row,
-  Col
+  Col,
+  Dropdown
 } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import {
@@ -39,11 +38,16 @@ import Loader from '../../components/loader/Index';
 import './article.scss';
 import Comment from '../../components/comment/Index';
 import ViewComment from '../../components/viewComment/Index';
-
+import ReportModal from '../../components/reportArticle/Index';
 
 const Article = (props) => {
   const { article, getArticle, getRecommendedArticles: getArticles } = props;
   const [progress, setProgress] = useState(0);
+  const [state, setState] = useState({
+    modalIsVisible: false,
+    dropDownIsVisible: false
+  });
+
   const { images } = article;
 
   let imageSrc;
@@ -63,6 +67,7 @@ const Article = (props) => {
     }
   } = props;
   const shareUrl = `https://vidar-ah-frontend-staging.herokuapp.com/articles/${slug}`;
+  const optionIcon = 'https://img.icons8.com/ios/35/000000/menu-2.png';
 
   const handleScroll = () => {
     const { innerHeight } = window;
@@ -93,6 +98,11 @@ const Article = (props) => {
       />
       <Header type="purple" />
       <Container>
+        <ReportModal
+          visible={state.modalIsVisible}
+          closeModal={() => setState({ modalIsVisible: false, dropDownIsVisible: false })}
+          articleSlug={article.slug}
+        />
         <ArticleTitle title={article.title} />
         <ArticleDescription description={article.description} />
         {
@@ -151,6 +161,24 @@ const Article = (props) => {
             >
               <EmailIcon size={32} round />
             </EmailShareButton>
+          </Col>
+          <Col>
+            <img
+              alt="img"
+              className="options"
+              src={optionIcon}
+              onClick={() => setState({ ...state, dropDownIsVisible: true })}
+            />
+            <Dropdown.Menu
+              show={state.dropDownIsVisible}
+              rootCloseEvent="click"
+            >
+              <Dropdown.Item
+                onClick={() => setState({ modalIsVisible: true, dropDownIsVisible: false })}
+              >
+                Report Article
+              </Dropdown.Item>
+            </Dropdown.Menu>
           </Col>
         </Row>
       </Container>
