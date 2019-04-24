@@ -24,7 +24,7 @@ exports[`Login page it render the login page without failing 1`] = `
           "entries": Array [
             Object {
               "hash": "",
-              "key": "6fv2zk",
+              "key": "q6uap5",
               "pathname": "/",
               "search": "",
               "state": undefined,
@@ -38,7 +38,7 @@ exports[`Login page it render the login page without failing 1`] = `
           "listen": [Function],
           "location": Object {
             "hash": "",
-            "key": "6fv2zk",
+            "key": "q6uap5",
             "pathname": "/",
             "search": "",
             "state": undefined,
@@ -71,9 +71,25 @@ exports[`Login page it render the login page without failing 1`] = `
               className="container"
             >
               <Connect(Header)
+                history={
+                  Object {
+                    "location": Object {
+                      "pathname": "",
+                    },
+                    "push": [MockFunction],
+                  }
+                }
                 location=""
               >
                 <Header
+                  history={
+                    Object {
+                      "location": Object {
+                        "pathname": "",
+                      },
+                      "push": [MockFunction],
+                    }
+                  }
                   isLoggedIn={true}
                   location=""
                   logOut={[Function]}
@@ -246,26 +262,12 @@ exports[`Login page it render the login page without failing 1`] = `
                                                 </Link>
                                                 <Link
                                                   className="white-link"
-                                                  to="/userprofile"
-                                                >
-                                                  <a
-                                                    className="white-link"
-                                                    href="/userprofile"
-                                                    onClick={[Function]}
-                                                  >
-                                                    My Profile
-                                                  </a>
-                                                </Link>
-                                                <Link
-                                                  className="white-link"
-                                                  id="logOut"
                                                   onClick={[Function]}
                                                   to="#"
                                                 >
                                                   <a
                                                     className="white-link"
                                                     href="/"
-                                                    id="logOut"
                                                     onClick={[Function]}
                                                   >
                                                     Log out
@@ -403,11 +405,12 @@ exports[`Login page it render the login page without failing 1`] = `
                               />
                             </FormControl>
                             <Button
+                              className="w-80"
                               onClick={[Function]}
                               text="Login"
                             >
                               <button
-                                className="yellow-button"
+                                className="yellow-button w-80"
                                 onClick={[Function]}
                               >
                                 Login
@@ -454,7 +457,14 @@ exports[`Login page it render the login page without failing 1`] = `
                           </span>
                           <SocialIcon
                             className="social-media-icons"
+                            fgColor="#fff"
                             network="google"
+                            style={
+                              Object {
+                                "height": 35,
+                                "width": 35,
+                              }
+                            }
                             url="https://vidar-ah-backend-production.herokuapp.com/api/v1/auth/google"
                           >
                             <a
@@ -464,11 +474,11 @@ exports[`Login page it render the login page without failing 1`] = `
                               style={
                                 Object {
                                   "display": "inline-block",
-                                  "height": "50px",
+                                  "height": 35,
                                   "overflow": "hidden",
                                   "position": "relative",
                                   "verticalAlign": "middle",
-                                  "width": "50px",
+                                  "width": 35,
                                 }
                               }
                             >
@@ -521,6 +531,7 @@ exports[`Login page it render the login page without failing 1`] = `
                                     </g>
                                   </Background>
                                   <Icon
+                                    fgColor="#fff"
                                     networkKey="google"
                                   >
                                     <g
@@ -530,7 +541,7 @@ exports[`Login page it render the login page without failing 1`] = `
                                           "MozTransition": "fill 170ms ease-in-out",
                                           "OTransition": "fill 170ms ease-in-out",
                                           "WebkitTransition": "fill 170ms ease-in-out",
-                                          "fill": "transparent",
+                                          "fill": "#fff",
                                           "msTransition": "fill 170ms ease-in-out",
                                           "transition": "fill 170ms ease-in-out",
                                         }
@@ -568,7 +579,14 @@ exports[`Login page it render the login page without failing 1`] = `
                           </SocialIcon>
                           <SocialIcon
                             className="social-media-icons"
+                            fgColor="#fff"
                             network="facebook"
+                            style={
+                              Object {
+                                "height": 35,
+                                "width": 35,
+                              }
+                            }
                             url="https://vidar-ah-backend-production.herokuapp.com/api/v1/auth/facebook"
                           >
                             <a
@@ -578,11 +596,11 @@ exports[`Login page it render the login page without failing 1`] = `
                               style={
                                 Object {
                                   "display": "inline-block",
-                                  "height": "50px",
+                                  "height": 35,
                                   "overflow": "hidden",
                                   "position": "relative",
                                   "verticalAlign": "middle",
-                                  "width": "50px",
+                                  "width": 35,
                                 }
                               }
                             >
@@ -635,6 +653,7 @@ exports[`Login page it render the login page without failing 1`] = `
                                     </g>
                                   </Background>
                                   <Icon
+                                    fgColor="#fff"
                                     networkKey="facebook"
                                   >
                                     <g
@@ -644,7 +663,7 @@ exports[`Login page it render the login page without failing 1`] = `
                                           "MozTransition": "fill 170ms ease-in-out",
                                           "OTransition": "fill 170ms ease-in-out",
                                           "WebkitTransition": "fill 170ms ease-in-out",
-                                          "fill": "transparent",
+                                          "fill": "#fff",
                                           "msTransition": "fill 170ms ease-in-out",
                                           "transition": "fill 170ms ease-in-out",
                                         }

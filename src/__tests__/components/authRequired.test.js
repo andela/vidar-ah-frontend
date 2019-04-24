@@ -8,7 +8,7 @@ describe('AuthRequired component', () => {
     const wrapper = shallow(<AuthRequired />);
   });
 
-  it('it returns component with true logged in prop', () => {
+  it('returns component with true logged in prop', () => {
     const wrapper = shallow(<AuthRequired Component />);
   });
 });
