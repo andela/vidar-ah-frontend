@@ -24,7 +24,7 @@ exports[`Login page it render the login page without failing 1`] = `
           "entries": Array [
             Object {
               "hash": "",
-              "key": "0ne726",
+              "key": "6fv2zk",
               "pathname": "/",
               "search": "",
               "state": undefined,
@@ -38,7 +38,7 @@ exports[`Login page it render the login page without failing 1`] = `
           "listen": [Function],
           "location": Object {
             "hash": "",
-            "key": "0ne726",
+            "key": "6fv2zk",
             "pathname": "/",
             "search": "",
             "state": undefined,
@@ -258,12 +258,14 @@ exports[`Login page it render the login page without failing 1`] = `
                                                 </Link>
                                                 <Link
                                                   className="white-link"
+                                                  id="logOut"
                                                   onClick={[Function]}
                                                   to="#"
                                                 >
                                                   <a
                                                     className="white-link"
                                                     href="/"
+                                                    id="logOut"
                                                     onClick={[Function]}
                                                   >
                                                     Log out
@@ -401,12 +403,11 @@ exports[`Login page it render the login page without failing 1`] = `
                               />
                             </FormControl>
                             <Button
-                              className=""
                               onClick={[Function]}
                               text="Login"
                             >
                               <button
-                                className="yellow-button "
+                                className="yellow-button"
                                 onClick={[Function]}
                               >
                                 Login

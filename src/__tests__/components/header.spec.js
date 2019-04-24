@@ -17,6 +17,7 @@ describe('Header component', () => {
     }
   });
 
+
   it('renders correctly', () => {
     component = mount(
       <Provider store={store}>

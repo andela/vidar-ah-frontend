@@ -3,3 +3,5 @@ node_modules
 .DS_Store
 coverage
 /linters
+/src/__test__/redux/*/__snapshots__/
+/src/__test__/views/__snapshots__/

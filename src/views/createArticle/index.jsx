@@ -1,3 +1,4 @@
+/* eslint-disable import/no-named-as-default */
 /* eslint-disable react/jsx-no-bind */
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
@@ -7,7 +8,7 @@ import Create from '../../components/createForms/Create';
 import Preview from '../../components/previewArticle/Preview';
 import { validateArticle } from '../../utils/validator';
 import { createArticle } from '../../redux/actions/articles';
-import Header from '../../components/header/Header';
+import Header from '../../components/header/Index';
 import './createArticle.scss';
 
 const CreateArticle = (props) => {

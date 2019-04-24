@@ -1,7 +1,5 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/jsx-no-bind */
-/* eslint-disable react/jsx-indent */
-/* eslint-disable indent */
 /* eslint-disable no-unused-expressions */
 import React from 'react';
 import { Link } from 'react-router-dom';
@@ -39,14 +37,14 @@ const Header = (props) => {
                   <Link to="/" className={className}>Home</Link>
                   <Link to="/create-article" className={className}>Create post</Link>
                   <Link to="/userprofile" className={className}>My Profile</Link>
-                  <Link to="#" onClick={logout} className={className}>Log out</Link>
+                  <Link to="#" onClick={logout} id="logOut" className={className}>Log out</Link>
                 </div>
               ) : (
-                  <div>
-                    <Link to="/signup" className={className}>Signup</Link>
-                    <Link to="/login" className={className}>Login</Link>
-                  </div>
-                )
+                <div>
+                  <Link to="/signup" className={className}>Signup</Link>
+                  <Link to="/login" className={className}>Login</Link>
+                </div>
+              )
             }
           </Nav>
         </Navbar.Collapse>
@@ -56,12 +54,11 @@ const Header = (props) => {
 };
 Header.propTypes = {
   type: PropTypes.string,
-  isLoggedIn: PropTypes.bool,
+  isLoggedIn: PropTypes.bool.isRequired,
   logOut: PropTypes.func.isRequired,
 };
 Header.defaultProps = {
   type: 'white',
-  isLoggedIn: false
 };
 
 const mapStateToProps = state => ({

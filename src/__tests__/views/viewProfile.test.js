@@ -33,6 +33,7 @@ describe('ViewProfile component', () => {
           <ViewProfile
             profile={{}}
             getProfileRequest={f => f}
+            history={{}}
           />
         </MemoryRouter>
       </Provider>
@@ -56,6 +57,7 @@ describe('ViewProfile component', () => {
           <ViewProfile
             profile={{}}
             getProfileRequest={f => f}
+            history={{}}
           />
         </MemoryRouter>
       </Provider>

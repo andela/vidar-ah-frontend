@@ -19,3 +19,5 @@ export const VIEW_PROFILE = 'VIEW_PROFILE';
 export const POST_COMMENT = 'POST_COMMENT';
 export const DELETE_COMMENT = 'DELETE_COMMENT';
 export const EDIT_COMMENT = 'EDIT_COMMENT';
+export const SIGNUP = 'SIGNUP';
+export const SIGNUP_FAILURE = 'SIGNUP_FAILURE';
