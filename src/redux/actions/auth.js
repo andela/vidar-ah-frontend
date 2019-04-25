@@ -43,6 +43,7 @@ export const loginUser = userData => async (dispatch) => {
 export const logOut = () => (
   async (dispatch) => {
     removeToken();
+    localStorage.removeItem('userprofile');
     dispatch({
       type: LOGOUT,
     });

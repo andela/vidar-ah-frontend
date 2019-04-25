@@ -179,6 +179,10 @@ a {
   padding: 1rem;
 }
 
+.form-label {
+  margin-right: 1rem;
+}
+
 .cont {
   background-image: linear-gradient(to right, $deep-purple-grad, $light-purple-grad),
   url('https://res.cloudinary.com/jessam/image/upload/v1554725326/tachina-lee-42980-unsplash_1.jpg'); // sass-lint:disable-line no-url-domains, no-url-protocols
@@ -222,6 +226,10 @@ a {
   font-size: 1.2em;
   margin-right: 20px;
   padding-left: 0;
+
+  &-text {
+    color: $black-color;
+  }
 }
 
 .purple-link,
@@ -230,6 +238,10 @@ a {
   font-size: 1.2em;
   margin-right: 20px;
   padding-left: 0;
+
+  &-text {
+    color: $purple-nav;
+  }
 }
 
 .container-social-login {
@@ -246,6 +258,18 @@ a {
   }
 }
 
+.search-pad {
+  padding-top: 2rem;
+}
+
+.search-entry {
+  background-image: url('https://res.cloudinary.com/dqyytlxwe/image/upload/v1555842449/search.png');
+  background-position: 0.5rem;
+  background-repeat: no-repeat;
+  background-size: 2rem 2rem;
+  text-indent: 2rem;
+}
+
 .container-directing-to-signup,
 .container-directing-to-login {
   margin: 1em 0;
@@ -253,12 +277,99 @@ a {
   & span {
     display: block;
     font-size: 1em;
+  }
 
-    .link-to-another-page {
-      color: $yellow;
-      font-size: 1em;
-      margin: 0.5em;
-      text-decoration: none;
+  .link-to-another-page {
+    color: $yellow;
+    font-size: 1em;
+    margin: 0.5em;
+    text-decoration: none;
+  }
+}
+
+img {
+  &.thumbnail-image {
+    height: 100%;
+    margin: 0 auto;
+    margin-left: -37%;
+    width: auto;
+  }
+}
+
+.small-profile {
+  border-radius: 50%;
+  height: 3.5rem;
+  overflow: hidden;
+  position: relative;
+  width: 3.5rem;
+}
+
+.dropdown-toggle {
+  &::after {
+    display: none;
+  }
+}
+
+
+.dropdown-menu {
+  left: -6rem;
+
+  &.show {
+    right: 10rem;
+    top: 4rem;
+    }
+}
+
+.fab-item:nth-last-child(1) {
+  background-image: url('https://res.cloudinary.com/dqyytlxwe/image/upload/v1555966518/plus-symbol2.png');
+  background-size: contain;
+  transition-delay: 25ms;
+  z-index: 999999;
+
+}
+
+
+@media screen and (max-width: 800px) {
+  .navbar {
+    align-items: baseline;
+  }
+
+  .navbar-nav {
+    padding-top: 1rem;
+
+    & .dropdown-menu {
+      position: absolute;
     }
   }
+
+  .small-profile {
+    border-radius: 50%;
+    display: block;
+    height: 3.5rem;
+    overflow: hidden;
+    position: relative;
+    width: 3.5rem;
+  }
+
+  img {
+    &.thumbnail-image {
+      height: 100%;
+      margin: 0 auto;
+      margin-left: -1.3rem;
+      width: auto;
+    }
+  }
+
+  .hide-small {
+    display: none;
+  }
+}
+
+.fab {
+  bottom: 4rem;
+  font-size: 0.8rem;
+  margin-left: -28px;
+  position: fixed;
+  right: 2rem;
+  z-index: 999999;
 }

@@ -1,20 +1,22 @@
-/* eslint-disable no-unused-expressions */
-/* eslint-disable react/jsx-no-bind */
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { Navbar, Nav } from 'react-bootstrap';
+import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
 import PropTypes from 'prop-types';
-import { logOut } from '../../redux/actions/auth';
+import Button from "../button/Index";
 import './header.scss';
+import { logOut } from '../../redux/actions/auth';
 
-export const Header = (props) => {
+
+const Header = (props) => {
   let className;
   const {
     type,
     isLoggedIn,
     logOut: LogOut,
     history,
+    profile,
+    role
   } = props;
 
   type === 'purple' ? className = 'purple-link' : className = 'white-link';
@@ -27,46 +29,61 @@ export const Header = (props) => {
   return (
     <div className="header-container">
       <Navbar collapseOnSelect expand="lg">
-        <Link to="/" className={className}>authorsHAVEN</Link>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="mr-auto" />
-          <Nav>
-            {
-              isLoggedIn ? (
-                <div>
-                  <Link to="/" className={className}>Home</Link>
-                  <Link to="/create-article" className={className}>Create post</Link>
-                  <Link to="#" onClick={logout} className={className}>Log out</Link>
-                </div>
-              ) : (
-                <div>
-                  <Link to="/signup" className={className}>Signup</Link>
-                  <Link to="/login" className={className}>Login</Link>
-                </div>
-              )
-            }
-          </Nav>
-        </Navbar.Collapse>
+        <Nav>
+          <Link to="/" className={className}>authorsHAVEN</Link>
+        </Nav>
+        <Nav className="mr-auto" />
+        {
+          isLoggedIn ? (
+            <>
+              <Nav>
+                <NavDropdown title={(
+                  <div className="small-profile">
+                    <img
+                      className="thumbnail-image"
+                      src={`${profile.image}`}
+                      alt="user pic"
+                    />
+                  </div>
+                )}>
+                  <NavDropdown.Item><Link to="/" className={`${className}-text`}>Home</Link></NavDropdown.Item>
+                  <NavDropdown.Item><Link to="/create-article" className={`${className}-text`}>Create post</Link></NavDropdown.Item>
+                  {role === 'superadmin' && <NavDropdown.Item><Link to="/reports" className={`${className}-text`}>Reports</Link></NavDropdown.Item>}
+                  <NavDropdown.Item><Link to="/userprofile" className={`${className}-text`}>My Profile</Link></NavDropdown.Item>
+                  <NavDropdown.Divider />
+                  <NavDropdown.Item><Link to="#" onClick={logout} className={`${className}-text`}>Log out</Link></NavDropdown.Item>
+                </NavDropdown>
+              </Nav>
+              <Link to="/create-article"><Button text="CREATE POST" className="fab" /></Link>
+            </>
+          ) : (
+            <Nav>
+              <Link to="/signup" className={`${className} hide-small`}>Signup</Link>
+              <Link to="/login" className={className}>Login</Link>
+            </Nav>
+          )
+        }
       </Navbar>
     </div>
   );
 };
-
 Header.propTypes = {
   type: PropTypes.string,
-  isLoggedIn: PropTypes.bool.isRequired,
+  isLoggedIn: PropTypes.bool,
   logOut: PropTypes.func.isRequired,
-  history: PropTypes.object.isRequired
+  history: PropTypes.object.isRequired,
+  profile: PropTypes.object.isRequired,
+  role: PropTypes.string.isRequired
 };
-
 Header.defaultProps = {
   type: 'white',
+  isLoggedIn: false
 };
 
 const mapStateToProps = state => ({
   isLoggedIn: state.authReducer.isLoggedIn,
   user: state.authReducer.currentUser,
+  profile: state.authReducer.profile
 });
 
 export default connect(() => mapStateToProps, { logOut })(Header);

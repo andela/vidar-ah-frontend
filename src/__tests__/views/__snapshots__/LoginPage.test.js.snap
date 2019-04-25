@@ -24,7 +24,7 @@ exports[`Login page it render the login page without failing 1`] = `
           "entries": Array [
             Object {
               "hash": "",
-              "key": "q6uap5",
+              "key": "j0vos0",
               "pathname": "/",
               "search": "",
               "state": undefined,
@@ -38,7 +38,7 @@ exports[`Login page it render the login page without failing 1`] = `
           "listen": [Function],
           "location": Object {
             "hash": "",
-            "key": "q6uap5",
+            "key": "j0vos0",
             "pathname": "/",
             "search": "",
             "state": undefined,
@@ -93,6 +93,7 @@ exports[`Login page it render the login page without failing 1`] = `
                   isLoggedIn={true}
                   location=""
                   logOut={[Function]}
+                  profile={Object {}}
                   type="white"
                   user={Object {}}
                 >
@@ -126,162 +127,427 @@ exports[`Login page it render the login page without failing 1`] = `
                             <nav
                               className="navbar navbar-expand-lg navbar-light"
                             >
-                              <Link
-                                className="white-link"
-                                to="/"
+                              <Nav
+                                as="div"
+                                fill={false}
+                                justify={false}
                               >
-                                <a
-                                  className="white-link"
-                                  href="/"
-                                  onClick={[Function]}
+                                <ContextTransform(AbstractNav)
+                                  as="div"
+                                  className="navbar-nav"
+                                  onSelect={[Function]}
                                 >
-                                  authorsHAVEN
-                                </a>
-                              </Link>
-                              <NavbarToggle
-                                aria-controls="responsive-navbar-nav"
-                                as="button"
-                                label="Toggle navigation"
-                              >
-                                <button
-                                  aria-controls="responsive-navbar-nav"
-                                  aria-label="Toggle navigation"
-                                  className="navbar-toggler"
-                                  onClick={[Function]}
-                                  type="button"
-                                >
-                                  <span
-                                    className="navbar-toggler-icon"
-                                  />
-                                </button>
-                              </NavbarToggle>
-                              <NavbarCollapse
-                                id="responsive-navbar-nav"
-                              >
-                                <Collapse
-                                  appear={false}
-                                  dimension="height"
-                                  getDimensionValue={[Function]}
-                                  id="responsive-navbar-nav"
-                                  in={false}
-                                  mountOnEnter={false}
-                                  timeout={300}
-                                  unmountOnExit={false}
-                                >
-                                  <Transition
-                                    addEndListener={[Function]}
-                                    appear={false}
-                                    aria-expanded={null}
-                                    enter={true}
-                                    exit={true}
-                                    id="responsive-navbar-nav"
-                                    in={false}
-                                    mountOnEnter={false}
-                                    onEnter={[Function]}
-                                    onEntered={[Function]}
-                                    onEntering={[Function]}
-                                    onExit={[Function]}
-                                    onExited={[Function]}
-                                    onExiting={[Function]}
-                                    timeout={300}
-                                    unmountOnExit={false}
+                                  <AbstractNav
+                                    as="div"
+                                    className="navbar-nav"
+                                    onSelect={[Function]}
+                                    parentOnSelect={[Function]}
                                   >
                                     <div
-                                      aria-expanded={null}
-                                      className="navbar-collapse collapse"
-                                      id="responsive-navbar-nav"
+                                      className="navbar-nav"
+                                      onKeyDown={[Function]}
                                     >
-                                      <Nav
-                                        as="div"
-                                        className="mr-auto"
-                                        fill={false}
-                                        justify={false}
+                                      <Link
+                                        className="white-link"
+                                        to="/"
                                       >
-                                        <ContextTransform(AbstractNav)
-                                          as="div"
-                                          className="mr-auto navbar-nav"
-                                          onSelect={[Function]}
+                                        <a
+                                          className="white-link"
+                                          href="/"
+                                          onClick={[Function]}
                                         >
-                                          <AbstractNav
-                                            as="div"
-                                            className="mr-auto navbar-nav"
-                                            onSelect={[Function]}
-                                            parentOnSelect={[Function]}
-                                          >
-                                            <div
-                                              className="mr-auto navbar-nav"
-                                              onKeyDown={[Function]}
-                                            />
-                                          </AbstractNav>
-                                        </ContextTransform(AbstractNav)>
-                                      </Nav>
-                                      <Nav
-                                        as="div"
-                                        fill={false}
-                                        justify={false}
-                                      >
-                                        <ContextTransform(AbstractNav)
-                                          as="div"
-                                          className="navbar-nav"
-                                          onSelect={[Function]}
-                                        >
-                                          <AbstractNav
-                                            as="div"
-                                            className="navbar-nav"
-                                            onSelect={[Function]}
-                                            parentOnSelect={[Function]}
-                                          >
-                                            <div
-                                              className="navbar-nav"
-                                              onKeyDown={[Function]}
-                                            >
-                                              <div>
-                                                <Link
-                                                  className="white-link"
-                                                  to="/"
-                                                >
-                                                  <a
-                                                    className="white-link"
-                                                    href="/"
-                                                    onClick={[Function]}
-                                                  >
-                                                    Home
-                                                  </a>
-                                                </Link>
-                                                <Link
-                                                  className="white-link"
-                                                  to="/create-article"
-                                                >
-                                                  <a
-                                                    className="white-link"
-                                                    href="/create-article"
-                                                    onClick={[Function]}
-                                                  >
-                                                    Create post
-                                                  </a>
-                                                </Link>
-                                                <Link
-                                                  className="white-link"
-                                                  onClick={[Function]}
-                                                  to="#"
-                                                >
-                                                  <a
-                                                    className="white-link"
-                                                    href="/"
-                                                    onClick={[Function]}
-                                                  >
-                                                    Log out
-                                                  </a>
-                                                </Link>
-                                              </div>
-                                            </div>
-                                          </AbstractNav>
-                                        </ContextTransform(AbstractNav)>
-                                      </Nav>
+                                          authorsHAVEN
+                                        </a>
+                                      </Link>
                                     </div>
-                                  </Transition>
-                                </Collapse>
-                              </NavbarCollapse>
+                                  </AbstractNav>
+                                </ContextTransform(AbstractNav)>
+                              </Nav>
+                              <Nav
+                                as="div"
+                                className="mr-auto"
+                                fill={false}
+                                justify={false}
+                              >
+                                <ContextTransform(AbstractNav)
+                                  as="div"
+                                  className="mr-auto navbar-nav"
+                                  onSelect={[Function]}
+                                >
+                                  <AbstractNav
+                                    as="div"
+                                    className="mr-auto navbar-nav"
+                                    onSelect={[Function]}
+                                    parentOnSelect={[Function]}
+                                  >
+                                    <div
+                                      className="mr-auto navbar-nav"
+                                      onKeyDown={[Function]}
+                                    />
+                                  </AbstractNav>
+                                </ContextTransform(AbstractNav)>
+                              </Nav>
+                              <Nav
+                                as="div"
+                                fill={false}
+                                justify={false}
+                              >
+                                <ContextTransform(AbstractNav)
+                                  as="div"
+                                  className="navbar-nav"
+                                  onSelect={[Function]}
+                                >
+                                  <AbstractNav
+                                    as="div"
+                                    className="navbar-nav"
+                                    onSelect={[Function]}
+                                    parentOnSelect={[Function]}
+                                  >
+                                    <div
+                                      className="navbar-nav"
+                                      onKeyDown={[Function]}
+                                    >
+                                      <NavDropdown
+                                        title={
+                                          <div
+                                            className="small-profile"
+                                          >
+                                            <img
+                                              alt="user pic"
+                                              className="thumbnail-image"
+                                              src="undefined"
+                                            />
+                                          </div>
+                                        }
+                                      >
+                                        <Dropdown
+                                          as={
+                                            Object {
+                                              "$$typeof": Symbol(react.forward_ref),
+                                              "defaultProps": Object {
+                                                "as": "div",
+                                              },
+                                              "displayName": "NavItem",
+                                              "render": [Function],
+                                            }
+                                          }
+                                          navbar={false}
+                                        >
+                                          <ReactOverlaysDropdown
+                                            itemSelector=".dropdown-item:not(.disabled):not(:disabled)"
+                                            onToggle={[Function]}
+                                          >
+                                            <Manager>
+                                              <NavItem
+                                                as="div"
+                                                className="dropdown"
+                                                onKeyDown={[Function]}
+                                              >
+                                                <div
+                                                  className="dropdown nav-item"
+                                                  onKeyDown={[Function]}
+                                                >
+                                                  <Bootstrap(DropdownToggle)
+                                                    as={
+                                                      Object {
+                                                        "$$typeof": Symbol(react.forward_ref),
+                                                        "defaultProps": Object {
+                                                          "as": [Function],
+                                                          "disabled": false,
+                                                        },
+                                                        "displayName": "NavLink",
+                                                        "render": [Function],
+                                                      }
+                                                    }
+                                                    eventKey={null}
+                                                  >
+                                                    <DropdownToggle
+                                                      as={
+                                                        Object {
+                                                          "$$typeof": Symbol(react.forward_ref),
+                                                          "defaultProps": Object {
+                                                            "as": [Function],
+                                                            "disabled": false,
+                                                          },
+                                                          "displayName": "NavLink",
+                                                          "render": [Function],
+                                                        }
+                                                      }
+                                                      bsPrefix="dropdown-toggle"
+                                                      eventKey={null}
+                                                    >
+                                                      <ReactOverlaysDropdownToggle>
+                                                        <NavLink
+                                                          aria-expanded={false}
+                                                          aria-haspopup={true}
+                                                          as={[Function]}
+                                                          className="dropdown-toggle"
+                                                          disabled={false}
+                                                          eventKey={null}
+                                                          onClick={[Function]}
+                                                        >
+                                                          <ForwardRef
+                                                            aria-expanded={false}
+                                                            aria-haspopup={true}
+                                                            as={[Function]}
+                                                            className="dropdown-toggle nav-link"
+                                                            disabled={false}
+                                                            eventKey={null}
+                                                            onClick={[Function]}
+                                                          >
+                                                            <SafeAnchor
+                                                              aria-expanded={false}
+                                                              aria-haspopup={true}
+                                                              as="a"
+                                                              className="dropdown-toggle nav-link"
+                                                              data-rb-event-key={null}
+                                                              disabled={false}
+                                                              onClick={[Function]}
+                                                            >
+                                                              <a
+                                                                aria-expanded={false}
+                                                                aria-haspopup={true}
+                                                                className="dropdown-toggle nav-link"
+                                                                data-rb-event-key={null}
+                                                                href="#"
+                                                                onClick={[Function]}
+                                                                onKeyDown={[Function]}
+                                                                role="button"
+                                                              >
+                                                                <div
+                                                                  className="small-profile"
+                                                                >
+                                                                  <img
+                                                                    alt="user pic"
+                                                                    className="thumbnail-image"
+                                                                    src="undefined"
+                                                                  />
+                                                                </div>
+                                                              </a>
+                                                            </SafeAnchor>
+                                                          </ForwardRef>
+                                                        </NavLink>
+                                                      </ReactOverlaysDropdownToggle>
+                                                    </DropdownToggle>
+                                                  </Bootstrap(DropdownToggle)>
+                                                  <DropdownMenu
+                                                    alignRight={false}
+                                                    as="div"
+                                                    flip={true}
+                                                  >
+                                                    <ForwardRef(ContextTransform(DropdownMenu))
+                                                      alignEnd={false}
+                                                      flip={true}
+                                                      usePopper={false}
+                                                    >
+                                                      <ReactOverlaysDropdownMenu
+                                                        alignEnd={false}
+                                                        flip={true}
+                                                        menuRef={[Function]}
+                                                        onToggle={[Function]}
+                                                        toggleNode={
+                                                          <a
+                                                            aria-expanded="false"
+                                                            aria-haspopup="true"
+                                                            class="dropdown-toggle nav-link"
+                                                            href="#"
+                                                            role="button"
+                                                          >
+                                                            <div
+                                                              class="small-profile"
+                                                            >
+                                                              <img
+                                                                alt="user pic"
+                                                                class="thumbnail-image"
+                                                                src="undefined"
+                                                              />
+                                                            </div>
+                                                          </a>
+                                                        }
+                                                        usePopper={false}
+                                                      >
+                                                        <RootCloseWrapper
+                                                          disabled={true}
+                                                          event="click"
+                                                          onRootClose={[Function]}
+                                                        >
+                                                          <div
+                                                            aria-labelledby=""
+                                                            className="dropdown-menu"
+                                                          >
+                                                            <DropdownItem
+                                                              as={[Function]}
+                                                              disabled={false}
+                                                            >
+                                                              <SafeAnchor
+                                                                as="a"
+                                                                className="dropdown-item"
+                                                                disabled={false}
+                                                                onClick={[Function]}
+                                                              >
+                                                                <a
+                                                                  className="dropdown-item"
+                                                                  href="#"
+                                                                  onClick={[Function]}
+                                                                  onKeyDown={[Function]}
+                                                                  role="button"
+                                                                >
+                                                                  <Link
+                                                                    className="white-link-text"
+                                                                    to="/"
+                                                                  >
+                                                                    <a
+                                                                      className="white-link-text"
+                                                                      href="/"
+                                                                      onClick={[Function]}
+                                                                    >
+                                                                      Home
+                                                                    </a>
+                                                                  </Link>
+                                                                </a>
+                                                              </SafeAnchor>
+                                                            </DropdownItem>
+                                                            <DropdownItem
+                                                              as={[Function]}
+                                                              disabled={false}
+                                                            >
+                                                              <SafeAnchor
+                                                                as="a"
+                                                                className="dropdown-item"
+                                                                disabled={false}
+                                                                onClick={[Function]}
+                                                              >
+                                                                <a
+                                                                  className="dropdown-item"
+                                                                  href="#"
+                                                                  onClick={[Function]}
+                                                                  onKeyDown={[Function]}
+                                                                  role="button"
+                                                                >
+                                                                  <Link
+                                                                    className="white-link-text"
+                                                                    to="/create-article"
+                                                                  >
+                                                                    <a
+                                                                      className="white-link-text"
+                                                                      href="/create-article"
+                                                                      onClick={[Function]}
+                                                                    >
+                                                                      Create post
+                                                                    </a>
+                                                                  </Link>
+                                                                </a>
+                                                              </SafeAnchor>
+                                                            </DropdownItem>
+                                                            <DropdownItem
+                                                              as={[Function]}
+                                                              disabled={false}
+                                                            >
+                                                              <SafeAnchor
+                                                                as="a"
+                                                                className="dropdown-item"
+                                                                disabled={false}
+                                                                onClick={[Function]}
+                                                              >
+                                                                <a
+                                                                  className="dropdown-item"
+                                                                  href="#"
+                                                                  onClick={[Function]}
+                                                                  onKeyDown={[Function]}
+                                                                  role="button"
+                                                                >
+                                                                  <Link
+                                                                    className="white-link-text"
+                                                                    to="/userprofile"
+                                                                  >
+                                                                    <a
+                                                                      className="white-link-text"
+                                                                      href="/userprofile"
+                                                                      onClick={[Function]}
+                                                                    >
+                                                                      My Profile
+                                                                    </a>
+                                                                  </Link>
+                                                                </a>
+                                                              </SafeAnchor>
+                                                            </DropdownItem>
+                                                            <DropdownDivider
+                                                              role="separator"
+                                                            >
+                                                              <div
+                                                                className="dropdown-divider"
+                                                                role="separator"
+                                                              />
+                                                            </DropdownDivider>
+                                                            <DropdownItem
+                                                              as={[Function]}
+                                                              disabled={false}
+                                                            >
+                                                              <SafeAnchor
+                                                                as="a"
+                                                                className="dropdown-item"
+                                                                disabled={false}
+                                                                onClick={[Function]}
+                                                              >
+                                                                <a
+                                                                  className="dropdown-item"
+                                                                  href="#"
+                                                                  onClick={[Function]}
+                                                                  onKeyDown={[Function]}
+                                                                  role="button"
+                                                                >
+                                                                  <Link
+                                                                    className="white-link-text"
+                                                                    onClick={[Function]}
+                                                                    to="#"
+                                                                  >
+                                                                    <a
+                                                                      className="white-link-text"
+                                                                      href="/"
+                                                                      onClick={[Function]}
+                                                                    >
+                                                                      Log out
+                                                                    </a>
+                                                                  </Link>
+                                                                </a>
+                                                              </SafeAnchor>
+                                                            </DropdownItem>
+                                                          </div>
+                                                        </RootCloseWrapper>
+                                                      </ReactOverlaysDropdownMenu>
+                                                    </ForwardRef(ContextTransform(DropdownMenu))>
+                                                  </DropdownMenu>
+                                                </div>
+                                              </NavItem>
+                                            </Manager>
+                                          </ReactOverlaysDropdown>
+                                        </Dropdown>
+                                      </NavDropdown>
+                                    </div>
+                                  </AbstractNav>
+                                </ContextTransform(AbstractNav)>
+                              </Nav>
+                              <Link
+                                to="/create-article"
+                              >
+                                <a
+                                  href="/create-article"
+                                  onClick={[Function]}
+                                >
+                                  <Button
+                                    className="fab"
+                                    onClick={[Function]}
+                                    text="CREATE POST"
+                                  >
+                                    <button
+                                      className="yellow-button fab"
+                                      onClick={[Function]}
+                                    >
+                                      CREATE POST
+                                    </button>
+                                  </Button>
+                                </a>
+                              </Link>
                             </nav>
                           </Navbar>
                         </Uncontrolled(Navbar)>

@@ -6,7 +6,7 @@ import toJson from 'enzyme-to-json';
 import { MemoryRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { SignUp } from '../../views/signup/Index';
-import { Header } from '../../components/header/Index';
+import Header from '../../components/header/Index';
 import ErrorAlert from '../../components/alert/Alert';
 import Button from '../../components/button/Index';
 
