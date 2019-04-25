@@ -40,6 +40,9 @@ describe('get an article by its slug', () => {
             match={{ params: { slug: 'poierwjvoejcijwoei' } }}
             article={article}
           />
+          , context:
+          {}
+          , attachTo: DOMElement
         </MemoryRouter>
       </Provider>
     );
