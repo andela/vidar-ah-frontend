@@ -22,3 +22,5 @@ export const EDIT_COMMENT = 'EDIT_COMMENT';
 export const SIGNUP = 'SIGNUP';
 export const SIGNUP_FAILURE = 'SIGNUP_FAILURE';
 export const GET_REPORTS = 'GET_REPORTS';
+export const LIKE_ARTICLE = 'LIKE_ARTICLE';
+export const DISLIKE_ARTICLE = 'DISLIKE_ARTICLE';

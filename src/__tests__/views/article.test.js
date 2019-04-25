@@ -24,8 +24,10 @@ describe('get an article by its slug', () => {
   it('renders an article component correctly', () => {
     const store = mockStore({
       articleReducer: {
-        article,
-        recommendedArticles,
+        article: {
+          article
+        },
+        recommendedArticles
       },
       authReducer: {
         isLoggedIn: true,
@@ -55,8 +57,10 @@ describe('get an article by its slug', () => {
     article = { Comments: [] };
     const store = mockStore({
       articleReducer: {
-        article,
-        recommendedArticles,
+        article: {
+          article
+        },
+        recommendedArticles
       },
       authReducer: {
         isLoggedIn: true,

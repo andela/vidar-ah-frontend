@@ -7,7 +7,9 @@ import {
   CREATE_ARTICLE,
   SET_ARTICLE,
   SET_ARTICLE_ERROR,
-  GET_RECOMMENDED_ARTICLES
+  GET_RECOMMENDED_ARTICLES,
+  LIKE_ARTICLE,
+  DISLIKE_ARTICLE
 } from './actionTypes';
 
 const apiUrl = 'https://vidar-ah-backend-production.herokuapp.com/api/v1';
@@ -27,13 +29,33 @@ export const setRecommendedArticles = articles => ({
   payload: articles
 });
 
+export const likeArticle = () => ({
+  type: LIKE_ARTICLE
+});
+
+export const dislikeArticle = () => ({
+  type: DISLIKE_ARTICLE
+});
+
 // eslint-disable-next-line import/prefer-default-export
 export const getArticleRequest = slug => async (dispatch) => {
+  const token = localStorage.getItem('token');
   try {
-    const response = await axios.get(`${apiUrl}/articles/${slug}`);
-    const { article } = response.data;
-
-    dispatch(setArticle(article));
+    if (token) {
+      const response = await axios.get(
+        `${apiUrl}/articles/${slug}`,
+        {
+          headers: {
+            'x-access-token': token,
+            'Content-Type': 'application/json'
+          },
+        }
+      );
+      dispatch(setArticle(response.data));
+    } else {
+      const response = await axios.get(`${apiUrl}/articles/${slug}`);
+      dispatch(setArticle(response.data));
+    }
   } catch (error) {
     dispatch(setArticleError(error.response.message));
   }
@@ -69,6 +91,46 @@ export const createArticle = articleData => async (dispatch) => {
     dispatch({
       type: CREATE_ARTICLE,
     });
+    return error.response.data;
+  }
+};
+
+export const likeArticleRequest = slug => async (dispatch) => {
+  try {
+    const token = localStorage.getItem('token');
+    const { data } = await axios.post(
+      `${apiUrl}/like_article`,
+      { slug },
+      {
+        headers: {
+          'x-access-token': token,
+          'Content-Type': 'application/json'
+        },
+      }
+    );
+    dispatch(likeArticle());
+    return data;
+  } catch (error) {
+    return error.response;
+  }
+};
+
+export const dislikeArticleRequest = slug => async (dispatch) => {
+  try {
+    const token = localStorage.getItem('token');
+    const { data } = await axios.post(
+      `${apiUrl}/dislike_article`,
+      { slug },
+      {
+        headers: {
+          'x-access-token': token,
+          'Content-Type': 'application/json'
+        },
+      }
+    );
+    dispatch(dislikeArticle());
+    return data;
+  } catch (error) {
     return error.response.data;
   }
 };
