@@ -30,7 +30,9 @@ import ArticleSummary from '../../components/articleSummary/Index';
 import ArticleDescription from '../../components/articleDescription/Index';
 import {
   getArticleRequest,
-  getRecommendedArticles
+  getRecommendedArticles,
+  likeArticleRequest,
+  dislikeArticleRequest
 } from '../../redux/actions/articles';
 import Footer from '../../components/footer/Index';
 import Header from '../../components/header/Index';
@@ -41,26 +43,34 @@ import ViewComment from '../../components/viewComment/Index';
 import ReportModal from '../../components/reportArticle/Index';
 
 const Article = (props) => {
-  const { article, getArticle, getRecommendedArticles: getArticles } = props;
   const [progress, setProgress] = useState(0);
   const [state, setState] = useState({
     modalIsVisible: false,
     dropDownIsVisible: false
   });
 
-  const { images } = article;
+  const {
+    articlePayload,
+    getArticle,
+    getRecommendedArticles: getArticles,
+    isLoggedIn
+  } = props;
 
-  let imageSrc;
+  const {
+    likeCount,
+    dislikeCount,
+    userReaction,
+    article
+  } = articlePayload;
 
-  if (images) {
-    const [url] = images;
-    if (url) {
-      imageSrc = url;
-    } else {
-      imageSrc = 'https://res.cloudinary.com/djdsxql5q/image/upload/v1554806589/Authors%20Haven/culture.jpg';
+  let image = 'https://res.cloudinary.com/djdsxql5q/image/upload/v1554806589/Authors%20Haven/culture.jpg';
+  if (article) {
+    const { images } = article;
+    if (images && images.length > 0) {
+      const [url] = images;
+      image = url;
     }
   }
-
   const {
     match: {
       params: { slug }
@@ -87,6 +97,22 @@ const Article = (props) => {
 
 
   if (!article) return <Loader />;
+  const sendLikeRequest = async (event) => {
+    event.preventDefault();
+    await props.likeArticleRequest(slug);
+    getArticle(slug);
+  };
+
+  const sendDislikeRequest = async (event) => {
+    event.preventDefault();
+    await props.dislikeArticleRequest(slug);
+    getArticle(slug);
+  };
+
+  const likeImg = (userReaction === 'like') ? 'https://res.cloudinary.com/jessam/image/upload/v1556008738/like_active.png' : 'https://res.cloudinary.com/jessam/image/upload/v1556008738/like_inactive.png';
+
+  const disikeImg = (userReaction === 'dislike') ? 'https://res.cloudinary.com/jessam/image/upload/v1556008738/dislike_active.png' : 'https://res.cloudinary.com/jessam/image/upload/v1556008738/dislike_inactive.png';
+
   return (
     <div id="article-container">
       <LoadingBar
@@ -106,9 +132,9 @@ const Article = (props) => {
         <ArticleTitle title={article.title} />
         <ArticleDescription description={article.description} />
         {
-          imageSrc ? (
+          image ? (
             <ImageContainer
-              src={imageSrc}
+              src={image}
             />
           ) : null
         }
@@ -180,6 +206,35 @@ const Article = (props) => {
               </Dropdown.Item>
             </Dropdown.Menu>
           </Col>
+          {
+          (isLoggedIn) ? (
+            <>
+              <Col className="reactions">
+                <a href="#" onClick={sendLikeRequest}>
+                  <img src={likeImg} alt="like" />
+                </a>
+                {likeCount}
+              </Col>
+              <Col className="reactions">
+                <a href="#" onClick={sendDislikeRequest}>
+                  <img src={disikeImg} alt="dislike" />
+                </a>
+                {dislikeCount}
+              </Col>
+            </>
+          ) : (
+            <>
+              <Col className="reactions">
+                <img src={likeImg} alt="like" />
+                {likeCount}
+              </Col>
+              <Col className="reactions">
+                <img src={disikeImg} alt="dislike" />
+                {dislikeCount}
+              </Col>
+            </>
+          )
+        }
         </Row>
       </Container>
 
@@ -187,8 +242,8 @@ const Article = (props) => {
         <Col md={{ span: 6, offset: 3 }}>
           <div><h3>Comments</h3></div>
           <Comment slug={slug} />
-          { props.article.Comments ? (
-            props.article.Comments.map(comment => (
+          { article.Comments ? (
+            article.Comments.map(comment => (
               <ViewComment
                 key={comment.id}
                 comment={comment.comment}
@@ -223,25 +278,31 @@ const Article = (props) => {
 };
 
 Article.propTypes = {
-  article: PropTypes.instanceOf(Object),
+  articlePayload: PropTypes.instanceOf(Object),
   getArticle: PropTypes.func.isRequired,
   recommendedArticles: PropTypes.array.isRequired,
   getRecommendedArticles: PropTypes.func.isRequired,
   match: PropTypes.object.isRequired,
+  likeArticleRequest: PropTypes.func.isRequired,
+  dislikeArticleRequest: PropTypes.func.isRequired,
+  isLoggedIn: PropTypes.bool
 };
 
 Article.defaultProps = {
-  article: { Comments: [] }
+  articlePayload: { article: { Comments: [] } },
+  isLoggedIn: false
 };
 
 const mapStateToProps = state => ({
-  article: state.articleReducer.article,
-  recommendedArticles: state.articleReducer.recommendedArticles
+  articlePayload: state.articleReducer.article,
+  recommendedArticles: state.articleReducer.recommendedArticles,
+  isLoggedIn: state.authReducer.isLoggedIn
 });
-
 const mapDispatchToProps = dispatch => ({
   getArticle: slug => dispatch(getArticleRequest(slug)),
-  getRecommendedArticles: () => dispatch(getRecommendedArticles())
+  getRecommendedArticles: () => dispatch(getRecommendedArticles()),
+  likeArticleRequest: slug => dispatch(likeArticleRequest(slug)),
+  dislikeArticleRequest: slug => dispatch(dislikeArticleRequest(slug))
 });
 
 const ConnectedArticle = connect(

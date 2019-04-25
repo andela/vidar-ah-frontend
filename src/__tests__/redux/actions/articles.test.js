@@ -37,17 +37,21 @@ describe('handles getArticleRequest', () => {
         title: 'An article title',
         body: 'The body of an article',
         description: 'The description of an article',
-      }
+      },
+      success: true,
+      likeCount: 0,
+      dislikeCount: 0
     };
 
     mockAxios.get.mockImplementationOnce(() => Promise.resolve({
-      data: { ...mockData },
+      data: mockData.article
     }));
 
     const expectedActions = [{
       type: types.SET_ARTICLE,
       payload: mockData.article,
     }];
+
     const store = mockStore({ article: {} });
 
     return store.dispatch(actions.getArticleRequest('slug')).then(() => {

@@ -41,6 +41,8 @@ $border-styling: rgba(255, 255, 255, 0.3);
 
 // input sizes
 $input-field-width: 80%;
+$text-color: #6f42c1;
+$color-ccc: #ccc;
 
 
 a,
@@ -373,3 +375,11 @@ img {
   right: 2rem;
   z-index: 999999;
 }
+
+.reactions {
+  img {
+    height: auto;
+    width: 32px;
+  }
+}
+
