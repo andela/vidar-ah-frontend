@@ -15,7 +15,8 @@ const Header = (props) => {
     isLoggedIn,
     logOut: LogOut,
     history,
-    profile
+    profile,
+    role
   } = props;
 
   type === 'purple' ? className = 'purple-link' : className = 'white-link';
@@ -47,6 +48,7 @@ const Header = (props) => {
                 )}>
                   <NavDropdown.Item><Link to="/" className={`${className}-text`}>Home</Link></NavDropdown.Item>
                   <NavDropdown.Item><Link to="/create-article" className={`${className}-text`}>Create post</Link></NavDropdown.Item>
+                  {role === 'superadmin' && <NavDropdown.Item><Link to="/reports" className={`${className}-text`}>Reports</Link></NavDropdown.Item>}
                   <NavDropdown.Item><Link to="/userprofile" className={`${className}-text`}>My Profile</Link></NavDropdown.Item>
                   <NavDropdown.Divider />
                   <NavDropdown.Item><Link to="#" onClick={logout} className={`${className}-text`}>Log out</Link></NavDropdown.Item>
@@ -54,7 +56,6 @@ const Header = (props) => {
               </Nav>
               <Link to="/create-article"><Button text="CREATE POST" className="fab" /></Link>
             </>
-
           ) : (
             <Nav>
               <Link to="/signup" className={`${className} hide-small`}>Signup</Link>
@@ -71,7 +72,8 @@ Header.propTypes = {
   isLoggedIn: PropTypes.bool,
   logOut: PropTypes.func.isRequired,
   history: PropTypes.object.isRequired,
-  profile: PropTypes.object.isRequired
+  profile: PropTypes.object.isRequired,
+  role: PropTypes.string.isRequired
 };
 Header.defaultProps = {
   type: 'white',
