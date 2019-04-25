@@ -13,6 +13,7 @@ import ViewProfile from '../views/profilePage/ViewProfile';
 import EditProfile from '../views/profilePage/EditProfile';
 import Signup from '../views/signup/Index';
 import VerifyAccount from '../components/VerifyEmail';
+import ReportsPage from '../views/reportedArticles/Index';
 
 const Routes = () => (
   <Switch>
@@ -27,6 +28,7 @@ const Routes = () => (
     <AuthWrapper path="/userprofile" component={ViewProfile} />
     <AuthWrapper path="/editprofile" component={EditProfile} />
     <Route path="/verify/:id" component={VerifyAccount} />
+    <AuthWrapper path="/reports" component={ReportsPage} adminRequred />
     <Route component={NotFound} />
   </Switch>
 );
