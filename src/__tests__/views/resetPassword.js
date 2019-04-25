@@ -4,8 +4,8 @@ import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
-import ResetPassword from '../../views/passwordReset/ResetPassword';
-import Button from '../../components/button/Index';
+import ResetPassword from '../../views/PasswordReset/ResetPassword';
+import Button from '../../components/Button';
 
 describe('Reset password', () => {
   const mockStore = configureStore([thunk]);

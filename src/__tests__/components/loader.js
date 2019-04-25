@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import { BrowserRouter } from 'react-router-dom';
-import Loader from '../../components/loader/Index';
+import Loader from '../../components/Loader';
 
 describe('Loader component', () => {
   let component;

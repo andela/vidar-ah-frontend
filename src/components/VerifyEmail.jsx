@@ -7,7 +7,7 @@ import {
   Row,
   Col,
 } from 'react-bootstrap';
-import Header from './header/Index';
+import Header from './Header/index';
 
 
 const VerifyEmail = (props) => {

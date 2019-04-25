@@ -225,6 +225,11 @@ a {
     box-shadow: none;
     font-size: 0.9em;
   }
+
+  &-alert {
+    font-size: small;
+    padding: 6px 20px;
+  }
 }
 
 .white-link,
@@ -334,8 +339,75 @@ img {
 
 }
 
+.fab {
+  bottom: 4rem;
+  font-size: 0.8rem;
+  margin-left: -28px;
+  position: fixed;
+  right: 2rem;
+  z-index: 999999;
+}
+
+.reactions {
+  img {
+    height: auto;
+    width: 32px;
+  }
+}
+
+.float-front-left {
+  position: absolute;
+  top: 33%;
+  z-index: 10000000001;
+}
+
+.fab-likes {
+  left: 7rem;
+  max-width: 40%;
+  position: absolute;
+  top: 20rem;
+  z-index: 999999;
+}
+
+.button-margin {
+  margin-top: 2rem;
+}
+
+.icon-sizes {
+  cursor: pointer;
+  height: 2rem;
+  width: 2rem;
+
+  &-reaction {
+    cursor: initial;
+  }
+}
+
+.alert-style {
+  position: fixed;
+  top: 2rem;
+  z-index: 999999999;
+}
+
 
 @media screen and (max-width: 800px) {
+
+  .fab-likes {
+    left: 1rem;
+    position: absolute;
+    top: 5rem;
+    z-index: 999999;
+  }
+
+  .icon-sizes {
+    height: 1.5rem;
+    width: 1.5rem;
+
+    &-reaction {
+      cursor: initial;
+    }
+  }
+
   .navbar {
     align-items: baseline;
   }
@@ -361,7 +433,6 @@ img {
     &.thumbnail-image {
       height: 100%;
       margin: 0 auto;
-      margin-left: -1.3rem;
       width: auto;
     }
   }
@@ -369,21 +440,17 @@ img {
   .hide-small {
     display: none;
   }
-}
 
-.fab {
-  bottom: 4rem;
-  font-size: 0.8rem;
-  margin-left: -28px;
-  position: fixed;
-  right: 2rem;
-  z-index: 999999;
-}
-
-.reactions {
-  img {
-    height: auto;
-    width: 32px;
+  .button-margin {
+    margin-top: 0.5rem;
   }
-}
 
+  .alert-style {
+    margin-left: 2rem;
+    margin-right: 1rem;
+    position: fixed;
+    top: 3rem;
+    z-index: 999999999;
+ }
+
+}

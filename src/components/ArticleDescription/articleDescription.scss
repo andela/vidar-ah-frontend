@@ -1,0 +1,24 @@
+.description-text {
+  font-size: 1.3125rem;
+  font-style: italic;
+  font-weight: 400;
+  margin-bottom: 2.5rem;
+  padding: 0 2rem;
+  text-align: center;
+}
+
+.center-div {
+  text-align: center;
+}
+
+@media screen and (max-width: 800px) {
+  .description-text {
+    font-size: 1.1rem;
+    padding: 0;
+    text-align: left;
+  }
+
+  .center-div {
+    margin-left: 3rem;
+  }
+}

@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Checkbox from '../../components/checkbox/Index';
+import Checkbox from '../../components/Checkbox';
 
 describe('Alert component', () => {
   it('should render correctly', () => {

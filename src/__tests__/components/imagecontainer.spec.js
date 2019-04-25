@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import ImageContainer from '../../components/imageContainer/Index';
+import ImageContainer from '../../components/ImageContainer';
 
 describe('imageContainer component', () => {
   it('should render image container', () => {

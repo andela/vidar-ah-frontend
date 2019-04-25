@@ -3,7 +3,7 @@ import { mount } from 'enzyme';
 import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
-import ReportModal from '../../components/reportArticle/Index';
+import ReportModal from '../../components/ReportArticle';
 
 describe('Report modal component', () => {
   const mockStore = configureStore([thunk]);

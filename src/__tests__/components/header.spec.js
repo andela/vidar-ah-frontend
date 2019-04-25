@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import { BrowserRouter } from 'react-router-dom';
-import Header from '../../components/header/Index';
+import Header from '../../components/Header';
 
 describe('Header component', () => {
   let component;

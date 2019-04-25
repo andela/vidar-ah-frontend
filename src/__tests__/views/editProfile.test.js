@@ -5,7 +5,7 @@ import { MemoryRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
-import EditProfile from '../../views/profilePage/EditProfile';
+import EditProfile from '../../views/ProfilePage/EditProfile';
 import validation from '../../utils/validator';
 
 describe('EditProfile component', () => {
@@ -30,6 +30,7 @@ describe('EditProfile component', () => {
     authReducer: {
       profile,
       editProfile,
+      currentUser: {}
     },
   });
 

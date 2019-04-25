@@ -7,10 +7,10 @@ import {
   Container, Row, Col, Form, Alert
 } from 'react-bootstrap';
 import PropTypes from 'prop-types';
-import Header from '../../components/header/Index';
-import Button from '../../components/button/Index';
+import Header from '../../components/Header';
+import Button from '../../components/Button';
 import { loginUser } from '../../redux/actions/auth';
-import Loader from '../../components/loader/Index';
+import Loader from '../../components/Loader';
 import './login.scss';
 
 

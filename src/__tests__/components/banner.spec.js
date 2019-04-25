@@ -5,7 +5,7 @@ import configureStore from 'redux-mock-store';
 import { MemoryRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
-import Banner from '../../components/banner/Index';
+import Banner from '../../components/Banner';
 
 
 const getBanner = () => {

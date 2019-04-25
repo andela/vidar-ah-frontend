@@ -1,0 +1,23 @@
+.body-text {
+  font-size: 1.3125rem;
+  font-weight: 400;
+  margin-bottom: 3rem;
+  margin-top: 2.5rem;
+  padding: 0 2rem;
+}
+
+.align-div {
+  text-align: left;
+}
+
+@media screen and (max-width: 800px) {
+  .body-text {
+    font-size: 1rem;
+    padding: 0 1.5rem 0 0;
+    text-align: justify;
+  }
+
+  .align-div {
+    margin-left: 3rem;
+  }
+}
