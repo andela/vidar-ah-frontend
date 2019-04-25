@@ -47,6 +47,7 @@
           "no-trailing-spaces": 2,
           "eol-last": 2,
           "no-unused-vars": 2,
+          "no-unused-expressions": 0,
           "no-underscore-dangle": 0,
           "no-alert": 0,
           "no-lone-blocks": 0,

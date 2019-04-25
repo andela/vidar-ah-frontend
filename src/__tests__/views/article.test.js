@@ -29,6 +29,7 @@ describe('get an article by its slug', () => {
       },
       authReducer: {
         isLoggedIn: true,
+        profile: {}
       }
     });
 
@@ -58,7 +59,8 @@ describe('get an article by its slug', () => {
         recommendedArticles,
       },
       authReducer: {
-        isLoggedIn: true
+        isLoggedIn: true,
+        profile: {}
       }
     });
 

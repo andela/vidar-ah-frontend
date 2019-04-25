@@ -23,7 +23,8 @@ const getBanner = () => {
   const store = mockStore({
     authReducer: {
       currentUser: {},
-      isLoggedIn: true
+      isLoggedIn: true,
+      profile: {}
     }
   });
 

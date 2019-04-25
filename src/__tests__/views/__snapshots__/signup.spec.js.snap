@@ -24,7 +24,7 @@ exports[`Signup component should render without failing 1`] = `
           "entries": Array [
             Object {
               "hash": "",
-              "key": "i87k4x",
+              "key": "3mlofs",
               "pathname": "/",
               "search": "",
               "state": undefined,
@@ -38,7 +38,7 @@ exports[`Signup component should render without failing 1`] = `
           "listen": [Function],
           "location": Object {
             "hash": "",
-            "key": "i87k4x",
+            "key": "3mlofs",
             "pathname": "/",
             "search": "",
             "state": undefined,
@@ -125,149 +125,114 @@ exports[`Signup component should render without failing 1`] = `
                             <nav
                               className="navbar navbar-expand-lg navbar-light"
                             >
-                              <Link
-                                className="white-link"
-                                to="/"
+                              <Nav
+                                as="div"
+                                fill={false}
+                                justify={false}
                               >
-                                <a
-                                  className="white-link"
-                                  href="/"
-                                  onClick={[Function]}
+                                <ContextTransform(AbstractNav)
+                                  as="div"
+                                  className="navbar-nav"
+                                  onSelect={[Function]}
                                 >
-                                  authorsHAVEN
-                                </a>
-                              </Link>
-                              <NavbarToggle
-                                aria-controls="responsive-navbar-nav"
-                                as="button"
-                                label="Toggle navigation"
-                              >
-                                <button
-                                  aria-controls="responsive-navbar-nav"
-                                  aria-label="Toggle navigation"
-                                  className="navbar-toggler"
-                                  onClick={[Function]}
-                                  type="button"
-                                >
-                                  <span
-                                    className="navbar-toggler-icon"
-                                  />
-                                </button>
-                              </NavbarToggle>
-                              <NavbarCollapse
-                                id="responsive-navbar-nav"
-                              >
-                                <Collapse
-                                  appear={false}
-                                  dimension="height"
-                                  getDimensionValue={[Function]}
-                                  id="responsive-navbar-nav"
-                                  in={false}
-                                  mountOnEnter={false}
-                                  timeout={300}
-                                  unmountOnExit={false}
-                                >
-                                  <Transition
-                                    addEndListener={[Function]}
-                                    appear={false}
-                                    aria-expanded={null}
-                                    enter={true}
-                                    exit={true}
-                                    id="responsive-navbar-nav"
-                                    in={false}
-                                    mountOnEnter={false}
-                                    onEnter={[Function]}
-                                    onEntered={[Function]}
-                                    onEntering={[Function]}
-                                    onExit={[Function]}
-                                    onExited={[Function]}
-                                    onExiting={[Function]}
-                                    timeout={300}
-                                    unmountOnExit={false}
+                                  <AbstractNav
+                                    as="div"
+                                    className="navbar-nav"
+                                    onSelect={[Function]}
+                                    parentOnSelect={[Function]}
                                   >
                                     <div
-                                      aria-expanded={null}
-                                      className="navbar-collapse collapse"
-                                      id="responsive-navbar-nav"
+                                      className="navbar-nav"
+                                      onKeyDown={[Function]}
                                     >
-                                      <Nav
-                                        as="div"
-                                        className="mr-auto"
-                                        fill={false}
-                                        justify={false}
+                                      <Link
+                                        className="white-link"
+                                        to="/"
                                       >
-                                        <ContextTransform(AbstractNav)
-                                          as="div"
-                                          className="mr-auto navbar-nav"
-                                          onSelect={[Function]}
+                                        <a
+                                          className="white-link"
+                                          href="/"
+                                          onClick={[Function]}
                                         >
-                                          <AbstractNav
-                                            as="div"
-                                            className="mr-auto navbar-nav"
-                                            onSelect={[Function]}
-                                            parentOnSelect={[Function]}
-                                          >
-                                            <div
-                                              className="mr-auto navbar-nav"
-                                              onKeyDown={[Function]}
-                                            />
-                                          </AbstractNav>
-                                        </ContextTransform(AbstractNav)>
-                                      </Nav>
-                                      <Nav
-                                        as="div"
-                                        fill={false}
-                                        justify={false}
-                                      >
-                                        <ContextTransform(AbstractNav)
-                                          as="div"
-                                          className="navbar-nav"
-                                          onSelect={[Function]}
-                                        >
-                                          <AbstractNav
-                                            as="div"
-                                            className="navbar-nav"
-                                            onSelect={[Function]}
-                                            parentOnSelect={[Function]}
-                                          >
-                                            <div
-                                              className="navbar-nav"
-                                              onKeyDown={[Function]}
-                                            >
-                                              <div>
-                                                <Link
-                                                  className="white-link"
-                                                  to="/signup"
-                                                >
-                                                  <a
-                                                    className="white-link"
-                                                    href="/signup"
-                                                    onClick={[Function]}
-                                                  >
-                                                    Signup
-                                                  </a>
-                                                </Link>
-                                                <Link
-                                                  className="white-link"
-                                                  to="/login"
-                                                >
-                                                  <a
-                                                    className="white-link"
-                                                    href="/login"
-                                                    onClick={[Function]}
-                                                  >
-                                                    Login
-                                                  </a>
-                                                </Link>
-                                              </div>
-                                            </div>
-                                          </AbstractNav>
-                                        </ContextTransform(AbstractNav)>
-                                      </Nav>
+                                          authorsHAVEN
+                                        </a>
+                                      </Link>
                                     </div>
-                                  </Transition>
-                                </Collapse>
-                              </NavbarCollapse>
+                                  </AbstractNav>
+                                </ContextTransform(AbstractNav)>
+                              </Nav>
+                              <Nav
+                                as="div"
+                                className="mr-auto"
+                                fill={false}
+                                justify={false}
+                              >
+                                <ContextTransform(AbstractNav)
+                                  as="div"
+                                  className="mr-auto navbar-nav"
+                                  onSelect={[Function]}
+                                >
+                                  <AbstractNav
+                                    as="div"
+                                    className="mr-auto navbar-nav"
+                                    onSelect={[Function]}
+                                    parentOnSelect={[Function]}
+                                  >
+                                    <div
+                                      className="mr-auto navbar-nav"
+                                      onKeyDown={[Function]}
+                                    />
+                                  </AbstractNav>
+                                </ContextTransform(AbstractNav)>
+                              </Nav>
+                              <Nav
+                                as="div"
+                                fill={false}
+                                justify={false}
+                              >
+                                <ContextTransform(AbstractNav)
+                                  as="div"
+                                  className="navbar-nav"
+                                  onSelect={[Function]}
+                                >
+                                  <AbstractNav
+                                    as="div"
+                                    className="navbar-nav"
+                                    onSelect={[Function]}
+                                    parentOnSelect={[Function]}
+                                  >
+                                    <div
+                                      className="navbar-nav"
+                                      onKeyDown={[Function]}
+                                    >
+                                      <Link
+                                        className="white-link hide-small"
+                                        to="/signup"
+                                      >
+                                        <a
+                                          className="white-link hide-small"
+                                          href="/signup"
+                                          onClick={[Function]}
+                                        >
+                                          Signup
+                                        </a>
+                                      </Link>
+                                      <Link
+                                        className="white-link"
+                                        to="/login"
+                                      >
+                                        <a
+                                          className="white-link"
+                                          href="/login"
+                                          onClick={[Function]}
+                                        >
+                                          Login
+                                        </a>
+                                      </Link>
+                                    </div>
+                                  </AbstractNav>
+                                </ContextTransform(AbstractNav)>
+                              </Nav>
                             </nav>
                           </Navbar>
                         </Uncontrolled(Navbar)>

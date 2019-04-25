@@ -6,6 +6,7 @@ import {
   Row,
   Col,
   Button,
+  Form
 } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -22,11 +23,9 @@ const LandingPage = (props) => {
   const { history, trendingArticles, articles } = props;
   useEffect(() => {
     props.getArticles(3).then();
-  }, {});
-
-  useEffect(() => {
     props.getTrendingArticles(6).then();
   }, {});
+
 
   const getMoreTrending = () => {
     const amount = props.trendingArticles.length + 6;
@@ -38,18 +37,40 @@ const LandingPage = (props) => {
     props.getArticles(amount).then();
   };
 
+  const Search = () => (
+    <Form>
+      <Form.Group controlId="searchForm" className="search-pad">
+        <Form.Control type="search" placeholder="Search" className="search-entry" />
+      </Form.Group>
+      <Form.Group controlId="filterForm">
+        <Form.Label className="form-label">Filter by</Form.Label>
+        <Form.Check inline label="Automobiles" type="checkbox" id="inline-checkbox-1" />
+        <Form.Check inline label="Finance" type="checkbox" id="inline-checkbox-2" />
+        <Form.Check inline label="General" type="checkbox" id="inline-checkbox-3" />
+        <Form.Check inline label="Life-hacks" type="checkbox" id="inline-checkbox-4" />
+        <Form.Check inline label="Medicine" type="checkbox" id="inline-checkbox-5" />
+        <Form.Check inline label="Software development" type="checkbox" id="inline-checkbox-6" />
+        <Form.Check inline label="Sports" type="checkbox" id="inline-checkbox-7" />
+      </Form.Group>
+    </Form>
+  );
+
+
   return (
     <div className="test-div">
       <Banner history={history} />
       <Container>
+        <Search />
+      </Container>
+      <Container>
         <Row>
           <Col className="trending" md={8}>
-            <ContentHeader textHeader="Trending this week" />
+            <ContentHeader textHeader="All articles" />
             <CardColumns>
               {
                 trendingArticles.map(data => (
                   <ArticleSummary
-className="p-1"
+                    className="p-1"
                     key={data.id}
                     src={`${data.images[0]}`}
                     header={data.title}
