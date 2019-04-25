@@ -1,5 +1,5 @@
 /* eslint-disable import/prefer-default-export */
-export const validateArticle = (articleData) => {
+const validateArticle = (articleData) => {
   const fieldsArr = Object.entries(articleData);
   const errors = [];
   fieldsArr.forEach((field) => {
@@ -14,7 +14,7 @@ export const validateArticle = (articleData) => {
   return errors;
 };
 
-export const validateUserProfile = (userData) => {
+const validateUserProfile = (userData) => {
   const fieldsArr = Object.entries(userData);
   const errors = [];
   fieldsArr.forEach((field) => {
@@ -27,4 +27,8 @@ export const validateUserProfile = (userData) => {
     }
   });
   return errors;
+};
+
+module.exports = {
+  validateArticle, validateUserProfile
 };

@@ -6,7 +6,7 @@ module.exports = {
   moduleFileExtensions: ['js', 'json', 'jsx'],
   moduleNameMapper: {
     '\\.(css|scss)$': '<rootDir>/src/__mocks__/styleMock.js',
-    '\\.(jpg|jpeg|png|otf|webp|svg)$': '<rootDir>/src/__mocks__/fileMock.js',
+    '\\.(jpg|jpeg|png|gif|otf|webp|svg)$': '<rootDir>/src/__mocks__/fileMock.js',
   },
   setupFiles: ['<rootDir>/enzyme.config.js'],
   testEnvironment: 'jsdom',

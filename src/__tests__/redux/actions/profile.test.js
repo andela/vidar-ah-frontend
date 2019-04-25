@@ -78,3 +78,24 @@ describe('get editProfileRequest actions', () => {
     });
   });
 });
+
+describe('upload image actions', () => {
+  it('handles success case', () => {
+    const mockData = {
+      data: {
+        image: 'https://imgur.com'
+      }
+    };
+
+    mockAxios.patch.mockImplementationOnce(() => Promise.resolve({
+      data: { ...mockData },
+    }));
+
+    const expectedActions = [];
+    const store = mockStore({ image: [] });
+
+    return store.dispatch(actions.uploadImage()).then(() => {
+      expect(store.getActions()).toEqual(expectedActions);
+    });
+  });
+});

@@ -1,0 +1,38 @@
+@import '../../assets/default';
+
+.hr {
+  border: 0;
+  border-bottom: 1px solid $border-styling;
+  border-top: 1px solid $yellow-color;
+  height: 0;
+}
+
+#action-btn {
+
+  .avatar-btn {
+    background-color: $yellow-color;
+    border: 0;
+    border-color: $yellow-color;
+    border-radius: 0;
+    color: $black-color;
+    margin-top: 1.25rem;
+    outline-style: none;
+  }
+}
+
+.align-btn {
+  display: flex;
+  justify-content: space-around;
+}
+
+.input {
+  outline: none;
+}
+
+.name-field {
+  margin-bottom: 3.75rem;
+}
+
+.name {
+  font-size: 0.8rem;
+}

@@ -1,9 +1,9 @@
+/* eslint-disable react/jsx-no-bind */
 import React, { useEffect } from 'react';
 import {
   Container,
   Row,
   Col,
-  Image,
   Button,
   Card,
   CardDeck
@@ -11,7 +11,6 @@ import {
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import './profile.scss';
 import Footer from '../../components/footer/Index';
 import likes from '../../assets/images/article-likes.png';
 import dislike from '../../assets/images/dislike.png';
@@ -21,13 +20,16 @@ import articleWritten from '../../assets/images/articles-written.png';
 import articleRead from '../../assets/images/article-read.png';
 import { getProfileRequest } from '../../redux/actions/profile';
 import Header from '../../components/header/Header';
+import ImageUpload from '../../components/imageUpload/Index';
+import './profile.scss';
 
 const ViewProfile = (props) => {
   const { getProfileRequest: getUserProfile, profile, history } = props;
+
   useEffect(() => {
     getUserProfile();
   }, []);
-  const imageSrc = 'https://res.cloudinary.com/djdsxql5q/image/upload/v1547914942/ireporter/ujz7ozprk8hkyszjju7d.jpg';
+
   return (
     <div>
       <Header type="purple" history={history} />
@@ -35,8 +37,7 @@ const ViewProfile = (props) => {
         <Container>
           <Row>
             <Col md={3} id="image-form">
-              <Image className="profile-image" src={imageSrc} />
-              <Button type="button" className="avatar-btn responsive-btn">Change Avatar</Button>
+              <ImageUpload />
             </Col>
             <Col md={9}>
               <h2 className="welcome">
@@ -152,4 +153,8 @@ const mapStateToProps = state => ({
   profile: state.authReducer.profile
 });
 
-export default connect(() => mapStateToProps, { getProfileRequest })(ViewProfile);
+const mapDispatchToProps = dispatch => ({
+  getProfileRequest: () => dispatch(getProfileRequest())
+});
+
+export default connect(() => mapStateToProps, mapDispatchToProps)(ViewProfile);
