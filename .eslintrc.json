@@ -66,13 +66,7 @@
           "react/jsx-indent-props": 0,
           "react/jsx-key": 1,
           "react/jsx-max-props-per-line": 0,
-          "react/jsx-no-bind": [ 1, {
-            "ignoreDOMComponents": false,
-            "ignoreRefs": false,
-            "allowArrowFunctions": false,
-            "allowFunctions": false,
-            "allowBind": true
-          }],
+          "react/jsx-no-bind": 0,
           "react/jsx-no-duplicate-props": 1,
           "react/jsx-no-literals": 0,
           "react/jsx-no-undef": 1,
@@ -104,6 +98,12 @@
             {
               "devDependencies": true
             }
-          ]
+          ],
+          "jsx-a11y/no-noninteractive-element-interactions": 0,
+          "react/destructuring-assignment": 0,
+          "jsx-a11y/click-events-have-key-events": 0,
+          "import/prefer-default-export": 0
+
+
               }
 }

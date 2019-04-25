@@ -11,7 +11,7 @@ import Button from '../button/Index';
 import HeaderText from '../headerText/Index';
 import Header from '../header/Index';
 
-export default function Banner({ history }) {
+export default function Banner({ history, showButton }) {
   return (
     <section>
       <div className="cont">
@@ -22,12 +22,16 @@ export default function Banner({ history }) {
               <HeaderText textHeader="All your thoughts in one place" textBody="This is a fertile ground for the creative mind. Plant your words as seeds and watch them blossom. Feel free to also harvest from the this garden of words and wisdom." />
             </Col>
           </Row>
-          <div className="button">
-            <Button
-            text="Get Started"
-            onClick={() => history.push('/signup')} // eslint-disable-line react/jsx-no-bind
-            />
-          </div>
+          {
+            showButton ? (
+              <div className="button">
+                <Button
+                text="Get Started"
+                onClick={() => history.push('/signup')}
+                />
+              </div>
+            ) : <div />
+          }
         </Container>
       </div>
     </section>
@@ -36,4 +40,9 @@ export default function Banner({ history }) {
 
 Banner.propTypes = {
   history: PropTypes.instanceOf(Object).isRequired,
+  showButton: PropTypes.bool
+};
+
+Banner.defaultProps = {
+  showButton: true
 };

@@ -24,7 +24,7 @@ exports[`Signup component should render without failing 1`] = `
           "entries": Array [
             Object {
               "hash": "",
-              "key": "i87k4x",
+              "key": "14ao9j",
               "pathname": "/",
               "search": "",
               "state": undefined,
@@ -38,7 +38,7 @@ exports[`Signup component should render without failing 1`] = `
           "listen": [Function],
           "location": Object {
             "hash": "",
-            "key": "i87k4x",
+            "key": "14ao9j",
             "pathname": "/",
             "search": "",
             "state": undefined,
