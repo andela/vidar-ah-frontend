@@ -1,5 +1,4 @@
 /* eslint-disable import/no-named-as-default */
-/* eslint-disable react/jsx-no-bind */
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';

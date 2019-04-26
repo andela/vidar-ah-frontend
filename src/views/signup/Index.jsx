@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-no-bind */
 /* eslint-disable import/no-named-as-default */
 import React, { useState } from 'react';
 import { SocialIcon } from 'react-social-icons';

@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-no-bind */
 import React from 'react';
 import { mount } from 'enzyme';
 import ImageContainer from '../../components/imageContainer/Index';

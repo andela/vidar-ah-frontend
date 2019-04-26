@@ -220,6 +220,11 @@ a {
     font-size: small;
     padding: 6px 20px;
   }
+
+  &-search {
+    box-shadow: none;
+    font-size: 0.9em;
+  }
 }
 
 .white-link,

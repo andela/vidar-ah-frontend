@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Container,
   CardDeck,
@@ -11,25 +11,52 @@ import {
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Banner from '../../components/banner/Index';
-import { getArticles, getTrendingArticles } from '../../redux/actions/getArticles';
+import { getArticles, getTrendingArticles, searchArticles } from '../../redux/actions/getArticles';
 import ArticleSummary from '../../components/articleSummary/Index';
 import RectArticleSummary from '../../components/rectArticleSummary/Index';
 import ContentHeader from '../../components/contentHeader/Index';
 import './landingPage.scss';
 import Footer from '../../components/footer/Index';
+import DefaultButton from '../../components/button/Index';
 
 
 const LandingPage = (props) => {
-  const { history, trendingArticles, articles } = props;
+  const [searchItems, setSearchItems] = useState({
+    title: '',
+    author: '',
+    limit: 6,
+    offset: 0
+  });
+  const [searchResults, setSearchResults] = useState({
+    articlesCount: 0,
+    articles: [],
+    searchRequest: false
+  });
+
+  const { history, articles, trendingArticles } = props;
   useEffect(() => {
     props.getArticles(3).then();
     props.getTrendingArticles(6).then();
   }, {});
 
-
   const getMoreTrending = () => {
     const amount = props.trendingArticles.length + 6;
     props.getTrendingArticles(amount).then();
+  };
+
+  const getMoreSearchResults = async () => {
+    const limit = searchItems.limit + 6;
+    setSearchItems({ ...searchItems, limit });
+    const query = `offset=${searchItems.offset}&limit=${limit}&term=${searchItems.title}&author=${searchItems.author}`;
+    const response = await props.searchArticles(query);
+    if (response.success) {
+      setSearchResults({
+        ...searchResults,
+        articlesCount: response.results.count,
+        articles: response.results.rows,
+        searchRequest: true
+      });
+    }
   };
 
   const getMoreArticles = () => {
@@ -37,38 +64,76 @@ const LandingPage = (props) => {
     props.getArticles(amount).then();
   };
 
-  const Search = () => (
-    <Form>
-      <Form.Group controlId="searchForm" className="search-pad">
-        <Form.Control type="search" placeholder="Search" className="search-entry" />
-      </Form.Group>
-      <Form.Group controlId="filterForm">
-        <Form.Label className="form-label">Filter by</Form.Label>
-        <Form.Check inline label="Automobiles" type="checkbox" id="inline-checkbox-1" />
-        <Form.Check inline label="Finance" type="checkbox" id="inline-checkbox-2" />
-        <Form.Check inline label="General" type="checkbox" id="inline-checkbox-3" />
-        <Form.Check inline label="Life-hacks" type="checkbox" id="inline-checkbox-4" />
-        <Form.Check inline label="Medicine" type="checkbox" id="inline-checkbox-5" />
-        <Form.Check inline label="Software development" type="checkbox" id="inline-checkbox-6" />
-        <Form.Check inline label="Sports" type="checkbox" id="inline-checkbox-7" />
-      </Form.Group>
-    </Form>
-  );
 
+  const updateTitle = (event) => {
+    setSearchItems({ ...searchItems, title: event.target.value });
+  };
 
+  const updateAuthor = (event) => {
+    setSearchItems({ ...searchItems, author: event.target.value });
+  };
+
+  const completeRequest = async (event) => {
+    event.preventDefault();
+    const query = `offset=${searchItems.offset}&limit=${searchItems.limit}&term=${searchItems.title}&author=${searchItems.author}`;
+    const response = await props.searchArticles(query);
+    if (response.success) {
+      setSearchResults({
+        ...searchResults,
+        articlesCount: response.results.count,
+        articles: response.results.rows,
+        searchRequest: true
+      });
+    }
+  };
   return (
     <div className="test-div">
       <Banner history={history} />
       <Container>
-        <Search />
+        <Form className="search-pad">
+          <Form.Row>
+            <Col md="6">
+              <Form.Control
+                type="search"
+                className="search-entry search-test"
+                placeholder="Title or description"
+                onChange={updateTitle} />
+            </Col>
+            <Col md="4">
+              <Form.Control
+                type="text"
+                placeholder="Author"
+                className="author-test"
+                onChange={updateAuthor}
+              />
+            </Col>
+            <Col md="auto">
+              <DefaultButton
+                text="Search"
+                className="yellow-button-search"
+                onClick={completeRequest} />
+            </Col>
+          </Form.Row>
+        </Form>
       </Container>
       <Container>
         <Row>
           <Col className="trending" md={8}>
-            <ContentHeader textHeader="All articles" />
+            {
+              searchResults.searchRequest ? <ContentHeader textHeader={`Search results (${searchResults.articlesCount})`} /> : <ContentHeader textHeader="All articles" />
+            }
             <CardColumns>
               {
-                trendingArticles.map(data => (
+                searchResults.searchRequest ? searchResults.articles.map(data => (
+                  <ArticleSummary
+                    className="p-1"
+                    key={data.id}
+                    src={`${data.images[0]}`}
+                    header={data.title}
+                    url={`/articles/${data.slug}`}
+                    name={data.name}
+                    time={data.updatedAt} />
+                )) : trendingArticles.map(data => (
                   <ArticleSummary
                     className="p-1"
                     key={data.id}
@@ -81,13 +146,31 @@ const LandingPage = (props) => {
               }
             </CardColumns>
             <div>
-              <Button
-                onClick={() => getMoreTrending()} // eslint-disable-line react/jsx-no-bind
-                className="readMore"
-                variant="outline-secondary"
-                size="lg" block>
-                <h4>See more trending articles</h4>
-              </Button>
+              {
+                searchResults.searchRequest
+                && (searchResults.articlesCount > 6)
+                && ((searchResults.articles.length % 6) === 0) ? (
+                  <Button
+                    onClick={() => getMoreSearchResults()}
+                    className="readMore"
+                    variant="outline-secondary"
+                    size="lg" block>
+                    <h4>See more search results</h4>
+                  </Button>
+                  ) : null
+              }
+              {
+                !searchResults.searchRequest ? (
+                  <Button
+                    onClick={() => getMoreTrending()}
+                    className="readMore"
+                    variant="outline-secondary"
+                    size="lg" block>
+                    <h4>See more trending articles</h4>
+                  </Button>
+                ) : null
+              }
+
             </div>
           </Col>
           <Col md={3}>
@@ -113,7 +196,7 @@ const LandingPage = (props) => {
                 variant="outline-secondary"
                 size="lg"
                 block
-                onClick={() => getMoreArticles()} // eslint-disable-line react/jsx-no-bind
+                onClick={() => getMoreArticles()}
               >
                 <h4>See more recent articles </h4>
               </Button>
@@ -133,7 +216,8 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = {
   getArticles,
-  getTrendingArticles
+  getTrendingArticles,
+  searchArticles
 };
 
 LandingPage.propTypes = {
@@ -141,6 +225,7 @@ LandingPage.propTypes = {
   getTrendingArticles: PropTypes.func.isRequired,
   articles: PropTypes.array.isRequired,
   getArticles: PropTypes.func.isRequired,
+  searchArticles: PropTypes.func.isRequired
 };
 
 LandingPage.propTypes = {

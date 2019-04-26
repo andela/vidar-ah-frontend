@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-no-bind */
 import React, { useState, useEffect } from 'react';
 import { Form, Collapse } from 'react-bootstrap';
 import PropTypes from 'prop-types';
