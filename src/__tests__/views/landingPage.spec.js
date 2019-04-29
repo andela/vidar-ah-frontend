@@ -60,5 +60,7 @@ describe('LandingPage', () => {
       </Provider>
     );
     expect(component.find('.test-div').exists()).toBe(true);
+    expect(component.find('.search-test').exists()).toBe(true);
+    expect(component.find('.author-test').exists()).toBe(true);
   });
 });

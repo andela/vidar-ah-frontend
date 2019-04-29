@@ -24,3 +24,4 @@ export const SIGNUP_FAILURE = 'SIGNUP_FAILURE';
 export const GET_REPORTS = 'GET_REPORTS';
 export const LIKE_ARTICLE = 'LIKE_ARTICLE';
 export const DISLIKE_ARTICLE = 'DISLIKE_ARTICLE';
+export const SEARCH = 'SEARCH';

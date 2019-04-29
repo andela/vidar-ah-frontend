@@ -9,7 +9,7 @@ import {
   SET_ARTICLE_ERROR,
   GET_RECOMMENDED_ARTICLES,
   LIKE_ARTICLE,
-  DISLIKE_ARTICLE
+  DISLIKE_ARTICLE,
 } from './actionTypes';
 
 const apiUrl = 'https://vidar-ah-backend-production.herokuapp.com/api/v1';

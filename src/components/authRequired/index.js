@@ -1,5 +1,4 @@
 /* eslint-disable react/prop-types */
-/* eslint-disable react/jsx-no-bind */
 /* eslint-disable react/display-name */
 import React from 'react';
 import { Route, Redirect } from 'react-router-dom';

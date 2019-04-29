@@ -1,5 +1,4 @@
 /* eslint-disable react/prop-types */
-/* eslint-disable react/jsx-no-bind */
 /* eslint-disable jsx-a11y/no-autofocus */
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
