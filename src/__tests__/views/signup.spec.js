@@ -56,7 +56,7 @@ describe('Signup component', () => {
   });
   it('should render form inputs, buttons and links', () => {
     expect(mountWrapper.find('Container')).toHaveLength(1);
-    expect(mountWrapper.find('.dark-forms')).toHaveLength(10);
+    expect(mountWrapper.find('.dark-forms')).toHaveLength(12);
     expect(mountWrapper.find('.interest')).toHaveLength(1);
   });
 });
