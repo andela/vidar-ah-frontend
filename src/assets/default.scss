@@ -64,7 +64,7 @@ a,
 input,
 select {
   &.dark-forms {
-    background-color: $white;
+    background-color: transparent;
     border: $aaa-border 1px solid;
     border-radius: 0 !important;
     box-sizing: border-box;
@@ -121,7 +121,7 @@ h2 {
 
 h3 {
   font-family: $font-family-header;
-  font-size: 1.00rem;
+  font-size: 1.20rem;
 }
 
 h4 {
@@ -298,7 +298,6 @@ img {
   &.thumbnail-image {
     height: 100%;
     margin: 0 auto;
-    margin-left: -37%;
     width: auto;
   }
 }

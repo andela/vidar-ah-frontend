@@ -4,23 +4,16 @@ import {
   Row,
   Col,
   Button,
-  Card,
-  CardDeck
 } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Footer from '../../components/footer/Index';
-import likes from '../../assets/images/article-likes.png';
-import dislike from '../../assets/images/dislike.png';
-import followers from '../../assets/images/followers.png';
-import following from '../../assets/images/following.png';
-import articleWritten from '../../assets/images/articles-written.png';
-import articleRead from '../../assets/images/article-read.png';
 import { getProfileRequest } from '../../redux/actions/profile';
 import Header from '../../components/header/Index';
 import ImageUpload from '../../components/imageUpload/Index';
 import './profile.scss';
+import Stats from '../../components/stats/Index';
 
 const ViewProfile = (props) => {
   const { getProfileRequest: getUserProfile, profile, history } = props;
@@ -76,65 +69,7 @@ const ViewProfile = (props) => {
               </div>
             </Col>
           </Row>
-          <h3 className="stats-title">Statistics</h3>
-          <div>
-            <CardDeck className="center-card">
-              <Card>
-                <Card.Img className="icon-size" variant="top" src={followers} />
-                <Card.Body>
-                  <Card.Title>0</Card.Title>
-                </Card.Body>
-                <Card.Footer>
-                  <small className="text-muted">Followers</small>
-                </Card.Footer>
-              </Card>
-              <Card>
-                <Card.Img className="icon-size" variant="top" src={following} />
-                <Card.Body>
-                  <Card.Title>0</Card.Title>
-                </Card.Body>
-                <Card.Footer>
-                  <small className="text-muted">Following</small>
-                </Card.Footer>
-              </Card>
-              <Card>
-                <Card.Img className="icon-size" variant="top" src={articleWritten} />
-                <Card.Body>
-                  <Card.Title>0</Card.Title>
-                </Card.Body>
-                <Card.Footer>
-                  <small className="text-muted">Articles written</small>
-                </Card.Footer>
-              </Card>
-              <Card>
-                <Card.Img className="icon-size" variant="top" src={articleRead} />
-                <Card.Body>
-                  <Card.Title>0</Card.Title>
-                </Card.Body>
-                <Card.Footer>
-                  <small className="text-muted">Articles read</small>
-                </Card.Footer>
-              </Card>
-              <Card>
-                <Card.Img className="icon-size" variant="top" src={likes} />
-                <Card.Body>
-                  <Card.Title>0</Card.Title>
-                </Card.Body>
-                <Card.Footer>
-                  <small className="text-muted">Articles likes</small>
-                </Card.Footer>
-              </Card>
-              <Card>
-                <Card.Img className="icon-size" variant="top" src={dislike} />
-                <Card.Body>
-                  <Card.Title>0</Card.Title>
-                </Card.Body>
-                <Card.Footer>
-                  <small className="text-muted">Articles dislikes</small>
-                </Card.Footer>
-              </Card>
-            </CardDeck>
-          </div>
+          <Stats />
           <Footer />
         </Container>
       </div>
