@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import HeaderText from '../../components/headerText/Index';
+import HeaderText from '../../components/HeaderText';
 
 describe('HeaderText component', () => {
   let component;

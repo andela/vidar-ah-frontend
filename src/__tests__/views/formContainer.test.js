@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import FormContainer from '../../components/formContainer/Index';
+import FormContainer from '../../components/FormContainer';
 
 describe('FormContainer component', () => {
   let component;

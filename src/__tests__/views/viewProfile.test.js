@@ -4,7 +4,7 @@ import { MemoryRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
-import ViewProfile from '../../views/profilePage/ViewProfile';
+import ViewProfile from '../../views/ProfilePage/ViewProfile';
 
 describe('ViewProfile component', () => {
   const mockStore = configureStore([thunk]);

@@ -28,7 +28,6 @@ export const editProfileRequest = updatedProfile => async (dispatch) => {
     await axios.patch(`${apiUrl}/userprofile`, updatedProfile, {
       headers: { Authorization: token }
     });
-
     dispatch(getProfileRequest());
   } catch (error) {
     return error.response;

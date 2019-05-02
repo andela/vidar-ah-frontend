@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import Preview from '../../components/previewArticle/Preview';
+import Preview from '../../components/PreviewArticle';
 
 describe('Preview component', () => {
   const article = {

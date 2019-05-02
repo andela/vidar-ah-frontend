@@ -4,7 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
-import Comment from '../../components/comment/Index';
+import Comment from '../../components/Comment';
 
 
 describe('Comment component', () => {

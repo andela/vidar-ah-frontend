@@ -1,0 +1,25 @@
+@import '../../assets/default';
+
+.title {
+  font-style: normal;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+  text-align: center;
+}
+
+.align-title {
+  padding-bottom: 3%;
+  padding-top: 3%;
+  text-align: center;
+}
+
+@media screen and (max-width: 800px) {
+  .title {
+    font-size: 1.7rem;
+    text-align: left;
+  }
+
+  .align-title {
+    margin-left: 3rem;
+  }
+}

@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import { BrowserRouter } from 'react-router-dom';
-import Button from '../../components/button/Index';
+import Button from '../../components/Button';
 
 const testFunc = () => { };
 

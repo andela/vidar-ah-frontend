@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
-import ReportsPage from '../../views/reportedArticles/Index';
+import ReportsPage from '../../views/ReportedArticles';
 
 describe('Reports component', () => {
   const mockStore = configureStore([thunk]);

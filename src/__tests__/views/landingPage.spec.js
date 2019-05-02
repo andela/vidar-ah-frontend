@@ -4,7 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
-import LandingPage from '../../views/landingPage/Index';
+import LandingPage from '../../views/LandingPage';
 
 describe('LandingPage', () => {
   const mockStore = configureStore([thunk]);

@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import ArticleBody from '../../components/articleBody/Index';
+import ArticleBody from '../../components/ArticleBody';
 
 describe('ArticleBody component', () => {
   it('should render article body', () => {

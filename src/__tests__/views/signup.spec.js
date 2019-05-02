@@ -5,10 +5,10 @@ import configureStore from 'redux-mock-store';
 import toJson from 'enzyme-to-json';
 import { MemoryRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import { SignUp } from '../../views/signup/Index';
-import Header from '../../components/header/Index';
-import ErrorAlert from '../../components/alert/Alert';
-import Button from '../../components/button/Index';
+import { SignUp } from '../../views/Signup';
+import Header from '../../components/Header';
+import ErrorAlert from '../../components/Alert';
+import Button from '../../components/Button';
 
 const mockStore = configureStore();
 

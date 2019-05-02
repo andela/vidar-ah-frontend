@@ -8,8 +8,8 @@ import { MemoryRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import { Login } from '../../views/LoginPage';
-import Header from '../../components/header/Index';
-import Button from '../../components/button/Index';
+import Header from '../../components/Header';
+import Button from '../../components/Button';
 
 
 const getLoginPage = () => {

@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
-import CreateArticle from '../../views/createArticle/index';
+import CreateArticle from '../../views/CreateArticle/index';
 
 describe('CreateArticle component', () => {
   const mockStore = configureStore([thunk]);

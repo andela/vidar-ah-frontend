@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import { BrowserRouter } from 'react-router-dom';
-import RectArticleSummary from '../../components/rectArticleSummary/Index';
+import RectArticleSummary from '../../components/RectArticleSummary';
 
 describe('RectArticleSummary component', () => {
   let component;
