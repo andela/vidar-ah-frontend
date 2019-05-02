@@ -27,11 +27,11 @@ const ArticleSummary = (props) => {
         </div>
         <Card.Footer className="text-muted">
           <Row className="small">
-            <Col sm={2} className="p-0"><img alt="user" src="https://res.cloudinary.com/dqyytlxwe/image/upload/v1554891501/user-shape_1_1.png" /></Col>
-            <Col sm={7} className="p-0">
+            <Col className="p-0"><img alt="user" src="https://res.cloudinary.com/dqyytlxwe/image/upload/v1554891501/user-shape_1_1.png" /></Col>
+            <Col className="p-0 col-6">
               {firstName}
             </Col>
-            <Col sm={3} className="p-0">
+            <Col className="p-0">
               <small>
                 {hrs}
                 {' '}

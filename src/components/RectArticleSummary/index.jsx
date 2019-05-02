@@ -24,8 +24,8 @@ const RectArticleSummary = (props) => {
         </Card.Body>
         <Card.Footer className="text-muted">
           <Row className="small">
-            <Col sm={1}><img alt="user" src="https://res.cloudinary.com/dqyytlxwe/image/upload/v1554891501/user-shape_1_1.png" /></Col>
-            <Col sm={6}>{firstName}</Col>
+            <Col className="col-2"><img alt="user" src="https://res.cloudinary.com/dqyytlxwe/image/upload/v1554891501/user-shape_1_1.png" /></Col>
+            <Col>{firstName}</Col>
             <Col>
               {hrs}
               {' '}

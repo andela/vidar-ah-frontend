@@ -162,9 +162,6 @@ a {
 
 .box { padding: 1.25rem; }
 
-@media screen and (min-width: 1400px) {
-  html { font-size: 1.25rem; }
-}
 
 .card-outline {
   box-shadow: $box-shadow-color;
@@ -395,7 +392,22 @@ img {
   }
 }
 
-@media screen and (max-width: 800px) {
+.article-col-count {
+  column-count: 4;
+}
+
+@media screen and (min-width: 1400px) {
+  html { font-size: 1.25rem; }
+}
+
+@media screen and (min-width: 750px) and (max-width: 800px) {
+  .card-columns {
+    column-count: 2;
+  }
+
+}
+
+@media screen and (max-width: 700px) {
 
   .fab-likes {
     left: 1rem;
