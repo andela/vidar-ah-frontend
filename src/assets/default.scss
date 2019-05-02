@@ -389,6 +389,11 @@ img {
   z-index: 999999999;
 }
 
+.link-card {
+  &:hover {
+    text-decoration: none;
+  }
+}
 
 @media screen and (max-width: 800px) {
 

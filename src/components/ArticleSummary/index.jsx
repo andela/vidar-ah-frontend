@@ -19,30 +19,30 @@ const ArticleSummary = (props) => {
   const imageSource = src || 'https://res.cloudinary.com/djdsxql5q/image/upload/v1554806589/Authors%20Haven/culture.jpg';
 
   return (
-    <Card className="card-outline" style={{ height: '16rem' }}>
-      <Card.Img style={{ height: '7rem' }} fluid="true" variant="top" src={imageSource} />
-      <div className="summary-card-body">
-        <Link className="link" to={`${url}`}>
+    <Link className="link-card" to={`${url}`}>
+      <Card className="card-outline" style={{ height: '16rem' }}>
+        <Card.Img style={{ height: '7rem' }} fluid="true" variant="top" src={imageSource} />
+        <div className="summary-card-body">
           <Card.Text className="card-pad">{header}</Card.Text>
-        </Link>
-      </div>
-      <Card.Footer className="text-muted">
-        <Row className="small">
-          <Col sm={2} className="p-0"><img alt="user" src="https://res.cloudinary.com/dqyytlxwe/image/upload/v1554891501/user-shape_1_1.png" /></Col>
-          <Col sm={7} className="p-0">
-            {firstName}
-          </Col>
-          <Col sm={3} className="p-0">
-            <small>
-              {hrs}
-              {' '}
-              h
-              {' '}
-            </small>
-          </Col>
-        </Row>
-      </Card.Footer>
-    </Card>
+        </div>
+        <Card.Footer className="text-muted">
+          <Row className="small">
+            <Col sm={2} className="p-0"><img alt="user" src="https://res.cloudinary.com/dqyytlxwe/image/upload/v1554891501/user-shape_1_1.png" /></Col>
+            <Col sm={7} className="p-0">
+              {firstName}
+            </Col>
+            <Col sm={3} className="p-0">
+              <small>
+                {hrs}
+                {' '}
+                h
+                {' '}
+              </small>
+            </Col>
+          </Row>
+        </Card.Footer>
+      </Card>
+    </Link>
   );
 };
 
