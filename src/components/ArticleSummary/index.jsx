@@ -17,6 +17,7 @@ const ArticleSummary = (props) => {
   const hrs = timeCalc(time);
   const firstName = nameSplit(name);
   const imageSource = src || 'https://res.cloudinary.com/djdsxql5q/image/upload/v1554806589/Authors%20Haven/culture.jpg';
+  const userImage = "https://res.cloudinary.com/dqyytlxwe/image/upload/v1554891501/user-shape_1_1.png";
 
   return (
     <Link className="link-card" to={`${url}`}>
@@ -27,7 +28,7 @@ const ArticleSummary = (props) => {
         </div>
         <Card.Footer className="text-muted">
           <Row className="small">
-            <Col className="p-0"><img alt="user" src="https://res.cloudinary.com/dqyytlxwe/image/upload/v1554891501/user-shape_1_1.png" /></Col>
+            <Col className="p-0"><img alt="user" src={userImage} /></Col>
             <Col className="p-0 col-6">
               {firstName}
             </Col>

@@ -1,9 +1,10 @@
 import React from 'react';
+import { Fab } from 'react-tiny-fab';
+import 'react-tiny-fab/dist/styles.min.css';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
 import PropTypes from 'prop-types';
-import Button from "../Button";
 import './header.scss';
 import { logOut } from '../../redux/actions/auth';
 
@@ -54,7 +55,25 @@ const Header = (props) => {
                   <NavDropdown.Item><Link to="#" onClick={logout} className={`${className}-text`}>Log out</Link></NavDropdown.Item>
                 </NavDropdown>
               </Nav>
-              <Link to="/create-article"><Button text="+ NEW POST" className="fab" /></Link>
+              <Fab
+                  icon={(
+                    <img
+                    src="https://res.cloudinary.com/dqyytlxwe/image/upload/v1556811098/fabb.png"
+                    alt="fab"
+                    height="60px" width="60px"
+                    />
+)}
+                >
+                <div text="New post">
+                  <Link to="/create-article">
+                    <img
+                      src="https://res.cloudinary.com/dqyytlxwe/image/upload/v1556810906/create.png"
+                      height="40px" width="40px"
+                      alt="New post"
+                    />
+                  </Link>
+                </div>
+              </Fab>
             </>
           ) : (
             <Nav>

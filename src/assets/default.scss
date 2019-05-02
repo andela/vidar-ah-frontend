@@ -227,6 +227,11 @@ a {
     font-size: small;
     padding: 6px 20px;
   }
+
+  &-profile {
+    font-size: large;
+    padding: 6px 20px;
+  }
 }
 
 .white-link,
@@ -405,6 +410,25 @@ img {
     column-count: 2;
   }
 
+  .article-col-count {
+    column-count: 2;
+  }
+
+  .fab-likes {
+    left: 1rem;
+    position: absolute;
+    top: 15rem;
+    z-index: 999999;
+  }
+
+  .navbar-nav {
+    padding-top: 1rem;
+
+    & .dropdown-menu {
+      position: absolute;
+    }
+  }
+
 }
 
 @media screen and (max-width: 700px) {
@@ -468,6 +492,10 @@ img {
     position: fixed;
     top: 3rem;
     z-index: 999999999;
+ }
+
+  .article-col-count {
+    column-count: 1;
  }
 
 }

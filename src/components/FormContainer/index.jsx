@@ -3,11 +3,11 @@ import React from 'react';
 import {
   Row,
   Col,
-  Button,
   Form,
   FormControl
 } from 'react-bootstrap';
 import './formContainer.scss';
+import Button from '../Button';
 
 const FormContainer = (props) => {
   const {
@@ -68,11 +68,10 @@ const FormContainer = (props) => {
               onChange={event => handleChange(event)} />
           </Form.Group>
         </div>
-        <h4>Actions</h4>
         <hr className="hr" />
         <div className="align-btn" id="action-btn">
-          <Button type="submit" className="avatar-btn">Save Profile</Button>
-          <Button onClick={cancelChanges} type="button" className="avatar-btn">Cancel</Button>
+          <Button type="submit" text="Save Profile" className="yellow-button-profile avatar-btn" />
+          <Button onClick={cancelChanges} text="Cancel" className="yellow-button-profile avatar-btn" />
         </div>
       </Form>
     </div>
