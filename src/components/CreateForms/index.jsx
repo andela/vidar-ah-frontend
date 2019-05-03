@@ -62,17 +62,9 @@ const Create = (props) => {
         onChange={updateEditor}
         className="form-body"
       />
-      <div className="center-button">
-        <Container>
-          <Row>
-            <Col md={{ span: 1, offset: 4 }}>
-              <Button text="Preview" onClick={onSubmit} type="solid" />
-            </Col>
-            <Col md={{ span: 1, offset: 1 }}>
-              <Button onClick={onDelete} text="Delete" />
-            </Col>
-          </Row>
-        </Container>
+      <div className="center-button center-button-create-form">
+        <Button text="Preview" onClick={onSubmit} type="solid" className="center-button-btn" />
+        <Button onClick={onDelete} text="Delete" className="center-button-btn" />
       </div>
     </div>
   );
