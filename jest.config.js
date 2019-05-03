@@ -11,7 +11,7 @@ module.exports = {
   setupFiles: ['<rootDir>/enzyme.config.js'],
   testEnvironment: 'jsdom',
   testMatch: ['**/__tests__/**/*.js?(x)', '**/?(*.)+(spec|test).js?(x)'],
-  testPathIgnorePatterns: ['\\\\node_modules\\\\', './__tests__/helpers/*'],
+  testPathIgnorePatterns: ['\\\\node_modules\\\\', './__tests__/helpers/*', 'src/components/authRequired'],
   testURL: 'http://localhost',
   transformIgnorePatterns: ['<rootDir>/node_modules/'],
   transform: {

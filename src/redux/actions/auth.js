@@ -6,13 +6,12 @@ import { saveToken, removeToken } from '../../utils/localStorage';
 import { getProfileRequest } from './profile';
 
 
-const baseUrl = 'https://vidar-ah-backend-production.herokuapp.com';
-
+const apiUrl = 'https://vidar-ah-backend-production.herokuapp.com/api/v1';
 export const loginUser = userData => async (dispatch) => {
   try {
     dispatch(startFetching());
     const { data } = await axios.post(
-      `${baseUrl}/api/v1/user/login`,
+      `${apiUrl}/user/login`,
       { ...userData }
     );
     const { success } = data;

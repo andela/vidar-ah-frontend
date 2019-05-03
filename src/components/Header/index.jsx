@@ -3,10 +3,11 @@ import { Fab } from 'react-tiny-fab';
 import 'react-tiny-fab/dist/styles.min.css';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
+import { Navbar, Nav, NavDropdown, Image } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import './header.scss';
 import { logOut } from '../../redux/actions/auth';
+import Notification from '../../views/Notification/index';
 
 
 const Header = (props) => {
@@ -37,12 +38,15 @@ const Header = (props) => {
         {
           isLoggedIn ? (
             <>
-              <Nav>
+              <Nav className="justify-content-end">
+                <Nav.Item>
+                  <Notification />
+                </Nav.Item>
                 <NavDropdown title={(
-                  <div className="small-profile">
-                    <img
-                      className="thumbnail-image"
-                      src={`${profile.image || "https://res.cloudinary.com/dqyytlxwe/image/upload/v1555941949/avatar.png"}`}
+                  <div className="profile-header-img">
+                    <Image
+                      className="img-circle"
+                      src={`${(profile || {}).image}`}
                       alt="user pic"
                     />
                   </div>

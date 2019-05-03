@@ -16,7 +16,6 @@ $primary-color: #999;
 $box-shadow-color: 0 6px 20px 1px rgba(0, 0, 0, 0.15);
 $white-color: #fff;
 $yellow: #e2d754;
-$deep-purple: hsl(279, 68%, 19%);
 $deep-purple-grad: rgba(60, 16, 83, 0.9);
 $light-blue: #0575e6;
 $light-purple-grad: rgba(173, 83, 137, 0.9);
@@ -309,13 +308,6 @@ img {
   }
 }
 
-.small-profile {
-  border-radius: 50%;
-  height: 3.5rem;
-  overflow: hidden;
-  position: relative;
-  width: 3.5rem;
-}
 
 .dropdown-toggle {
   &::after {
@@ -461,22 +453,6 @@ img {
     }
   }
 
-  .small-profile {
-    border-radius: 50%;
-    display: block;
-    height: 3.5rem;
-    overflow: hidden;
-    position: relative;
-    width: 3.5rem;
-  }
-
-  img {
-    &.thumbnail-image {
-      height: 100%;
-      margin: 0 auto;
-      width: auto;
-    }
-  }
 
   .hide-small {
     display: none;

@@ -18,7 +18,10 @@ describe('Reports component', () => {
         currentUser: {},
         isLoggedIn: true,
         profile: {}
-      }
+      },
+      notificationReducer: {
+        notify: [{ message: "Dubby commented on your article" }]
+      },
     });
 
     component = mount(
