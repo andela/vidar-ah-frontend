@@ -32,23 +32,29 @@ export const SignUp = ({ signup, history }) => {
     username: '',
     email: '',
     password: '',
+    confirmPassword: '',
     interests: ''
   });
 
-  const updateInput = event => setSignupData({
-    ...signupData, [event.target.name]: event.target.value
-  });
+  const updateInput = (event) => {
+    setSignupData({
+      ...signupData, [event.target.name]: event.target.value
+    });
+    setErrors([]);
+    setSuccess(false);
+  };
 
   const updateInterest = (interests) => {
     setSignupData({ ...signupData, interests: interests.toString() });
   };
 
   const {
-    name, username, email, password, interests
+    name, username, email, password, confirmPassword, interests
   } = signupData;
 
   const submitForm = async (event) => {
     event.preventDefault();
+    if (password !== confirmPassword) return setErrors(['Passwords do not match']);
     setLoading(true);
     const result = await signup(signupData);
     setLoading(false);
@@ -86,27 +92,28 @@ export const SignUp = ({ signup, history }) => {
                     <Form.Control type="email" name="email" value={email} placeholder="Email" className="dark-forms" onChange={updateInput} required />
                     <Checkbox updateInput={updateInterest} className="interest" interests={interests} />
                     <Form.Control type="password" name="password" value={password} placeholder="Password" className="dark-forms" onChange={event => updateInput(event)} required />
+                    <Form.Control type="password" name="confirmPassword" value={confirmPassword} placeholder="Renter Password" className="dark-forms" onChange={event => updateInput(event)} required />
                     <Button text="Sign up" className="w-80" />
                     <div className="container-social-login">
                       <span className="info">or sign up using</span>
                       <SocialIcon
-                        url={googleUrl}
-                        className="social-media-icons"
-                        network="google"
-                        style={{ height: 35, width: 35 }}
-                        fgColor="#fff"
+                          url={googleUrl}
+                          className="social-media-icons"
+                          network="google"
+                          style={{ height: 35, width: 35 }}
+                          fgColor="#fff"
                         />
                       <SocialIcon
-                      url={facebookUrl}
-                      className="social-media-icons"
-                      network="facebook"
-                      style={{ height: 35, width: 35 }}
-                      fgColor="#fff"
-                      />
+                          url={facebookUrl}
+                          className="social-media-icons"
+                          network="facebook"
+                          style={{ height: 35, width: 35 }}
+                          fgColor="#fff"
+                        />
                     </div>
                     <div className="container-directing-to-login">
                       <span>
-                      Already have an account?
+                          Already have an account?
                         <NavLink to="/login" className="link-to-another-page">
                             Log in
                         </NavLink>
