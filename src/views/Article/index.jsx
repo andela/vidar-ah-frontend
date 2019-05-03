@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import LoadingBar from 'react-top-loading-bar';
 import {
   Container,
-  CardDeck,
   Row,
-  Col
+  Col,
+  CardColumns
 } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import {
@@ -149,13 +149,13 @@ const Article = (props) => {
           articleSlug={article.slug}
         />
 
-        { (alertMessage.message) && (
-        <AlertModal
-          message={alertMessage.message}
-          show={alertMessage.visibility}
-          closeAlertModal={() => setAlertMessage({ message: '', visibility: false })}
-          variant="primary"
-        />
+        {(alertMessage.message) && (
+          <AlertModal
+            message={alertMessage.message}
+            show={alertMessage.visibility}
+            closeAlertModal={() => setAlertMessage({ message: '', visibility: false })}
+            variant="primary"
+          />
         )}
 
         <ArticleTitle title={article.title} />
@@ -299,7 +299,7 @@ const Article = (props) => {
       <hr />
       <Container>
         <h3>Also recommended for you</h3>
-        <CardDeck>
+        <CardColumns className="article-col-count">
           {props.recommendedArticles.map(recArticle => (
             <ArticleSummary
               key={recArticle.id}
@@ -310,7 +310,7 @@ const Article = (props) => {
               name={recArticle.name}
             />
           ))}
-        </CardDeck>
+        </CardColumns>
       </Container>
       <Footer />
     </div>
