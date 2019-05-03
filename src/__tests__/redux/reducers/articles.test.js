@@ -5,7 +5,8 @@ const initialState = {
   articles: [],
   article: {},
   recommendedArticles: [],
-  trendingArticles: []
+  trendingArticles: [],
+  successMessage: '',
 };
 
 describe('article reducer', () => {

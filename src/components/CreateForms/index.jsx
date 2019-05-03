@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ReactQuill from 'react-quill';
 import { Container, Row, Col } from 'react-bootstrap';
-
 import Button from '../Button';
 import '../../views/CreateArticle/createArticle.scss';
+// import setArticleImage from '../../utils/setArticleImage';
 
 const fields = [
   {
@@ -19,11 +19,13 @@ const Create = (props) => {
   const {
     onChangeText,
     onSubmit,
-    onDelete,
+    onCancel,
     article,
-    user
+    user,
   } = props;
   const updateEditor = text => onChangeText({ target: { name: 'body', value: text } });
+
+  // const image = setArticleImage(article);
 
   return (
     <div className="form-field">
@@ -62,17 +64,9 @@ const Create = (props) => {
         onChange={updateEditor}
         className="form-body"
       />
-      <div className="center-button">
-        <Container>
-          <Row>
-            <Col md={{ span: 1, offset: 4 }}>
-              <Button text="Preview" onClick={onSubmit} type="solid" />
-            </Col>
-            <Col md={{ span: 1, offset: 1 }}>
-              <Button onClick={onDelete} text="Delete" />
-            </Col>
-          </Row>
-        </Container>
+      <div className="center-button center-button-create-form">
+        <Button text="Preview" onClick={onSubmit} type="solid" className="center-button-btn" />
+        <Button onClick={onCancel} text="Delete" className="center-button-btn" />
       </div>
     </div>
   );
@@ -81,9 +75,9 @@ const Create = (props) => {
 Create.propTypes = {
   onChangeText: PropTypes.func.isRequired,
   onSubmit: PropTypes.func.isRequired,
-  onDelete: PropTypes.func.isRequired,
+  onCancel: PropTypes.func.isRequired,
   article: PropTypes.object.isRequired,
-  user: PropTypes.object.isRequired
+  user: PropTypes.object.isRequired,
 };
 
 export default Create;

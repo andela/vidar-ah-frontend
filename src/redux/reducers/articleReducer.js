@@ -1,5 +1,10 @@
 import {
-  SET_ARTICLE, GET_RECOMMENDED_ARTICLES, GET_LATEST_ARTICLES, GET_TRENDING_ARTICLES
+  SET_ARTICLE,
+  GET_RECOMMENDED_ARTICLES,
+  GET_LATEST_ARTICLES,
+  GET_TRENDING_ARTICLES,
+  SAVE_ARTICLE_DATA,
+  DELETE_ARTICLE,
 } from '../actions/actionTypes';
 import initialState from './initialState';
 
@@ -14,6 +19,17 @@ export default (state = initialState, action) => {
       return { ...state, articles: action.data };
     case GET_TRENDING_ARTICLES:
       return { ...state, trendingArticles: action.data };
+    case SAVE_ARTICLE_DATA:
+      return { ...state, article: action.payload };
+    case DELETE_ARTICLE:
+      return {
+        ...state,
+        articles: state.articles.filter(article => (article.slug !== action.payload.article.slug)),
+        trendingArticles: state
+          .trendingArticles
+          .filter(article => (article.slug !== action.payload.article.slug)),
+        successMessage: action.successMessage,
+      };
     default: return state;
   }
 };

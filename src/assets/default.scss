@@ -38,6 +38,7 @@ $button-shadow-hover: rgba(111, 102, 3, 0.8);
 $button-text: #51455c;
 $button-text-hover: rgb(46, 39, 53);
 $border-styling: rgba(255, 255, 255, 0.3);
+$red: #f00;
 
 // input sizes
 $input-field-width: 80%;
@@ -205,6 +206,14 @@ a {
   padding: 12px 25px;
   text-align: center;
   transition: ease-in-out 0.4s;
+
+  &-login {
+    width: 80%;
+
+    &:focus {
+      outline: none;
+    }
+  }
 
   &:hover {
     background: $hover-background;

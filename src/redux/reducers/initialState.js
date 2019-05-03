@@ -2,7 +2,8 @@ const initialState = {
   articles: [],
   article: {},
   recommendedArticles: [],
-  trendingArticles: []
+  trendingArticles: [],
+  successMessage: '',
 };
 
 export default initialState;

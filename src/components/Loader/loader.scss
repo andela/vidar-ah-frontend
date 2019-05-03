@@ -1,13 +1,23 @@
 $faded-black: rgba(0, 0, 0, 0.8);
+$purple-nav: #8932b4;
+$deep-purple-grad-2: rgba(60, 16, 83, 1);
+$deep-purple-grad: rgba(60, 16, 83, 0.7);
+$light-purple-grad: rgba(173, 83, 137, 0.7);
 
 .loader {
   align-items: center;
-  background: $faded-black;
+  background-image: linear-gradient(to right, $deep-purple-grad, $light-purple-grad),
+  url('https://res.cloudinary.com/jessam/image/upload/v1554725326/tachina-lee-42980-unsplash_1.jpg');
+  background-position: center;
+  background-size: cover;
   display: flex;
   height: 100%;
   justify-content: center;
+  left: 0;
+  opacity: 0.9;
   overflow: hidden;
   position: fixed;
+  top: 0;
   width: 100%;
   z-index: 99;
 

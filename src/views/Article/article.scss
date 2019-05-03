@@ -1,19 +1,5 @@
 @import '../../assets/default';
-
-.edit-delete-container {
-  border: 1px solid $black-color;
-  display: flex;
-  justify-content: space-around;
-  margin: auto;
-  width: 80%;
-
-  .btn {
-    display: inline-block;
-    text-align: center;
-    width: 5rem;
-
-  }
-}
+@import '../CreateArticle/createArticle';
 
 html,
 body {
@@ -29,6 +15,51 @@ body {
 
 .article-container {
   height: 100%;
+}
+
+.edit-delete-container {
+  display: flex;
+  justify-content: space-around;
+  margin: auto;
+  margin-bottom: 3em;
+  width: 70%;
+
+  .link-edit-article {
+    background-color: $white;
+    border: 1px solid $purple-nav;
+    box-shadow: none;
+    color: $deep-purple;
+    display: block;
+    font-size: 1.2em;
+    font-weight: 500;
+    line-height: normal;
+    padding: 0.2rem 1.2rem;
+    text-align: center;
+    text-decoration: none;
+    transition: ease-in-out 0.4s;
+    width: 5.5em;
+  }
+
+  .btn-delete-article {
+    background-color: $white;
+    border: 1px solid $purple-nav;
+    box-shadow: none;
+    color: $deep-purple;
+    display: block;
+    font-size: 1.2em;
+    font-weight: 500;
+    line-height: normal;
+    padding: 0.2rem 1.2rem;
+    text-align: center;
+    text-decoration: none;
+    transition: ease-in-out 0.4s;
+    width: 5.5em;
+
+    &:hover {
+      background-color: $red;
+      color: $white;
+    }
+  }
 }
 
 .progress-bar {
