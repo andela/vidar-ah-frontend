@@ -6,7 +6,7 @@ export default function ContentHeader(props) {
   const { textHeader } = props;
   return (
     <section className="content-header-test">
-      <h2 className="content-header">{textHeader}</h2>
+      <h3 className="content-header">{textHeader}</h3>
     </section>
   );
 }

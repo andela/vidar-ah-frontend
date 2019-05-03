@@ -15,26 +15,27 @@ const RectArticleSummary = (props) => {
   } = props;
   const hrs = timeCalc(time);
   const firstName = nameSplit(name);
+  const userImage = "https://res.cloudinary.com/dqyytlxwe/image/upload/v1554891501/user-shape_1_1.png";
 
   return (
-    <Card style={{ }} className="card-outline">
-      <Card.Body>
-        <Link className="link" to={`${url}`}>
+    <Link className="link-card" to={`${url}`}>
+      <Card style={{}} className="card-outline">
+        <Card.Body>
           <h5>{header}</h5>
-        </Link>
-      </Card.Body>
-      <Card.Footer className="text-muted">
-        <Row className="small">
-          <Col sm={1}><img alt="user" src="https://res.cloudinary.com/dqyytlxwe/image/upload/v1554891501/user-shape_1_1.png" /></Col>
-          <Col sm={6}>{firstName}</Col>
-          <Col>
-            {hrs}
-            {' '}
-            h
-          </Col>
-        </Row>
-      </Card.Footer>
-    </Card>
+        </Card.Body>
+        <Card.Footer className="text-muted">
+          <Row className="small">
+            <Col className="col-2"><img alt="user" src={userImage} /></Col>
+            <Col>{firstName}</Col>
+            <Col>
+              {hrs}
+              {' '}
+              h
+            </Col>
+          </Row>
+        </Card.Footer>
+      </Card>
+    </Link>
   );
 };
 
