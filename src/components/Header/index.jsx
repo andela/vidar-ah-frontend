@@ -7,7 +7,7 @@ import { Navbar, Nav, NavDropdown, Image } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import './header.scss';
 import { logOut } from '../../redux/actions/auth';
-import Notification from '../../views/notification/Index';
+import Notification from '../../views/Notification/index';
 
 
 const Header = (props) => {
@@ -46,7 +46,7 @@ const Header = (props) => {
                   <div className="profile-header-img">
                     <Image
                       className="img-circle"
-                      src={`${profile.image}`}
+                      src={`${(profile || {}).image}`}
                       alt="user pic"
                     />
                   </div>
@@ -80,11 +80,11 @@ const Header = (props) => {
               </Fab>
             </>
           ) : (
-              <Nav>
-                <Link to="/signup" className={`${className} hide-small`}>Signup</Link>
-                <Link to="/login" className={className}>Login</Link>
-              </Nav>
-            )
+            <Nav>
+              <Link to="/signup" className={`${className} hide-small`}>Signup</Link>
+              <Link to="/login" className={className}>Login</Link>
+            </Nav>
+          )
         }
       </Navbar>
     </div>

@@ -32,7 +32,10 @@ const getLoginPage = () => {
       currentUser: {},
       isLoggedIn: true,
       profile: {}
-    }
+    },
+    notificationReducer: {
+      notify: [{ message: "Dubby commented on your article" }]
+    },
   });
 
 

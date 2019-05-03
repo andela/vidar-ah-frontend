@@ -35,7 +35,11 @@ describe('Get an article by its slug', () => {
         isLoggedIn: true,
         profile: {},
         currentUser: {}
-      }
+      },
+
+      notificationReducer: {
+        notify: [{ message: "Dubby commented on your article" }]
+      },
     });
 
     component = mount(
@@ -69,7 +73,10 @@ describe('Get an article by its slug', () => {
         isLoggedIn: true,
         profile: {},
         currentUser: {}
-      }
+      },
+      notificationReducer: {
+        notify: [{ message: "Dubby commented on your article" }]
+      },
     });
 
     component = mount(
@@ -115,7 +122,10 @@ describe('Follow author buttons', () => {
         isLoggedIn: true,
         profile: {},
         currentUser: {}
-      }
+      },
+      notificationReducer: {
+        notify: [{ message: "Dubby commented on your article" }]
+      },
     });
 
     component = mount(
@@ -125,6 +135,7 @@ describe('Follow author buttons', () => {
             history={{ location: { pathname: '/articles/:slug' } }}
             match={{ params: { slug: 'poierwjvoejcijwoei' } }}
             article={article}
+            notify={[]}
           />
           , context:
           {}
@@ -147,7 +158,10 @@ describe('Follow author buttons', () => {
         isLoggedIn: true,
         profile: {},
         currentUser: {}
-      }
+      },
+      notificationReducer: {
+        notify: [{ message: "Dubby commented on your article" }]
+      },
     });
 
     component = mount(
@@ -180,7 +194,10 @@ describe('Follow author buttons', () => {
         isLoggedIn: true,
         profile: {},
         currentUser: {}
-      }
+      },
+      notificationReducer: {
+        notify: [{ message: "Dubby commented on your article" }]
+      },
     });
 
     component = mount(

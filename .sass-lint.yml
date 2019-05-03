@@ -17,3 +17,4 @@ rules:
   force-pseudo-nesting: 0
   no-qualifying-elements: 0
   no-ids: 0
+  force-element-nesting: 0

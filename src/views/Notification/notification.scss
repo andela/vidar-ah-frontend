@@ -1,0 +1,129 @@
+@import '../../assets/default';
+
+
+.box {
+  left: 80%;
+  top: 10%;
+}
+
+.notifications {
+  background: $white;
+  border-radius: 1.875rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  height: 3.625rem;
+  text-align: center;
+  width: 3.625rem;
+}
+
+.notifications:hover {
+  background: $deep-purple;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  height: 44px;
+  padding: 2 15px;
+  text-align: left;
+  transform: translateY(-100%);
+  width: 300px;
+
+  .num::after {
+    content: ' Notification';
+  }
+}
+
+.notifications:hover .fa {
+  color: $white;
+}
+
+.notifications .fa {
+  color: #cecece;
+  font-size: 30px;
+  line-height: 60px;
+}
+
+.fa {
+  display: inline-block;
+}
+
+.notifications .num {
+  background: #ff2c74;
+  border-radius: 50%;
+  color: $white;
+  font-family: $font-family-body;
+  height: 25px;
+  line-height: 25px;
+  position: absolute;
+  text-align: center;
+  width: 25px;
+}
+
+.length {
+  margin-left: 6px;
+}
+
+.notifications:hover .num {
+  background: transparent;
+  color: $white;
+  font-size: 24px;
+  position: relative;
+  top: -4px;
+}
+
+ul {
+  background: $white;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+  display: none;
+  left: 0;
+  margin: 0;
+  padding: 20px;
+  position: absolute;
+  top: 50px;
+  width: 100%;
+}
+
+.notifications:hover ul {
+  display: block;
+}
+
+ul li {
+  display: flex;
+  list-style: none;
+  padding: 8px 0;
+}
+
+ul li:last-child {
+  border-bottom: 0;
+}
+
+ul li .icon {
+  border-radius: 50%;
+  height: 24px;
+  line-height: 24px;
+  margin-right: 15px;
+  text-align: center;
+  width: 24px;
+}
+
+ul li .icon .fa {
+  color: $white;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+ul li .text {
+  color: rgb(8, 5, 5);
+  cursor: pointer;
+  font-family: sans-serif;
+  position: relative;
+  top: 3px;
+}
+
+ul li:hover .text {
+  color: $deep-purple;
+  font-weight: bold;
+}
+
+
