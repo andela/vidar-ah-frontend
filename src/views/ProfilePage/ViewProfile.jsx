@@ -2,8 +2,7 @@ import React, { useEffect } from 'react';
 import {
   Container,
   Row,
-  Col,
-  Button,
+  Col
 } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -14,6 +13,7 @@ import Header from '../../components/Header/index';
 import ImageUpload from '../../components/ImageUpload/index';
 import './profile.scss';
 import Stats from '../../components/Stats/index';
+import Button from '../../components/Button';
 
 const ViewProfile = (props) => {
   const { getProfileRequest: getUserProfile, profile, history } = props;
@@ -57,14 +57,13 @@ const ViewProfile = (props) => {
                 <h4>Bio</h4>
                 <p>{profile.bio}</p>
               </div>
-              <h4>Actions</h4>
               <hr className="hr" />
               <div className="align-btn" id="action-btn">
                 <Link to="/editprofile">
-                  <Button type="button" className="avatar-btn">Edit Profile</Button>
+                  <Button text="Edit Profile" className="yellow-button-profile" />
                 </Link>
                 <Link to="/requestpasswordreset">
-                  <Button type="button" className="avatar-btn">Reset Password</Button>
+                  <Button text="Reset Password" className="yellow-button-profile" />
                 </Link>
               </div>
             </Col>
